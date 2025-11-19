@@ -1,0 +1,210 @@
+Here are comprehensive setup instructions for implementing Wood's Plumbing in Next.js with SSR. Follow these steps carefully:
+# Wood's Plumbing - Next.js Implementation Guide
+## Project Context
+This is a professional plumbing services website for Wood's Plumbing Enterprises LLC, migrated from React+Vite (CSR) to Next.js (SSR) for proper SEO optimization. The site features 66 services, 8 locations, 22 blog posts, and comprehensive SEO including AI search engine optimization.
+## Phase 1: Project Setup
+1. **Initialize Next.js with TypeScript**
+   - Use App Router (not Pages Router)
+   - Enable TypeScript strict mode
+   - Configure src/ directory structure
+2. **Install Core Dependencies**
+   ```bash
+   npm install @neondatabase/serverless drizzle-orm drizzle-zod
+   npm install @radix-ui/react-* shadcn/ui components
+   npm install tailwindcss @tailwindcss/typography
+   npm install zod react-hook-form @hookform/resolvers
+   npm install date-fns class-variance-authority clsx tailwind-merge
+   npm install lucide-react react-icons
+   npm install -D drizzle-kit @types/node
+
+Configure Environment Variables
+DATABASE_URL=<from Replit secrets>
+NEXT_PUBLIC_SITE_URL=https://woodsplumbingaz.com
+
+Phase 2: Database Setup
+Copy Schema - Import the provided lib/db/schema.ts
+Configure Drizzle - Set up drizzle.config.ts for Neon PostgreSQL
+Database Connection - Create lib/db/index.ts with Neon serverless client
+Seed Database - Create seed script to populate all tables from JSON files:
+66 services from services.json
+8 locations from locations.json
+38 FAQs from faqs.json
+10 reviews from reviews.json
+22 blog posts from blog-posts.json
+Phase 3: Core Setup
+Business Constants - Import lib/constants.ts (company info, hours, social, etc.)
+SEO Schemas - Import lib/seo/schemas.ts (Schema.org generators)
+Tailwind Config - Set up with shadcn/ui theme tokens
+Layout Component - Create root layout with:
+Header with logo, navigation, phone CTA
+Footer with business info, hours, links, certifications
+Mobile floating action buttons (Call Now / Book Online)
+Phase 4: Page Implementation Priority
+Tier 1: Essential Pages (Build First)
+Homepage (app/page.tsx)
+
+Hero section with trust indicators
+Featured services grid
+Customer reviews carousel
+Service area map
+SEO: Organization + LocalBusiness schemas
+Contact Page (app/contact/page.tsx)
+
+Contact form with Zod validation
+Business hours, location, map
+Rate limiting (5 submissions/IP/hour)
+SEO: Organization schema
+Knowledge Base (app/knowledge-base/page.tsx)
+
+CRITICAL: AI search engine optimization page
+Consolidates ALL business info in LLM-friendly format
+Sections: Services, Locations, FAQs, Credentials, Contact
+Use bullet lists, Q&A format, clear headings
+SEO: FAQPage schema with all FAQs
+Tier 2: Service & Location Pages
+Services Index (app/services/page.tsx)
+
+Grid of all 66 services
+Category filtering
+SEO: BreadcrumbList schema
+Individual Service Pages (app/services/[slug]/page.tsx)
+
+Dynamic routes for all 66 services
+Service description, benefits, process
+Related FAQs (11+ per service)
+Trust indicators, CTA
+SEO: Service + FAQPage schemas
+Locations Index (app/locations/page.tsx)
+
+All 8 service areas
+Coverage map
+SEO: LocalBusiness schema
+Location Pages (app/locations/[slug]/page.tsx)
+
+Location-specific content
+Zip codes served
+SEO: LocalBusiness + DefinedRegion schemas
+Tier 3: Content & Resources
+Blog Index (app/blog/page.tsx)
+
+22 blog posts
+Category/tag filtering
+Featured posts
+Blog Post Pages (app/blog/[slug]/page.tsx)
+
+Full blog content
+Author, date, category, tags
+Related posts
+SEO: Article schema
+About Page (app/about/page.tsx)
+
+Company history (since 1979)
+Certifications, licenses
+Team information
+Phase 5: SEO Implementation
+Metadata API - Use Next.js generateMetadata for:
+
+Unique titles per page
+Meta descriptions (155 chars)
+Open Graph tags
+Twitter Cards
+Canonical URLs
+Structured Data - Implement Schema.org JSON-LD on all pages:
+
+Organization schema (all pages)
+LocalBusiness schema (location pages)
+Service schema (service pages)
+FAQPage schema (pages with FAQs)
+BreadcrumbList schema (navigation)
+Article schema (blog posts)
+Dynamic Schema Generation - For FAQs, generate schema AFTER data loads to include all questions
+
+Sitemap - Generate sitemap.xml with all pages
+
+Robots.txt - Configure for full indexing
+
+Phase 6: UI Components
+Build these reusable components:
+
+TrustBar (displays credentials)
+ServiceCard (service grid items)
+ReviewCard (customer testimonials)
+FAQAccordion (Q&A sections)
+ContactForm (with validation)
+MobileFloatingActions (sticky CTAs)
+Breadcrumbs (navigation)
+Phase 7: Styling & Design
+Theme Setup - Configure Tailwind with:
+
+Primary blue (#1E7FC9 equivalent)
+Secondary yellow (CTA highlights)
+Gray scale for backgrounds
+Custom spacing system
+Typography - Inter font from Google Fonts
+
+Responsive Design - Mobile-first with breakpoints
+
+Trust Elements - Prominently display:
+
+"46+ Years in Business"
+"4.9/5 Rating"
+"300+ Reviews"
+"BBB A+ Rating"
+"AZ ROC 296386"
+Phase 8: Features & Functionality
+Contact Form
+
+React Hook Form + Zod validation
+API route with rate limiting
+Email notifications
+Success/error states
+Search (optional MVP feature)
+
+Search services, locations, blog
+Filter by category
+Analytics
+
+Google Tag Manager integration
+Track form submissions, calls
+Key Implementation Notes
+SSR Considerations
+Use Server Components by default
+Client Components only when needed (forms, interactivity)
+Fetch data in Server Components for better SEO
+Use Next.js Image for optimization
+Performance
+Lazy load images
+Optimize fonts
+Minimize client-side JS
+Cache static content
+Mobile Optimization
+Sticky floating action buttons
+Touch-friendly tap targets
+Responsive navigation
+Fast page loads
+Tucson-Specific Content
+Emphasize hard water solutions (200-350 PPM)
+Mention desert climate considerations
+Highlight local service areas
+Use local zip codes in SEO
+Testing Checklist
+ All 66 service pages render with SSR
+ All 8 location pages have correct Schema.org markup
+ Knowledge base page is AI-searchable
+ Contact form validates and rate-limits
+ Blog posts display with proper formatting
+ Mobile floating buttons work on all pages
+ Schema.org validation passes (Google Rich Results Test)
+ Page speed scores 90+ (Lighthouse)
+ All images optimized
+ Metadata unique per page
+Success Criteria
+The Next.js implementation is successful when:
+
+All pages render with SSR (view source shows content)
+Schema.org markup validates on all pages
+Knowledge base page optimized for AI search engines
+Contact form works with rate limiting
+Mobile experience is excellent
+SEO scores 95+ on Lighthouse
+Site loads fast (<3s LCP)
