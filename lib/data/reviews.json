@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "author": "Sarah M.",
+    "rating": 5,
+    "date": "2024-10-15",
+    "content": "Wood's Plumbing saved the day when our water heater failed on a Sunday morning. They arrived within an hour and had us back up and running by noon. Professional, friendly, and reasonably priced. Highly recommend!",
+    "source": "Google",
+    "serviceSlug": "water-heater-repair",
+    "featured": true,
+    "displayOrder": 1
+  },
+  {
+    "id": "2",
+    "author": "James R.",
+    "rating": 5,
+    "date": "2024-10-10",
+    "content": "Best plumbing company in Tucson! They installed a new tankless water heater in my home and the technician was incredibly knowledgeable. Explained everything clearly and the work was spotless. Been using them for 5 years now.",
+    "source": "Yelp",
+    "serviceSlug": "tankless-water-heaters",
+    "featured": true,
+    "displayOrder": 2
+  },
+  {
+    "id": "3",
+    "author": "Maria L.",
+    "rating": 5,
+    "date": "2024-10-05",
+    "content": "Had a slab leak that was driving up our water bill. Wood's Plumbing used their detection equipment to find it quickly without tearing up the whole house. Fair pricing and excellent workmanship. A+ service!",
+    "source": "Google",
+    "serviceSlug": "slab-leak-detection",
+    "featured": true,
+    "displayOrder": 3
+  },
+  {
+    "id": "4",
+    "author": "Robert K.",
+    "rating": 5,
+    "date": "2024-09-28",
+    "content": "Emergency drain backup at 10 PM on a Friday. They answered right away and had someone here in 45 minutes. Fixed the problem and even gave me tips to prevent it in the future. This is what customer service should be!",
+    "source": "Google",
+    "serviceSlug": "emergency-drain-cleaning",
+    "featured": true,
+    "displayOrder": 4
+  },
+  {
+    "id": "5",
+    "author": "Linda T.",
+    "rating": 5,
+    "date": "2024-09-20",
+    "content": "We had our whole house repiped by Wood's Plumbing. Big job but they were professional from start to finish. Clean, efficient, and the price was very competitive. No more rusty water!",
+    "source": "Yelp",
+    "serviceSlug": "whole-house-repiping",
+    "featured": true,
+    "displayOrder": 5
+  },
+  {
+    "id": "6",
+    "author": "David H.",
+    "rating": 5,
+    "date": "2024-09-15",
+    "content": "Called them for a simple toilet repair and they sent someone out same day. Technician was polite, wore shoe covers, and fixed the issue in 20 minutes. Great experience with a local family business.",
+    "source": "Google",
+    "serviceSlug": "toilet-repair",
+    "featured": false,
+    "displayOrder": 6
+  },
+  {
+    "id": "7",
+    "author": "Patricia W.",
+    "rating": 5,
+    "date": "2024-09-08",
+    "content": "Installed a water softener system in our home. The difference in our water quality is amazing! No more spots on dishes and our skin feels so much better. The team was professional and cleaned up perfectly.",
+    "source": "Google",
+    "serviceSlug": "water-softener-installation",
+    "featured": false,
+    "displayOrder": 7
+  },
+  {
+    "id": "8",
+    "author": "Michael S.",
+    "rating": 5,
+    "date": "2024-08-30",
+    "content": "Had a gas leak emergency and they responded immediately. Safety was their top priority and they handled everything professionally including dealing with the gas company. Can't thank them enough!",
+    "source": "Google",
+    "serviceSlug": "gas-leak-detection",
+    "featured": false,
+    "displayOrder": 8
+  },
+  {
+    "id": "9",
+    "author": "Jennifer B.",
+    "rating": 5,
+    "date": "2024-08-22",
+    "content": "They did a camera inspection of our sewer line before we bought our house. Found issues the home inspector missed! Saved us from a $15,000 surprise. Worth every penny.",
+    "source": "Yelp",
+    "serviceSlug": "sewer-camera-inspection",
+    "featured": false,
+    "displayOrder": 9
+  },
+  {
+    "id": "10",
+    "author": "Thomas G.",
+    "rating": 5,
+    "date": "2024-08-15",
+    "content": "Excellent service for our commercial property. They handle all our plumbing needs and are always responsive. Their preventive maintenance program has saved us money on emergency repairs.",
+    "source": "Google",
+    "serviceSlug": "commercial-plumbing",
+    "featured": false,
+    "displayOrder": 10
+  }
+]
