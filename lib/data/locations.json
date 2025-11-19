@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Tucson",
+    "slug": "tucson",
+    "description": "Professional plumbing services throughout Tucson, AZ. Serving all neighborhoods with 24/7 emergency response.",
+    "zipCodes": ["85701", "85702", "85704", "85705", "85706", "85707", "85708", "85709", "85710", "85711", "85712", "85713", "85714", "85715", "85716", "85718", "85719"],
+    "featured": true,
+    "displayOrder": 1
+  },
+  {
+    "id": "2",
+    "name": "Marana",
+    "slug": "marana",
+    "description": "Expert plumbing services in Marana, AZ. Fast response times for residential and commercial properties.",
+    "zipCodes": ["85653", "85658"],
+    "featured": true,
+    "displayOrder": 2
+  },
+  {
+    "id": "3",
+    "name": "Oro Valley",
+    "slug": "oro-valley",
+    "description": "Trusted plumbing contractor serving Oro Valley with comprehensive residential and commercial services.",
+    "zipCodes": ["85737", "85739", "85742", "85755"],
+    "featured": true,
+    "displayOrder": 3
+  },
+  {
+    "id": "4",
+    "name": "Catalina Foothills",
+    "slug": "catalina-foothills",
+    "description": "Premium plumbing services for Catalina Foothills homes and businesses since 1979.",
+    "zipCodes": ["85718", "85750"],
+    "featured": true,
+    "displayOrder": 4
+  },
+  {
+    "id": "5",
+    "name": "Green Valley",
+    "slug": "green-valley",
+    "description": "Reliable plumbing services in Green Valley, AZ. Specializing in senior community plumbing needs.",
+    "zipCodes": ["85614", "85622"],
+    "featured": false,
+    "displayOrder": 5
+  },
+  {
+    "id": "6",
+    "name": "Sahuarita",
+    "slug": "sahuarita",
+    "description": "Full-service plumbing for Sahuarita residents. Emergency and scheduled service available.",
+    "zipCodes": ["85629", "85614"],
+    "featured": false,
+    "displayOrder": 6
+  },
+  {
+    "id": "7",
+    "name": "Vail",
+    "slug": "vail",
+    "description": "Professional plumbing services in Vail, AZ. Serving residential and commercial customers.",
+    "zipCodes": ["85641", "85747"],
+    "featured": false,
+    "displayOrder": 7
+  },
+  {
+    "id": "8",
+    "name": "Picture Rocks",
+    "slug": "picture-rocks",
+    "description": "Experienced plumbing contractor serving Picture Rocks and surrounding areas.",
+    "zipCodes": ["85743"],
+    "featured": false,
+    "displayOrder": 8
+  }
+]
