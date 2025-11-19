@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Phone, Clock, Award } from 'lucide-react';
-import { businessInfo } from '@/data/businessInfo';
+import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
 export function Header() {
@@ -13,8 +13,8 @@ export function Header() {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <a href={`tel:${businessInfo.phone}`} className="hover:text-blue-200 font-semibold">
-                  {businessInfo.phone}
+                <a href={`tel:${BUSINESS.phone}`} className="hover:text-blue-200 font-semibold">
+                  {BUSINESS.phone}
                 </a>
               </div>
               <div className="hidden md:flex items-center gap-2">
@@ -24,8 +24,8 @@ export function Header() {
             </div>
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4" />
-              <span className="hidden sm:inline">Licensed ROC {businessInfo.license}</span>
-              <span className="sm:hidden">ROC {businessInfo.license}</span>
+              <span className="hidden sm:inline">Licensed ROC AZ ROC {BUSINESS.trust.license}</span>
+              <span className="sm:hidden">ROC {BUSINESS.trust.license}</span>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex flex-col">
-            <span className="text-2xl md:text-3xl font-bold text-blue-900">{businessInfo.name}</span>
-            <span className="text-sm md:text-base text-gray-600">{businessInfo.tagline}</span>
+            <span className="text-2xl md:text-3xl font-bold text-blue-900">{BUSINESS.name}</span>
+            <span className="text-sm md:text-base text-gray-600">{BUSINESS.tagline}</span>
           </Link>
 
           <div className="flex items-center gap-4">

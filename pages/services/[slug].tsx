@@ -1,49 +1,55 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { services, Service } from '@/data/services';
-import { businessInfo } from '@/data/businessInfo';
+import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 
+// Import JSON data
+import servicesData from '@/lib/data/services.json';
+import faqsData from '@/lib/data/faqs.json';
+
 interface ServicePageProps {
-  service: Service;
-  relatedServices: Service[];
+  service: typeof servicesData[0];
+  relatedServices: typeof servicesData;
+  serviceFaqs: typeof faqsData;
 }
 
-const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) => {
+const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, serviceFaqs }) => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": service.title,
+    "serviceType": service.name,
     "provider": {
-      "@type": "LocalBusiness",
-      "name": businessInfo.name,
-      "telephone": businessInfo.phone,
+      "@type": "Plumber",
+      "name": BUSINESS.name,
+      "telephone": BUSINESS.phone,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": businessInfo.address.street,
-        "addressLocality": businessInfo.address.city,
-        "addressRegion": businessInfo.address.state,
-        "postalCode": businessInfo.address.zip
+        "streetAddress": BUSINESS.address.street,
+        "addressLocality": BUSINESS.address.city,
+        "addressRegion": BUSINESS.address.state,
+        "postalCode": BUSINESS.address.zip
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": BUSINESS.trust.displayRating,
+        "reviewCount": BUSINESS.trust.totalReviews
       }
     },
     "areaServed": {
-      "@type": "City",
-      "name": "Tucson"
+      "@type": "State",
+      "name": "Arizona"
     },
-    "description": service.description,
-    ...(service.priceRange && { "offers": {
-      "@type": "Offer",
-      "priceRange": service.priceRange
-    }})
+    "description": service.shortDescription
   };
 
-  const faqSchema = service.faqs.length > 0 ? {
+  const faqSchema = serviceFaqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": service.faqs.map(faq => ({
+    "mainEntity": serviceFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -56,8 +62,8 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
   return (
     <div>
       <Head>
-        <title>{`${service.title} | ${businessInfo.name}`}</title>
-        <meta name="description" content={service.excerpt} />
+        <title>{`${service.name} in Tucson AZ | ${BUSINESS.name}`}</title>
+        <meta name="description" content={service.shortDescription} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -69,24 +75,26 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-sm bg-blue-700 px-3 py-1 rounded">{service.category}</span>
-              {service.emergencyAvailable && (
+              {service.featured && (
+                <span className="text-sm bg-yellow-500 text-blue-900 px-3 py-1 rounded font-semibold">Popular Service</span>
+              )}
+              {service.name.toLowerCase().includes('emergency') && (
                 <span className="text-sm bg-red-600 px-3 py-1 rounded">24/7 Emergency Service</span>
               )}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {service.title}
+              {service.name}
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              {service.excerpt}
+              {service.shortDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={`tel:${businessInfo.phone}`}>
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
+              <a href={`tel:${BUSINESS.phone}`}>
+                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
                   <Phone className="mr-2" />
-                  Call {businessInfo.phone}
+                  Call {BUSINESS.phone}
                 </Button>
-              </Link>
+              </a>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="bg-white text-blue-900 hover:bg-gray-100">
                   Get Free Estimate
@@ -103,36 +111,63 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <div className="prose max-w-none mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">About This Service</h2>
-                <p className="text-lg text-gray-700 leading-relaxed">{service.description}</p>
-              </div>
+              {/* About This Service */}
+              {service.longDescription && (
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">About This Service</h2>
+                  <div className="prose max-w-none">
+                    <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">{service.longDescription}</p>
+                  </div>
+                </div>
+              )}
 
               {/* Benefits */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {service.benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                      <span className="text-gray-700">{benefit}</span>
-                    </div>
-                  ))}
+              {service.benefits && Array.isArray(service.benefits) && service.benefits.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {service.benefits.map((benefit: string, index: number) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                        <span className="text-gray-700">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {/* Process */}
+              {service.process && Array.isArray(service.process) && service.process.length > 0 && (
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Process</h2>
+                  <div className="space-y-4">
+                    {service.process.map((step: any, index: number) => (
+                      <div key={index} className="flex gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-gray-900 mb-1">{step.title || `Step ${index + 1}`}</h3>
+                          <p className="text-gray-700">{step.description || step}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* FAQs */}
-              {service.faqs.length > 0 && (
+              {serviceFaqs.length > 0 && (
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
                   <div className="space-y-6">
-                    {service.faqs.map((faq, index) => (
-                      <Card key={index}>
+                    {serviceFaqs.map((faq) => (
+                      <Card key={faq.id}>
                         <CardHeader>
                           <CardTitle className="text-xl">{faq.question}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-gray-700">{faq.answer}</p>
+                          <p className="text-gray-700 whitespace-pre-line">{faq.answer}</p>
                         </CardContent>
                       </Card>
                     ))}
@@ -152,12 +187,12 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
                       <Clock className="w-5 h-5" />
                       <span className="text-sm">24/7 Emergency Available</span>
                     </div>
-                    <Link href={`tel:${businessInfo.phone}`}>
-                      <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900">
+                    <a href={`tel:${BUSINESS.phone}`}>
+                      <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
                         <Phone className="mr-2" />
-                        {businessInfo.phone}
+                        {BUSINESS.phone}
                       </Button>
-                    </Link>
+                    </a>
                     <Link href="/contact">
                       <Button variant="outline" className="w-full bg-white text-blue-900 hover:bg-gray-100">
                         Request Estimate
@@ -167,20 +202,30 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
                 </CardContent>
               </Card>
 
-              {/* Pricing */}
-              {service.priceRange && (
-                <Card className="mb-6">
-                  <CardHeader>
-                    <CardTitle>Pricing</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-2xl font-bold text-blue-600">{service.priceRange}</p>
-                    <p className="text-sm text-gray-600 mt-2">
-                      Final pricing depends on specific requirements. Call for exact quote.
-                    </p>
-                  </CardContent>
-                </Card>
-              )}
+              {/* Trust Signals */}
+              <Card className="mb-6">
+                <CardHeader>
+                  <CardTitle>Why Choose Us?</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>Licensed ROC {BUSINESS.trust.license}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>{BUSINESS.trust.yearsInBusiness}+ Years Experience</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>BBB {BUSINESS.trust.bbbRating} Rated</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span>{BUSINESS.trust.displayRating} Stars ({BUSINESS.trust.totalReviews}+ Reviews)</span>
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Related Services */}
               {relatedServices.length > 0 && (
@@ -192,8 +237,8 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
                     <div className="space-y-2">
                       {relatedServices.map((related) => (
                         <Link key={related.slug} href={`/services/${related.slug}`}>
-                          <div className="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
-                            <span className="text-sm">{related.title}</span>
+                          <div className="flex items-center justify-between p-2 hover:bg-gray-50 rounded transition-colors">
+                            <span className="text-sm">{related.name}</span>
                             <ArrowRight className="w-4 h-4 text-gray-400" />
                           </div>
                         </Link>
@@ -214,17 +259,17 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Call now or request a free estimate for {service.title.toLowerCase()}
+            Call now or request a free estimate for {service.name.toLowerCase()}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="xl" className="bg-blue-600 hover:bg-blue-700">
+            <a href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
                 <Phone className="mr-2" />
-                Call {businessInfo.phone}
+                Call {BUSINESS.phone}
               </Button>
-            </Link>
+            </a>
             <Link href="/contact">
-              <Button size="xl" variant="outline">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
                 Get Free Estimate
               </Button>
             </Link>
@@ -236,28 +281,35 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = services.map((service) => ({
+  const paths = servicesData.map((service) => ({
     params: { slug: service.slug },
   }));
 
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const service = services.find((s) => s.slug === params?.slug);
+export const getStaticProps: GetStaticProps<ServicePageProps> = async ({ params }) => {
+  const service = servicesData.find((s) => s.slug === params?.slug);
   
   if (!service) {
     return { notFound: true };
   }
 
-  const relatedServices = services
-    .filter((s) => service.relatedServices.includes(s.slug))
+  // Get FAQs for this service
+  const serviceFaqs = faqsData
+    .filter((faq) => faq.serviceSlug === service.slug)
+    .sort((a, b) => a.displayOrder - b.displayOrder);
+
+  // Get related services (featured services excluding current one)
+  const relatedServices = servicesData
+    .filter((s) => s.featured && s.slug !== service.slug)
     .slice(0, 5);
 
   return {
     props: {
       service,
       relatedServices,
+      serviceFaqs,
     },
   };
 };

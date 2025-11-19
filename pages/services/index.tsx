@@ -1,18 +1,41 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { services, serviceCategories } from '@/data/services';
-import { businessInfo } from '@/data/businessInfo';
+import { BUSINESS } from '@/lib/constants';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Phone } from 'lucide-react';
+import { Phone, Wrench } from 'lucide-react';
 
-const ServicesPage: NextPage = () => {
+// Import JSON data
+import servicesData from '@/lib/data/services.json';
+
+// Group services by general category (we'll infer from service names/types)
+const serviceGroups = [
+  { name: 'Emergency Services', keywords: ['emergency', 'burst', 'backup'] },
+  { name: 'Water Heaters', keywords: ['water heater', 'tankless'] },
+  { name: 'Drain & Sewer', keywords: ['drain', 'sewer', 'hydro', 'camera'] },
+  { name: 'Leak Detection & Repair', keywords: ['leak', 'slab'] },
+  { name: 'Gas Services', keywords: ['gas'] },
+  { name: 'Pipes & Repiping', keywords: ['pipe', 'repipe', 'plumbing'] },
+  { name: 'Water Treatment', keywords: ['water softener', 'filtration', 'treatment'] },
+  { name: 'Fixtures & Installations', keywords: ['toilet', 'faucet', 'fixture', 'sink', 'shower', 'bathtub', 'garbage disposal', 'dishwasher'] },
+  { name: 'Commercial Services', keywords: ['commercial'] },
+];
+
+interface ServicesPageProps {
+  groupedServices: Array<{
+    name: string;
+    services: typeof servicesData;
+  }>;
+  totalServices: number;
+}
+
+const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServices }) => {
   return (
     <div>
       <Head>
-        <title>{`Plumbing Services in Tucson & Southern Arizona | ${businessInfo.name}`}</title>
-        <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${businessInfo.license}.`} />
+        <title>{`Plumbing Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
+        <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${BUSINESS.trust.license}. ${totalServices}+ professional services available.`} />
       </Head>
 
       {/* Hero */}
@@ -23,14 +46,21 @@ const ServicesPage: NextPage = () => {
               Professional Plumbing Services
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Comprehensive plumbing solutions for homes and businesses across Southern Arizona
+              Comprehensive plumbing solutions for homes and businesses across Southern Arizona. {totalServices}+ specialized services available.
             </p>
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
-                <Phone className="mr-2" />
-                {businessInfo.phone}
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={`tel:${BUSINESS.phone}`}>
+                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
+                  <Phone className="mr-2" />
+                  {BUSINESS.phone}
+                </Button>
+              </a>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="bg-white text-blue-900 hover:bg-gray-100">
+                  Get Free Estimate
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -38,42 +68,40 @@ const ServicesPage: NextPage = () => {
       {/* Services by Category */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          {serviceCategories.map((category) => {
-            const categoryServices = services.filter(s => s.category === category);
-            if (categoryServices.length === 0) return null;
+          {groupedServices.map((group) => {
+            if (group.services.length === 0) return null;
 
             return (
-              <div key={category} className="mb-16">
+              <div key={group.name} className="mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-4 border-blue-600 pb-2 inline-block">
-                  {category}
+                  {group.name}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                  {categoryServices.map((service) => (
-                    <Card key={service.slug} className="hover:shadow-lg transition-shadow">
+                  {group.services.map((service) => (
+                    <Card key={service.slug} className="hover:shadow-lg transition-shadow h-full flex flex-col">
                       <CardHeader>
                         <CardTitle className="flex items-start justify-between">
-                          <span>{service.title}</span>
-                          {service.emergencyAvailable && (
+                          <span className="text-lg">{service.name}</span>
+                          {service.name.toLowerCase().includes('emergency') && (
                             <span className="text-xs bg-red-600 text-white px-2 py-1 rounded ml-2 flex-shrink-0">
                               24/7
                             </span>
                           )}
-                        </CardTitle>
-                        <CardDescription>{service.excerpt}</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-2">
-                          {service.priceRange && (
-                            <p className="text-sm text-gray-600">
-                              <span className="font-semibold">Price Range:</span> {service.priceRange}
-                            </p>
+                          {service.featured && !service.name.toLowerCase().includes('emergency') && (
+                            <span className="text-xs bg-yellow-500 text-blue-900 px-2 py-1 rounded ml-2 flex-shrink-0 font-semibold">
+                              Popular
+                            </span>
                           )}
-                          <Link href={`/services/${service.slug}`}>
-                            <Button variant="outline" className="w-full">
-                              Learn More
-                            </Button>
-                          </Link>
-                        </div>
+                        </CardTitle>
+                        <CardDescription className="line-clamp-2">{service.shortDescription}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="mt-auto">
+                        <Link href={`/services/${service.slug}`}>
+                          <Button variant="outline" className="w-full">
+                            <Wrench className="mr-2 w-4 h-4" />
+                            Learn More
+                          </Button>
+                        </Link>
                       </CardContent>
                     </Card>
                   ))}
@@ -94,14 +122,14 @@ const ServicesPage: NextPage = () => {
             Call now for same-day service or request a free estimate
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="xl" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
+            <a href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold text-lg px-8 py-6">
                 <Phone className="mr-2" />
-                {businessInfo.phone}
+                {BUSINESS.phone}
               </Button>
-            </Link>
+            </a>
             <Link href="/contact">
-              <Button size="xl" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900">
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8 py-6">
                 Get Free Estimate
               </Button>
             </Link>
@@ -110,6 +138,41 @@ const ServicesPage: NextPage = () => {
       </section>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps<ServicesPageProps> = async () => {
+  // Group services by category based on keywords
+  const groupedServices = serviceGroups.map(group => {
+    const services = servicesData.filter(service => {
+      const serviceName = service.name.toLowerCase();
+      return group.keywords.some(keyword => serviceName.includes(keyword));
+    });
+
+    return {
+      name: group.name,
+      services,
+    };
+  });
+
+  // Add "Other Services" for any services not categorized
+  const categorizedSlugs = new Set(
+    groupedServices.flatMap(group => group.services.map(s => s.slug))
+  );
+  const otherServices = servicesData.filter(s => !categorizedSlugs.has(s.slug));
+  
+  if (otherServices.length > 0) {
+    groupedServices.push({
+      name: 'Other Services',
+      services: otherServices,
+    });
+  }
+
+  return {
+    props: {
+      groupedServices,
+      totalServices: servicesData.length,
+    },
+  };
 };
 
 export default ServicesPage;

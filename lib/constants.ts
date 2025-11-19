@@ -28,8 +28,8 @@ export const BUSINESS = {
   
   trust: {
     founded: 1979,
-    yearsInBusiness: new Date().getFullYear() - 1979,
-    license: "AZ ROC 296386",
+    yearsInBusiness: 46, // 2025 - 1979
+    license: "296386",
     rating: 4.9,
     displayRating: "4.9",
     totalReviews: 300,
