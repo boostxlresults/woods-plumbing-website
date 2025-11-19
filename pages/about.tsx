@@ -1,8 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Header } from '../src/components/layout/Header';
-import { Footer } from '../src/components/layout/Footer';
 import { Button } from '../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
@@ -15,8 +13,6 @@ const AboutPage: NextPage = () => {
         <title>{`About Us - Tucson's Trusted Plumber Since ${BUSINESS.trust.founded} | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Learn about ${BUSINESS.name}, Tucson's most trusted plumbing company since ${BUSINESS.trust.founded}. BBB A+ rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews.`} />
       </Head>
-
-      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
@@ -229,8 +225,6 @@ const AboutPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

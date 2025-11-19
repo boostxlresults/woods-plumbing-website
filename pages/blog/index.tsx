@@ -2,8 +2,6 @@ import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Header } from '../../src/components/layout/Header';
-import { Footer } from '../../src/components/layout/Footer';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../src/components/ui/card';
 import { Button } from '../../src/components/ui/button';
 import { Clock, Calendar } from 'lucide-react';
@@ -43,8 +41,6 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <title>{`Plumbing Blog & Tips | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our ${BUSINESS.trust.yearsInBusiness}+ years of experience.`} />
       </Head>
-
-      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
@@ -126,8 +122,6 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
           )}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

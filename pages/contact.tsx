@@ -5,8 +5,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Header } from '../src/components/layout/Header';
-import { Footer } from '../src/components/layout/Footer';
 import { Button } from '../src/components/ui/button';
 import { Input } from '../src/components/ui/input';
 import { Textarea } from '../src/components/ui/textarea';
@@ -79,8 +77,6 @@ const ContactPage: NextPage = () => {
         <title>{`Contact Us - Get Free Estimate | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Contact ${BUSINESS.name} for expert plumbing service in Southern Arizona. Call ${BUSINESS.phone} or request a free estimate online. 24/7 emergency service available.`} />
       </Head>
-
-      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
@@ -305,8 +301,6 @@ const ContactPage: NextPage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

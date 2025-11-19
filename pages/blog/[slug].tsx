@@ -1,8 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Header } from '../../src/components/layout/Header';
-import { Footer } from '../../src/components/layout/Footer';
 import { Button } from '../../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
@@ -54,8 +52,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
         <meta name="description" content={post.excerpt} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
-
-      <Header />
 
       {/* Breadcrumb */}
       <section className="bg-gray-100 py-4">
@@ -161,8 +157,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
           </div>
         </section>
       )}
-
-      <Footer />
     </div>
   );
 };

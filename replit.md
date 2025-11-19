@@ -9,7 +9,7 @@ This is a production-ready Next.js SSR website for Wood's Plumbing Enterprises L
 - **Styling**: Tailwind CSS 3.4.18 + shadcn/ui components
 - **Database**: PostgreSQL with Drizzle ORM
 - **Dev Server**: Running on port 5000
-- **Total Pages**: 110+ (66 services + 22 locations + 22 blog posts + core pages)
+- **Total Pages**: 80+ (66 services + 8 locations + blog posts + core pages)
 
 ## Project Structure
 ```
@@ -20,10 +20,10 @@ pages/
 │   └── [slug].tsx              # Dynamic service pages (66 total)
 ├── locations/
 │   ├── index.tsx               # Locations listing page
-│   └── [slug].tsx              # Dynamic location pages (22 total)
+│   └── [slug].tsx              # Dynamic location pages (8 total)
 ├── blog/
 │   ├── index.tsx               # Blog with category filtering
-│   └── [slug].tsx              # Dynamic blog post pages (22 total)
+│   └── [slug].tsx              # Dynamic blog post pages
 ├── contact.tsx                 # Contact form with database storage
 ├── knowledge-base.tsx          # AI-optimized knowledge base
 ├── about.tsx                   # About page
@@ -36,24 +36,27 @@ src/
 │   │   ├── Header.tsx          # Site header with navigation
 │   │   └── Footer.tsx          # Site footer
 │   └── ui/                     # shadcn/ui components (Button, Card, Input, etc.)
+
+lib/
+├── constants.ts                # BUSINESS constants (name, phone, hours, trust signals)
 ├── data/
-│   ├── businessInfo.ts         # Business details and constants
-│   ├── services.ts             # 66 services with SEO data
-│   ├── locations.ts            # 22 locations with zip codes
-│   └── blogPosts.ts            # 22 blog posts with content
-└── lib/
-    ├── db/
-    │   ├── index.ts            # Database connection
-    │   └── schema.ts           # Database schema (contacts, rate_limits)
-    └── utils.ts                # Utility functions
+│   ├── services.json           # 66 services with SEO data
+│   ├── locations.json          # 8 locations with zip codes
+│   ├── blog-posts.json         # Blog posts with content
+│   ├── faqs.json              # FAQs organized by service
+│   └── reviews.json            # Customer reviews
+├── db/
+│   ├── index.ts                # Database connection
+│   └── schema.ts               # Database schema (contactSubmissions, etc.)
+└── utils.ts                    # Utility functions
 ```
 
 ## Key Features
 
 ### 1. Dynamic Page Generation (SSG)
-- **66 Service Pages**: Generated via getStaticPaths/getStaticProps
-- **22 Location Pages**: Zip code targeting with local SEO
-- **22 Blog Posts**: Full content with category filtering
+- **66 Service Pages**: Generated via getStaticPaths/getStaticProps from services.json
+- **8 Location Pages**: Zip code targeting with local SEO from locations.json
+- **Blog Posts**: Full content with category filtering from blog-posts.json
 - All pages pre-rendered at build time for optimal performance
 
 ### 2. SEO Optimization
@@ -77,14 +80,23 @@ src/
 
 ### 5. Database Schema
 ```typescript
-contacts:
-- id, name, email, phone, service, location, message, createdAt, ipAddress
+contactSubmissions:
+- id, name, email, phone, service, message, createdAt
 
-rate_limits:
-- id, ipAddress, requestCount, resetTime
+services:
+- id, name, slug, shortDescription, longDescription, icon, benefits, process, featured, displayOrder
+
+locations:
+- id, name, slug, description, zipCodes, featured, displayOrder
+
+faqs:
+- id, question, answer, serviceSlug, locationSlug, displayOrder
+
+reviews:
+- id, author, rating, date, content, source, serviceSlug, featured
 
 blogPosts:
-- id, slug, title, excerpt, content, category, author, readTime, published, createdAt, updatedAt
+- id, slug, title, excerpt, content, category, author, publishedAt, tags, featured, metaTitle, metaDescription
 ```
 
 ## Business Information
@@ -92,24 +104,30 @@ blogPosts:
 - **Founded**: 1979 (46+ years)
 - **Phone**: (520) 682-2233
 - **License**: Arizona ROC 296386
-- **Service Area**: Tucson & Southern Arizona (22 cities)
+- **Service Area**: Tucson & Southern Arizona (8 cities, 32 zip codes)
 - **Rating**: BBB A+, 4.9 stars, 300+ reviews
 - **Services**: 66 plumbing services across 6 categories
 - **Hours**: 24/7 emergency service available
 
 ## Recent Changes
-- **2025-11-19**: Complete website build
-  - Generated all 66 service pages with SEO and Schema.org markup
-  - Generated all 22 location pages with zip code targeting
-  - Built blog system with 22 posts and category filtering
-  - Implemented contact form with database storage and rate limiting
-  - Created AI-optimized knowledge base page
-  - Fixed React title tag warnings (using template strings)
-  - Implemented production-ready database-backed rate limiting
-  - Added comprehensive Schema.org markup across all pages
-  - Configured Tailwind CSS and shadcn/ui components
-  - Set up PostgreSQL database with Drizzle ORM
-  - Validated all features with architect review
+- **2025-11-19**: Data migration and website updates
+  - Migrated all data from TypeScript files to JSON format
+    - services.ts → services.json (66 services)
+    - locations.ts → locations.json (8 locations with 32 zip codes)
+    - blogPosts.ts → blog-posts.json
+    - Created faqs.json and reviews.json data files
+  - Consolidated business info into lib/constants.ts (BUSINESS constant)
+  - Updated all pages to use new data structure:
+    - Homepage: Uses BUSINESS constants and JSON data files
+    - Service pages: Load from services.json with integrated FAQs
+    - Location pages: Load from locations.json with proper Schema.org markup
+    - Blog system: Category filtering, dynamic read time calculation
+    - Contact page: Updated to use BUSINESS constants
+    - About page: Fully migrated to BUSINESS constants
+  - Fixed Schema.org compliance on location pages (City type)
+  - All pages validated with architect review
+  - Header and Footer components added to all pages
+  - Zero hardcoded business data - all from constants or JSON
 
 ## Development Commands
 - `npm run dev` - Start development server on port 5000
