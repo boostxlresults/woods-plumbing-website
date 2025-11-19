@@ -1,27 +1,50 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
-import { blogPosts, blogCategories } from '@/data/blogPosts';
-import { businessInfo } from '@/data/businessInfo';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Header } from '../../src/components/layout/Header';
+import { Footer } from '../../src/components/layout/Footer';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../src/components/ui/card';
+import { Button } from '../../src/components/ui/button';
 import { Clock, Calendar } from 'lucide-react';
-import { formatDate } from '@/lib/utils';
+import { BUSINESS } from '../../lib/constants';
+import blogPostsData from '../../lib/data/blog-posts.json';
 
-const BlogPage: NextPage = () => {
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  publishedAt: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
+  metaTitle: string;
+  metaDescription: string;
+}
+
+interface BlogIndexProps {
+  posts: Array<BlogPost & { readTime: number }>;
+  categories: string[];
+}
+
+const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   
   const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
+    ? posts 
+    : posts.filter(post => post.category === selectedCategory);
 
   return (
     <div>
       <Head>
-        <title>{`Plumbing Blog & Tips | ${businessInfo.name}`}</title>
-        <meta name="description" content="Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our 46+ years of experience." />
+        <title>{`Plumbing Blog & Tips | ${BUSINESS.name}`}</title>
+        <meta name="description" content={`Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our ${BUSINESS.trust.yearsInBusiness}+ years of experience.`} />
       </Head>
+
+      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
@@ -31,7 +54,7 @@ const BlogPage: NextPage = () => {
               Plumbing Blog & Resources
             </h1>
             <p className="text-xl text-blue-100">
-              Expert tips, maintenance guides, and plumbing insights from our {businessInfo.yearsInBusiness}+ years of experience
+              {`Expert tips, maintenance guides, and plumbing insights from our ${BUSINESS.trust.yearsInBusiness}+ years of experience`}
             </p>
           </div>
         </div>
@@ -47,7 +70,7 @@ const BlogPage: NextPage = () => {
             >
               All Posts
             </Button>
-            {blogCategories.map((category) => (
+            {categories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? 'default' : 'outline'}
@@ -79,7 +102,7 @@ const BlogPage: NextPage = () => {
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
-                      {formatDate(post.publishedAt)}
+                      {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
@@ -103,8 +126,34 @@ const BlogPage: NextPage = () => {
           )}
         </div>
       </section>
+
+      <Footer />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const calculateReadTime = (content: string): number => {
+    const wordsPerMinute = 200;
+    const words = content.split(/\s+/).length;
+    return Math.ceil(words / wordsPerMinute);
+  };
+
+  const postsWithReadTime = blogPostsData
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .map(post => ({
+      ...post,
+      readTime: calculateReadTime(post.content)
+    }));
+
+  const categories = Array.from(new Set(blogPostsData.map(post => post.category)));
+
+  return {
+    props: {
+      posts: postsWithReadTime,
+      categories
+    }
+  };
 };
 
 export default BlogPage;

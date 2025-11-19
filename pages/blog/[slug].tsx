@@ -1,16 +1,32 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { blogPosts, BlogPostData } from '@/data/blogPosts';
-import { businessInfo } from '@/data/businessInfo';
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Header } from '../../src/components/layout/Header';
+import { Footer } from '../../src/components/layout/Footer';
+import { Button } from '../../src/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
-import { formatDate } from '@/lib/utils';
+import { BUSINESS } from '../../lib/constants';
+import blogPostsData from '../../lib/data/blog-posts.json';
+
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  publishedAt: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
+  metaTitle: string;
+  metaDescription: string;
+}
 
 interface BlogPostPageProps {
-  post: BlogPostData;
-  relatedPosts: BlogPostData[];
+  post: BlogPost & { readTime: number };
+  relatedPosts: Array<BlogPost & { readTime: number }>;
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
@@ -25,7 +41,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
     },
     "publisher": {
       "@type": "Organization",
-      "name": businessInfo.name
+      "name": BUSINESS.name
     },
     "datePublished": post.publishedAt,
     "articleSection": post.category
@@ -34,10 +50,12 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   return (
     <div>
       <Head>
-        <title>{`${post.title} | ${businessInfo.name} Blog`}</title>
+        <title>{`${post.title} | ${BUSINESS.name} Blog`}</title>
         <meta name="description" content={post.excerpt} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
+
+      <Header />
 
       {/* Breadcrumb */}
       <section className="bg-gray-100 py-4">
@@ -73,7 +91,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span>{formatDate(post.publishedAt)}</span>
+                <span>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
@@ -95,10 +113,10 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
                   Our expert plumbers are ready to help with all your plumbing needs. Call now for same-day service!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href={`tel:${businessInfo.phone}`}>
+                  <Link href={`tel:${BUSINESS.phone}`}>
                     <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
                       <Phone className="mr-2" />
-                      Call {businessInfo.phone}
+                      Call {BUSINESS.phone}
                     </Button>
                   </Link>
                   <Link href="/contact">
@@ -143,12 +161,20 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
           </div>
         </section>
       )}
+
+      <Footer />
     </div>
   );
 };
 
+const calculateReadTime = (content: string): number => {
+  const wordsPerMinute = 200;
+  const words = content.split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
+};
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = blogPosts.map((post) => ({
+  const paths = blogPostsData.map((post) => ({
     params: { slug: post.slug },
   }));
 
@@ -156,19 +182,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = blogPosts.find((p) => p.slug === params?.slug);
+  const post = blogPostsData.find((p) => p.slug === params?.slug);
   
   if (!post) {
     return { notFound: true };
   }
 
-  const relatedPosts = blogPosts
+  const relatedPosts = blogPostsData
     .filter((p) => p.category === post.category && p.slug !== post.slug)
-    .slice(0, 3);
+    .slice(0, 3)
+    .map(p => ({
+      ...p,
+      readTime: calculateReadTime(p.content)
+    }));
 
   return {
     props: {
-      post,
+      post: {
+        ...post,
+        readTime: calculateReadTime(post.content)
+      },
       relatedPosts,
     },
   };
