@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{businessInfo.name} - {businessInfo.tagline}</title>
+        <title>{`${businessInfo.name} - ${businessInfo.tagline}`}</title>
         <meta name="description" content={`Professional plumbing services in Southern Arizona since ${businessInfo.foundedYear}. 24/7 emergency repairs, water heaters, drain cleaning, and more. BBB A+ rated with ${businessInfo.reviewCount}+ reviews.`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>

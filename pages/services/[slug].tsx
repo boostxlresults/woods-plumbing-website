@@ -56,7 +56,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices }) =
   return (
     <div>
       <Head>
-        <title>{service.title} | {businessInfo.name}</title>
+        <title>{`${service.title} | ${businessInfo.name}`}</title>
         <meta name="description" content={service.excerpt} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (

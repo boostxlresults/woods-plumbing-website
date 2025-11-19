@@ -11,7 +11,7 @@ const ServicesPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Plumbing Services in Tucson & Southern Arizona | {businessInfo.name}</title>
+        <title>{`Plumbing Services in Tucson & Southern Arizona | ${businessInfo.name}`}</title>
         <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${businessInfo.license}.`} />
       </Head>
 

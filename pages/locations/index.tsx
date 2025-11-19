@@ -11,7 +11,7 @@ const LocationsPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Service Areas - Plumbing Services Across Southern Arizona | {businessInfo.name}</title>
+        <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${businessInfo.name}`}</title>
         <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${businessInfo.phone}.`} />
       </Head>
 

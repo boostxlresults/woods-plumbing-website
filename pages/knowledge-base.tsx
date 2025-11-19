@@ -23,7 +23,7 @@ const KnowledgeBasePage: NextPage = () => {
   return (
     <div className="bg-white">
       <Head>
-        <title>AI Knowledge Base - Complete Business Information | {businessInfo.name}</title>
+        <title>{`AI Knowledge Base - Complete Business Information | ${businessInfo.name}`}</title>
         <meta name="description" content="Complete business information, services, and capabilities of Wood's Plumbing Enterprises LLC optimized for AI assistants." />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

@@ -34,7 +34,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   return (
     <div>
       <Head>
-        <title>{post.title} | {businessInfo.name} Blog</title>
+        <title>{`${post.title} | ${businessInfo.name} Blog`}</title>
         <meta name="description" content={post.excerpt} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>

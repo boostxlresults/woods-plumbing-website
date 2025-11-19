@@ -26,7 +26,16 @@ export const blogPosts = pgTable('blog_posts', {
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
 
+export const rateLimits = pgTable('rate_limits', {
+  id: serial('id').primaryKey(),
+  ipAddress: varchar('ip_address', { length: 100 }).notNull().unique(),
+  requestCount: integer('request_count').notNull().default(0),
+  resetTime: timestamp('reset_time').notNull(),
+});
+
 export type Contact = typeof contacts.$inferSelect;
 export type InsertContact = typeof contacts.$inferInsert;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = typeof blogPosts.$inferInsert;
+export type RateLimit = typeof rateLimits.$inferSelect;
+export type InsertRateLimit = typeof rateLimits.$inferInsert;

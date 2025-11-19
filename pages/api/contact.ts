@@ -1,27 +1,48 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '@/lib/db';
-import { contacts } from '@/lib/db/schema';
-
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+import { contacts, rateLimits } from '@/lib/db/schema';
+import { eq, sql } from 'drizzle-orm';
 
 const RATE_LIMIT = 5; // max 5 requests
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
+async function checkRateLimit(ip: string): Promise<boolean> {
+  const now = new Date();
+  const resetTime = new Date(now.getTime() + RATE_LIMIT_WINDOW);
 
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+  try {
+    const existingLimit = await db.select().from(rateLimits).where(eq(rateLimits.ipAddress, ip)).limit(1);
+
+    if (existingLimit.length === 0) {
+      await db.insert(rateLimits).values({
+        ipAddress: ip,
+        requestCount: 1,
+        resetTime: resetTime,
+      });
+      return true;
+    }
+
+    const record = existingLimit[0];
+    
+    if (now > new Date(record.resetTime)) {
+      await db.update(rateLimits)
+        .set({ requestCount: 1, resetTime: resetTime })
+        .where(eq(rateLimits.ipAddress, ip));
+      return true;
+    }
+
+    if (record.requestCount >= RATE_LIMIT) {
+      return false;
+    }
+
+    await db.update(rateLimits)
+      .set({ requestCount: sql`${rateLimits.requestCount} + 1` })
+      .where(eq(rateLimits.ipAddress, ip));
+    return true;
+  } catch (error) {
+    console.error('Rate limit check error:', error);
     return true;
   }
-
-  if (record.count >= RATE_LIMIT) {
-    return false;
-  }
-
-  record.count++;
-  return true;
 }
 
 export default async function handler(
@@ -37,7 +58,8 @@ export default async function handler(
     const ip = (req.headers['x-forwarded-for'] as string || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
 
     // Check rate limit
-    if (!checkRateLimit(ip)) {
+    const isAllowed = await checkRateLimit(ip);
+    if (!isAllowed) {
       return res.status(429).json({ 
         error: 'Too many requests. Please try again later.' 
       });

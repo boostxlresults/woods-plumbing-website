@@ -10,7 +10,7 @@ const AboutPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>About Us - Tucson's Trusted Plumber Since {businessInfo.foundedYear} | {businessInfo.name}</title>
+        <title>{`About Us - Tucson's Trusted Plumber Since ${businessInfo.foundedYear} | ${businessInfo.name}`}</title>
         <meta name="description" content={`Learn about ${businessInfo.name}, Tucson's most trusted plumbing company since ${businessInfo.foundedYear}. BBB A+ rated, ${businessInfo.rating} stars, ${businessInfo.reviewCount}+ reviews.`} />
       </Head>
 

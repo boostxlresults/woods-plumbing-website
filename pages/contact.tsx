@@ -74,7 +74,7 @@ const ContactPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Contact Us - Get Free Estimate | {businessInfo.name}</title>
+        <title>{`Contact Us - Get Free Estimate | ${businessInfo.name}`}</title>
         <meta name="description" content={`Contact Wood's Plumbing for expert plumbing service in Southern Arizona. Call ${businessInfo.phone} or request a free estimate online. 24/7 emergency service available.`} />
       </Head>
 

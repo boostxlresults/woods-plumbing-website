@@ -19,7 +19,7 @@ const BlogPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Plumbing Blog & Tips | {businessInfo.name}</title>
+        <title>{`Plumbing Blog & Tips | ${businessInfo.name}`}</title>
         <meta name="description" content="Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our 46+ years of experience." />
       </Head>
 

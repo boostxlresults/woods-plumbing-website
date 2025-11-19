@@ -46,7 +46,7 @@ const LocationPage: NextPage<LocationPageProps> = ({ location }) => {
   return (
     <div>
       <Head>
-        <title>Plumber in {location.name}, AZ | {businessInfo.name}</title>
+        <title>{`Plumber in ${location.name}, AZ | ${businessInfo.name}`}</title>
         <meta name="description" content={`${location.description} Licensed plumber serving ${location.zipCodes.join(', ')} and surrounding areas.`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
