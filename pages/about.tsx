@@ -1,28 +1,32 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { businessInfo } from '@/data/businessInfo';
-import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Header } from '../src/components/layout/Header';
+import { Footer } from '../src/components/layout/Footer';
+import { Button } from '../src/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
+import { BUSINESS } from '../lib/constants';
 
 const AboutPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{`About Us - Tucson's Trusted Plumber Since ${businessInfo.foundedYear} | ${businessInfo.name}`}</title>
-        <meta name="description" content={`Learn about ${businessInfo.name}, Tucson's most trusted plumbing company since ${businessInfo.foundedYear}. BBB A+ rated, ${businessInfo.rating} stars, ${businessInfo.reviewCount}+ reviews.`} />
+        <title>{`About Us - Tucson's Trusted Plumber Since ${BUSINESS.trust.founded} | ${BUSINESS.name}`}</title>
+        <meta name="description" content={`Learn about ${BUSINESS.name}, Tucson's most trusted plumbing company since ${BUSINESS.trust.founded}. BBB A+ rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews.`} />
       </Head>
+
+      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              About {businessInfo.name}
+              {`About ${BUSINESS.name}`}
             </h1>
             <p className="text-xl text-blue-100">
-              Serving Southern Arizona with expert plumbing since {businessInfo.foundedYear}
+              {`Serving Southern Arizona with expert plumbing since ${BUSINESS.trust.founded}`}
             </p>
           </div>
         </div>
@@ -35,10 +39,7 @@ const AboutPage: NextPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="prose max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                For over {businessInfo.yearsInBusiness} years, {businessInfo.name} has been the trusted name in plumbing 
-                services across Southern Arizona. What started as a small family operation in {businessInfo.foundedYear} has 
-                grown into one of the region's most respected plumbing contractors, built on a foundation of honest service, 
-                quality workmanship, and genuine care for our customers.
+                {`For over ${BUSINESS.trust.yearsInBusiness} years, ${BUSINESS.name} has been the trusted name in plumbing services across Southern Arizona. What started as a small family operation in ${BUSINESS.trust.founded} has grown into one of the region's most respected plumbing contractors, built on a foundation of honest service, quality workmanship, and genuine care for our customers.`}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
                 We understand that plumbing problems don't wait for convenient times. That's why we maintain 24/7 emergency 
@@ -47,9 +48,7 @@ const AboutPage: NextPage = () => {
                 treating every home and business like our own.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                From emergency repairs to planned installations, from residential homes to commercial facilities, we've seen 
-                it all and fixed it all. Our BBB A+ rating and {businessInfo.rating}-star average across {businessInfo.reviewCount}+ 
-                reviews reflect our unwavering commitment to customer satisfaction and quality work.
+                {`From emergency repairs to planned installations, from residential homes to commercial facilities, we've seen it all and fixed it all. Our BBB A+ rating and ${BUSINESS.trust.displayRating}-star average across ${BUSINESS.trust.totalReviews}+ reviews reflect our unwavering commitment to customer satisfaction and quality work.`}
               </p>
             </div>
           </div>
@@ -59,7 +58,7 @@ const AboutPage: NextPage = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Tucson Trusts Wood's Plumbing</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{`Why Tucson Trusts ${BUSINESS.name}`}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card>
@@ -71,8 +70,7 @@ const AboutPage: NextPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Fully licensed (ROC {businessInfo.license}), bonded, and insured. Our technicians are certified 
-                  professionals who stay current with industry standards and local codes.
+                  {`Fully licensed (ROC ${BUSINESS.trust.license}), bonded, and insured. Our technicians are certified professionals who stay current with industry standards and local codes.`}
                 </p>
               </CardContent>
             </Card>
@@ -86,8 +84,7 @@ const AboutPage: NextPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  {businessInfo.rating} star rating with {businessInfo.reviewCount}+ verified reviews. Our reputation 
-                  is built on decades of honest service and customer satisfaction.
+                  {`${BUSINESS.trust.displayRating} star rating with ${BUSINESS.trust.totalReviews}+ verified reviews. Our reputation is built on decades of honest service and customer satisfaction.`}
                 </p>
               </CardContent>
             </Card>
@@ -111,13 +108,12 @@ const AboutPage: NextPage = () => {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="w-8 h-8 text-blue-600" />
-                  <CardTitle>{businessInfo.yearsInBusiness}+ Years Experience</CardTitle>
+                  <CardTitle>{`${BUSINESS.trust.yearsInBusiness}+ Years Experience`}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Since {businessInfo.foundedYear}, we've solved every type of plumbing challenge Southern Arizona can 
-                  present. Experience matters when it comes to quality repairs.
+                  {`Since ${BUSINESS.trust.founded}, we've solved every type of plumbing challenge Southern Arizona can present. Experience matters when it comes to quality repairs.`}
                 </p>
               </CardContent>
             </Card>
@@ -161,12 +157,22 @@ const AboutPage: NextPage = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Certifications & Qualifications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {businessInfo.certifications.map((cert, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                  <span className="text-gray-700">{cert}</span>
-                </div>
-              ))}
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                <span className="text-gray-700">{`Arizona ROC License #${BUSINESS.trust.license}`}</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                <span className="text-gray-700">{`BBB A+ Rated (${BUSINESS.trust.bbbRating})`}</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                <span className="text-gray-700">Fully Bonded & Insured</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                <span className="text-gray-700">Certified Master Plumbers on Staff</span>
+              </div>
             </div>
           </div>
         </div>
@@ -178,12 +184,22 @@ const AboutPage: NextPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Our Commitment to You</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {businessInfo.warranties.map((warranty, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">{warranty}</span>
-                </div>
-              ))}
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                <span className="text-blue-100">Quality Workmanship Guaranteed</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                <span className="text-blue-100">24/7 Emergency Service</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                <span className="text-blue-100">Upfront Pricing - No Hidden Fees</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                <span className="text-blue-100">Licensed & Insured Professionals</span>
+              </div>
             </div>
           </div>
         </div>
@@ -193,26 +209,28 @@ const AboutPage: NextPage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Experience the Wood's Plumbing Difference
+            {`Experience the ${BUSINESS.name} Difference`}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Join thousands of satisfied customers across Southern Arizona
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="xl" className="bg-blue-600 hover:bg-blue-700">
+            <Link href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 <Phone className="mr-2" />
-                Call {businessInfo.phone}
+                Call {BUSINESS.phone}
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="xl" variant="outline">
+              <Button size="lg" variant="outline">
                 Get Free Estimate
               </Button>
             </Link>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
