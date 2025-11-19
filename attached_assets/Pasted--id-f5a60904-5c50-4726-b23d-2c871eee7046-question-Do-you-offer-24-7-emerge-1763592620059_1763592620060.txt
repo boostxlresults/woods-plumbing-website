@@ -1,0 +1,298 @@
+[
+  {
+    "id": "f5a60904-5c50-4726-b23d-2c871eee7046",
+    "question": "Do you offer 24/7 emergency plumbing services?",
+    "answer": "Yes! Wood's Plumbing provides 24/7/365 emergency plumbing services throughout Tucson, Marana, Oro Valley, and surrounding areas. We understand plumbing emergencies don't wait for business hours. Call us anytime at (520) 682-2233 for immediate assistance.",
+    "serviceSlug": "emergency-plumbing",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "983ab4e6-4ab2-4065-8e62-f119b18cc5d5",
+    "question": "How quickly can you respond to a plumbing emergency?",
+    "answer": "We typically respond to emergency calls within 60-90 minutes, depending on your location and current service demand. For critical emergencies like burst pipes or gas leaks, we prioritize immediate dispatch and often arrive even faster.",
+    "serviceSlug": "emergency-plumbing",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "b7620958-0731-4820-93ec-52158ae0f359",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically ranges from $150-$400 depending on the severity and location of the clog. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates for all drain cleaning services.",
+    "serviceSlug": "drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "6fc3143a-06ca-48f9-a490-af3749664eef",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, or buildup of grease and debris. We recommend camera inspection to identify the root cause and provide a permanent solution rather than temporary fixes.",
+    "serviceSlug": "drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "7443ce7c-1d48-4f88-a992-34f33e956b57",
+    "question": "What is hydro jetting and when is it needed?",
+    "answer": "Hydro jetting uses high-pressure water (up to 4,000 PSI) to completely clear drain and sewer lines of buildup, roots, and debris. It's ideal for severe clogs, recurring issues, or preventive maintenance for commercial properties. It's more effective than traditional snaking for tough blockages.",
+    "serviceSlug": "hydro-jetting",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "736e9a87-203b-4f5d-bf2e-108b5152fb95",
+    "question": "How do I know if I need sewer line repair or replacement?",
+    "answer": "Signs include: multiple slow drains, sewage odors, soggy patches in your yard, recurring backups, and gurgling sounds. We use camera inspection to assess the damage and determine whether spot repair or full replacement is most cost-effective for your situation.",
+    "serviceSlug": "sewer-line-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "8bd7bf54-05d3-4798-bb40-d703405bdc40",
+    "question": "Will my homeowner's insurance cover sewer line repair?",
+    "answer": "Standard homeowners insurance typically doesn't cover sewer line repairs unless caused by a covered peril (like a fallen tree). However, many insurers offer optional sewer backup coverage. We can provide detailed documentation for insurance claims if your policy covers the damage.",
+    "serviceSlug": "sewer-line-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "7a00db1b-fffd-4123-b187-5eada78a10b1",
+    "question": "What is trenchless sewer repair?",
+    "answer": "Trenchless repair fixes sewer lines without extensive digging. We either pull a new pipe through the old one (pipe bursting) or insert a resin-coated liner that hardens inside the pipe (pipe lining). This saves your landscaping, driveway, and significantly reduces labor costs and time.",
+    "serviceSlug": "trenchless-sewer-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "de63f11c-d62b-4e9c-b718-ec329c24ac7a",
+    "question": "How long does sewer line replacement take?",
+    "answer": "Traditional sewer line replacement typically takes 2-4 days including excavation and restoration. Trenchless methods can often be completed in 1-2 days. Timeline depends on the length of pipe, soil conditions, and whether permits are required.",
+    "serviceSlug": "sewer-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "645e0e96-6dc9-4521-94c7-bf660574b20f",
+    "question": "How much does sewer line replacement cost?",
+    "answer": "Sewer line replacement costs vary widely based on length, depth, access, and method. Traditional replacement ranges from $3,000-$10,000+ while trenchless methods range from $6,000-$15,000. Though trenchless costs more upfront, it saves money on landscaping restoration and reduces total project time.",
+    "serviceSlug": "sewer-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "69a352c5-e6f7-4e7e-a065-69646e1ba805",
+    "question": "Can you locate my sewer line?",
+    "answer": "Yes! We use advanced camera inspection technology to locate and map your entire sewer line. This helps us identify the exact location and depth of problems, which is especially useful before excavation or when planning renovations.",
+    "serviceSlug": "sewer-camera-inspection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "42a2e312-aa3e-4ada-a821-023ece00e8f4",
+    "question": "How often should I have my sewer line inspected?",
+    "answer": "For preventive maintenance, inspect sewer lines every 3-5 years, especially in homes over 20 years old or with mature trees. Also inspect when buying a home, experiencing slow drains, or planning major landscaping. Early detection prevents costly emergency repairs.",
+    "serviceSlug": "sewer-camera-inspection",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "411182b6-f131-42f4-a30d-41d16f537dd5",
+    "question": "How can I tell if I have a hidden water leak?",
+    "answer": "Warning signs include: unexplained increases in your water bill, sound of running water when nothing is on, wet spots on walls/ceilings/floors, musty odors, foundation cracks, and water meter running when all water is off. If you notice any of these, call us for professional leak detection.",
+    "serviceSlug": "leak-detection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "932b89e4-c8ac-411d-a7f9-c8a6cb02207d",
+    "question": "How do you find hidden leaks?",
+    "answer": "We use state-of-the-art technology including acoustic listening devices, thermal imaging cameras, moisture meters, and video camera inspection. These non-invasive methods can pinpoint leaks behind walls, under slabs, and underground without unnecessary demolition.",
+    "serviceSlug": "leak-detection",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "79246268-c70c-40e5-99f2-6101806cc5c4",
+    "question": "What is a slab leak?",
+    "answer": "A slab leak is a water line leak that occurs in pipes running beneath your concrete foundation. Common in Arizona due to shifting soil and hard water. Signs include hot spots on floors, increased water bills, and cracking in floors or walls. Early detection prevents major foundation damage.",
+    "serviceSlug": "slab-leak-detection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "c6dcf04f-7583-425c-a2e0-f1461d16fef2",
+    "question": "What causes slab leaks in Arizona homes?",
+    "answer": "Arizona's shifting soil, hard water, and extreme temperature changes cause pipe expansion/contraction leading to slab leaks. Copper pipes are especially vulnerable to corrosion from alkaline soil and hard water. Homes built before 1990 are at highest risk. Regular leak detection can catch problems early.",
+    "serviceSlug": "slab-leak-detection",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "d8f1ec59-9e7c-4893-8795-d544fbdeeb65",
+    "question": "Should I repair or replace after a slab leak?",
+    "answer": "Depends on pipe age and condition. If pipes are old throughout, whole-house repiping may be more cost-effective than repeated slab leak repairs. For newer homes with isolated leaks, spot repair is usually best. We'll assess your entire system and provide honest recommendations.",
+    "serviceSlug": "slab-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "579bc8a2-f0dc-4270-9eb5-921684ec2b66",
+    "question": "Can you detect gas leaks?",
+    "answer": "Yes! We have specialized equipment to detect natural gas and propane leaks. Gas leaks are extremely dangerous - if you smell gas, evacuate immediately and call 911, then call us. For suspected slow leaks, we can perform comprehensive gas line inspections.",
+    "serviceSlug": "gas-leak-detection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "ce3b2812-e6c1-4e45-ab9d-524256f165ef",
+    "question": "How do I know if I have a gas leak?",
+    "answer": "Signs of gas leaks include: sulfur or rotten egg smell, hissing sounds near gas lines, dead vegetation over gas lines, physical symptoms like dizziness or nausea. If you suspect a gas leak, evacuate immediately, call 911, then call us at (520) 682-2233.",
+    "serviceSlug": "gas-leak-detection",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "c6d6b647-f626-432f-9f89-5a8b9a4f6413",
+    "question": "Do I need a permit for gas line installation?",
+    "answer": "Yes, gas line installation requires permits and must be inspected for safety compliance. Wood's Plumbing handles all permitting and inspection scheduling as part of our gas line installation service, ensuring everything meets code requirements.",
+    "serviceSlug": "gas-line-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "3d378488-d6a0-49ab-9ff2-8c74552e2422",
+    "question": "Can you install gas lines for outdoor kitchens?",
+    "answer": "Absolutely! We regularly install gas lines for outdoor kitchens, BBQ islands, fire pits, patio heaters, and pool heaters. We'll assess the best route, handle permits, and ensure safe installation that passes inspection.",
+    "serviceSlug": "gas-line-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "4cd4d2d6-fd7e-4f30-9ff6-19043c63aed4",
+    "question": "How often should gas lines be inspected?",
+    "answer": "We recommend professional gas line inspection every 2-3 years for residential properties and annually for commercial properties. Also inspect before buying a home and if you smell gas, notice appliance issues, or after any excavation near gas lines.",
+    "serviceSlug": "gas-line-inspection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "9ed3d57e-496b-4a19-9a0d-201b6b468be0",
+    "question": "Do gas lines need regular maintenance?",
+    "answer": "Gas lines themselves don't require maintenance, but regular inspections ensure safety. We check for corrosion, proper connections, and leaks. Appliance connections should be checked when moving or replacing equipment. Annual inspection is recommended for commercial properties.",
+    "serviceSlug": "gas-line-inspection",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "22e80e55-1d66-45c9-b16b-e780b5f50121",
+    "question": "What's involved in gas line repair?",
+    "answer": "Gas line repair involves locating the leak, shutting off gas supply, repairing or replacing the damaged section, pressure testing the system, and inspection by local authorities. All gas work must be performed by licensed professionals - never attempt DIY gas repairs.",
+    "serviceSlug": "gas-line-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "da4078db-1a6a-49de-afdb-063ef6458016",
+    "question": "Do I need a water softener in Tucson?",
+    "answer": "Tucson has very hard water (200-350 PPM), which causes scale buildup in pipes and appliances, reduces soap effectiveness, and leaves spots on dishes. A water softener protects your plumbing investment and can extend appliance life by years while reducing soap and detergent usage.",
+    "serviceSlug": "water-softener-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "111bae2b-4a4b-47f7-8cc4-c0af7bea07b9",
+    "question": "How much does water softener installation cost?",
+    "answer": "Water softener installation typically ranges from $800-$2,500 depending on the system size and features. Higher capacity systems for larger homes or advanced features like smart monitoring cost more. We'll help you choose the right size system for your household needs and budget.",
+    "serviceSlug": "water-softener-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "08c19163-b2b8-4d63-9fc9-155954a0468d",
+    "question": "How often does a water softener need maintenance?",
+    "answer": "Water softeners need salt refilled monthly (depending on usage and tank size) and annual professional maintenance including cleaning the resin tank and checking settings. Proper maintenance ensures optimal performance and extends system life to 15-20 years.",
+    "serviceSlug": "water-softener-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "eee89ad9-60ad-4ee1-8db1-e04aff075a28",
+    "question": "What's the difference between water softener and water filtration?",
+    "answer": "Water softeners remove minerals (calcium and magnesium) that cause hardness. Water filtration removes contaminants like chlorine, sediment, and other impurities affecting taste and safety. Many homes benefit from both - softening protects pipes and appliances while filtration improves drinking water quality.",
+    "serviceSlug": "water-conditioning",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "9a47af29-6f44-4279-be27-16c307cc5bed",
+    "question": "Can I drink softened water?",
+    "answer": "Softened water is safe to drink, but adds small amounts of sodium. People on low-sodium diets may prefer using a bypass for drinking water taps or installing a reverse osmosis system for drinking/cooking water. RO removes sodium and provides the highest quality drinking water.",
+    "serviceSlug": "water-conditioning",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "86df8885-4b93-4b9c-b7a9-dccb4c97f05e",
+    "question": "What's the lifespan of water filtration systems?",
+    "answer": "Whole-house filters last 5-10 years depending on water quality and usage. Filters need replacement every 3-12 months depending on type. RO membranes last 2-3 years, while pre-filters need replacement every 6-12 months. We offer maintenance plans for hassle-free filter replacement.",
+    "serviceSlug": "water-filtration-systems",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "0c2f200e-a736-4e05-b7ac-f1ecaa7c0e0c",
+    "question": "What is reverse osmosis and do I need it?",
+    "answer": "Reverse osmosis (RO) is advanced filtration that removes up to 99% of contaminants including heavy metals, fluoride, and dissolved solids. It's ideal for drinking water and cooking. If you want the highest quality drinking water, RO is the gold standard filtration method.",
+    "serviceSlug": "reverse-osmosis-systems",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "63bc4c7c-6aff-4cd6-b7f8-2bef73b22203",
+    "question": "What are the signs that I need a new water heater?",
+    "answer": "Common signs include: water that isn't getting hot enough, rusty or discolored water, strange noises from the tank, water pooling around the base, your unit is over 10-15 years old, or you're experiencing inconsistent water temperatures. If you notice any of these issues, it's time to call Wood's Plumbing for a professional assessment.",
+    "serviceSlug": "water-heaters",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "56e545f9-df1b-480a-830d-71858618a56a",
+    "question": "How much does water heater installation cost in Marana and Tucson?",
+    "answer": "Water heater installation costs vary based on the type and size of unit you choose. Traditional tank water heaters typically range from $1,200-$2,500 installed, while tankless water heaters range from $2,500-$4,500. We offer free estimates and can help you choose the most cost-effective solution for your home. Contact us at (520) 682-2233 for a personalized quote.",
+    "serviceSlug": "water-heaters",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "9babd64d-9f61-4029-bda6-0ac9ca43f86e",
+    "question": "How much do plumbing repairs typically cost?",
+    "answer": "Basic repairs like fixing a dripping faucet or running toilet typically cost $150-$300. More complex repairs like pipe replacement or fixture installation range from $300-$1,000+. We provide upfront pricing before starting any work so there are no surprises.",
+    "serviceSlug": "plumbing-repairs",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "1eda9c51-52c8-4da3-b6bf-ef58f7ce51be",
+    "question": "How do I know if I need to replace my plumbing?",
+    "answer": "Consider whole-house repiping if you have: frequent leaks, discolored water, low pressure, pipes over 50 years old (galvanized), or multiple failing fixtures. We'll inspect your entire system and provide honest recommendations based on age, condition, and repair history.",
+    "serviceSlug": "plumbing-repairs",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "a4724493-5d55-4449-a194-738207ec03f0",
+    "question": "Do you offer plumbing inspections for home buyers?",
+    "answer": "Yes! Our comprehensive plumbing inspection ($200-$400) includes checking all visible plumbing, testing water pressure, inspecting water heater, looking for leaks, and camera inspection of sewer lines. This helps you avoid expensive surprises after purchase.",
+    "serviceSlug": "plumbing-inspection",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "e01ee5d2-208b-49f2-a037-702fdcd74d3d",
+    "question": "What areas do you service?",
+    "answer": "We service Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, and surrounding areas within 50 miles of our Marana location. Check our service areas page for the complete list of communities we serve.",
+    "serviceSlug": null,
+    "locationSlug": null,
+    "displayOrder": 1
+  }
+]
