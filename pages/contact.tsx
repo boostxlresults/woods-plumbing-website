@@ -5,15 +5,17 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { businessInfo } from '@/data/businessInfo';
-import { services } from '@/data/services';
-import { locations } from '@/data/locations';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Header } from '../src/components/layout/Header';
+import { Footer } from '../src/components/layout/Footer';
+import { Button } from '../src/components/ui/button';
+import { Input } from '../src/components/ui/input';
+import { Textarea } from '../src/components/ui/textarea';
+import { Label } from '../src/components/ui/label';
+import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { BUSINESS } from '../lib/constants';
+import servicesData from '../lib/data/services.json';
+import locationsData from '../lib/data/locations.json';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -74,24 +76,26 @@ const ContactPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{`Contact Us - Get Free Estimate | ${businessInfo.name}`}</title>
-        <meta name="description" content={`Contact Wood's Plumbing for expert plumbing service in Southern Arizona. Call ${businessInfo.phone} or request a free estimate online. 24/7 emergency service available.`} />
+        <title>{`Contact Us - Get Free Estimate | ${BUSINESS.name}`}</title>
+        <meta name="description" content={`Contact ${BUSINESS.name} for expert plumbing service in Southern Arizona. Call ${BUSINESS.phone} or request a free estimate online. 24/7 emergency service available.`} />
       </Head>
+
+      <Header />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Contact Wood's Plumbing
+              {`Contact ${BUSINESS.name}`}
             </h1>
             <p className="text-xl text-blue-100 mb-8">
               Get a free estimate or call us now for immediate service
             </p>
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="xl" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
+            <Link href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
                 <Phone className="mr-2" />
-                Call {businessInfo.phone}
+                Call {BUSINESS.phone}
               </Button>
             </Link>
           </div>
@@ -113,8 +117,8 @@ const ContactPage: NextPage = () => {
                     <Phone className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-gray-900">Phone</p>
-                      <a href={`tel:${businessInfo.phone}`} className="text-blue-600 hover:text-blue-700">
-                        {businessInfo.phone}
+                      <a href={`tel:${BUSINESS.phone}`} className="text-blue-600 hover:text-blue-700">
+                        {BUSINESS.phone}
                       </a>
                     </div>
                   </div>
@@ -123,8 +127,8 @@ const ContactPage: NextPage = () => {
                     <Mail className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-gray-900">Email</p>
-                      <a href={`mailto:${businessInfo.email}`} className="text-blue-600 hover:text-blue-700">
-                        {businessInfo.email}
+                      <a href={`mailto:${BUSINESS.email}`} className="text-blue-600 hover:text-blue-700">
+                        {BUSINESS.email}
                       </a>
                     </div>
                   </div>
@@ -133,7 +137,7 @@ const ContactPage: NextPage = () => {
                     <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-gray-900">Address</p>
-                      <p className="text-gray-600">{businessInfo.address.full}</p>
+                      <p className="text-gray-600">{`${BUSINESS.address.street}, ${BUSINESS.address.city}, ${BUSINESS.address.state} ${BUSINESS.address.zip}`}</p>
                     </div>
                   </div>
 
@@ -141,8 +145,9 @@ const ContactPage: NextPage = () => {
                     <Clock className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-gray-900">Hours</p>
-                      <p className="text-gray-600">{businessInfo.hours.regular}</p>
-                      <p className="text-red-600 font-semibold mt-1">Emergency: {businessInfo.hours.emergency}</p>
+                      <p className="text-gray-600">{BUSINESS.hours.weekday}</p>
+                      <p className="text-gray-600">{BUSINESS.hours.saturday}</p>
+                      <p className="text-red-600 font-semibold mt-1">{BUSINESS.hours.emergency}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -154,10 +159,10 @@ const ContactPage: NextPage = () => {
                   <p className="text-blue-100 text-sm mb-4">
                     Plumbing emergency? Call us now for immediate assistance.
                   </p>
-                  <Link href={`tel:${businessInfo.phone}`}>
+                  <Link href={`tel:${BUSINESS.phone}`}>
                     <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900">
                       <Phone className="mr-2" />
-                      Emergency: {businessInfo.phone}
+                      Emergency: {BUSINESS.phone}
                     </Button>
                   </Link>
                 </CardContent>
@@ -222,9 +227,9 @@ const ContactPage: NextPage = () => {
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm"
                       >
                         <option value="">Select a service...</option>
-                        {services.slice(0, 20).map((service) => (
-                          <option key={service.slug} value={service.title}>
-                            {service.title}
+                        {servicesData.slice(0, 20).map((service) => (
+                          <option key={service.slug} value={service.name}>
+                            {service.name}
                           </option>
                         ))}
                       </select>
@@ -239,7 +244,7 @@ const ContactPage: NextPage = () => {
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm"
                       >
                         <option value="">Select your city...</option>
-                        {locations.map((location) => (
+                        {locationsData.map((location) => (
                           <option key={location.slug} value={location.name}>
                             {location.name}
                           </option>
@@ -300,6 +305,8 @@ const ContactPage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
