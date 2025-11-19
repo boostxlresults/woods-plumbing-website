@@ -1,18 +1,24 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { locations } from '@/data/locations';
-import { businessInfo } from '@/data/businessInfo';
+import { BUSINESS } from '@/lib/constants';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone } from 'lucide-react';
 
-const LocationsPage: NextPage = () => {
+// Import JSON data
+import locationsData from '@/lib/data/locations.json';
+
+interface LocationsPageProps {
+  locations: typeof locationsData;
+}
+
+const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
   return (
     <div>
       <Head>
-        <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${businessInfo.name}`}</title>
-        <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${businessInfo.phone}.`} />
+        <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${BUSINESS.name}`}</title>
+        <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${BUSINESS.phone}.`} />
       </Head>
 
       {/* Hero */}
@@ -20,17 +26,17 @@ const LocationsPage: NextPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Serving Southern Arizona Since {businessInfo.foundedYear}
+              Serving Southern Arizona Since {BUSINESS.trust.founded}
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Professional plumbing services across {locations.length}+ communities in {businessInfo.serviceArea.primary}
+              Professional plumbing services across {locations.length} communities in Tucson and Southern Arizona
             </p>
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
+            <a href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
                 <Phone className="mr-2" />
-                {businessInfo.phone}
+                {BUSINESS.phone}
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -43,7 +49,7 @@ const LocationsPage: NextPage = () => {
               Our Service Areas
             </h2>
             <p className="text-xl text-gray-600">
-              Trusted plumbing services in communities across Pima County
+              Trusted plumbing services in communities across Southern Arizona
             </p>
           </div>
 
@@ -55,16 +61,16 @@ const LocationsPage: NextPage = () => {
                     <MapPin className="w-5 h-5 text-blue-600" />
                     {location.name}
                   </CardTitle>
-                  <CardDescription>{location.county}</CardDescription>
+                  <CardDescription>Pima County, Arizona</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-3">{location.description}</p>
                   <div className="space-y-2">
-                    <p className="text-xs text-gray-500">
-                      Population: {location.population.toLocaleString()}
+                    <p className="text-xs text-gray-500 font-semibold">
+                      {location.zipCodes.length} Zip Code{location.zipCodes.length !== 1 ? 's' : ''} Served
                     </p>
                     <p className="text-xs text-gray-500">
-                      Zip Codes: {location.zipCodes.slice(0, 3).join(', ')}
+                      {location.zipCodes.slice(0, 3).join(', ')}
                       {location.zipCodes.length > 3 && ` +${location.zipCodes.length - 3} more`}
                     </p>
                     <Link href={`/locations/${location.slug}`}>
@@ -90,14 +96,14 @@ const LocationsPage: NextPage = () => {
             We serve all of Southern Arizona with expert plumbing solutions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={`tel:${businessInfo.phone}`}>
-              <Button size="xl" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
+            <a href={`tel:${BUSINESS.phone}`}>
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold text-lg px-8 py-6">
                 <Phone className="mr-2" />
-                Call {businessInfo.phone}
+                Call {BUSINESS.phone}
               </Button>
-            </Link>
+            </a>
             <Link href="/contact">
-              <Button size="xl" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900">
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8 py-6">
                 Get Free Estimate
               </Button>
             </Link>
@@ -106,6 +112,14 @@ const LocationsPage: NextPage = () => {
       </section>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps<LocationsPageProps> = async () => {
+  return {
+    props: {
+      locations: locationsData,
+    },
+  };
 };
 
 export default LocationsPage;

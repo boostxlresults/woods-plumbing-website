@@ -1,0 +1,108 @@
+# Wood's Plumbing - React to Next.js Migration
+
+## Migration Overview
+
+This project is being migrated from **React + Express + Vite (CSR only)** to **Next.js (with SSR)** to meet the original specification requiring server-side rendering for SEO optimization.
+
+## Original Project Specifications
+
+- **Goal**: World-class SSR website for Wood's Plumbing Enterprises (Tucson/Marana plumbing company)
+- **SEO Requirements**: Optimized for both AI search engines (ChatGPT, Perplexity, Claude) and traditional SEO
+- **Scale**: MVP with 20-30 representative pages, architecture for eventual 250-500 pages
+- **Content**: 66 services with individual SEO-optimized pages, 22 blog posts, comprehensive knowledge base
+
+## Why Migration Was Needed
+
+The original implementation used React + Vite which only supports **client-side rendering (CSR)**. The project specification explicitly required **server-side rendering (SSR)** for:
+1. Improved SEO performance
+2. Better initial page load times
+3. AI search engine optimization
+4. Social media preview generation
+
+Attempts to add SSR to the Vite setup were blocked by protected configuration files in the Replit environment.
+
+## Data Files Exported
+
+All data has been exported from the original database and provided as JSON files:
+
+1. **lib/db/schema.ts** - Complete database schema (Drizzle ORM with PostgreSQL)
+2. **lib/constants.ts** - Business information and configuration
+3. **lib/data/services.json** - All 66 plumbing services
+4. **lib/data/locations.json** - 8 service area locations
+5. **lib/data/faqs.json** - 38 frequently asked questions
+6. **lib/data/reviews.json** - 10 customer reviews
+7. **lib/data/blog-posts.json** - 22 blog posts from original site
+8. **lib/seo/schemas.ts** - Schema.org structured data generators
+
+## Key Architecture Decisions from Original
+
+### Database
+- PostgreSQL with Neon serverless driver
+- Drizzle ORM for type-safe queries
+- Rate limiting on contact form (5 submissions per IP per hour)
+
+### SEO Strategy
+- Organization schema uses `@type: "Organization"` with `additionalType: "Plumber"`
+- FAQPage schema generated dynamically after data loads
+- Location pages use DefinedRegion schema for zip code targeting
+- Dedicated `/knowledge-base` page for AI search engine optimization
+
+### Design System
+- Material Design inspired with mobile-first approach
+- Trust indicators prominently displayed (46+ years, 4.9 rating, 300+ reviews, BBB A+)
+- Focus on conversion optimization with clear CTAs
+
+## Technology Stack (Original)
+
+- **Frontend**: React 18+ with TypeScript, Wouter for routing
+- **Backend**: Express.js with TypeScript
+- **Database**: PostgreSQL (Neon) with Drizzle ORM
+- **UI**: shadcn/ui components with Tailwind CSS
+- **Forms**: React Hook Form with Zod validation
+- **State**: TanStack Query for server state
+
+## Next.js Implementation Notes
+
+The Next.js version should maintain all the original features while adding SSR capabilities:
+
+1. **App Router** recommended for modern Next.js SSR
+2. **Server Components** for better performance
+3. **Metadata API** for SEO optimization
+4. **Image Optimization** with Next.js Image component
+5. **API Routes** for contact form and data fetching
+
+## Business Information
+
+- **Name**: Wood's Plumbing Enterprises LLC
+- **Since**: 1979 (46+ years in business)
+- **Phone**: (520) 682-2233
+- **Service Area**: Tucson, Marana, Oro Valley, Catalina Foothills, and surrounding Southern Arizona communities
+- **License**: AZ ROC 296386
+- **Rating**: 4.9/5 with 300+ reviews
+
+## Important Implementation Details
+
+1. **Water Heater Certifications**: American, AO Smith, and ACT certified
+2. **Hard Water Focus**: Tucson has 200-350 PPM hard water - water softeners are essential
+3. **24/7 Emergency Service**: Prominent feature throughout site
+4. **Mobile Optimization**: Sticky floating action buttons on mobile
+5. **Trust Indicators**: Display throughout site for conversion optimization
+
+## Contact Information for Production
+
+- **Business Email**: info@woodsplumbingaz.com
+- **Website**: https://woodsplumbingaz.com
+- **Social Media**: Facebook, Instagram, Yelp, Google Business Profile
+
+## Next Steps
+
+1. Set up Next.js project with TypeScript
+2. Install dependencies (Drizzle, PostgreSQL, shadcn/ui, etc.)
+3. Import all data files
+4. Implement database connection and seeding
+5. Create page structure with SSR
+6. Implement SEO metadata and Schema.org markup
+7. Build out 66 service pages
+8. Create blog system with 22 posts
+9. Implement contact form with rate limiting
+10. Test SSR rendering and SEO optimization
