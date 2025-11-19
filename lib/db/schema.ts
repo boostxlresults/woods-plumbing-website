@@ -1,41 +1,155 @@
-import { pgTable, serial, text, varchar, timestamp, integer, boolean } from 'drizzle-orm/pg-core';
+import { sql } from "drizzle-orm";
+import { pgTable, text, varchar, timestamp, integer, boolean } from "drizzle-orm/pg-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
 
-export const contacts = pgTable('contacts', {
-  id: serial('id').primaryKey(),
-  name: varchar('name', { length: 255 }).notNull(),
-  email: varchar('email', { length: 255 }).notNull(),
-  phone: varchar('phone', { length: 50 }),
-  service: varchar('service', { length: 255 }),
-  location: varchar('location', { length: 255 }),
-  message: text('message').notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  ipAddress: varchar('ip_address', { length: 100 }),
+// Users
+export const users = pgTable("users", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
 });
 
-export const blogPosts = pgTable('blog_posts', {
-  id: serial('id').primaryKey(),
-  slug: varchar('slug', { length: 255 }).notNull().unique(),
-  title: varchar('title', { length: 500 }).notNull(),
-  excerpt: text('excerpt').notNull(),
-  content: text('content').notNull(),
-  category: varchar('category', { length: 100 }).notNull(),
-  author: varchar('author', { length: 255 }).notNull(),
-  readTime: integer('read_time').notNull(),
-  published: boolean('published').default(true).notNull(),
-  createdAt: timestamp('created_at').defaultNow().notNull(),
-  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true,
 });
 
-export const rateLimits = pgTable('rate_limits', {
-  id: serial('id').primaryKey(),
-  ipAddress: varchar('ip_address', { length: 100 }).notNull().unique(),
-  requestCount: integer('request_count').notNull().default(0),
-  resetTime: timestamp('reset_time').notNull(),
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type User = typeof users.$inferSelect;
+
+// Contact Submissions
+export const contactSubmissions = pgTable("contact_submissions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  service: text("service"),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export type Contact = typeof contacts.$inferSelect;
-export type InsertContact = typeof contacts.$inferInsert;
+export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
+export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+// Services
+export const services = pgTable("services", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  slug: text("slug").notNull().unique(),
+  shortDescription: text("short_description").notNull(),
+  longDescription: text("long_description"),
+  icon: text("icon").notNull(),
+  benefits: text("benefits").array(),
+  process: text("process").array(),
+  featured: boolean("featured").default(false),
+  displayOrder: integer("display_order").default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertServiceSchema = createInsertSchema(services).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertService = z.infer<typeof insertServiceSchema>;
+export type Service = typeof services.$inferSelect;
+
+// Locations
+export const locations = pgTable("locations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  slug: text("slug").notNull().unique(),
+  description: text("description"),
+  zipCodes: text("zip_codes").array(),
+  featured: boolean("featured").default(false),
+  displayOrder: integer("display_order").default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertLocationSchema = createInsertSchema(locations).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertLocation = z.infer<typeof insertLocationSchema>;
+export type Location = typeof locations.$inferSelect;
+
+// FAQs
+export const faqs = pgTable("faqs", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  question: text("question").notNull(),
+  answer: text("answer").notNull(),
+  serviceSlug: text("service_slug"),
+  locationSlug: text("location_slug"),
+  displayOrder: integer("display_order").default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertFaqSchema = createInsertSchema(faqs).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertFaq = z.infer<typeof insertFaqSchema>;
+export type Faq = typeof faqs.$inferSelect;
+
+// Reviews
+export const reviews = pgTable("reviews", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  author: text("author").notNull(),
+  rating: integer("rating").notNull(),
+  date: text("date").notNull(),
+  content: text("content").notNull(),
+  source: text("source").notNull(),
+  serviceSlug: text("service_slug"),
+  featured: boolean("featured").default(false),
+  displayOrder: integer("display_order").default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertReviewSchema = createInsertSchema(reviews).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertReview = z.infer<typeof insertReviewSchema>;
+export type Review = typeof reviews.$inferSelect;
+
+// Blog Posts
+export const blogPosts = pgTable("blog_posts", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: text("title").notNull(),
+  slug: text("slug").notNull().unique(),
+  excerpt: text("excerpt").notNull(),
+  content: text("content").notNull(),
+  author: text("author").notNull(),
+  publishedAt: timestamp("published_at").notNull(),
+  category: text("category").notNull(),
+  tags: text("tags").array(),
+  featured: boolean("featured").default(false),
+  metaTitle: text("meta_title"),
+  metaDescription: text("meta_description"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
 export type BlogPost = typeof blogPosts.$inferSelect;
-export type InsertBlogPost = typeof blogPosts.$inferInsert;
-export type RateLimit = typeof rateLimits.$inferSelect;
-export type InsertRateLimit = typeof rateLimits.$inferInsert;
