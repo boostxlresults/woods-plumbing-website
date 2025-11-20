@@ -1,0 +1,42 @@
+App Router vs. Pages Router for SEO & AI SEO (AISO)
+
+Here’s a clear breakdown comparing the App Router and Pages Router in Next.js—specifically through the lens of technical SEO, AI-readiness, and future-proofing for generative search engines.
+
+🔧 TL;DR Recommendation
+
+✅ Use Pages Router for now (Next.js 13/14) until App Router fully supports stable SSR for JSON-LD schema injection and metadata indexing.
+
+🔍 Comparison Breakdown
+Feature	Pages Router	App Router
+Stability	Mature and battle-tested	Still maturing and changing
+Schema Rendering (JSON-LD)	✅ Works well with SSR or static injection	❌ Currently stripped from HTML in many SSR attempts
+SEO Metadata Control	✅ Fine-grained via getServerSideProps, Head, or next/head	⚠️ Can be unpredictable; uses new metadata.js files
+AI SEO Compatibility	✅ Supports clean, crawlable HTML for vector indexing	❌ Inconsistent schema rendering leads to missing AI context
+Indexability & Crawling	✅ Predictable for bots (Googlebot, AI parsers)	❌ Some SSR content may not be captured properly
+Performance Optimization	✅ Great with static generation + ISR	✅ App Router is slightly faster, but not enough to outweigh SEO loss
+Customization & Plugins	✅ Compatible with most third-party plugins (e.g., RealWorkLabs, Schema Builders, GTM tools)	⚠️ Limited compatibility with older ecosystem tools
+Learning Curve	Low for dev teams used to traditional React	Higher—requires full buy-in to React Server Components
+🧠 Why This Matters for AI SEO
+Pages Router:
+
+Ensures full schema injection at build time or during SSR
+
+Delivers clean metadata and full HTML context, which AI scrapers and LLM parsers rely on
+
+Can power structured sitemap generation for clear crawl paths and knowledge graph alignment
+
+Allows deep control over canonical tags, schema modules, and dynamic meta tags
+
+App Router (as of 2025):
+
+Strips inline scripts for structured data (even with workarounds)
+
+Makes it difficult to inject dynamic JSON-LD schemas per page
+
+Still in flux—meaning future updates might break your SEO efforts without warning
+
+🚀 Final Verdict
+
+Until the App Router stabilizes for advanced SEO needs:
+
+Use Pages Router for production sites focused on Google search, local 3-pack, and AI SEO discoverability.
