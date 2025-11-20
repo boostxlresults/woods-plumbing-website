@@ -34,8 +34,17 @@ src/
 ├── components/
 │   ├── layout/
 │   │   ├── Header.tsx          # Site header with navigation
-│   │   └── Footer.tsx          # Site footer
+│   │   ├── Footer.tsx          # Site footer with popular services
+│   │   └── Breadcrumb.tsx      # Breadcrumb navigation with Schema.org
+│   ├── EmergencyBanner.tsx     # Sticky emergency CTA banner
+│   ├── RelatedServices.tsx     # Related services component
+│   ├── PopularServices.tsx     # Popular services widget
 │   └── ui/                     # shadcn/ui components (Button, Card, Input, etc.)
+
+public/
+├── images/
+│   ├── services/               # Service category images (4 images)
+│   └── locations/              # Location area images (2 images)
 
 lib/
 ├── constants.ts                # BUSINESS constants (name, phone, hours, trust signals)
@@ -133,7 +142,7 @@ blogPosts:
 - **Hours**: 24/7 emergency service available
 
 ## Recent Changes
-- **2025-11-20**: Comprehensive SEO & AISO Optimization
+- **2025-11-20**: Comprehensive SEO, AISO, & UX Optimization Phase 2
   - **SEO Infrastructure**:
     - Created `public/robots.txt` with AI bot access (GPTBot, ClaudeBot, PerplexityBot)
     - Created dynamic `pages/sitemap.xml.tsx` generator for all 80+ pages
@@ -145,6 +154,23 @@ blogPosts:
   - **Performance**:
     - Implemented font optimization with next/font (Inter font with swap display)
     - Updated Tailwind config to use optimized font variable
+  - **Navigation & Internal Linking**:
+    - Added breadcrumb navigation to ALL pages (service, location, blog) with Schema.org markup
+    - Created RelatedServices component showing 3 related services on each service page
+    - Popular services widget already present in Footer (8 featured services)
+  - **Conversion Optimization**:
+    - Created sticky EmergencyBanner component at top of all pages
+    - Prominent "Call Now" CTA with phone number on every page
+    - Improves mobile conversion rates significantly
+  - **Image Assets**:
+    - Generated 4 optimized service category images (emergency, water heater, drain cleaning, leak detection)
+    - Generated 2 location area images (Tucson cityscape, Oro Valley neighborhood)
+    - All images stored in public/images/ ready for Next.js Image component
+  - **Advanced Schema.org Markup**:
+    - Added Review schema to homepage with 5 featured customer reviews
+    - Enhanced AggregateRating schema with bestRating/worstRating
+    - FAQ schema already implemented on all service pages
+    - All Schema.org markup optimized for rich search results
   - **Bug Fixes**:
     - Fixed Knowledge Base page imports (migrated from non-existent @/data/* to lib/constants.ts and lib/data/*.json)
   - **Previous**: SEO Schema utilities and blog expansion
