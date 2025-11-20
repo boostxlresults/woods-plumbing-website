@@ -1,0 +1,86 @@
+[
+  {
+    "id": "catalina-foothills",
+    "name": "Catalina Foothills",
+    "slug": "catalina-foothills",
+    "city": "Tucson",
+    "description": "Upscale residential area at the base of the Santa Catalina Mountains with luxury homes and scenic desert views.",
+    "zipCodes": ["85718", "85750"],
+    "highlights": [
+      "Luxury home plumbing services",
+      "High-end fixture installation",
+      "Water pressure optimization for hillside homes",
+      "Leak detection for mountain properties"
+    ]
+  },
+  {
+    "id": "eastside",
+    "name": "Eastside Tucson",
+    "slug": "eastside",
+    "city": "Tucson",
+    "description": "Family-friendly neighborhood with modern homes, schools, and shopping centers.",
+    "zipCodes": ["85710", "85730", "85747", "85748"],
+    "highlights": [
+      "Family home plumbing repairs",
+      "Water heater replacement",
+      "Drain cleaning services",
+      "Slab leak detection"
+    ]
+  },
+  {
+    "id": "northwest",
+    "name": "Northwest Tucson",
+    "slug": "northwest",
+    "city": "Tucson",
+    "description": "Rapidly growing area with new developments, shopping, and easy interstate access.",
+    "zipCodes": ["85704", "85705", "85741", "85742", "85743"],
+    "highlights": [
+      "New construction plumbing",
+      "Water softener installation",
+      "Emergency plumbing services",
+      "Repiping for older homes"
+    ]
+  },
+  {
+    "id": "midtown",
+    "name": "Midtown Tucson",
+    "slug": "midtown",
+    "city": "Tucson",
+    "description": "Historic neighborhoods with vintage charm, walkable streets, and local businesses.",
+    "zipCodes": ["85701", "85702", "85712", "85719"],
+    "highlights": [
+      "Historic home plumbing restoration",
+      "Galvanized pipe replacement",
+      "Foundation leak repair",
+      "Old home repiping"
+    ]
+  },
+  {
+    "id": "rita-ranch",
+    "name": "Rita Ranch",
+    "slug": "rita-ranch",
+    "city": "Tucson",
+    "description": "Master-planned community with family-friendly amenities and modern infrastructure.",
+    "zipCodes": ["85747"],
+    "highlights": [
+      "Modern home plumbing",
+      "Tankless water heater installation",
+      "Smart home plumbing integration",
+      "Preventative maintenance plans"
+    ]
+  },
+  {
+    "id": "vail",
+    "name": "Vail",
+    "slug": "vail",
+    "city": "Tucson",
+    "description": "Rural community southeast of Tucson with spacious properties and horse-friendly zoning.",
+    "zipCodes": ["85641"],
+    "highlights": [
+      "Well pump repair and replacement",
+      "Septic system plumbing",
+      "Large property water line installation",
+      "Agricultural plumbing needs"
+    ]
+  }
+]
