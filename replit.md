@@ -42,12 +42,14 @@ lib/
 ├── data/
 │   ├── services.json           # 66 services with SEO data
 │   ├── locations.json          # 8 locations with zip codes
-│   ├── blog-posts.json         # Blog posts with content
+│   ├── blog-posts.json         # 22 blog posts with content
 │   ├── faqs.json              # FAQs organized by service
 │   └── reviews.json            # Customer reviews
 ├── db/
 │   ├── index.ts                # Database connection
 │   └── schema.ts               # Database schema (contactSubmissions, etc.)
+├── seo/
+│   └── schemas.ts              # Schema.org JSON-LD helper functions
 └── utils.ts                    # Utility functions
 ```
 
@@ -61,6 +63,13 @@ lib/
 
 ### 2. SEO Optimization
 - Comprehensive Schema.org markup (LocalBusiness, Service, FAQPage, BlogPosting)
+- Centralized Schema.org helper functions in `lib/seo/schemas.ts`:
+  - `generateOrganizationSchema()` - Organization markup for all pages
+  - `generateLocalBusinessSchema()` - LocalBusiness with zip code DefinedRegions
+  - `generateServiceSchema()` - Service-specific markup
+  - `generateWebSiteSchema()` - WebSite schema
+  - `generateFAQSchema()` - FAQ page markup
+  - `generateBreadcrumbSchema()` - Breadcrumb navigation
 - Unique meta titles and descriptions for every page
 - Structured data for rich search results
 - Mobile-first responsive design
@@ -110,6 +119,13 @@ blogPosts:
 - **Hours**: 24/7 emergency service available
 
 ## Recent Changes
+- **2025-11-20**: SEO Schema utilities and blog expansion
+  - Created `lib/seo/schemas.ts` with comprehensive Schema.org helper functions
+  - Expanded blog from 4 to 22 posts (added 18 new posts)
+  - Added new blog categories: Water Heaters, Water Conditioning, Repiping
+  - Fixed Header/Footer duplication issue (moved to `pages/_app.tsx` only)
+  - All Schema.org markup uses proper canonical URLs and types
+
 - **2025-11-19**: Data migration and website updates
   - Migrated all data from TypeScript files to JSON format
     - services.ts → services.json (66 services)
