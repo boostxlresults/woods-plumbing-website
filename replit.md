@@ -61,18 +61,32 @@ lib/
 - **Blog Posts**: Full content with category filtering from blog-posts.json
 - All pages pre-rendered at build time for optimal performance
 
-### 2. SEO Optimization
-- Comprehensive Schema.org markup (LocalBusiness, Service, FAQPage, BlogPosting)
-- Centralized Schema.org helper functions in `lib/seo/schemas.ts`:
-  - `generateOrganizationSchema()` - Organization markup for all pages
-  - `generateLocalBusinessSchema()` - LocalBusiness with zip code DefinedRegions
-  - `generateServiceSchema()` - Service-specific markup
-  - `generateWebSiteSchema()` - WebSite schema
-  - `generateFAQSchema()` - FAQ page markup
-  - `generateBreadcrumbSchema()` - Breadcrumb navigation
-- Unique meta titles and descriptions for every page
-- Structured data for rich search results
-- Mobile-first responsive design
+### 2. SEO & AISO Optimization
+- **Traditional SEO (Google, Bing)**:
+  - Canonical URLs on ALL pages (prevents duplicate content penalties)
+  - Open Graph tags on ALL pages (social sharing optimization)
+  - Twitter Card tags for enhanced social media previews
+  - Dynamic XML sitemap with all 80+ pages (`/sitemap.xml`)
+  - Custom 404 page with helpful navigation
+  - Breadcrumb component with Schema.org BreadcrumbList markup
+- **AI Search Optimization (ChatGPT, Claude, Perplexity)**:
+  - `robots.txt` allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+  - AI-optimized Knowledge Base page (`/knowledge-base`) with all business data
+  - Complete FAQs on knowledge base for AI parsing
+- **Schema.org Structured Data**:
+  - Comprehensive Schema.org markup (LocalBusiness, Service, FAQPage, BlogPosting)
+  - Centralized Schema.org helper functions in `lib/seo/schemas.ts`:
+    - `generateOrganizationSchema()` - Organization markup for all pages
+    - `generateLocalBusinessSchema()` - LocalBusiness with zip code DefinedRegions
+    - `generateServiceSchema()` - Service-specific markup
+    - `generateWebSiteSchema()` - WebSite schema
+    - `generateFAQSchema()` - FAQ page markup
+    - `generateBreadcrumbSchema()` - Breadcrumb navigation
+- **Performance**:
+  - Font optimization with next/font (Inter font, display swap)
+  - Mobile-first responsive design
+  - Unique meta titles and descriptions for every page
+  - Structured data for rich search results
 
 ### 3. Contact Form System
 - PostgreSQL database storage for submissions
@@ -119,13 +133,27 @@ blogPosts:
 - **Hours**: 24/7 emergency service available
 
 ## Recent Changes
-- **2025-11-20**: SEO Schema utilities and blog expansion
-  - Created `lib/seo/schemas.ts` with comprehensive Schema.org helper functions
-  - Expanded blog from 4 to 22 posts (added 18 new posts)
-  - Added new blog categories: Water Heaters, Water Conditioning, Repiping
-  - Fixed Header/Footer duplication issue (moved to `pages/_app.tsx` only)
-  - All Schema.org markup uses proper canonical URLs and types
-  - Created `MIGRATION.md` documenting React to Next.js migration process
+- **2025-11-20**: Comprehensive SEO & AISO Optimization
+  - **SEO Infrastructure**:
+    - Created `public/robots.txt` with AI bot access (GPTBot, ClaudeBot, PerplexityBot)
+    - Created dynamic `pages/sitemap.xml.tsx` generator for all 80+ pages
+    - Added canonical URLs to ALL page templates (homepage, services, locations, blog, about, contact, knowledge-base)
+    - Added Open Graph tags to ALL page templates for social sharing
+    - Created custom 404 page with helpful navigation
+  - **Components**:
+    - Created `src/components/layout/Breadcrumb.tsx` with Schema.org BreadcrumbList markup
+  - **Performance**:
+    - Implemented font optimization with next/font (Inter font with swap display)
+    - Updated Tailwind config to use optimized font variable
+  - **Bug Fixes**:
+    - Fixed Knowledge Base page imports (migrated from non-existent @/data/* to lib/constants.ts and lib/data/*.json)
+  - **Previous**: SEO Schema utilities and blog expansion
+    - Created `lib/seo/schemas.ts` with comprehensive Schema.org helper functions
+    - Expanded blog from 4 to 22 posts (added 18 new posts)
+    - Added new blog categories: Water Heaters, Water Conditioning, Repiping
+    - Fixed Header/Footer duplication issue (moved to `pages/_app.tsx` only)
+    - All Schema.org markup uses proper canonical URLs and types
+    - Created `MIGRATION.md` documenting React to Next.js migration process
 
 - **2025-11-19**: Data migration and website updates
   - Migrated all data from TypeScript files to JSON format
