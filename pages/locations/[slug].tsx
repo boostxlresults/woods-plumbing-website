@@ -1,11 +1,13 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Phone, MapPin, CheckCircle, Wrench } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { trackLocationView } from '@/lib/analytics';
 
 // Import JSON data
 import locationsData from '@/lib/data/locations.json';
@@ -17,6 +19,10 @@ interface LocationPageProps {
 }
 
 const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }) => {
+  useEffect(() => {
+    trackLocationView(location.name);
+  }, [location.name]);
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Plumber",

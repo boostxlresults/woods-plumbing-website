@@ -1,12 +1,14 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { RelatedServices } from '@/components/RelatedServices';
+import { trackServiceView } from '@/lib/analytics';
 
 // Import JSON data
 import servicesData from '@/lib/data/services.json';
@@ -19,6 +21,10 @@ interface ServicePageProps {
 }
 
 const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, serviceFaqs }) => {
+  useEffect(() => {
+    trackServiceView(service.name);
+  }, [service.name]);
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",

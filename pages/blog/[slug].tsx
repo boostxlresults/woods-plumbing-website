@@ -1,11 +1,13 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Button } from '../../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
 import { Breadcrumb } from '../../src/components/layout/Breadcrumb';
 import { BUSINESS } from '../../lib/constants';
+import { trackBlogView } from '../../lib/analytics';
 import blogPostsData from '../../lib/data/blog-posts.json';
 
 interface BlogPost {
@@ -29,6 +31,10 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
+  useEffect(() => {
+    trackBlogView(post.title, post.category);
+  }, [post.title, post.category]);
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

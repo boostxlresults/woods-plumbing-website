@@ -12,6 +12,7 @@ import { Label } from '../src/components/ui/label';
 import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { BUSINESS } from '../lib/constants';
+import { trackContactFormSubmission, trackPhoneClick } from '../lib/analytics';
 import servicesData from '../lib/data/services.json';
 import locationsData from '../lib/data/locations.json';
 
@@ -58,6 +59,7 @@ const ContactPage: NextPage = () => {
 
       if (response.ok) {
         setSubmitStatus('success');
+        trackContactFormSubmission(data.service);
         reset();
       } else {
         setSubmitStatus('error');
@@ -95,7 +97,7 @@ const ContactPage: NextPage = () => {
             <p className="text-xl text-blue-100 mb-8">
               Get a free estimate or call us now for immediate service
             </p>
-            <Link href={`tel:${BUSINESS.phone}`}>
+            <Link href={`tel:${BUSINESS.phone}`} onClick={() => trackPhoneClick('contact_hero')}>
               <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
                 <Phone className="mr-2" />
                 Call {BUSINESS.phone}

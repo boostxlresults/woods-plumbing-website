@@ -1,5 +1,8 @@
+'use client';
+
 import { Phone, Clock } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
+import { trackPhoneClick } from '@/lib/analytics';
 
 export const EmergencyBanner: React.FC = () => {
   return (
@@ -11,6 +14,7 @@ export const EmergencyBanner: React.FC = () => {
         </div>
         <a 
           href={`tel:${BUSINESS.phone}`}
+          onClick={() => trackPhoneClick('emergency_banner')}
           className="flex items-center gap-2 bg-white text-red-600 px-4 py-1.5 rounded-md font-bold hover:bg-gray-100 transition-colors"
         >
           <Phone className="w-4 h-4" />
