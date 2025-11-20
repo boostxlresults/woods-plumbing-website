@@ -4,7 +4,7 @@ export const BUSINESS = {
   tagline: "Tucson's Best Plumber Since 1979",
   phone: "(520) 682-2233",
   email: "info@woodsplumbingaz.com",
-  website: "https://woodsplumbingaz.com",
+  website: process.env.NEXT_PUBLIC_SITE_URL || "https://woodsplumbing.com",
   
   address: {
     street: "123 N Main Ave",
