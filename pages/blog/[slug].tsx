@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '../../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
+import { Breadcrumb } from '../../src/components/layout/Breadcrumb';
 import { BUSINESS } from '../../lib/constants';
 import blogPostsData from '../../lib/data/blog-posts.json';
 
@@ -69,14 +70,11 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
       </Head>
 
       {/* Breadcrumb */}
-      <section className="bg-gray-100 py-4">
-        <div className="container mx-auto px-4">
-          <Link href="/blog" className="flex items-center gap-2 text-blue-600 hover:text-blue-700">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Blog
-          </Link>
-        </div>
-      </section>
+      <Breadcrumb items={[
+        { label: 'Blog', href: '/blog' },
+        { label: post.category, href: `/blog?category=${encodeURIComponent(post.category)}` },
+        { label: post.title }
+      ]} />
 
       {/* Article */}
       <article className="py-16">

@@ -5,6 +5,8 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { RelatedServices } from '@/components/RelatedServices';
 
 // Import JSON data
 import servicesData from '@/lib/data/services.json';
@@ -82,6 +84,12 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         )}
       </Head>
+
+      {/* Breadcrumb */}
+      <Breadcrumb items={[
+        { label: 'Services', href: '/services' },
+        { label: service.name }
+      ]} />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
@@ -264,6 +272,9 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices services={relatedServices} currentSlug={service.slug} />
 
       {/* CTA */}
       <section className="bg-gray-100 py-16">

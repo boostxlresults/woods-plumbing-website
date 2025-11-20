@@ -21,6 +21,53 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
   // Get featured services for homepage
   const featuredServices = services.filter(s => s.featured).slice(0, 6);
 
+  // Local Business Schema with reviews
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": BUSINESS.name,
+    "image": `${BUSINESS.website}/logo.png`,
+    "@id": BUSINESS.website,
+    "url": BUSINESS.website,
+    "telephone": BUSINESS.phone,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS.address.street,
+      "addressLocality": BUSINESS.address.city,
+      "addressRegion": BUSINESS.address.state,
+      "postalCode": BUSINESS.address.zip,
+      "addressCountry": BUSINESS.address.country
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": BUSINESS.geo.latitude,
+      "longitude": BUSINESS.geo.longitude
+    },
+    "openingHours": "Mo-Fr 07:00-17:00,Sa 08:00-16:00",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": BUSINESS.trust.displayRating,
+      "reviewCount": BUSINESS.trust.totalReviews,
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": featuredReviews.slice(0, 5).map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating,
+        "bestRating": "5"
+      },
+      "reviewBody": review.content,
+      "datePublished": review.date
+    }))
+  };
+
   return (
     <div>
       <Head>
@@ -41,40 +88,10 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         <meta name="twitter:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
         <meta name="twitter:description" content={`Licensed plumbing contractor serving Southern Arizona since ${BUSINESS.trust.founded}.`} />
         
-        {/* Schema.org Local Business Markup */}
+        {/* Schema.org Local Business Markup with Reviews */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Plumber",
-              "name": BUSINESS.name,
-              "image": `${BUSINESS.website}/logo.png`,
-              "@id": BUSINESS.website,
-              "url": BUSINESS.website,
-              "telephone": BUSINESS.phone,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": BUSINESS.address.street,
-                "addressLocality": BUSINESS.address.city,
-                "addressRegion": BUSINESS.address.state,
-                "postalCode": BUSINESS.address.zip,
-                "addressCountry": BUSINESS.address.country
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": BUSINESS.geo.latitude,
-                "longitude": BUSINESS.geo.longitude
-              },
-              "openingHours": "Mo-Fr 07:00-17:00,Sa 08:00-16:00",
-              "priceRange": "$$",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": BUSINESS.trust.displayRating,
-                "reviewCount": BUSINESS.trust.totalReviews
-              }
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </Head>
 

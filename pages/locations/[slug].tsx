@@ -5,6 +5,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Phone, MapPin, CheckCircle, Wrench } from 'lucide-react';
+import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 // Import JSON data
 import locationsData from '@/lib/data/locations.json';
@@ -60,6 +61,12 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
+
+      {/* Breadcrumb */}
+      <Breadcrumb items={[
+        { label: 'Locations', href: '/locations' },
+        { label: location.name }
+      ]} />
 
       {/* Hero */}
       <section className="bg-blue-900 text-white py-16">
