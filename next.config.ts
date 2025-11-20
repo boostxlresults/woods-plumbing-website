@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
-import { env } from "process";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: [env.REPLIT_DOMAINS.split(",")[0]],
+  // Allow Replit preview iframe to access the dev server
+  ...(process.env.REPLIT_DEV_DOMAIN && {
+    allowedDevOrigins: [
+      `https://${process.env.REPLIT_DEV_DOMAIN}`,
+      process.env.REPLIT_DEV_DOMAIN,
+    ],
+  }),
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -12,4 +17,4 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
