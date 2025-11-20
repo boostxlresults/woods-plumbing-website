@@ -15,10 +15,10 @@ export const EmergencyBanner: React.FC = () => {
         <a 
           href={`tel:${BUSINESS.phone}`}
           onClick={() => trackPhoneClick('emergency_banner')}
-          className="flex items-center gap-2 bg-copper-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-copper-600 transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105"
+          className="flex items-center gap-2 bg-copper-500 text-white px-5 py-2 rounded-lg font-bold hover:bg-copper-600 transition-all duration-200 shadow-sm hover:shadow-md transform hover:scale-105"
         >
           <Phone className="w-4 h-4" />
-          <span className="text-sm">Call Now: {BUSINESS.phone}</span>
+          <span className="text-base">Call Now: {BUSINESS.phone}</span>
         </a>
       </div>
     </div>
