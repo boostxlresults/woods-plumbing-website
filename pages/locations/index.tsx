@@ -19,6 +19,13 @@ const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
       <Head>
         <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${BUSINESS.phone}.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/locations`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`Service Areas | ${BUSINESS.name}`} />
+        <meta property="og:description" content={`Serving ${locations.length}+ communities across Southern Arizona since ${BUSINESS.trust.founded}.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/locations`} />
+        <meta property="og:type" content="website" />
       </Head>
 
       {/* Hero */}

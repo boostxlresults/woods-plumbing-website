@@ -36,6 +36,13 @@ const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServi
       <Head>
         <title>{`Plumbing Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${BUSINESS.trust.license}. ${totalServices}+ professional services available.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${totalServices}+ Plumbing Services | ${BUSINESS.name}`} />
+        <meta property="og:description" content={`Emergency repairs, water heaters, drain cleaning, and more. Licensed ROC ${BUSINESS.trust.license}.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/services`} />
+        <meta property="og:type" content="website" />
       </Head>
 
       {/* Hero */}

@@ -40,6 +40,13 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
       <Head>
         <title>{`Plumbing Blog & Tips | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our ${BUSINESS.trust.yearsInBusiness}+ years of experience.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/blog`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`Plumbing Blog & Tips | ${BUSINESS.name}`} />
+        <meta property="og:description" content={`Expert tips from ${BUSINESS.trust.yearsInBusiness}+ years of plumbing experience in Southern Arizona.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/blog`} />
+        <meta property="og:type" content="website" />
       </Head>
 
       {/* Hero */}
