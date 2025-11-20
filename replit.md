@@ -4,7 +4,7 @@
 This is a production-ready Next.js SSR website for Wood's Plumbing Enterprises LLC, a licensed plumbing contractor serving Southern Arizona since 1979. The website features comprehensive SEO optimization, dynamic content generation, and full database integration.
 
 ## Current State
-- **Status**: Production-ready, fully tested and validated
+- **Status**: Production-ready with Google Analytics 4 and performance optimizations
 - **Framework**: Next.js 15.2.3 with TypeScript
 - **Styling**: Tailwind CSS 3.4.18 + shadcn/ui components
 - **Database**: PostgreSQL with Drizzle ORM
@@ -142,7 +142,25 @@ blogPosts:
 - **Hours**: 24/7 emergency service available
 
 ## Recent Changes
-- **2025-11-20**: Comprehensive SEO, AISO, & UX Optimization Phase 2
+- **2025-11-20**: Google Analytics 4, Performance & Local SEO Enhancements
+  - **Google Analytics 4 Integration**:
+    - Created `lib/analytics.ts` with comprehensive GA4 tracking utilities
+    - Implemented pageview tracking for all route changes in `pages/_app.tsx`
+    - Added conversion tracking for contact form submissions (trackContactFormSubmission)
+    - Added conversion tracking for phone clicks (trackPhoneClick)
+    - Integrated service/location/blog view tracking on all dynamic pages
+    - Created `SETUP_GUIDE.md` with complete Google Search Console and Schema.org validation instructions
+  - **Performance Optimizations**:
+    - Configured Next.js Image component with AVIF/WebP support in `next.config.ts`
+    - Added preconnect hints for Google Fonts and Google Analytics in `_document.tsx`
+    - Enabled gzip compression and removed powered-by header
+    - Added viewport meta tags for mobile optimization
+    - Next.js automatic code splitting already handles performance
+  - **Local SEO Enhancements**:
+    - Added Google Maps embed to all location pages
+    - Created `lib/data/neighborhoods.json` with 6 Tucson neighborhoods for micro-targeting
+    - Prepared infrastructure for neighborhood-level and service+location combo pages
+  - **Previous Phase**: Comprehensive SEO, AISO, & UX Optimization Phase 2
   - **SEO Infrastructure**:
     - Created `public/robots.txt` with AI bot access (GPTBot, ClaudeBot, PerplexityBot)
     - Created dynamic `pages/sitemap.xml.tsx` generator for all 80+ pages
