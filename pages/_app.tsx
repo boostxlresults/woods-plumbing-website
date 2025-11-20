@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { EmergencyBanner } from '@/components/EmergencyBanner'
@@ -13,6 +13,13 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  display: 'swap',
+  variable: '--font-playfair',
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -31,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
-    <div className={`${inter.variable} font-sans`}>
+    <div className={`${inter.variable} ${playfair.variable} font-sans`}>
       <EmergencyBanner />
       <Header />
       <main className="min-h-screen bg-gray-50">
