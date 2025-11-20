@@ -26,7 +26,20 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
       <Head>
         <title>{`${BUSINESS.name} - ${BUSINESS.tagline}`}</title>
         <meta name="description" content={`Professional plumbing services in Southern Arizona since ${BUSINESS.trust.founded}. 24/7 emergency repairs, water heaters, drain cleaning, and more. BBB ${BUSINESS.trust.bbbRating} rated with ${BUSINESS.trust.totalReviews}+ reviews.`} />
+        <link rel="canonical" href={BUSINESS.website} />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
+        <meta property="og:description" content={`Licensed plumbing contractor serving Southern Arizona since ${BUSINESS.trust.founded}. ${BUSINESS.hours.emergency}.`} />
+        <meta property="og:url" content={BUSINESS.website} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
+        <meta name="twitter:description" content={`Licensed plumbing contractor serving Southern Arizona since ${BUSINESS.trust.founded}.`} />
         
         {/* Schema.org Local Business Markup */}
         <script

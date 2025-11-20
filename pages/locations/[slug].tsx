@@ -46,6 +46,18 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
       <Head>
         <title>{`Plumber in ${location.name}, AZ | ${BUSINESS.name}`}</title>
         <meta name="description" content={`${location.description} Licensed plumber serving ${location.zipCodes.join(', ')} and surrounding areas. Call ${BUSINESS.phone} for 24/7 emergency service.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/locations/${location.slug}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`Plumber in ${location.name}, AZ | ${BUSINESS.name}`} />
+        <meta property="og:description" content={`${location.description} Call ${BUSINESS.phone} for service.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/locations/${location.slug}`} />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`Plumber in ${location.name}, AZ`} />
+        
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 

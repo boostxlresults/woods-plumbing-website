@@ -50,6 +50,21 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
       <Head>
         <title>{`${post.title} | ${BUSINESS.name} Blog`}</title>
         <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={`${BUSINESS.website}/blog/${post.slug}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:url" content={`${BUSINESS.website}/blog/${post.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:author" content={post.author} />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 

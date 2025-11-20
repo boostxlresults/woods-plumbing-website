@@ -64,6 +64,19 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
       <Head>
         <title>{`${service.name} in Tucson AZ | ${BUSINESS.name}`}</title>
         <meta name="description" content={service.shortDescription} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/${service.slug}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${service.name} | ${BUSINESS.name}`} />
+        <meta property="og:description" content={service.shortDescription} />
+        <meta property="og:url" content={`${BUSINESS.website}/services/${service.slug}`} />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${service.name} | ${BUSINESS.name}`} />
+        <meta name="twitter:description" content={service.shortDescription} />
+        
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

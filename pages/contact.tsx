@@ -76,6 +76,13 @@ const ContactPage: NextPage = () => {
       <Head>
         <title>{`Contact Us - Get Free Estimate | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Contact ${BUSINESS.name} for expert plumbing service in Southern Arizona. Call ${BUSINESS.phone} or request a free estimate online. 24/7 emergency service available.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/contact`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`Contact ${BUSINESS.name} | Get Free Estimate`} />
+        <meta property="og:description" content={`Call ${BUSINESS.phone} or request a free estimate online. ${BUSINESS.hours.emergency}.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/contact`} />
+        <meta property="og:type" content="website" />
       </Head>
 
       {/* Hero */}

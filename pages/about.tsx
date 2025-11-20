@@ -12,6 +12,13 @@ const AboutPage: NextPage = () => {
       <Head>
         <title>{`About Us - Tucson's Trusted Plumber Since ${BUSINESS.trust.founded} | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Learn about ${BUSINESS.name}, Tucson's most trusted plumbing company since ${BUSINESS.trust.founded}. BBB A+ rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews.`} />
+        <link rel="canonical" href={`${BUSINESS.website}/about`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`About ${BUSINESS.name} | Tucson's Trusted Plumber Since ${BUSINESS.trust.founded}`} />
+        <meta property="og:description" content={`BBB A+ rated with ${BUSINESS.trust.displayRating} stars. Serving Southern Arizona since ${BUSINESS.trust.founded}.`} />
+        <meta property="og:url" content={`${BUSINESS.website}/about`} />
+        <meta property="og:type" content="website" />
       </Head>
 
       {/* Hero */}
