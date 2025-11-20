@@ -8,6 +8,7 @@ import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
 import { Breadcrumb } from '../../src/components/layout/Breadcrumb';
 import { BUSINESS } from '../../lib/constants';
 import { trackBlogView } from '../../lib/analytics';
+import { formatDate } from '../../lib/formatDate';
 import blogPostsData from '../../lib/data/blog-posts.json';
 
 interface BlogPost {
@@ -106,7 +107,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                <span>{formatDate(post.publishedAt)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />

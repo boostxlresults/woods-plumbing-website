@@ -5,6 +5,7 @@ import { Phone, Clock, Award, Star, CheckCircle, MapPin } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { formatDateShort } from '@/lib/formatDate';
 
 // Import JSON data
 import servicesData from '@/lib/data/services.json';
@@ -236,7 +237,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 text-sm">{review.content}</p>
-                  <p className="text-xs text-gray-400 mt-2">{new Date(review.date).toLocaleDateString()}</p>
+                  <p className="text-xs text-gray-400 mt-2">{formatDateShort(review.date)}</p>
                 </CardContent>
               </Card>
             ))}

@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../..
 import { Button } from '../../src/components/ui/button';
 import { Clock, Calendar } from 'lucide-react';
 import { BUSINESS } from '../../lib/constants';
+import { formatDate } from '../../lib/formatDate';
 import blogPostsData from '../../lib/data/blog-posts.json';
 
 interface BlogPost {
@@ -105,7 +106,7 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                      {formatDate(post.publishedAt)}
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
