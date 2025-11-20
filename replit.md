@@ -125,6 +125,7 @@ blogPosts:
   - Added new blog categories: Water Heaters, Water Conditioning, Repiping
   - Fixed Header/Footer duplication issue (moved to `pages/_app.tsx` only)
   - All Schema.org markup uses proper canonical URLs and types
+  - Created `MIGRATION.md` documenting React to Next.js migration process
 
 - **2025-11-19**: Data migration and website updates
   - Migrated all data from TypeScript files to JSON format
