@@ -10,7 +10,7 @@ const NotFoundPage: NextPage = () => {
     <div>
       <Head>
         <title>{`Page Not Found | ${BUSINESS.name}`}</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Browse our plumbing services or contact us for help." />
+        <meta name="description" content="The page you are looking for does not exist. Browse our plumbing services or contact us for help." />
         <meta name="robots" content="noindex, follow" />
       </Head>
 
