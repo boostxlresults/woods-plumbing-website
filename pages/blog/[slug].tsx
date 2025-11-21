@@ -83,24 +83,24 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
         { label: post.title }
       ]} />
 
-      {/* Article */}
-      <article className="py-16">
+      {/* Hero Section - Navy Banner */}
+      <section className="bg-navy-700 text-white py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Meta */}
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-sm bg-blue-100 text-blue-900 px-3 py-1 rounded">
+              <span className="text-sm bg-red-600 text-white px-3 py-1 rounded uppercase font-bold">
                 {post.category}
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {post.title}
             </h1>
 
             {/* Metadata */}
-            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8 pb-8 border-b">
+            <div className="flex flex-wrap items-center gap-6 text-gray-200">
               <div className="flex items-center gap-2">
                 <User className="w-5 h-5" />
                 <span>{post.author}</span>
@@ -114,6 +114,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
                 <span>{post.readTime} min read</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Article */}
+      <article className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
 
             {/* Content */}
             <div 
@@ -122,21 +130,21 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
             />
 
             {/* CTA */}
-            <Card className="bg-blue-900 text-white">
+            <Card className="bg-navy-700 text-white">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-4">Need Professional Plumbing Help?</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-gray-200 mb-6">
                   Our expert plumbers are ready to help with all your plumbing needs. Call now for same-day service!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href={`tel:${BUSINESS.phone}`}>
-                    <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900">
+                    <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-bold">
                       <Phone className="mr-2" />
                       Call {BUSINESS.phone}
                     </Button>
                   </Link>
                   <Link href="/contact">
-                    <Button size="lg" variant="outline" className="bg-white text-blue-900 hover:bg-gray-100">
+                    <Button size="lg" className="bg-white text-navy-700 hover:bg-gray-100 font-bold">
                       Get Free Estimate
                     </Button>
                   </Link>

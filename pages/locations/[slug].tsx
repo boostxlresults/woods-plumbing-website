@@ -6,6 +6,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Star, Wrench } from 'lucide-react';
 import { trackLocationView, trackPhoneClick } from '@/lib/analytics';
+import { HeroSplit } from '@/components/HeroSplit';
 
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
@@ -63,53 +64,19 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
-      {/* Hero Section */}
-      <section className="bg-navy-900 text-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              {location.name}&apos;s Trusted Plumbing, Drain & Water Services
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-4">
-              Call for Service:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <a 
-                href={`tel:${BUSINESS.phone}`}
-                onClick={() => trackPhoneClick('location_hero')}
-              >
-                <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white font-bold text-xl px-8 py-6 w-full sm:w-auto">
-                  <Phone className="mr-2" />
-                  {BUSINESS.phone}
-                </Button>
-              </a>
-              <Link href="/contact">
-                <Button size="lg" className="bg-white text-navy-900 hover:bg-gray-100 font-bold text-xl px-8 py-6 w-full sm:w-auto">
-                  Schedule Online
-                </Button>
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-red-400 text-red-400" />
-                ))}
-              </div>
-              <span className="text-lg font-semibold">Rated {BUSINESS.trust.displayRating} on Google</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Banner */}
-      <div className="bg-red-500 text-white py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-lg md:text-xl font-semibold">
-            Free Estimates. No Extra Charge for Evening Service
-          </p>
-        </div>
-      </div>
+      {/* Hero Section - Roto-Rooter Split Layout */}
+      <HeroSplit
+        title={`${location.name.toUpperCase()}'S TRUSTED PLUMBING, DRAIN & WATER SERVICES`}
+        subtitle={location.description}
+        ctaText="Call Us Now!"
+        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageAlt={`Professional plumbing services in ${location.name}, Arizona`}
+        backgroundColor="gray"
+        showBanner={true}
+        bannerText="FREE ESTIMATES. NO EXTRA CHARGE FOR EVENING SERVICE"
+        showTrustBadges={true}
+        analyticsLocation="location_hero"
+      />
 
       {/* Value Propositions */}
       <section className="py-12 bg-gray-50">

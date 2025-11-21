@@ -7,6 +7,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Star, ChevronDown } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
+import { HeroSplit } from '@/components/HeroSplit';
 
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
@@ -87,55 +88,19 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
         )}
       </Head>
 
-      {/* Hero Section - Roto-Rooter Style */}
-      <section className="bg-navy-900 text-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              {service.name}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8">
-              {service.shortDescription}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href={`tel:${BUSINESS.phone}`}
-                onClick={() => trackPhoneClick('service_hero')}
-              >
-                <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-8 py-6 w-full sm:w-auto">
-                  <Phone className="mr-2" />
-                  {BUSINESS.phone}
-                </Button>
-              </a>
-              <Link href="/contact">
-                <Button size="lg" className="bg-white text-navy-900 hover:bg-gray-100 font-bold text-lg px-8 py-6 w-full sm:w-auto">
-                  Schedule Service
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Banner */}
-      <div className="bg-red-500 text-white py-3">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-base md:text-lg font-semibold">
-            💰 Save money! <Link href="/contact" className="underline hover:text-white">Check out available coupons</Link>
-          </p>
-        </div>
-      </div>
-
-      {/* Schedule CTA Banner */}
-      <div className="bg-gray-100 py-4 border-b border-gray-200">
-        <div className="container mx-auto px-4 text-center">
-          <Link href="/contact">
-            <span className="text-red-600 hover:text-red-700 font-semibold text-lg">
-              Fast, Friendly and Professional Service. Schedule Now! →
-            </span>
-          </Link>
-        </div>
-      </div>
+      {/* Hero Section - Roto-Rooter Split Layout */}
+      <HeroSplit
+        title={`PROFESSIONAL ${service.name.toUpperCase()} IN SOUTHERN ARIZONA`}
+        subtitle={service.shortDescription}
+        ctaText="Call Us Now!"
+        imageSrc="/images/service_-_plumbing_repair_work.png"
+        imageAlt={`Professional ${service.name} service in Southern Arizona`}
+        backgroundColor="gray"
+        showBanner={true}
+        bannerText="FAST, FRIENDLY AND PROFESSIONAL SERVICE. SCHEDULE NOW!"
+        showTrustBadges={true}
+        analyticsLocation="service_hero"
+      />
 
       {/* Main Content Section */}
       <section className="py-16 bg-white">
