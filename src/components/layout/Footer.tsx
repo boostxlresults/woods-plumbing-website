@@ -16,12 +16,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <div className="relative w-48 h-20 mb-4">
+            <div className="relative w-72 h-32 mb-4">
               <Image
                 src="/images/woods-plumbing-logo.png"
                 alt={BUSINESS.name}
                 fill
-                sizes="192px"
+                sizes="288px"
                 className="object-contain object-left brightness-0 invert"
               />
             </div>

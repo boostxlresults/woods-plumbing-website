@@ -39,12 +39,12 @@ export function Header() {
       <div className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center group">
-            <div className="relative w-48 h-20 md:w-64 md:h-24">
+            <div className="relative w-72 h-32 md:w-[32rem] md:h-40">
               <Image
                 src="/images/woods-plumbing-logo.png"
                 alt={BUSINESS.name}
                 fill
-                sizes="(max-width: 768px) 192px, 256px"
+                sizes="(max-width: 768px) 288px, 512px"
                 className="object-contain object-left"
                 priority
               />
