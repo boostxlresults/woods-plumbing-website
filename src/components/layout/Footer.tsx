@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { trackPhoneClick } from '@/lib/analytics';
@@ -15,7 +16,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <h3 className="text-white text-2xl font-bold font-display mb-4">{BUSINESS.name}</h3>
+            <div className="relative w-48 h-20 mb-4">
+              <Image
+                src="/images/woods-plumbing-logo.png"
+                alt={BUSINESS.name}
+                fill
+                sizes="192px"
+                className="object-contain object-left brightness-0 invert"
+              />
+            </div>
             <p className="text-sm mb-6 text-gray-400">{BUSINESS.tagline}</p>
             
             <div className="space-y-3 text-sm">

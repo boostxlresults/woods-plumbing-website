@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Clock, Award } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
@@ -37,11 +38,17 @@ export function Header() {
       {/* Main Header */}
       <div className="container mx-auto px-4 py-5">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex flex-col group">
-            <span className="text-2xl md:text-3xl font-bold text-navy-900 font-display group-hover:text-navy-700 transition-colors">
-              {BUSINESS.name}
-            </span>
-            <span className="text-sm md:text-base text-gray-600">{BUSINESS.tagline}</span>
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-48 h-20 md:w-64 md:h-24">
+              <Image
+                src="/images/woods-plumbing-logo.png"
+                alt={BUSINESS.name}
+                fill
+                sizes="(max-width: 768px) 192px, 256px"
+                className="object-contain object-left"
+                priority
+              />
+            </div>
           </Link>
 
           <div className="flex items-center gap-3">
