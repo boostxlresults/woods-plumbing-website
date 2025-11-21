@@ -8,6 +8,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { trackPhoneClick } from '@/lib/analytics';
 import { serviceCategories } from '@/lib/data/service-categories';
+import locationsData from '@/lib/data/locations.json';
 
 export function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -48,6 +49,8 @@ export function Header() {
     }
   ];
 
+  const locations = locationsData.sort((a, b) => a.displayOrder - b.displayOrder);
+
   return (
     <header className="bg-white border-b border-gray-200 sticky top-[60px] z-40">
       <div className="container mx-auto px-4 py-3">
@@ -68,8 +71,8 @@ export function Header() {
 
           {/* Center Navigation - Desktop */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
-              LOCATIONS
+            <Link href="/" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              HOME
             </Link>
             
             {megaMenuCategories.map((menu) => (
@@ -123,19 +126,52 @@ export function Header() {
               </div>
             ))}
 
+            {/* Service Areas Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('service-areas')}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors flex items-center gap-1">
+                SERVICE AREAS
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              
+              {activeDropdown === 'service-areas' && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[400px] z-50">
+                  <div className="p-6">
+                    <h3 className="font-bold text-navy-700 text-sm mb-3 uppercase">We Serve Southern Arizona</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      {locations.map((location) => (
+                        <Link
+                          key={location.slug}
+                          href={`/locations/${location.slug}`}
+                          className="text-gray-700 hover:text-red-600 text-sm transition-colors py-1"
+                        >
+                          {location.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="border-t border-gray-200 px-6 py-3 bg-gray-50 rounded-b-lg">
+                    <Link 
+                      href="/locations" 
+                      className="text-red-600 hover:text-red-700 font-semibold text-sm"
+                    >
+                      View All Service Areas →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
               CONTACT
             </Link>
           </nav>
 
-          {/* Right Side: Location + CTAs */}
+          {/* Right Side: CTAs */}
           <div className="flex items-center gap-3 md:gap-4">
-            {/* Location Badge */}
-            <div className="hidden md:flex items-center gap-2 text-navy-700">
-              <MapPin className="w-4 h-4 text-red-600" />
-              <span className="font-semibold text-sm">MARANA, AZ</span>
-            </div>
-
             {/* Schedule Button */}
             <Link href="/contact">
               <Button 
@@ -168,13 +204,18 @@ export function Header() {
         <nav className="lg:hidden mt-3 pt-3 border-t border-gray-200">
           <ul className="flex flex-wrap gap-4 text-xs">
             <li>
-              <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold uppercase">
-                LOCATIONS
+              <Link href="/" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                HOME
               </Link>
             </li>
             <li>
               <Link href="/services" className="text-navy-700 hover:text-red-600 font-bold uppercase">
                 ALL SERVICES
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                SERVICE AREAS
               </Link>
             </li>
             <li>
