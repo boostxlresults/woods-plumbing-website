@@ -73,63 +73,70 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         />
       </Head>
 
-      {/* Hero Section - Roto-Rooter Style */}
-      <section className="relative bg-navy-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/75 to-navy-900/60 z-10"></div>
-        <Image
-          src="/images/hero_-_plumber_with_customers_arizona.png"
-          alt="Professional plumber serving Southern Arizona"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority
-          quality={85}
-        />
-        
-        <div className="relative z-20 container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Southern Arizona&apos;s Trusted Plumbing, Drain & Water Services
-            </h1>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+      {/* Hero Section - Roto-Rooter Layout */}
+      <section className="bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-0 items-center">
+            {/* Left Side: Image */}
+            <div className="relative h-[400px] md:h-[500px]">
+              <Image
+                src="/images/hero_-_plumber_with_customers_arizona.png"
+                alt="Professional plumber with van serving Southern Arizona"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center"
+                priority
+                quality={90}
+              />
+            </div>
+
+            {/* Right Side: Content */}
+            <div className="py-12 md:py-16 px-6 md:px-12">
+              <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase">
+                THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
+              </h1>
+              
+              <p className="text-red-600 font-bold text-2xl md:text-3xl mb-4">
+                Call Us Now!
+              </p>
+              
               <a 
                 href={`tel:${BUSINESS.phone}`}
                 onClick={() => trackPhoneClick('hero')}
-                className="inline-block"
+                className="block mb-6"
               >
-                <Button size="lg" className="bg-copper-500 hover:bg-copper-600 text-white font-bold text-xl px-8 py-6 w-full sm:w-auto">
-                  <Phone className="mr-2 h-5 w-5" />
+                <p className="text-navy-700 font-bold text-4xl md:text-5xl lg:text-6xl hover:text-red-600 transition-colors">
                   {BUSINESS.phone}
-                </Button>
+                </p>
               </a>
+              
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-navy-900 hover:bg-gray-100 font-bold text-xl px-8 py-6 w-full sm:w-auto">
-                  Schedule Online
+                <Button 
+                  size="lg" 
+                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg flex items-center gap-2"
+                >
+                  <span>SCHEDULE ONLINE</span>
+                  <span className="text-xl">✓</span>
                 </Button>
               </Link>
-            </div>
-
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-copper-400 text-copper-400" />
-                ))}
-              </div>
-              <span className="text-lg font-semibold">Rated {BUSINESS.trust.displayRating} on Google</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Banner */}
-      <div className="bg-copper-500 text-white py-4">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-lg md:text-xl font-semibold">
-            Free Estimates. No Extra Charge for Evening Service
-          </p>
+      {/* Red Banner */}
+      <section className="bg-red-600 text-white py-4">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p className="text-lg md:text-xl font-bold uppercase flex items-center justify-center gap-3">
+              <span>FREE ESTIMATES &amp; NO TRIP CHARGE. SAME DAY SERVICE</span>
+              <span className="text-2xl">→</span>
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Trust Banner - Removed duplicate, already have red banner above */}
 
       {/* Value Propositions */}
       <section className="py-12 bg-gray-50">
@@ -140,42 +147,42 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">Open 24/7</h3>
                 <p className="text-gray-700">No Extra Charge Nights, Weekends, and Holidays</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">Free Estimates</h3>
                 <p className="text-gray-700">Upfront pricing before we start any work</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">Full-Service Plumbing</h3>
                 <p className="text-gray-700">For Home & Business Throughout Pima County</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">State-of-the-Art Equipment</h3>
                 <p className="text-gray-700">Professional drain cleaning and plumbing tools</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">Licensed & Insured</h3>
                 <p className="text-gray-700">Trusted Since {BUSINESS.trust.founded} - ROC {BUSINESS.trust.license}</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <CheckCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg text-navy-900 mb-1">Local Family-Owned</h3>
                 <p className="text-gray-700">Serving our neighbors throughout Southern Arizona</p>
@@ -199,10 +206,10 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
                 href={`/services/${service.slug}`}
                 className="group flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="w-16 h-16 bg-copper-500 rounded-full flex items-center justify-center mb-4 group-hover:bg-copper-600 transition-colors">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mb-4 group-hover:bg-red-700 transition-colors">
                   <Wrench className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-navy-900 group-hover:text-copper-600 transition-colors">
+                <h3 className="font-semibold text-navy-900 group-hover:text-red-600 transition-colors">
                   {service.name}
                 </h3>
               </Link>
@@ -211,7 +218,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
 
           <div className="text-center mt-10">
             <Link href="/services">
-              <Button size="lg" className="bg-copper-500 hover:bg-copper-600 text-white font-semibold px-8">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8">
                 View All Services
               </Button>
             </Link>
@@ -235,32 +242,32 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Same day service</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>24/7 availability</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>No additional charges for nights, weekends, or holidays</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Free onsite and upfront cost estimates</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Highly trained, insured, and experienced plumbers</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Industry-leading equipment</span>
                 </li>
               </ul>
               <p>
-                For service with a smile from the most dependable plumbers in Southern Arizona, <Link href="/contact" className="text-copper-600 hover:text-copper-700 font-semibold">reach out through our online scheduling form</Link> or call our round-the-clock service line at <a href={`tel:${BUSINESS.phone}`} className="text-copper-600 hover:text-copper-700 font-semibold">{BUSINESS.phone}</a>.
+                For service with a smile from the most dependable plumbers in Southern Arizona, <Link href="/contact" className="text-red-600 hover:text-red-700 font-semibold">reach out through our online scheduling form</Link> or call our round-the-clock service line at <a href={`tel:${BUSINESS.phone}`} className="text-red-600 hover:text-red-700 font-semibold">{BUSINESS.phone}</a>.
               </p>
             </div>
           </div>
@@ -280,43 +287,43 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
               </p>
               <ul className="grid md:grid-cols-2 gap-3 mb-6">
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Emergency plumbing services</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Sewer & drain cleaning</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Faucet repair & replacement</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Water heater repairs and installation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Toilet repair and replacement</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Garbage disposal repair and replacement</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Sewer line repair and replacement</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Water line and gas line services</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Leak detection</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                   <span>Whole home re-piping</span>
                 </li>
               </ul>
@@ -340,7 +347,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">REPUTATION</h3>
@@ -350,7 +357,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">QUALITY</h3>
@@ -360,7 +367,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ThumbsUp className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">TRANSPARENCY</h3>
@@ -370,7 +377,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">EFFICIENCY</h3>
@@ -380,7 +387,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">LOCAL EXPERTS</h3>
@@ -390,7 +397,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-copper-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="w-10 h-10 text-white" />
               </div>
               <h3 className="font-bold text-xl mb-3">SATISFACTION</h3>
@@ -415,7 +422,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
                 href={`/locations/${location.slug}`}
                 className="text-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow"
               >
-                <h3 className="font-semibold text-navy-900 hover:text-copper-600 transition-colors">
+                <h3 className="font-semibold text-navy-900 hover:text-red-600 transition-colors">
                   {location.name}
                 </h3>
               </Link>
@@ -423,7 +430,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
           </div>
           <div className="text-center mt-8">
             <Link href="/locations">
-              <Button className="bg-copper-500 hover:bg-copper-600 text-white font-semibold">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold">
                 View All Service Areas
               </Button>
             </Link>
@@ -432,7 +439,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-copper-500 text-white">
+      <section className="py-16 bg-navy-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
             Plumbing and water services.
@@ -442,7 +449,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             href={`tel:${BUSINESS.phone}`}
             onClick={() => trackPhoneClick('bottom_cta')}
           >
-            <Button size="lg" className="bg-white text-copper-600 hover:bg-gray-100 font-bold text-xl px-10 py-6">
+            <Button size="lg" className="bg-white text-navy-700 hover:bg-gray-100 font-bold text-xl px-10 py-6">
               Call now to schedule: {BUSINESS.phone}
             </Button>
           </a>

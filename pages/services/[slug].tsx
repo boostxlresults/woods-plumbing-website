@@ -102,7 +102,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                 href={`tel:${BUSINESS.phone}`}
                 onClick={() => trackPhoneClick('service_hero')}
               >
-                <Button size="lg" className="bg-copper-500 hover:bg-copper-600 text-white font-bold text-lg px-8 py-6 w-full sm:w-auto">
+                <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-8 py-6 w-full sm:w-auto">
                   <Phone className="mr-2" />
                   {BUSINESS.phone}
                 </Button>
@@ -118,7 +118,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
       </section>
 
       {/* Trust Banner */}
-      <div className="bg-copper-500 text-white py-3">
+      <div className="bg-red-500 text-white py-3">
         <div className="container mx-auto px-4 text-center">
           <p className="text-base md:text-lg font-semibold">
             💰 Save money! <Link href="/contact" className="underline hover:text-white">Check out available coupons</Link>
@@ -130,7 +130,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
       <div className="bg-gray-100 py-4 border-b border-gray-200">
         <div className="container mx-auto px-4 text-center">
           <Link href="/contact">
-            <span className="text-copper-600 hover:text-copper-700 font-semibold text-lg">
+            <span className="text-red-600 hover:text-red-700 font-semibold text-lg">
               Fast, Friendly and Professional Service. Schedule Now! →
             </span>
           </Link>
@@ -165,7 +165,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                 <ul className="grid md:grid-cols-2 gap-3">
                   {service.benefits.map((benefit: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700">{benefit}</span>
                     </li>
                   ))}
@@ -185,7 +185,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                 <div className="space-y-6">
                   {service.process.map((step: any, index: number) => (
                     <div key={index} className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-copper-500 text-white flex items-center justify-center font-bold text-lg">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-lg">
                         {index + 1}
                       </div>
                       <div>
@@ -212,7 +212,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
               <div key={review.id} className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-copper-500 text-copper-500" />
+                    <Star key={i} className="w-5 h-5 fill-red-500 text-red-500" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 line-clamp-4">{review.content}</p>
@@ -263,7 +263,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                   href={`/services/${related.slug}`}
                   className="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow border border-gray-200"
                 >
-                  <h3 className="font-semibold text-navy-900 hover:text-copper-600 transition-colors">
+                  <h3 className="font-semibold text-navy-900 hover:text-red-600 transition-colors">
                     {related.name}
                   </h3>
                 </Link>
@@ -271,7 +271,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
             </div>
             <div className="text-center mt-8">
               <Link href="/services">
-                <Button className="bg-copper-500 hover:bg-copper-600 text-white font-semibold">
+                <Button className="bg-red-500 hover:bg-red-600 text-white font-semibold">
                   View All Services
                 </Button>
               </Link>
@@ -281,7 +281,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
       )}
 
       {/* Final CTA */}
-      <section className="py-12 bg-copper-500 text-white">
+      <section className="py-12 bg-red-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-2xl md:text-4xl font-bold mb-6">
             Need {service.name}?
@@ -291,7 +291,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
             href={`tel:${BUSINESS.phone}`}
             onClick={() => trackPhoneClick('service_bottom_cta')}
           >
-            <Button size="lg" className="bg-white text-copper-600 hover:bg-gray-100 font-bold text-xl px-10 py-6">
+            <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 font-bold text-xl px-10 py-6">
               Call now to schedule: {BUSINESS.phone}
             </Button>
           </a>

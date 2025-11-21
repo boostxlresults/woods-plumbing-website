@@ -1,84 +1,105 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Clock, Award } from 'lucide-react';
+import { Phone, MapPin, Calendar } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { trackPhoneClick } from '@/lib/analytics';
 
 export function Header() {
   return (
-    <header className="sticky top-[52px] z-40 bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between gap-4">
+    <header className="bg-white border-b border-gray-200 sticky top-[52px] z-40">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center group flex-shrink-0">
-            <div className="relative w-48 h-16 md:w-64 md:h-20">
+          <Link href="/" className="flex-shrink-0">
+            <div className="relative w-40 h-14 md:w-48 md:h-16">
               <Image
                 src="/images/woods-plumbing-logo.png"
                 alt={BUSINESS.name}
                 fill
-                sizes="(max-width: 768px) 192px, 256px"
+                sizes="(max-width: 768px) 160px, 192px"
                 className="object-contain object-left"
                 priority
               />
             </div>
           </Link>
 
-          {/* Right Side: Location, Phone, Schedule */}
-          <div className="flex items-center gap-4 md:gap-6">
-            {/* Service Area Badge */}
-            <div className="hidden lg:block text-sm">
-              <div className="text-gray-600 font-medium">Serving Pima County</div>
-            </div>
+          {/* Center Navigation - Desktop */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              LOCATIONS
+            </Link>
+            <Link href="/services" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              PLUMBING
+            </Link>
+            <Link href="/services?category=drain" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              DRAINS
+            </Link>
+            <Link href="/services?category=water-quality" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              WATER QUALITY
+            </Link>
+            <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+              CONTACT
+            </Link>
+          </nav>
 
-            {/* Phone */}
-            <a 
-              href={`tel:${BUSINESS.phone}`} 
-              onClick={() => trackPhoneClick('header')}
-              className="flex items-center gap-2 text-navy-900 hover:text-copper-600 transition-colors"
-            >
-              <Phone className="w-5 h-5 hidden md:block" />
-              <span className="font-bold text-lg md:text-xl">{BUSINESS.phone}</span>
-            </a>
+          {/* Right Side: Location + CTAs */}
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Location Badge */}
+            <div className="hidden md:flex items-center gap-2 text-navy-700">
+              <MapPin className="w-4 h-4 text-red-600" />
+              <span className="font-semibold text-sm">MARANA, AZ</span>
+            </div>
 
             {/* Schedule Button */}
             <Link href="/contact">
               <Button 
-                size="lg" 
-                className="bg-copper-500 hover:bg-copper-600 text-white font-semibold px-6"
+                size="sm"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm flex items-center gap-2"
               >
-                Schedule
+                <Calendar className="w-4 h-4" />
+                <span>SCHEDULE</span>
               </Button>
             </Link>
+
+            {/* Call Button */}
+            <a 
+              href={`tel:${BUSINESS.phone}`} 
+              onClick={() => trackPhoneClick('header')}
+            >
+              <Button 
+                size="sm"
+                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm flex items-center gap-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="hidden sm:inline">CALL {BUSINESS.phone}</span>
+                <span className="sm:hidden">CALL</span>
+              </Button>
+            </a>
           </div>
         </div>
 
-        {/* Simple Navigation */}
-        <nav className="mt-4 pt-3 border-t border-gray-100">
-          <ul className="flex flex-wrap gap-6 md:gap-8 text-sm">
+        {/* Mobile Navigation */}
+        <nav className="lg:hidden mt-3 pt-3 border-t border-gray-200">
+          <ul className="flex flex-wrap gap-4 text-xs">
             <li>
-              <Link href="/services" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Services
+              <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                LOCATIONS
               </Link>
             </li>
             <li>
-              <Link href="/locations" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Service Areas
+              <Link href="/services" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                PLUMBING
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                About
+              <Link href="/services?category=drain" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                DRAINS
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Contact
+              <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                CONTACT
               </Link>
             </li>
           </ul>
