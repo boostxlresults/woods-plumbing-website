@@ -317,7 +317,7 @@ export const getStaticProps: GetStaticProps<ServicePageProps> = async ({ params 
   }
 
   const relatedServices = servicesData
-    .filter((s) => s.id !== service.id && s.category === service.category)
+    .filter((s) => s.id !== service.id)
     .slice(0, 8);
 
   const serviceFaqs = faqsData
