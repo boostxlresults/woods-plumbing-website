@@ -54,7 +54,7 @@ export function Header() {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-[60px] z-40">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-6">
+        <div className="flex items-center gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="relative w-48 h-20 md:w-56 md:h-24">
@@ -70,7 +70,7 @@ export function Header() {
           </Link>
 
           {/* Center Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6 flex-1">
             <Link href="/" className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors">
               HOME
             </Link>
@@ -171,7 +171,7 @@ export function Header() {
           </nav>
 
           {/* Right Side: CTAs */}
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center gap-3 md:gap-4 flex-shrink-0">
             {/* Schedule Button */}
             <Link href="/contact">
               <Button 
