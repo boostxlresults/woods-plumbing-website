@@ -5,9 +5,8 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { Phone, CheckCircle, Star, ChevronDown } from 'lucide-react';
+import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
-import { HeroSplit } from '@/components/HeroSplit';
 
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
@@ -132,41 +131,126 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
   const localSeoTitle = `${service.name} in ${serviceAreas} | ${BUSINESS.name}`;
   const localSeoDescription = `Professional ${service.name.toLowerCase()} services in ${serviceAreas}. ${service.shortDescription} Licensed ROC ${BUSINESS.trust.license}. Call (520) 682-2233.`;
 
+  // AI-optimized keywords for this specific service
+  const aiKeywords = `${service.name}, plumbing ${service.name.toLowerCase()}, ${service.name} Tucson, ${service.name} Southern Arizona, ${service.name} Marana, ${service.name} Oro Valley, licensed plumber, emergency plumber, ROC ${BUSINESS.trust.license}`;
+
   return (
     <div>
       <Head>
         <title>{localSeoTitle}</title>
         <meta name="description" content={localSeoDescription} />
+        <meta name="keywords" content={aiKeywords} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/services/${service.slug}`} />
         
+        {/* Open Graph for Social & AI */}
         <meta property="og:title" content={localSeoTitle} />
         <meta property="og:description" content={localSeoDescription} />
         <meta property="og:url" content={`${BUSINESS.website}/services/${service.slug}`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
         
-        <meta name="twitter:card" content="summary" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={localSeoTitle} />
         <meta name="twitter:description" content={localSeoDescription} />
         
+        {/* AI Search Optimization */}
+        <meta name="author" content={BUSINESS.name} />
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Southern Arizona" />
+        <meta name="geo.position" content={`${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`} />
+        
+        {/* Schema.org Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         )}
       </Head>
 
-      {/* Hero Section - Roto-Rooter Split Layout */}
-      <HeroSplit
-        title={`PROFESSIONAL ${service.name.toUpperCase()} IN TUCSON & SOUTHERN ARIZONA`}
-        subtitle={service.shortDescription}
-        ctaText="Call Us Now!"
-        imageSrc="/images/service_-_plumbing_repair_work.png"
-        imageAlt={`Professional ${service.name} service in Tucson and Southern Arizona`}
-        backgroundColor="gray"
-        showBanner={true}
-        bannerText="FAST, FRIENDLY AND PROFESSIONAL SERVICE. SCHEDULE NOW!"
-        showTrustBadges={true}
-        analyticsLocation="service_hero"
-      />
+      {/* Hero Section - Matching Homepage Layout */}
+      <section className="bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-0 items-center">
+            {/* Left Side: Image */}
+            <div className="relative h-[400px] md:h-[500px]">
+              <Image
+                src="/images/service_-_plumbing_repair_work.png"
+                alt={`Professional ${service.name} service in Tucson and Southern Arizona`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-center"
+                priority
+                quality={90}
+              />
+            </div>
+
+            {/* Right Side: Content */}
+            <div className="py-12 md:py-16 px-6 md:px-12">
+              <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase">
+                PROFESSIONAL {service.name.toUpperCase()} IN TUCSON & SOUTHERN ARIZONA
+              </h1>
+              
+              <p className="text-gray-700 text-lg mb-6">
+                {service.shortDescription}
+              </p>
+              
+              <p className="text-red-600 font-bold text-2xl md:text-3xl mb-4">
+                Call Us Now!
+              </p>
+              
+              <a 
+                href={`tel:${BUSINESS.phone}`}
+                onClick={() => trackPhoneClick('service_hero')}
+                className="block mb-6"
+              >
+                <p className="text-navy-700 font-bold text-4xl md:text-5xl lg:text-6xl hover:text-red-600 transition-colors">
+                  {BUSINESS.phone}
+                </p>
+              </a>
+              
+              <Link href="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg flex items-center gap-2"
+                >
+                  <span>SCHEDULE ONLINE</span>
+                  <span className="text-xl">✓</span>
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges Section */}
+      <section className="py-8 bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 text-center">
+            <div className="flex flex-col items-center">
+              <Shield className="w-12 h-12 text-red-600 mb-2" />
+              <p className="font-semibold text-navy-900 text-sm">Licensed & Insured</p>
+              <p className="text-xs text-gray-600">ROC {BUSINESS.trust.license}</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Award className="w-12 h-12 text-red-600 mb-2" />
+              <p className="font-semibold text-navy-900 text-sm">BBB {BUSINESS.trust.bbbRating} Rated</p>
+              <p className="text-xs text-gray-600">{BUSINESS.trust.totalReviews}+ Reviews</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Clock className="w-12 h-12 text-red-600 mb-2" />
+              <p className="font-semibold text-navy-900 text-sm">{new Date().getFullYear() - BUSINESS.trust.founded}+ Years</p>
+              <p className="text-xs text-gray-600">Serving Arizona</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Users className="w-12 h-12 text-red-600 mb-2" />
+              <p className="font-semibold text-navy-900 text-sm">Expert Team</p>
+              <p className="text-xs text-gray-600">Certified Plumbers</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Main Content Section */}
       <section className="py-16 bg-white">
