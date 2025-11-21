@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Phone, MapPin, Calendar, ChevronDown, Menu, X } from 'lucide-react';
+import { Phone, MapPin, Calendar, ChevronDown, Menu, X, Wrench, Droplet, Flame, FlaskConical, Home, Zap, AlertCircle, Pipette, Sparkles } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { trackPhoneClick } from '@/lib/analytics';
@@ -20,6 +20,20 @@ export function Header() {
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+  };
+
+  // Icon mapping for categories
+  const categoryIcons: Record<string, any> = {
+    'Emergency Services': AlertCircle,
+    'Plumbing Services': Wrench,
+    'Leak Detection': Droplet,
+    'Repiping': Pipette,
+    'Drains & Sewer': Droplet,
+    'Water Heaters': Flame,
+    'Gas Services': Flame,
+    'Water Treatment': FlaskConical,
+    'Fixtures & Installations': Home,
+    'Additional Services': Sparkles
   };
 
   const megaMenuCategories = [
@@ -79,7 +93,7 @@ export function Header() {
             {megaMenuCategories.map((menu) => (
               <div
                 key={menu.slug}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => handleMouseEnter(menu.slug)}
                 onMouseLeave={handleMouseLeave}
               >
@@ -89,21 +103,29 @@ export function Header() {
                 </button>
                 
                 {activeDropdown === menu.slug && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[600px] z-50">
-                    <div className="p-6 grid grid-cols-2 gap-6">
+                  <div 
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[700px] z-50"
+                    onMouseEnter={() => handleMouseEnter(menu.slug)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <div className="p-8 grid grid-cols-2 gap-8">
                       {menu.categories.map((categoryName) => {
                         const category = serviceCategories.find(c => c.name === categoryName);
                         if (!category) return null;
+                        const CategoryIcon = categoryIcons[category.name] || Wrench;
                         
                         return (
                           <div key={category.slug}>
-                            <h3 className="font-bold text-navy-700 text-sm mb-3 uppercase">{category.name}</h3>
-                            <ul className="space-y-2">
+                            <h3 className="font-bold text-navy-700 text-sm mb-4 uppercase flex items-center gap-2">
+                              <CategoryIcon className="w-5 h-5 text-red-600" />
+                              {category.name}
+                            </h3>
+                            <ul className="space-y-2.5 ml-7">
                               {category.services.map((service) => (
                                 <li key={service.slug}>
                                   <Link
                                     href={`/services/${service.slug}`}
-                                    className="text-gray-700 hover:text-red-600 text-sm transition-colors block"
+                                    className="text-gray-600 hover:text-red-600 text-sm transition-colors block hover:translate-x-1 transform duration-200"
                                   >
                                     {service.name}
                                   </Link>
@@ -114,12 +136,13 @@ export function Header() {
                         );
                       })}
                     </div>
-                    <div className="border-t border-gray-200 px-6 py-3 bg-gray-50 rounded-b-lg">
+                    <div className="border-t border-gray-200 px-8 py-4 bg-gradient-to-r from-gray-50 to-white rounded-b-lg">
                       <Link 
                         href="/services" 
-                        className="text-red-600 hover:text-red-700 font-semibold text-sm"
+                        className="text-red-600 hover:text-red-700 font-bold text-sm flex items-center gap-2 group"
                       >
-                        View All Services →
+                        <span>View All Services</span>
+                        <span className="group-hover:translate-x-1 transform transition-transform">→</span>
                       </Link>
                     </div>
                   </div>
@@ -129,7 +152,7 @@ export function Header() {
 
             {/* Service Areas Dropdown */}
             <div
-              className="relative"
+              className="relative group"
               onMouseEnter={() => handleMouseEnter('service-areas')}
               onMouseLeave={handleMouseLeave}
             >
@@ -139,27 +162,35 @@ export function Header() {
               </button>
               
               {activeDropdown === 'service-areas' && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[400px] z-50">
-                  <div className="p-6">
-                    <h3 className="font-bold text-navy-700 text-sm mb-3 uppercase">We Serve Southern Arizona</h3>
-                    <div className="grid grid-cols-2 gap-3">
+                <div 
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[450px] z-50"
+                  onMouseEnter={() => handleMouseEnter('service-areas')}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="p-8">
+                    <h3 className="font-bold text-navy-700 text-sm mb-4 uppercase flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-red-600" />
+                      We Serve Southern Arizona
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3 ml-7">
                       {locations.map((location) => (
                         <Link
                           key={location.slug}
                           href={`/locations/${location.slug}`}
-                          className="text-gray-700 hover:text-red-600 text-sm transition-colors py-1"
+                          className="text-gray-600 hover:text-red-600 text-sm transition-colors py-1.5 hover:translate-x-1 transform duration-200 block"
                         >
                           {location.name}
                         </Link>
                       ))}
                     </div>
                   </div>
-                  <div className="border-t border-gray-200 px-6 py-3 bg-gray-50 rounded-b-lg">
+                  <div className="border-t border-gray-200 px-8 py-4 bg-gradient-to-r from-gray-50 to-white rounded-b-lg">
                     <Link 
                       href="/locations" 
-                      className="text-red-600 hover:text-red-700 font-semibold text-sm"
+                      className="text-red-600 hover:text-red-700 font-bold text-sm flex items-center gap-2 group"
                     >
-                      View All Service Areas →
+                      <span>View All Service Areas</span>
+                      <span className="group-hover:translate-x-1 transform transition-transform">→</span>
                     </Link>
                   </div>
                 </div>
