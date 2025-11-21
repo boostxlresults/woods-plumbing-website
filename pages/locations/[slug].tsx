@@ -4,12 +4,9 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Phone, MapPin, CheckCircle, Wrench } from 'lucide-react';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { trackLocationView } from '@/lib/analytics';
+import { Phone, CheckCircle, Star, Wrench } from 'lucide-react';
+import { trackLocationView, trackPhoneClick } from '@/lib/analytics';
 
-// Import JSON data
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 
@@ -55,283 +52,246 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
         <meta name="description" content={`${location.description} Licensed plumber serving ${location.zipCodes.join(', ')} and surrounding areas. Call ${BUSINESS.phone} for 24/7 emergency service.`} />
         <link rel="canonical" href={`${BUSINESS.website}/locations/${location.slug}`} />
         
-        {/* Open Graph */}
         <meta property="og:title" content={`Plumber in ${location.name}, AZ | ${BUSINESS.name}`} />
         <meta property="og:description" content={`${location.description} Call ${BUSINESS.phone} for service.`} />
         <meta property="og:url" content={`${BUSINESS.website}/locations/${location.slug}`} />
         <meta property="og:type" content="website" />
         
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`Plumber in ${location.name}, AZ`} />
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </Head>
 
-      {/* Breadcrumb */}
-      <Breadcrumb items={[
-        { label: 'Locations', href: '/locations' },
-        { label: location.name }
-      ]} />
-
-      {/* Hero */}
-      <section className="bg-blue-900 text-white py-16">
+      {/* Hero Section */}
+      <section className="bg-navy-900 text-white py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 mb-4">
-              <MapPin className="w-6 h-6" />
-              <span className="text-sm bg-blue-700 px-3 py-1 rounded">Pima County</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Plumber in {location.name}, Arizona
+          <div className="max-w-4xl">
+            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              {location.name}&apos;s Trusted Plumbing, Drain & Water Services
             </h1>
-            <p className="text-xl text-blue-100 mb-8">
-              {location.description}
+            <p className="text-xl md:text-2xl text-gray-200 mb-4">
+              Call for Service:
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${BUSINESS.phone}`}>
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+              <a 
+                href={`tel:${BUSINESS.phone}`}
+                onClick={() => trackPhoneClick('location_hero')}
+              >
+                <Button size="lg" className="bg-copper-500 hover:bg-copper-600 text-white font-bold text-xl px-8 py-6 w-full sm:w-auto">
                   <Phone className="mr-2" />
-                  Call {BUSINESS.phone}
+                  {BUSINESS.phone}
                 </Button>
               </a>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="bg-white text-blue-900 hover:bg-gray-100">
-                  Get Free Estimate
+                <Button size="lg" className="bg-white text-navy-900 hover:bg-gray-100 font-bold text-xl px-8 py-6 w-full sm:w-auto">
+                  Schedule Online
                 </Button>
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Location Info */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Professional Plumbing Services in {location.name}
-                </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Wood&apos;s Plumbing has been serving {location.name} residents and businesses since {BUSINESS.trust.founded}. 
-                  As a licensed and insured plumbing contractor (ROC {BUSINESS.trust.license}), we provide comprehensive plumbing 
-                  services throughout Pima County.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Whether you need emergency plumbing repairs, water heater installation, drain cleaning, or routine maintenance, 
-                  our experienced plumbers are ready to help. We serve all zip codes in {location.name} including {location.zipCodes.slice(0, 5).join(', ')}
-                  {location.zipCodes.length > 5 && `, and ${location.zipCodes.length - 5} more areas`}.
-                </p>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-copper-400 text-copper-400" />
+                ))}
               </div>
-
-              {/* Why Choose Us */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Why {location.name} Trusts Wood&apos;s Plumbing
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">Licensed ROC {BUSINESS.trust.license}</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">{BUSINESS.trust.yearsInBusiness}+ Years of Experience</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">BBB {BUSINESS.trust.bbbRating} Rating</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">{BUSINESS.trust.displayRating} Stars ({BUSINESS.trust.totalReviews}+ Reviews)</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">24/7 Emergency Service</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">Same-Day Service Available</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">Upfront Pricing - No Hidden Fees</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">100% Satisfaction Guaranteed</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Services */}
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Our Plumbing Services in {location.name}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {popularServices.map((service) => (
-                    <Card key={service.slug} className="hover:shadow-md transition-shadow">
-                      <CardHeader>
-                        <CardTitle className="text-lg flex items-start justify-between">
-                          <span>{service.name}</span>
-                          {service.name.toLowerCase().includes('emergency') && (
-                            <span className="text-xs bg-red-600 text-white px-2 py-1 rounded ml-2 flex-shrink-0">
-                              24/7
-                            </span>
-                          )}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <Link href={`/services/${service.slug}`}>
-                          <Button variant="outline" size="sm" className="w-full">
-                            <Wrench className="mr-2 w-4 h-4" />
-                            Learn More
-                          </Button>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-                <div className="mt-6 text-center">
-                  <Link href="/services">
-                    <Button size="lg">View All {servicesData.length} Services</Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div>
-              {/* Google Maps Embed */}
-              <Card className="mb-6 overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] w-full">
-                    <iframe
-                      src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(location.name + ', Arizona')}&zoom=12`}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title={`Map of ${location.name}, AZ`}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Quick Contact */}
-              <Card className="mb-6 bg-blue-900 text-white">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Serving {location.name}</h3>
-                  <div className="space-y-4 text-sm mb-6">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-5 h-5 flex-shrink-0" />
-                      <div>
-                        <p className="font-semibold">Coverage Area:</p>
-                        <p className="text-blue-100">All of {location.name}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <div>
-                        <p className="font-semibold">Service Level:</p>
-                        <p className="text-blue-100">Same-day & Emergency</p>
-                      </div>
-                    </div>
-                  </div>
-                  <a href={`tel:${BUSINESS.phone}`}>
-                    <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold mb-3">
-                      <Phone className="mr-2" />
-                      {BUSINESS.phone}
-                    </Button>
-                  </a>
-                  <Link href="/contact">
-                    <Button variant="outline" className="w-full bg-white text-blue-900 hover:bg-gray-100">
-                      Request Estimate
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Zip Codes */}
-              <Card className="mb-6">
-                <CardHeader>
-                  <CardTitle>Zip Codes Served in {location.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {location.zipCodes.map((zip) => (
-                      <span key={zip} className="bg-blue-100 text-blue-900 px-3 py-1 rounded text-sm font-semibold">
-                        {zip}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Trust Signals */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Why Choose Us</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span>{BUSINESS.trust.yearsInBusiness}+ Years Experience</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span>BBB {BUSINESS.trust.bbbRating} Rating</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span>{BUSINESS.trust.displayRating} Star Rating</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span>{BUSINESS.trust.totalReviews}+ Reviews</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <span>Licensed ROC {BUSINESS.trust.license}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <span className="text-lg font-semibold">Rated {BUSINESS.trust.displayRating} on Google</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-100 py-16">
+      {/* Trust Banner */}
+      <div className="bg-copper-500 text-white py-4">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Need a Plumber in {location.name}?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Call now for same-day service or request a free estimate
+          <p className="text-lg md:text-xl font-semibold">
+            Free Estimates. No Extra Charge for Evening Service
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${BUSINESS.phone}`}>
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
-                <Phone className="mr-2" />
-                Call {BUSINESS.phone}
-              </Button>
-            </a>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                Get Free Estimate
+        </div>
+      </div>
+
+      {/* Value Propositions */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-8 text-center">
+            Plumbers You&apos;ve Trusted in {location.name} for over {BUSINESS.trust.yearsInBusiness} Years
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">Open 24/7</h3>
+                <p className="text-gray-700">No Extra Charge Nights, Weekends, and Holidays</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">Free Estimates</h3>
+                <p className="text-gray-700">Upfront pricing before we start any work</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">Full-Service Plumbing</h3>
+                <p className="text-gray-700">For Home & Business Throughout {location.name}</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">State-of-the-Art Equipment</h3>
+                <p className="text-gray-700">Professional drain cleaning and plumbing tools</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">Licensed & Insured</h3>
+                <p className="text-gray-700">Trusted Since {BUSINESS.trust.founded} - ROC {BUSINESS.trust.license}</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-6 h-6 text-copper-600 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg text-navy-900 mb-1">Same-Day Service</h3>
+                <p className="text-gray-700">Available when you need us most</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-12 text-center">
+            Our Services
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {popularServices.slice(0, 8).map((service) => (
+              <Link 
+                key={service.id} 
+                href={`/services/${service.slug}`}
+                className="group flex flex-col items-center text-center p-6 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="w-16 h-16 bg-copper-500 rounded-full flex items-center justify-center mb-4 group-hover:bg-copper-600 transition-colors">
+                  <Wrench className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-semibold text-navy-900 group-hover:text-copper-600 transition-colors">
+                  {service.name}
+                </h3>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/services">
+              <Button size="lg" className="bg-copper-500 hover:bg-copper-600 text-white font-semibold px-8">
+                View All Services
               </Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+              Plumber in {location.name}, AZ
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p className="mb-4">
+                In {location.name}, where plumbing needs are as diverse as the residents, {BUSINESS.name} stands out for our commitment to excellence. We&apos;re not just another plumbing company in Pima County; we&apos;re your neighborhood problem-solvers, with skilled plumbers available 24/7 to ensure your pipes, drains, and water systems function flawlessly.
+              </p>
+              <p className="mb-4">
+                Trusted and recommended since {BUSINESS.trust.founded}, {BUSINESS.name} is the obvious choice when people in {location.name} need a professional plumber. More families and businesses depend on Wood&apos;s Plumbing than any other local plumbing company. When you work with us, you get:
+              </p>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>Same day service</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>24/7 availability</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>No additional charges for nights, weekends, or holidays</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>Free onsite and upfront cost estimates</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>Highly trained, insured, and experienced plumbers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-5 h-5 text-copper-600 flex-shrink-0 mt-0.5" />
+                  <span>Industry-leading equipment</span>
+                </li>
+              </ul>
+              <p className="mb-6">
+                For service with a smile from the most dependable plumbers in {location.name}, <Link href="/contact" className="text-copper-600 hover:text-copper-700 font-semibold">reach out through our online scheduling form</Link> or call our round-the-clock service line at <a href={`tel:${BUSINESS.phone}`} className="text-copper-600 hover:text-copper-700 font-semibold">{BUSINESS.phone}</a>.
+              </p>
+
+              <h3 className="text-2xl font-bold text-navy-900 mb-4 mt-8">
+                Serving {location.name} Zip Codes
+              </h3>
+              <p>
+                We proudly serve all zip codes in {location.name} including: {location.zipCodes.join(', ')}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas Map */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-8 text-center">
+              Serving the Entire {location.name} Area
+            </h2>
+            <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(location.name + ', Arizona')}&zoom=11`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Map of ${location.name}, AZ`}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-copper-500 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
+            Plumbing and water services in {location.name}.
+          </h2>
+          <p className="text-2xl mb-8">Yeah, we do both.</p>
+          <a 
+            href={`tel:${BUSINESS.phone}`}
+            onClick={() => trackPhoneClick('location_bottom_cta')}
+          >
+            <Button size="lg" className="bg-white text-copper-600 hover:bg-gray-100 font-bold text-xl px-10 py-6">
+              Call now to schedule: {BUSINESS.phone}
+            </Button>
+          </a>
         </div>
       </section>
     </div>
@@ -348,13 +308,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params }) => {
   const location = locationsData.find((l) => l.slug === params?.slug);
-  
+
   if (!location) {
     return { notFound: true };
   }
 
-  // Get featured services for display
-  const popularServices = servicesData.filter(s => s.featured).slice(0, 9);
+  const popularServices = servicesData.filter(s => s.featured).slice(0, 12);
 
   return {
     props: {
