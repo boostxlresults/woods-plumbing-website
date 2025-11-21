@@ -108,7 +108,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         <div className="relative z-20 container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Tucson's Most Trusted Plumbing Experts
+              Tucson&apos;s Most Trusted Plumbing Experts
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-gray-200 leading-relaxed">
               Licensed, professional plumbing services for Southern Arizona since {BUSINESS.trust.founded}
@@ -274,10 +274,10 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-navy-900 mb-4">
-              Why Choose Wood's Plumbing?
+              Why Choose Wood&apos;s Plumbing?
             </h2>
             <p className="text-xl text-gray-600">
-              Southern Arizona's most trusted plumbing company for over {BUSINESS.trust.yearsInBusiness} years
+              Southern Arizona&apos;s most trusted plumbing company for over {BUSINESS.trust.yearsInBusiness} years
             </p>
           </div>
 
@@ -372,7 +372,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             Ready to Get Started?
           </h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-copper-50">
-            From emergency repairs to planned installations, Wood's Plumbing delivers expert service you can trust. Call now or schedule online!
+            From emergency repairs to planned installations, Wood&apos;s Plumbing delivers expert service you can trust. Call now or schedule online!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

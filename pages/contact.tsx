@@ -179,7 +179,7 @@ const ContactPage: NextPage = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl">Get a Free Estimate</CardTitle>
-                  <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
+                  <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you within 24 hours</p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -288,7 +288,7 @@ const ContactPage: NextPage = () => {
                         <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="font-semibold text-green-900">Thank you for contacting us!</p>
-                          <p className="text-sm text-green-700">We'll get back to you within 24 hours.</p>
+                          <p className="text-sm text-green-700">We&apos;ll get back to you within 24 hours.</p>
                         </div>
                       </div>
                     )}

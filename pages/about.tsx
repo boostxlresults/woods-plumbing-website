@@ -45,7 +45,7 @@ const AboutPage: NextPage = () => {
                 {`For over ${BUSINESS.trust.yearsInBusiness} years, ${BUSINESS.name} has been the trusted name in plumbing services across Southern Arizona. What started as a small family operation in ${BUSINESS.trust.founded} has grown into one of the region's most respected plumbing contractors, built on a foundation of honest service, quality workmanship, and genuine care for our customers.`}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                We understand that plumbing problems don't wait for convenient times. That's why we maintain 24/7 emergency 
+                We understand that plumbing problems don&apos;t wait for convenient times. That&apos;s why we maintain 24/7 emergency 
                 service with no overtime charges—because Tucson families and businesses deserve reliable help whenever they 
                 need it. Our team of licensed, experienced plumbers brings not just technical expertise but a commitment to 
                 treating every home and business like our own.
@@ -102,7 +102,7 @@ const AboutPage: NextPage = () => {
               <CardContent>
                 <p className="text-gray-700">
                   Always available when you need us most—nights, weekends, holidays. No overtime charges for emergency 
-                  calls because emergencies don't wait.
+                  calls because emergencies don&apos;t wait.
                 </p>
               </CardContent>
             </Card>
@@ -145,8 +145,8 @@ const AboutPage: NextPage = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  We're your neighbors, serving the Tucson community for over four decades. Local ownership means we're 
-                  invested in this community's success.
+                  We&apos;re your neighbors, serving the Tucson community for over four decades. Local ownership means we&apos;re 
+                  invested in this community&apos;s success.
                 </p>
               </CardContent>
             </Card>

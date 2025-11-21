@@ -27,8 +27,8 @@ const NotFoundPage: NextPage = () => {
             Oops! This Page Has Sprung a Leak
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            The page you're looking for doesn't exist or has been moved. 
-            But don't worry—we can help you find what you need!
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. 
+            But don&apos;t worry—we can help you find what you need!
           </p>
 
           {/* Quick Actions */}

@@ -37,6 +37,17 @@ export const insertContactSubmissionSchema = createInsertSchema(contactSubmissio
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 
+// Rate Limits
+export const rateLimits = pgTable("rate_limits", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  ipAddress: text("ip_address").notNull().unique(),
+  requestCount: integer("request_count").notNull().default(0),
+  resetTime: timestamp("reset_time").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export type RateLimit = typeof rateLimits.$inferSelect;
+
 // Services
 export const services = pgTable("services", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),

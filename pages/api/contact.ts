@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '@/lib/db';
-import { contacts, rateLimits } from '@/lib/db/schema';
+import { contactSubmissions, rateLimits } from '@/lib/db/schema';
 import { eq, sql } from 'drizzle-orm';
 
 const RATE_LIMIT = 5; // max 5 requests
@@ -81,14 +81,12 @@ export default async function handler(
     }
 
     // Insert into database
-    const [contact] = await db.insert(contacts).values({
+    const [contact] = await db.insert(contactSubmissions).values({
       name,
       email,
-      phone: phone || null,
+      phone: phone || '',
       service: service || null,
-      location: location || null,
       message,
-      ipAddress: ip,
     }).returning();
 
     return res.status(200).json({ 

@@ -116,7 +116,7 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
                   Professional Plumbing Services in {location.name}
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Wood's Plumbing has been serving {location.name} residents and businesses since {BUSINESS.trust.founded}. 
+                  Wood&apos;s Plumbing has been serving {location.name} residents and businesses since {BUSINESS.trust.founded}. 
                   As a licensed and insured plumbing contractor (ROC {BUSINESS.trust.license}), we provide comprehensive plumbing 
                   services throughout Pima County.
                 </p>
@@ -130,7 +130,7 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
               {/* Why Choose Us */}
               <div className="mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Why {location.name} Trusts Wood's Plumbing
+                  Why {location.name} Trusts Wood&apos;s Plumbing
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
