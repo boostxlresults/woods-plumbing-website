@@ -1,11 +1,53 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, MapPin, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, MapPin, Calendar, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { trackPhoneClick } from '@/lib/analytics';
+import { serviceCategories } from '@/lib/data/service-categories';
 
 export function Header() {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const handleMouseEnter = (menu: string) => {
+    setActiveDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
+
+  const megaMenuCategories = [
+    {
+      label: "PLUMBING",
+      slug: "plumbing",
+      categories: ['Emergency Services', 'Plumbing Services', 'Leak Detection', 'Repiping']
+    },
+    {
+      label: "DRAINS",
+      slug: "drains",
+      categories: ['Drains & Sewer']
+    },
+    {
+      label: "WATER HEATERS",
+      slug: "water-heaters",
+      categories: ['Water Heaters']
+    },
+    {
+      label: "GAS SERVICES",
+      slug: "gas",
+      categories: ['Gas Services']
+    },
+    {
+      label: "MORE",
+      slug: "more",
+      categories: ['Water Treatment', 'Fixtures & Installations', 'Additional Services']
+    }
+  ];
+
   return (
     <header className="bg-white border-b border-gray-200 sticky top-[60px] z-40">
       <div className="container mx-auto px-4 py-3">
@@ -29,15 +71,58 @@ export function Header() {
             <Link href="/locations" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
               LOCATIONS
             </Link>
-            <Link href="/services" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
-              PLUMBING
-            </Link>
-            <Link href="/services?category=drain" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
-              DRAINS
-            </Link>
-            <Link href="/services?category=water-quality" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
-              WATER QUALITY
-            </Link>
+            
+            {megaMenuCategories.map((menu) => (
+              <div
+                key={menu.slug}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(menu.slug)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors flex items-center gap-1">
+                  {menu.label}
+                  <ChevronDown className="w-3 h-3" />
+                </button>
+                
+                {activeDropdown === menu.slug && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white border border-gray-200 rounded-lg shadow-xl min-w-[600px] z-50">
+                    <div className="p-6 grid grid-cols-2 gap-6">
+                      {menu.categories.map((categoryName) => {
+                        const category = serviceCategories.find(c => c.name === categoryName);
+                        if (!category) return null;
+                        
+                        return (
+                          <div key={category.slug}>
+                            <h3 className="font-bold text-navy-700 text-sm mb-3 uppercase">{category.name}</h3>
+                            <ul className="space-y-2">
+                              {category.services.map((service) => (
+                                <li key={service.slug}>
+                                  <Link
+                                    href={`/services/${service.slug}`}
+                                    className="text-gray-700 hover:text-red-600 text-sm transition-colors block"
+                                  >
+                                    {service.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="border-t border-gray-200 px-6 py-3 bg-gray-50 rounded-b-lg">
+                      <Link 
+                        href="/services" 
+                        className="text-red-600 hover:text-red-700 font-semibold text-sm"
+                      >
+                        View All Services →
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+
             <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
               CONTACT
             </Link>
@@ -89,17 +174,17 @@ export function Header() {
             </li>
             <li>
               <Link href="/services" className="text-navy-700 hover:text-red-600 font-bold uppercase">
-                PLUMBING
-              </Link>
-            </li>
-            <li>
-              <Link href="/services?category=drain" className="text-navy-700 hover:text-red-600 font-bold uppercase">
-                DRAINS
+                ALL SERVICES
               </Link>
             </li>
             <li>
               <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold uppercase">
                 CONTACT
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="text-navy-700 hover:text-red-600 font-bold uppercase">
+                BLOG
               </Link>
             </li>
           </ul>

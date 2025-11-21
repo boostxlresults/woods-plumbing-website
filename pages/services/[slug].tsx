@@ -46,10 +46,72 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
         "reviewCount": BUSINESS.trust.totalReviews
       }
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "Arizona"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Tucson",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Marana",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Oro Valley",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Sahuarita",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Green Valley",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Vail",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Catalina",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Flowing Wells",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      }
+    ],
     "description": service.shortDescription
   };
 
@@ -66,21 +128,25 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
     }))
   } : null;
 
+  const serviceAreas = "Tucson, Marana, Oro Valley, Sahuarita & Southern Arizona";
+  const localSeoTitle = `${service.name} in ${serviceAreas} | ${BUSINESS.name}`;
+  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in ${serviceAreas}. ${service.shortDescription} Licensed ROC ${BUSINESS.trust.license}. Call (520) 682-2233.`;
+
   return (
     <div>
       <Head>
-        <title>{`${service.name} in Southern Arizona | ${BUSINESS.name}`}</title>
-        <meta name="description" content={service.shortDescription} />
+        <title>{localSeoTitle}</title>
+        <meta name="description" content={localSeoDescription} />
         <link rel="canonical" href={`${BUSINESS.website}/services/${service.slug}`} />
         
-        <meta property="og:title" content={`${service.name} | ${BUSINESS.name}`} />
-        <meta property="og:description" content={service.shortDescription} />
+        <meta property="og:title" content={localSeoTitle} />
+        <meta property="og:description" content={localSeoDescription} />
         <meta property="og:url" content={`${BUSINESS.website}/services/${service.slug}`} />
         <meta property="og:type" content="website" />
         
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${service.name} | ${BUSINESS.name}`} />
-        <meta name="twitter:description" content={service.shortDescription} />
+        <meta name="twitter:title" content={localSeoTitle} />
+        <meta name="twitter:description" content={localSeoDescription} />
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (
@@ -90,11 +156,11 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
 
       {/* Hero Section - Roto-Rooter Split Layout */}
       <HeroSplit
-        title={`PROFESSIONAL ${service.name.toUpperCase()} IN SOUTHERN ARIZONA`}
+        title={`PROFESSIONAL ${service.name.toUpperCase()} IN TUCSON & SOUTHERN ARIZONA`}
         subtitle={service.shortDescription}
         ctaText="Call Us Now!"
         imageSrc="/images/service_-_plumbing_repair_work.png"
-        imageAlt={`Professional ${service.name} service in Southern Arizona`}
+        imageAlt={`Professional ${service.name} service in Tucson and Southern Arizona`}
         backgroundColor="gray"
         showBanner={true}
         bannerText="FAST, FRIENDLY AND PROFESSIONAL SERVICE. SCHEDULE NOW!"

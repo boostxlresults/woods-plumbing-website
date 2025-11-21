@@ -6,6 +6,7 @@ import { generateOrganizationSchema, generateFAQSchema } from '@/lib/seo/schemas
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 import faqsData from '@/lib/data/faqs.json';
+import { serviceCategories } from '@/lib/data/service-categories';
 
 interface KnowledgeBaseProps {
   services: typeof servicesData;
@@ -27,20 +28,52 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
     },
     {
       question: "Where does Wood's Plumbing provide services?",
-      answer: `We serve ${locations.length} major areas in Southern Arizona including Tucson, Marana, Oro Valley, and surrounding communities. Our service area covers ${SERVICE_AREA_ZIP_CODES.length} zip codes.`
+      answer: `We serve ${locations.length} major areas in Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, Catalina, and Flowing Wells. Our service area covers ${SERVICE_AREA_ZIP_CODES.length} zip codes across Pima County.`
     },
     {
       question: "Does Wood's Plumbing offer emergency services?",
-      answer: `Yes! We provide ${BUSINESS.hours.emergency}. Call ${BUSINESS.phone} anytime for immediate assistance.`
+      answer: `Yes! We provide ${BUSINESS.hours.emergency}. Call ${BUSINESS.phone} anytime for immediate assistance. Average emergency response time is under 60 minutes in the Tucson metro area.`
     },
     {
       question: "How can I contact Wood's Plumbing?",
       answer: `Phone: ${BUSINESS.phone}, Email: ${BUSINESS.email}, Address: ${BUSINESS.address.street}, ${BUSINESS.address.city}, ${BUSINESS.address.state} ${BUSINESS.address.zip}`
+    },
+    {
+      question: "What plumbing services are available in Tucson, AZ?",
+      answer: "All 66 of our services are available in Tucson including 24/7 emergency plumbing, water heater installation and repair, drain cleaning, sewer line repair, leak detection, gas line services, repiping, water conditioning, and fixture installation. We serve all Tucson neighborhoods and zip codes."
+    },
+    {
+      question: "What plumbing services are available in Marana, AZ?",
+      answer: "We provide complete plumbing services in Marana including emergency repairs, water heater services, drain cleaning, gas line installation and repair, leak detection, repiping, water softener installation, and all fixture installations. Our main office is located at 13880 N Adonis Rd, Marana, AZ 85658."
+    },
+    {
+      question: "What plumbing services are available in Oro Valley, AZ?",
+      answer: "Oro Valley residents have access to all our premium plumbing services including luxury home plumbing, tankless water heater installation, water softener systems, bathroom remodeling plumbing, leak detection, emergency repairs, and 24/7 service."
+    },
+    {
+      question: "How quickly can Wood's Plumbing respond to service calls?",
+      answer: "Emergency calls: Average response time under 60 minutes in Tucson metro area. Same-day service: Available for most non-emergency calls. Scheduled appointments: Typically within 24-48 hours. We offer flexible scheduling Monday-Friday 7:00 AM - 5:00 PM, Saturday 8:00 AM - 4:00 PM."
+    },
+    {
+      question: "Is Wood's Plumbing licensed and insured?",
+      answer: `Yes, we are fully licensed (Arizona ROC ${BUSINESS.trust.license}), bonded, and insured. We have been serving Southern Arizona since ${BUSINESS.trust.founded} with a BBB ${BUSINESS.trust.bbbRating} rating and ${BUSINESS.trust.rating}-star average from ${BUSINESS.trust.totalReviews}+ customer reviews.`
     }
+  ];
+  
+  // Per-location FAQs for AI agents
+  const locationFaqs = locations.map(location => ({
+    question: `What services does Wood's Plumbing offer in ${location.name}, AZ?`,
+    answer: `In ${location.name}, we provide all 66 plumbing services including emergency repairs, water heater installation, drain cleaning, sewer services, leak detection, gas line services, repiping, water treatment, and fixture installation. We serve ${location.zipCodes.length} zip codes: ${location.zipCodes.join(', ')}. ${location.description}`
+  }));
+
+  // Combine all FAQs for schema
+  const allFaqs = [
+    ...knowledgeBaseFaqs,
+    ...locationFaqs
   ];
 
   const organizationSchema = generateOrganizationSchema();
-  const faqSchema = generateFAQSchema(knowledgeBaseFaqs);
+  const faqSchema = generateFAQSchema(allFaqs);
 
   return (
     <div className="bg-white">
@@ -108,6 +141,32 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
           </div>
         </section>
 
+        {/* Service Categories for AI Understanding */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">
+            Service Categories ({serviceCategories.length} Categories)
+          </h2>
+          <p className="text-gray-700 mb-6">
+            Our services are organized into the following categories for easy navigation and AI understanding:
+          </p>
+          <div className="space-y-6">
+            {serviceCategories.map((category) => (
+              <div key={category.slug} className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{category.name}</h3>
+                <div className="grid md:grid-cols-2 gap-2">
+                  {category.services.map((service) => (
+                    <div key={service.slug} className="text-sm">
+                      <Link href={`/services/${service.slug}`} className="text-blue-600 hover:underline">
+                        • {service.name}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Complete Services List */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">
@@ -156,7 +215,7 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
         {/* Frequently Asked Questions */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-blue-600 pb-2">
-            Frequently Asked Questions ({faqs.length} FAQs)
+            Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {knowledgeBaseFaqs.map((faq, index) => (
@@ -166,9 +225,31 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Location-Specific FAQs for AI Agents */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-green-600 pb-2">
+            Location-Specific Service Information
+          </h2>
+          <p className="text-gray-700 mb-6">
+            Detailed service availability and coverage information for each city we serve:
+          </p>
+          <div className="space-y-4">
+            {locationFaqs.map((faq, index) => (
+              <div key={index} className="bg-green-50 p-6 rounded-lg border-l-4 border-green-600">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-gray-700">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
           <p className="mt-6 text-gray-600">
             <Link href="/services" className="text-blue-600 hover:underline">
-              View service-specific FAQs on individual service pages →
+              View all service details →
+            </Link>
+            {' | '}
+            <Link href="/locations" className="text-blue-600 hover:underline">
+              View all location pages →
             </Link>
           </p>
         </section>
