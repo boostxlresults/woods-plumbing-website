@@ -71,7 +71,7 @@ export function Header() {
 
           {/* Center Navigation - Desktop */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            <Link href="/" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+            <Link href="/" className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors">
               HOME
             </Link>
             
@@ -82,9 +82,9 @@ export function Header() {
                 onMouseEnter={() => handleMouseEnter(menu.slug)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors flex items-center gap-1">
+                <button className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors flex items-center gap-1">
                   {menu.label}
-                  <ChevronDown className="w-3 h-3" />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
                 
                 {activeDropdown === menu.slug && (
@@ -132,9 +132,9 @@ export function Header() {
               onMouseEnter={() => handleMouseEnter('service-areas')}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors flex items-center gap-1">
+              <button className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors flex items-center gap-1">
                 SERVICE AREAS
-                <ChevronDown className="w-3 h-3" />
+                <ChevronDown className="w-4 h-4" />
               </button>
               
               {activeDropdown === 'service-areas' && (
@@ -165,7 +165,7 @@ export function Header() {
               )}
             </div>
 
-            <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold text-sm uppercase transition-colors">
+            <Link href="/contact" className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors">
               CONTACT
             </Link>
           </nav>
