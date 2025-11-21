@@ -321,7 +321,7 @@ export const getStaticProps: GetStaticProps<ServicePageProps> = async ({ params 
     .slice(0, 8);
 
   const serviceFaqs = faqsData
-    .filter((faq) => faq.categories.includes(service.category))
+    .filter((faq) => faq.serviceSlug === service.slug)
     .slice(0, 8);
 
   return {
