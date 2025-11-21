@@ -1,22 +1,22 @@
 export const BUSINESS = {
   name: "Wood's Plumbing Enterprises LLC",
   legalName: "Wood's Plumbing Enterprises LLC",
-  tagline: "Tucson's Best Plumber Since 1979",
+  tagline: "Southern Arizona's Trusted Plumber Since 1979",
   phone: "(520) 682-2233",
   email: "info@woodsplumbingaz.com",
   website: process.env.NEXT_PUBLIC_SITE_URL || "https://woodsplumbing.com",
   
   address: {
-    street: "123 N Main Ave",
-    city: "Tucson",
+    street: "13880 N Adonis Rd",
+    city: "Marana",
     state: "AZ",
-    zip: "85701",
+    zip: "85658",
     country: "US",
   },
   
   geo: {
-    latitude: 32.2226,
-    longitude: -110.9747,
+    latitude: 32.4185,
+    longitude: -111.1926,
   },
   
   hours: {

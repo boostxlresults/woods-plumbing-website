@@ -7,71 +7,55 @@ import { trackPhoneClick } from '@/lib/analytics';
 
 export function Header() {
   return (
-    <header className="sticky top-[52px] z-40 bg-white shadow-sm">
-      {/* Top Bar with Trust Signals */}
-      <div className="bg-navy-800 text-white py-2.5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-between text-sm">
-            <div className="flex items-center gap-6">
-              <a 
-                href={`tel:${BUSINESS.phone}`} 
-                onClick={() => trackPhoneClick('header_topbar')}
-                className="flex items-center gap-2 hover:text-copper-300 transition-colors font-semibold"
-              >
-                <Phone className="w-4 h-4" />
-                <span>{BUSINESS.phone}</span>
-              </a>
-              <div className="hidden md:flex items-center gap-2 text-gray-300">
-                <Clock className="w-4 h-4" />
-                <span>24/7 Emergency Service</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-gray-300">
-              <Award className="w-4 h-4" />
-              <span className="hidden sm:inline">Licensed ROC AZ ROC {BUSINESS.trust.license}</span>
-              <span className="sm:hidden">ROC {BUSINESS.trust.license}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <div className="container mx-auto px-4 py-5">
+    <header className="sticky top-[52px] z-40 bg-white border-b border-gray-200">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center group">
-            <div className="relative w-72 h-32 md:w-[32rem] md:h-40">
+          {/* Logo */}
+          <Link href="/" className="flex items-center group flex-shrink-0">
+            <div className="relative w-48 h-16 md:w-64 md:h-20">
               <Image
                 src="/images/woods-plumbing-logo.png"
                 alt={BUSINESS.name}
                 fill
-                sizes="(max-width: 768px) 288px, 512px"
+                sizes="(max-width: 768px) 192px, 256px"
                 className="object-contain object-left"
                 priority
               />
             </div>
           </Link>
 
-          <div className="flex items-center gap-3">
+          {/* Right Side: Location, Phone, Schedule */}
+          <div className="flex items-center gap-4 md:gap-6">
+            {/* Service Area Badge */}
+            <div className="hidden lg:block text-sm">
+              <div className="text-gray-600 font-medium">Serving Pima County</div>
+            </div>
+
+            {/* Phone */}
+            <a 
+              href={`tel:${BUSINESS.phone}`} 
+              onClick={() => trackPhoneClick('header')}
+              className="flex items-center gap-2 text-navy-900 hover:text-copper-600 transition-colors"
+            >
+              <Phone className="w-5 h-5 hidden md:block" />
+              <span className="font-bold text-lg md:text-xl">{BUSINESS.phone}</span>
+            </a>
+
+            {/* Schedule Button */}
             <Link href="/contact">
               <Button 
                 size="lg" 
-                className="hidden md:inline-flex bg-copper-500 hover:bg-copper-600 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                className="bg-copper-500 hover:bg-copper-600 text-white font-semibold px-6"
               >
-                Get Free Estimate
-              </Button>
-              <Button 
-                size="default" 
-                className="md:hidden bg-copper-500 hover:bg-copper-600 text-white"
-              >
-                Estimate
+                Schedule
               </Button>
             </Link>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="mt-5 pt-4 border-t border-gray-200">
-          <ul className="flex flex-wrap gap-6 md:gap-8 text-sm md:text-base">
+        {/* Simple Navigation */}
+        <nav className="mt-4 pt-3 border-t border-gray-100">
+          <ul className="flex flex-wrap gap-6 md:gap-8 text-sm">
             <li>
               <Link href="/services" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
                 Services
@@ -79,17 +63,17 @@ export function Header() {
             </li>
             <li>
               <Link href="/locations" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Locations
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
-                Blog
+                Service Areas
               </Link>
             </li>
             <li>
               <Link href="/about" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
                 About
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="text-gray-700 hover:text-copper-600 font-medium transition-colors">
+                Blog
               </Link>
             </li>
             <li>
