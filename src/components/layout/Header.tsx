@@ -53,16 +53,16 @@ export function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-[60px] z-40">
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <div className="relative w-40 h-14 md:w-48 md:h-16">
+          <Link href="/" className="flex-shrink-0 -my-1">
+            <div className="relative w-48 h-20 md:w-56 md:h-24">
               <Image
                 src="/images/woods-plumbing-logo.png"
                 alt={BUSINESS.name}
                 fill
-                sizes="(max-width: 768px) 160px, 192px"
+                sizes="(max-width: 768px) 192px, 224px"
                 className="object-contain object-left"
                 priority
               />
