@@ -14,11 +14,39 @@ interface LocationsPageProps {
 }
 
 const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Plumbing Services",
+    "provider": {
+      "@type": "Plumber",
+      "name": BUSINESS.name,
+      "telephone": BUSINESS.phone,
+      "url": BUSINESS.website,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": BUSINESS.address.city,
+        "addressRegion": BUSINESS.address.state,
+        "addressCountry": BUSINESS.address.country
+      }
+    },
+    "areaServed": locations.map(loc => ({
+      "@type": "City",
+      "name": loc.name,
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Southern Arizona"
+      }
+    }))
+  };
+
   return (
     <div>
       <Head>
         <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${BUSINESS.phone}.`} />
+        <meta name="keywords" content="plumber Tucson, plumber Marana, plumber Oro Valley, plumber Sahuarita, Southern Arizona plumbing, service areas" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/locations`} />
         
         {/* Open Graph */}
@@ -26,6 +54,19 @@ const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
         <meta property="og:description" content={`Serving ${locations.length}+ communities across Southern Arizona since ${BUSINESS.trust.founded}.`} />
         <meta property="og:url" content={`${BUSINESS.website}/locations`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Service Areas - Southern Arizona" />
+
+        {/* AI Search Optimization */}
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Southern Arizona" />
+
+        {/* Schema.org */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       </Head>
 
       {/* Hero */}

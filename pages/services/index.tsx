@@ -31,11 +31,36 @@ interface ServicesPageProps {
 }
 
 const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServices }) => {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `Plumbing Services by ${BUSINESS.name}`,
+    "description": `Complete plumbing services in Southern Arizona including emergency repairs, water heaters, drain cleaning, and more.`,
+    "numberOfItems": totalServices,
+    "itemListElement": servicesData.slice(0, 10).map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.name,
+        "description": service.shortDescription,
+        "url": `${BUSINESS.website}/services/${service.slug}`,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": BUSINESS.name,
+          "telephone": BUSINESS.phone
+        }
+      }
+    }))
+  };
+
   return (
     <div>
       <Head>
         <title>{`Plumbing Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${BUSINESS.trust.license}. ${totalServices}+ professional services available.`} />
+        <meta name="keywords" content="plumbing services Tucson, emergency plumber, water heater repair, drain cleaning, leak detection, gas line repair, Southern Arizona plumber" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/services`} />
         
         {/* Open Graph */}
@@ -43,6 +68,19 @@ const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServi
         <meta property="og:description" content={`Emergency repairs, water heaters, drain cleaning, and more. Licensed ROC ${BUSINESS.trust.license}.`} />
         <meta property="og:url" content={`${BUSINESS.website}/services`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${totalServices}+ Plumbing Services`} />
+
+        {/* AI Search Optimization */}
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Southern Arizona" />
+
+        {/* Schema.org */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       </Head>
 
       {/* Hero */}

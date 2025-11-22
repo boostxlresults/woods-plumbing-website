@@ -36,11 +36,37 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
     ? posts 
     : posts.filter(post => post.category === selectedCategory);
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": `${BUSINESS.name} Plumbing Blog`,
+    "description": "Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company",
+    "url": `${BUSINESS.website}/blog`,
+    "publisher": {
+      "@type": "Organization",
+      "name": BUSINESS.name,
+      "url": BUSINESS.website
+    },
+    "blogPost": posts.slice(0, 5).map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `${BUSINESS.website}/blog/${post.slug}`,
+      "datePublished": post.publishedAt,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      }
+    }))
+  };
+
   return (
     <div>
       <Head>
         <title>{`Plumbing Blog & Tips | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our ${BUSINESS.trust.yearsInBusiness}+ years of experience.`} />
+        <meta name="keywords" content="plumbing blog, plumbing tips, plumbing maintenance, Arizona plumbing, water heater guide, drain cleaning tips" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/blog`} />
         
         {/* Open Graph */}
@@ -48,6 +74,18 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <meta property="og:description" content={`Expert tips from ${BUSINESS.trust.yearsInBusiness}+ years of plumbing experience in Southern Arizona.`} />
         <meta property="og:url" content={`${BUSINESS.website}/blog`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Plumbing Blog & Tips" />
+
+        {/* AI Search Optimization */}
+        <meta name="author" content={BUSINESS.name} />
+
+        {/* Schema.org */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       </Head>
 
       {/* Hero */}
