@@ -41,6 +41,50 @@ const ContactPage: NextPage = () => {
     resolver: zodResolver(contactSchema),
   });
 
+  // Schema.org LocalBusiness markup
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": BUSINESS.name,
+    "image": `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+    "telephone": BUSINESS.phone,
+    "email": BUSINESS.email,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS.address.street,
+      "addressLocality": BUSINESS.address.city,
+      "addressRegion": BUSINESS.address.state,
+      "postalCode": BUSINESS.address.zip,
+      "addressCountry": BUSINESS.address.country
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": BUSINESS.geo.latitude,
+      "longitude": BUSINESS.geo.longitude
+    },
+    "url": BUSINESS.website,
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": BUSINESS.trust.displayRating,
+      "reviewCount": BUSINESS.trust.totalReviews
+    }
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -78,6 +122,8 @@ const ContactPage: NextPage = () => {
       <Head>
         <title>{`Contact Us - Get Free Estimate | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Contact ${BUSINESS.name} for expert plumbing service in Southern Arizona. Call ${BUSINESS.phone} or request a free estimate online. 24/7 emergency service available.`} />
+        <meta name="keywords" content={`contact ${BUSINESS.name}, plumber phone number Tucson, free plumbing estimate, emergency plumber contact, ${BUSINESS.phone}`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/contact`} />
         
         {/* Open Graph */}
@@ -85,6 +131,22 @@ const ContactPage: NextPage = () => {
         <meta property="og:description" content={`Call ${BUSINESS.phone} or request a free estimate online. ${BUSINESS.hours.emergency}.`} />
         <meta property="og:url" content={`${BUSINESS.website}/contact`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`Contact ${BUSINESS.name}`} />
+        <meta name="twitter:description" content={`Call ${BUSINESS.phone} for service`} />
+
+        {/* AI Search Optimization */}
+        <meta name="author" content={BUSINESS.name} />
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Southern Arizona" />
+        <meta name="geo.position" content={`${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`} />
+
+        {/* Schema.org */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </Head>
 
       {/* Hero */}

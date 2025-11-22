@@ -3,15 +3,104 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Button } from '../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
-import { Phone, Award, Users, Clock, CheckCircle, Star } from 'lucide-react';
+import { Phone, Award, Users, Clock, CheckCircle, Star, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '../lib/constants';
 
 const AboutPage: NextPage = () => {
+  // Schema.org Organization markup
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": BUSINESS.name,
+    "legalName": BUSINESS.legalName,
+    "url": BUSINESS.website,
+    "logo": `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+    "foundingDate": BUSINESS.trust.founded.toString(),
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS.address.street,
+      "addressLocality": BUSINESS.address.city,
+      "addressRegion": BUSINESS.address.state,
+      "postalCode": BUSINESS.address.zip,
+      "addressCountry": BUSINESS.address.country
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": BUSINESS.geo.latitude,
+      "longitude": BUSINESS.geo.longitude
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": BUSINESS.phone,
+      "contactType": "customer service",
+      "email": BUSINESS.email,
+      "areaServed": "Southern Arizona",
+      "availableLanguage": "English"
+    },
+    "sameAs": BUSINESS.social ? [
+      BUSINESS.social.facebook,
+      BUSINESS.social.instagram,
+      BUSINESS.social.yelp,
+      BUSINESS.social.googleBusiness
+    ].filter(Boolean) : [],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": BUSINESS.trust.displayRating,
+      "reviewCount": BUSINESS.trust.totalReviews,
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  // About FAQs
+  const aboutFaqs = [
+    {
+      question: `How long has ${BUSINESS.name} been in business?`,
+      answer: `${BUSINESS.name} has been serving Southern Arizona since ${BUSINESS.trust.founded}, with over ${BUSINESS.trust.yearsInBusiness} years of trusted plumbing expertise.`
+    },
+    {
+      question: "Is your company licensed and insured?",
+      answer: `Yes, we are fully licensed (Arizona ROC ${BUSINESS.trust.license}), bonded, and insured. All our plumbers are certified professionals who meet or exceed industry standards.`
+    },
+    {
+      question: "Do you offer a warranty on your work?",
+      answer: "Yes, we stand behind our work with a lifetime warranty on workmanship. We also honor manufacturer warranties on parts and equipment we install."
+    },
+    {
+      question: "Are you available for emergency calls?",
+      answer: `Yes! We provide ${BUSINESS.hours.emergency}. We understand plumbing emergencies don't wait for business hours, so we're always available when you need us.`
+    },
+    {
+      question: "Do you charge overtime for emergency calls?",
+      answer: "No, we do not charge overtime fees for emergency calls. Our emergency rates are fair and transparent, with upfront pricing before we start any work."
+    },
+    {
+      question: "What areas do you serve?",
+      answer: "We serve all of Southern Arizona, including Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, Catalina, and Flowing Wells."
+    }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": aboutFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div>
       <Head>
         <title>{`About Us - Tucson's Trusted Plumber Since ${BUSINESS.trust.founded} | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Learn about ${BUSINESS.name}, Tucson's most trusted plumbing company since ${BUSINESS.trust.founded}. BBB A+ rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews.`} />
+        <meta name="keywords" content={`about ${BUSINESS.name}, plumber history, Tucson plumber since ${BUSINESS.trust.founded}, licensed plumber Arizona, BBB A+ plumber, family owned plumbing`} />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/about`} />
         
         {/* Open Graph */}
@@ -19,6 +108,23 @@ const AboutPage: NextPage = () => {
         <meta property="og:description" content={`BBB A+ rated with ${BUSINESS.trust.displayRating} stars. Serving Southern Arizona since ${BUSINESS.trust.founded}.`} />
         <meta property="og:url" content={`${BUSINESS.website}/about`} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`About ${BUSINESS.name}`} />
+        <meta name="twitter:description" content={`BBB A+ rated with ${BUSINESS.trust.displayRating} stars.`} />
+
+        {/* AI Search Optimization */}
+        <meta name="author" content={BUSINESS.name} />
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Southern Arizona" />
+        <meta name="geo.position" content={`${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`} />
+
+        {/* Schema.org */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       {/* Hero */}
@@ -203,6 +309,30 @@ const AboutPage: NextPage = () => {
                 <CheckCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
                 <span className="text-blue-100">Licensed & Insured Professionals</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {aboutFaqs.map((faq, index) => (
+                <details key={index} className="group border border-gray-200 rounded-lg bg-white">
+                  <summary className="cursor-pointer p-6 font-semibold text-lg text-gray-900 flex justify-between items-center hover:bg-gray-50">
+                    {faq.question}
+                    <ChevronDown className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <div className="px-6 pb-6 text-gray-700 text-lg">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
             </div>
           </div>
         </div>
