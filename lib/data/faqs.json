@@ -294,5 +294,2389 @@
     "serviceSlug": null,
     "locationSlug": null,
     "displayOrder": 1
+  },
+  {
+    "id": "816d5992-d33d-4e2f-b7dc-9f8bc87c2320",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "burst-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "bc454540-8a4a-454b-bf53-d108c15d68bd",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "burst-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "52b71ef4-1325-41d9-b7d3-70a6838d13d1",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "burst-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "07ec0393-c9f9-442a-b1e2-120a7846a9e4",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "burst-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "85287a8f-6eae-4e33-9b1b-76971f846011",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "burst-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "c908bcc2-f96b-4338-95e2-24e30fdc8234",
+    "question": "Do you charge extra for emergency service after hours?",
+    "answer": "No! Unlike many plumbing companies, Wood's Plumbing does not charge extra for nights, weekends, or holidays. We provide 24/7 emergency service at our standard rates because plumbing emergencies don't wait for business hours.",
+    "serviceSlug": "emergency-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "007146b2-7a0a-4976-88fa-d242708d6229",
+    "question": "How quickly can you respond to an emergency?",
+    "answer": "We typically respond to emergency calls within 60-90 minutes, depending on your location in Southern Arizona. For critical emergencies like burst pipes, gas leaks, or sewer backups, we prioritize immediate dispatch.",
+    "serviceSlug": "emergency-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "6c5062a9-a98c-4455-920f-4bd10c97defa",
+    "question": "What should I do while waiting for the emergency plumber?",
+    "answer": "If possible, shut off the main water valve to stop flooding. Move valuables away from water. Take photos for insurance. Do not attempt temporary fixes that could make the situation worse. Our dispatcher can provide specific guidance when you call.",
+    "serviceSlug": "emergency-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "1643338d-b6f0-4101-acf4-8e2bfa57dd2e",
+    "question": "Do you provide emergency service throughout Southern Arizona?",
+    "answer": "Yes, we provide 24/7 emergency plumbing service throughout Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, Catalina Foothills, and Picture Rocks.",
+    "serviceSlug": "emergency-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "22a275d6-bb23-4c20-8f2f-34f6e17d47ce",
+    "question": "Will I get an estimate before you start emergency repairs?",
+    "answer": "Absolutely. Even for emergencies, we provide upfront pricing before starting work. You'll know exactly what the repair will cost with no hidden fees or surprises.",
+    "serviceSlug": "emergency-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "58af868c-cdf6-4d99-9d38-5e7245ef0e4a",
+    "question": "Do you charge extra for emergency service after hours?",
+    "answer": "No! Unlike many plumbing companies, Wood's Plumbing does not charge extra for nights, weekends, or holidays. We provide 24/7 emergency service at our standard rates because plumbing emergencies don't wait for business hours.",
+    "serviceSlug": "emergency-drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "a3f9d4b9-18d0-4fa8-ae38-f57fbb8510c3",
+    "question": "How quickly can you respond to an emergency?",
+    "answer": "We typically respond to emergency calls within 60-90 minutes, depending on your location in Southern Arizona. For critical emergencies like burst pipes, gas leaks, or sewer backups, we prioritize immediate dispatch.",
+    "serviceSlug": "emergency-drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "b6a828e4-473f-4779-b5bd-16c3cdc7e933",
+    "question": "What should I do while waiting for the emergency plumber?",
+    "answer": "If possible, shut off the main water valve to stop flooding. Move valuables away from water. Take photos for insurance. Do not attempt temporary fixes that could make the situation worse. Our dispatcher can provide specific guidance when you call.",
+    "serviceSlug": "emergency-drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "43813ae5-9ade-4551-9b5a-d2c40e964d00",
+    "question": "Do you provide emergency service throughout Southern Arizona?",
+    "answer": "Yes, we provide 24/7 emergency plumbing service throughout Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, Catalina Foothills, and Picture Rocks.",
+    "serviceSlug": "emergency-drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "f25ec345-9642-4f57-b310-94925a66d901",
+    "question": "Will I get an estimate before you start emergency repairs?",
+    "answer": "Absolutely. Even for emergencies, we provide upfront pricing before starting work. You'll know exactly what the repair will cost with no hidden fees or surprises.",
+    "serviceSlug": "emergency-drain-cleaning",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "d1bb00e8-e001-4da3-bf9f-85b3f334a722",
+    "question": "Do you charge extra for emergency service after hours?",
+    "answer": "No! Unlike many plumbing companies, Wood's Plumbing does not charge extra for nights, weekends, or holidays. We provide 24/7 emergency service at our standard rates because plumbing emergencies don't wait for business hours.",
+    "serviceSlug": "sewer-backup-emergency",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "15714868-092c-4326-9d64-00e490c34fe7",
+    "question": "How quickly can you respond to an emergency?",
+    "answer": "We typically respond to emergency calls within 60-90 minutes, depending on your location in Southern Arizona. For critical emergencies like burst pipes, gas leaks, or sewer backups, we prioritize immediate dispatch.",
+    "serviceSlug": "sewer-backup-emergency",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "26c5d0c1-69d7-41c1-bc9a-7d9500412184",
+    "question": "What should I do while waiting for the emergency plumber?",
+    "answer": "If possible, shut off the main water valve to stop flooding. Move valuables away from water. Take photos for insurance. Do not attempt temporary fixes that could make the situation worse. Our dispatcher can provide specific guidance when you call.",
+    "serviceSlug": "sewer-backup-emergency",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "10e8e8b4-4aeb-4e71-8239-d2b759e5c334",
+    "question": "Do you provide emergency service throughout Southern Arizona?",
+    "answer": "Yes, we provide 24/7 emergency plumbing service throughout Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail, Catalina Foothills, and Picture Rocks.",
+    "serviceSlug": "sewer-backup-emergency",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "2c296bd9-a35f-4b4c-b24c-4d3fa35eb9e2",
+    "question": "Will I get an estimate before you start emergency repairs?",
+    "answer": "Absolutely. Even for emergencies, we provide upfront pricing before starting work. You'll know exactly what the repair will cost with no hidden fees or surprises.",
+    "serviceSlug": "sewer-backup-emergency",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "dba4a7e2-4b7a-410b-be91-46e084e764b1",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "c4da2b8a-ed7e-45f0-9e05-7e8a579ae0d0",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "447568a6-6b9a-42c5-a1c5-565d00babf2f",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "a1fb1c2a-a9dd-410a-9887-5617948a4a14",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "a7430bbb-5f87-4a58-b583-038da279ea15",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "89302a70-7587-4819-b031-3eded323fa88",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "water-heater-installation",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "78b533ec-9e74-4df2-866b-412dec5d2e41",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "cf32f071-020d-4008-9036-de67aa49ce4b",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "9747e3c0-c396-45a8-9611-467e90501de4",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "7017558b-564d-47e7-8155-05370a822145",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "71f7c419-4886-40a1-ac14-bfdab63e3eb5",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "a25a8d5c-eeab-49a4-ac88-bb4afc2690e0",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "water-heater-repair",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "2948d98f-9740-42c5-a1d9-75bc90bf2dc5",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "7fe9b708-2f70-46eb-943c-4f37b1b0a785",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "ed91759d-2882-4a9f-b044-64425ba59029",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "635bcdcb-ed80-421e-8e6b-17b0b67bd434",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "95934d51-671f-4870-8224-fe6c087e9151",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "f072aba6-ca79-488c-a956-cd56c5360938",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "water-heater-replacement",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "761a95ae-4eea-47e9-8fba-904662251cb9",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "379eb874-ca56-401f-913a-6e90fbd45058",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "c85ae9f9-2138-47a8-a903-0703acc56a98",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "5476b1fe-55b3-4e35-b40e-3c28b9e3bee3",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "e9ed8abf-7344-4fca-880c-8345d5e541a5",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "bf1b1480-5c9f-4888-9228-78e6913c0cc1",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "tankless-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "29ac8d1c-0b39-4302-b7e2-877b3ce89fc1",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "c2724d4f-dbfb-4b9b-ab36-f1ae235568a5",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "1f2e9318-5706-4805-8e7d-3efbeb0da47c",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "726c5089-32df-4424-8425-aed807d11b88",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "63364368-1d27-450c-89d6-75d3a0f76d5e",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "d55334c8-0bf8-4909-bb21-5773af2f37f2",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "tank-water-heaters",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "266ff5d0-4555-4732-9b8b-5e08175ea96d",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "3dcb7861-3e9c-4b60-a028-e030f1714f43",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "1c626508-e277-4bbb-a0ec-b597ddabeebe",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "c1f43618-2b85-45e7-9329-4cff76b54cad",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "80856597-0427-4fdc-8562-6404250b8f80",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "5b745f39-fcbc-47cc-8cd6-233c2374fc3e",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "water-heater-maintenance",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "ab231eea-e6ce-48ac-9feb-77bed4f7af39",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "e9fb7c08-c457-4fc2-9b09-9645a747d615",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "223fb056-ab7e-49c6-b90b-0d2a5a8018e5",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "08efc8c0-d7fc-4030-b628-8764e41311e8",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "7750f227-b7aa-4fc3-b553-15790e52ba04",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "bd1980bc-4ab9-446a-a825-2b333df6e791",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "water-heater-flushing",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "ab15ae7f-b510-447f-980e-bc3849964476",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "d9816c86-ec89-48c2-b2ee-87f0c86abd36",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "0945a050-7f58-42ed-b907-432d76e8c722",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "51c88e9f-4ac1-4f38-bc82-ab19a5eba90e",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "c0b7235d-b269-4f06-a895-4ea28d57c23e",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "2bd5d6db-e8df-4f85-a873-62412cb7f074",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "gas-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "0955ba9e-19b8-4604-963c-34c34a503614",
+    "question": "How long does a water heater typically last?",
+    "answer": "Tank water heaters typically last 8-12 years, while tankless models can last 15-20 years with proper maintenance. Factors affecting lifespan include water quality, usage patterns, and regular maintenance.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "fc6027c2-9533-45fb-b8af-071dd59b41cd",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If your water heater is over 10 years old, experiencing frequent issues, or repair costs exceed 50% of replacement cost, replacement is usually more cost-effective. We'll provide honest recommendations based on your specific situation.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "68e45624-7d19-4f02-bf9d-fb5b760af0e0",
+    "question": "What size water heater do I need?",
+    "answer": "Size depends on household occupancy and usage. For tank water heaters, most families need 40-50 gallons. Tankless heaters are sized by flow rate (gallons per minute). We'll assess your needs and recommend the right capacity.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "efcba8d9-7c38-4d09-903a-1b05cc5723ee",
+    "question": "Are tankless water heaters worth the investment?",
+    "answer": "Tankless water heaters cost more upfront but provide endless hot water, last longer (15-20 years vs. 8-12), save energy (20-30% reduction), and free up space. Most homeowners recover the cost through energy savings over time.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "eba63eed-b6d2-4b8a-b21c-6e64a75e9feb",
+    "question": "How often should I flush my water heater?",
+    "answer": "We recommend flushing tank water heaters annually to remove sediment buildup, especially in Southern Arizona's hard water areas. This extends lifespan, improves efficiency, and prevents premature failure.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "3aef3772-10e9-4320-a294-290b79970bb2",
+    "question": "Do you work with American, AO Smith, and ACT water heaters?",
+    "answer": "Yes! Wood's Plumbing is an authorized dealer for American, AO Smith, and ACT water heaters. We install, repair, and maintain all major brands and our work meets manufacturer specifications for warranty protection.",
+    "serviceSlug": "electric-water-heater-service",
+    "locationSlug": null,
+    "displayOrder": 6
+  },
+  {
+    "id": "bd8a543d-30bd-4477-9299-f90052f2d521",
+    "question": "How do I know if I need sewer line repair?",
+    "answer": "Warning signs include: multiple slow drains, sewage odors indoors or outdoors, soggy patches in your yard, recurring backups, gurgling sounds from drains, and sewage backing up into fixtures. Camera inspection confirms the diagnosis.",
+    "serviceSlug": "sewer-line-cleaning",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "29cc6427-2845-4cca-88c7-1c9bfcf361cf",
+    "question": "How much does sewer line repair cost?",
+    "answer": "Costs vary widely: spot repairs $1,500-$3,500, trenchless repair $3,000-$12,000, full replacement $5,000-$20,000+. Price depends on damage extent, pipe length, accessibility, and method used. We provide free estimates and explain all options.",
+    "serviceSlug": "sewer-line-cleaning",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "2c8a3a78-2e9a-4e4c-8382-6315b8a157f7",
+    "question": "What is trenchless sewer repair?",
+    "answer": "Trenchless repair fixes sewer lines without extensive digging. Methods include pipe bursting (pulling new pipe through old) or pipe lining (inserting resin-coated liner that hardens). This saves landscaping, reduces labor costs, and completes faster.",
+    "serviceSlug": "sewer-line-cleaning",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "79a7e469-6a6a-4e37-aec2-e79e9b4dd878",
+    "question": "Will insurance cover sewer line repair?",
+    "answer": "Standard homeowners insurance typically excludes sewer line repairs unless caused by a covered peril. Many insurers offer optional sewer backup coverage. We provide detailed documentation for insurance claims.",
+    "serviceSlug": "sewer-line-cleaning",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "adb08190-5418-4a13-b18a-46eb974577fb",
+    "question": "How long does sewer line replacement take?",
+    "answer": "Traditional replacement takes 2-4 days including excavation and restoration. Trenchless methods often complete in 1-2 days. Timeline depends on pipe length, soil conditions, and permit requirements.",
+    "serviceSlug": "sewer-line-cleaning",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "1effb2b7-5874-46b8-acba-719cc3ec7927",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "rooter-service",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "6c6264e6-e107-4b3b-802b-a5e37de6a5bb",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "rooter-service",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "1793f10c-11af-4184-9c7a-fca855607895",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "rooter-service",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "425a4024-28f1-405f-9952-b4ca1e5e98c0",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "rooter-service",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "d4bf198b-2d67-4f10-b792-08ad39ca5f11",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "rooter-service",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "1eb5b4ca-a301-46a6-b0f6-7bff5278039e",
+    "question": "How do you detect hidden leaks?",
+    "answer": "We use electronic leak detection equipment, thermal imaging cameras, acoustic sensors, and moisture meters to locate leaks without destructive exploratory work. For slab leaks, we use specialized equipment to pinpoint the exact location.",
+    "serviceSlug": "water-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "2d34c942-e25e-4038-8ef6-500e34b8dda4",
+    "question": "What causes slab leaks?",
+    "answer": "Common causes include: shifting soil foundation, corrosion of copper pipes, poor installation, water chemistry, high water pressure, and electrolysis from improper grounding. Southern Arizona's alkaline soil can accelerate pipe corrosion.",
+    "serviceSlug": "water-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "b2b209cc-4a42-40a7-82e7-65ef6d8da864",
+    "question": "How much does leak detection cost?",
+    "answer": "Leak detection services typically cost $200-$500 depending on the complexity and location of the leak. This fee is often waived if you proceed with repair. Early detection saves money by preventing extensive water damage.",
+    "serviceSlug": "water-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "e3636e6a-2edc-4ef7-ab32-bcf36cdd2cdc",
+    "question": "Will leak detection damage my property?",
+    "answer": "Modern leak detection methods are non-invasive. We use electronic equipment to locate leaks without breaking walls or floors. Only after pinpointing the exact location do we make minimal access points for repair.",
+    "serviceSlug": "water-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "4bc7c37e-5f3a-4e70-a9af-e3f22678e2a1",
+    "question": "How can I tell if I have a hidden leak?",
+    "answer": "Signs include: unexplained water bill increases, sound of running water when nothing is on, wet spots on floors/walls/ceilings, mold or mildew odor, warm spots on floors (slab leaks), and foundation cracks.",
+    "serviceSlug": "water-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "1327b507-af04-4887-a57b-724ce1bf253a",
+    "question": "How do you detect hidden leaks?",
+    "answer": "We use electronic leak detection equipment, thermal imaging cameras, acoustic sensors, and moisture meters to locate leaks without destructive exploratory work. For slab leaks, we use specialized equipment to pinpoint the exact location.",
+    "serviceSlug": "pipe-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "4a68ad8b-1ea5-4226-b484-81bff89cc4dd",
+    "question": "What causes slab leaks?",
+    "answer": "Common causes include: shifting soil foundation, corrosion of copper pipes, poor installation, water chemistry, high water pressure, and electrolysis from improper grounding. Southern Arizona's alkaline soil can accelerate pipe corrosion.",
+    "serviceSlug": "pipe-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "09fe91ae-5490-44db-aa71-1bc600000244",
+    "question": "How much does leak detection cost?",
+    "answer": "Leak detection services typically cost $200-$500 depending on the complexity and location of the leak. This fee is often waived if you proceed with repair. Early detection saves money by preventing extensive water damage.",
+    "serviceSlug": "pipe-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "1336f1a3-7347-418e-a205-6407d6aa6c6d",
+    "question": "Will leak detection damage my property?",
+    "answer": "Modern leak detection methods are non-invasive. We use electronic equipment to locate leaks without breaking walls or floors. Only after pinpointing the exact location do we make minimal access points for repair.",
+    "serviceSlug": "pipe-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "1d16ab16-80a0-4069-b58c-0c4cef2b4a3b",
+    "question": "How can I tell if I have a hidden leak?",
+    "answer": "Signs include: unexplained water bill increases, sound of running water when nothing is on, wet spots on floors/walls/ceilings, mold or mildew odor, warm spots on floors (slab leaks), and foundation cracks.",
+    "serviceSlug": "pipe-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "5105d462-5f7c-4d8c-9a7b-1c1a3f5e15e4",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "toilet-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "2ad98287-82bb-4959-ac07-24e3627255e0",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "toilet-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "94a3fe04-bcf1-47f7-9730-2a1895d7ada5",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "toilet-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "6aeb34d9-5ae9-4d9d-9223-68996c3aabda",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "toilet-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "e7e704d1-8453-4e06-8506-56e3953ac13f",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "toilet-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "fe92dcb1-cca5-4b23-9838-bacb2007b63b",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "toilet-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "2f98a6b3-5ff9-4469-b90d-9e786c280d72",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "toilet-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "b744cdcb-3d9b-4359-b825-624c5ca4004f",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "toilet-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "a4694ead-73e7-4afc-ac73-8692d7b5d0cd",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "toilet-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "974bac9b-c0b2-4f48-a216-f54de6538c35",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "toilet-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "979b04bc-0121-4957-bc49-3ac15479f983",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "faucet-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "f1d161da-2ca7-4f5e-95d6-2a0594c2d092",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "faucet-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "78dc7161-015a-40d8-a313-01cd089cc581",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "faucet-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "41d50597-72e5-4a0f-b8a8-4f3e46e1721d",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "faucet-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "c09366de-1f43-4b4d-977c-5e2c3b78efdb",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "faucet-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "1045f9d7-5d8f-4d09-a345-016e3cecd749",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "faucet-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "d72fe2a6-61ab-4a78-a794-55cbf0368afe",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "faucet-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "cef6feaf-d883-4b79-9535-448a54afd78e",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "faucet-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "e6cc8f33-f088-47dc-beac-0076b8da87e4",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "faucet-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "2508ed04-2888-4adf-ade0-a214015872cc",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "faucet-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "18dddf25-2ae1-4c73-895f-0b642b125371",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "sink-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "1e48d263-220f-475d-950b-43a160e6d361",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "sink-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "ba0f8aaf-4398-4cef-98d3-00410e33ad32",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "sink-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "03c18acd-74a5-403c-8a79-1d5bd9f96296",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "sink-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "448b86ac-d666-48a7-98f2-7a85a43fcbaf",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "sink-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "2234ae58-a252-4b4c-813c-2c62b171f519",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "sink-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "1d665909-c124-416c-b468-f1b54ba2e131",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "sink-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "a36a3a72-d835-4b77-b2c4-b3b68b9b63c3",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "sink-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "59d21de2-77dd-4ce1-83e9-91cf5f754835",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "sink-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "0b5e0acb-6c97-4508-91b9-6ebcaf641371",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "sink-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "94a9fa86-a670-489a-82c8-527deda68b70",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "garbage-disposal-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "cfc0a518-48da-4c40-a9d2-591befe01802",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "garbage-disposal-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "abd01eba-5931-4a57-90b5-98d028f2f889",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "garbage-disposal-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "359e1ea3-f0e2-4783-aad3-dad3367051b1",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "garbage-disposal-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "19a01f3b-e5ae-4ef7-8a62-5f8cd3f53930",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "garbage-disposal-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "79314683-7d6b-4836-82b5-fbcd49335e1b",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "garbage-disposal-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "04e0de7f-86ef-44e8-8d37-5c6e710c5a0e",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "garbage-disposal-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "78e7e58d-5084-483a-af92-d64fcd8b7ffa",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "garbage-disposal-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "eaa44802-c1dd-4bf0-a84d-2ab42259d4df",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "garbage-disposal-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "dd8e9485-4569-4a47-971e-d1d35706375d",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "garbage-disposal-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "9d772478-fc32-44ef-b33e-1e3a2e30a4ee",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "shower-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "b292d6b4-8f06-42b3-8a2a-250fcaf43d3c",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "shower-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "be5e03f0-7fea-45cc-b799-21202f547c17",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "shower-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "8150a121-5a18-4d91-bbdd-372f769704df",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "shower-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "da8f0aa0-3944-4b90-bab3-ef8abf75c2e0",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "shower-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "30945582-24b3-477e-8ebd-ff1a3cf80436",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "bathtub-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "7a0b859f-774e-4c61-b6f3-13091be1a2e4",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "bathtub-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "1f1c3c7a-8822-4939-a2ab-90d1e1cfb81a",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "bathtub-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "172c2da4-9365-4992-8369-3a798a2c1b38",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "bathtub-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "e6bd4820-2171-40fa-beb7-c03d41bd9309",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "bathtub-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "c758376e-e5f6-4539-acfe-4452231af8ab",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "shower-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "bdf8108a-6070-4b2e-b77c-36298b7c631e",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "shower-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "67ea2822-40d9-41b9-b243-8139d4fcf8d4",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "shower-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "3315f791-8b65-4f0c-8b0e-023d5d1ded7e",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "shower-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "1acb45f5-3c4b-42ea-b306-0e49896a5540",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "shower-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "6f74d441-8a30-4831-9197-4a94b04e3d4d",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "bc0e3f39-8ec5-416d-8cb9-58edd10eb659",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "6ff56cda-6564-4ea0-843d-9715179977bc",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "1b856cee-a80d-4348-9bc8-89555f6fd52b",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "268a5c8b-2699-4bc8-9412-47c01675564e",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "e33ef863-0d67-4dfb-85e3-11fa6b063934",
+    "question": "How much does it cost to install a new toilet?",
+    "answer": "Professional toilet installation typically costs $200-$500 including labor, depending on the toilet type and any additional plumbing modifications needed. This includes removal of the old toilet, proper sealing, and testing for leaks.",
+    "serviceSlug": "fixture-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "4682b028-4407-4345-8b92-0a41ecd52afe",
+    "question": "Can you match my existing fixtures?",
+    "answer": "Yes! We work with all major fixture brands and can help you find matching products or recommend quality alternatives. Bring us photos or model numbers and we'll source the right fixtures for your home.",
+    "serviceSlug": "fixture-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "7a4300a6-83d4-4ede-84bf-4c327f80adf9",
+    "question": "How long does fixture installation take?",
+    "answer": "Most single fixture installations (faucet, toilet, sink) take 1-2 hours. Multiple fixture installations or those requiring additional plumbing modifications may take longer. We'll provide accurate time estimates upfront.",
+    "serviceSlug": "fixture-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "45e6da33-f919-4624-905f-f6386cc4596f",
+    "question": "Do you provide warranties on fixture installations?",
+    "answer": "Yes. We warranty our workmanship, and most fixtures include manufacturer warranties. We'll explain warranty coverage and help with claims if issues arise.",
+    "serviceSlug": "fixture-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "c48c6eef-b7a6-4e41-878e-34e3edb227e9",
+    "question": "Should I buy the fixtures or do you provide them?",
+    "answer": "We can work either way. We can source fixtures at competitive prices, or you can purchase them yourself. If you buy fixtures, we recommend consulting with us first to ensure they're suitable for your plumbing system.",
+    "serviceSlug": "fixture-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "830dbd19-0ae7-41b7-9c7e-f9e4064aa168",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "clogged-drain-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "f418a054-5d6b-411a-acbe-81010ba18538",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "clogged-drain-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "0e66d291-6637-4762-882a-a2ce9737dea9",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "clogged-drain-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "6a6444e9-e6b3-44b4-82a5-e1a8ffe8fb44",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "clogged-drain-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "0691896b-dd1a-4276-a8b0-0b45be3fb439",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "clogged-drain-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "c8580035-0fc9-4ef8-8b40-b075c9da4678",
+    "question": "How do I know if I need whole house repiping?",
+    "answer": "Signs include: frequent leaks, discolored water, low water pressure, visible pipe corrosion, pipes over 50 years old, and recurring repair costs. If you're experiencing multiple issues, repiping is often more cost-effective than ongoing repairs.",
+    "serviceSlug": "whole-house-repiping",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "14b1a242-61d0-4857-9bca-c3e64d6b0a48",
+    "question": "How much does whole house repiping cost?",
+    "answer": "Whole house repiping typically costs $4,000-$15,000+ depending on home size, pipe material chosen (PEX vs. copper), accessibility, and number of fixtures. We provide detailed estimates after inspecting your home.",
+    "serviceSlug": "whole-house-repiping",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "51b7553b-90a3-4eb0-9289-703698c2b902",
+    "question": "How long does repiping take?",
+    "answer": "Most whole house repiping projects take 2-5 days depending on home size and complexity. Water service is usually shut off during work hours but restored overnight. We work efficiently to minimize disruption.",
+    "serviceSlug": "whole-house-repiping",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "a4aa7224-651c-4adf-a2ab-ff0899ed1292",
+    "question": "PEX or copper pipes - which is better?",
+    "answer": "Both are excellent. PEX costs less, installs faster, resists freezing better, and never corrodes. Copper is more traditional, withstands higher temperatures, and some prefer it for drinking water. We'll explain pros/cons for your specific situation.",
+    "serviceSlug": "whole-house-repiping",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "135b9260-80b2-4680-8fe8-38ca4ca6eaf6",
+    "question": "Will repiping damage my walls?",
+    "answer": "Some wall access is necessary, but we minimize it. We use existing access points where possible and make neat, small openings. We don't do drywall repair/painting, but we can recommend trusted contractors or you can repair yourself.",
+    "serviceSlug": "whole-house-repiping",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "2e9fb038-6450-4d2d-8ee2-4ba13bf31b4f",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "pipe-replacement",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "55393e01-99e5-4aa5-8b02-68b47c71be37",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "pipe-replacement",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "339de2e5-d859-4a6c-97a9-70bd8aabb18c",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "pipe-replacement",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "f22b4f34-8250-499f-92ad-b6d5d8d9b51c",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "pipe-replacement",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "4e6fff09-cc2f-4b9c-a3bf-50be9a2932ff",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "pipe-replacement",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "ff549da1-36ba-43be-9dfe-45c1c142e900",
+    "question": "How do I know if I need whole house repiping?",
+    "answer": "Signs include: frequent leaks, discolored water, low water pressure, visible pipe corrosion, pipes over 50 years old, and recurring repair costs. If you're experiencing multiple issues, repiping is often more cost-effective than ongoing repairs.",
+    "serviceSlug": "water-line-installation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "b308c931-9c48-4bdb-90ad-4878c52c38d6",
+    "question": "How much does whole house repiping cost?",
+    "answer": "Whole house repiping typically costs $4,000-$15,000+ depending on home size, pipe material chosen (PEX vs. copper), accessibility, and number of fixtures. We provide detailed estimates after inspecting your home.",
+    "serviceSlug": "water-line-installation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "d5e53819-9889-477d-8e01-e99e548d3394",
+    "question": "How long does repiping take?",
+    "answer": "Most whole house repiping projects take 2-5 days depending on home size and complexity. Water service is usually shut off during work hours but restored overnight. We work efficiently to minimize disruption.",
+    "serviceSlug": "water-line-installation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "bec4e3a7-8722-4bd5-af08-75a17815e478",
+    "question": "PEX or copper pipes - which is better?",
+    "answer": "Both are excellent. PEX costs less, installs faster, resists freezing better, and never corrodes. Copper is more traditional, withstands higher temperatures, and some prefer it for drinking water. We'll explain pros/cons for your specific situation.",
+    "serviceSlug": "water-line-installation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "1c8e3fd4-ae5b-46a8-ac4a-34b59ca86f36",
+    "question": "Will repiping damage my walls?",
+    "answer": "Some wall access is necessary, but we minimize it. We use existing access points where possible and make neat, small openings. We don't do drywall repair/painting, but we can recommend trusted contractors or you can repair yourself.",
+    "serviceSlug": "water-line-installation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "497ea68a-32ab-4493-a256-2c3815caf8a1",
+    "question": "How do I know if I need whole house repiping?",
+    "answer": "Signs include: frequent leaks, discolored water, low water pressure, visible pipe corrosion, pipes over 50 years old, and recurring repair costs. If you're experiencing multiple issues, repiping is often more cost-effective than ongoing repairs.",
+    "serviceSlug": "water-line-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "bb5b2130-dc2d-4874-9d78-235dcef571b6",
+    "question": "How much does whole house repiping cost?",
+    "answer": "Whole house repiping typically costs $4,000-$15,000+ depending on home size, pipe material chosen (PEX vs. copper), accessibility, and number of fixtures. We provide detailed estimates after inspecting your home.",
+    "serviceSlug": "water-line-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "4a79439b-8a25-465a-9f14-db7854955b8c",
+    "question": "How long does repiping take?",
+    "answer": "Most whole house repiping projects take 2-5 days depending on home size and complexity. Water service is usually shut off during work hours but restored overnight. We work efficiently to minimize disruption.",
+    "serviceSlug": "water-line-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "a5fabc54-616b-4932-9116-2263a60ecf24",
+    "question": "PEX or copper pipes - which is better?",
+    "answer": "Both are excellent. PEX costs less, installs faster, resists freezing better, and never corrodes. Copper is more traditional, withstands higher temperatures, and some prefer it for drinking water. We'll explain pros/cons for your specific situation.",
+    "serviceSlug": "water-line-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "627939fb-e396-42d9-a1e5-68adfac245ea",
+    "question": "Will repiping damage my walls?",
+    "answer": "Some wall access is necessary, but we minimize it. We use existing access points where possible and make neat, small openings. We don't do drywall repair/painting, but we can recommend trusted contractors or you can repair yourself.",
+    "serviceSlug": "water-line-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "59b1830a-4dd8-4fd1-9385-cc561683e4b5",
+    "question": "How do I know if I need whole house repiping?",
+    "answer": "Signs include: frequent leaks, discolored water, low water pressure, visible pipe corrosion, pipes over 50 years old, and recurring repair costs. If you're experiencing multiple issues, repiping is often more cost-effective than ongoing repairs.",
+    "serviceSlug": "water-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "f8dff732-3ef6-4a5c-852c-0d8d07af122a",
+    "question": "How much does whole house repiping cost?",
+    "answer": "Whole house repiping typically costs $4,000-$15,000+ depending on home size, pipe material chosen (PEX vs. copper), accessibility, and number of fixtures. We provide detailed estimates after inspecting your home.",
+    "serviceSlug": "water-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "6a586436-eb42-4951-8752-1c5bc5e8e0fa",
+    "question": "How long does repiping take?",
+    "answer": "Most whole house repiping projects take 2-5 days depending on home size and complexity. Water service is usually shut off during work hours but restored overnight. We work efficiently to minimize disruption.",
+    "serviceSlug": "water-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "d0c3afe7-f532-4b8c-91d2-189bf91ac1c4",
+    "question": "PEX or copper pipes - which is better?",
+    "answer": "Both are excellent. PEX costs less, installs faster, resists freezing better, and never corrodes. Copper is more traditional, withstands higher temperatures, and some prefer it for drinking water. We'll explain pros/cons for your specific situation.",
+    "serviceSlug": "water-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "29643b3b-61c5-442a-852d-e19ea5f252d9",
+    "question": "Will repiping damage my walls?",
+    "answer": "Some wall access is necessary, but we minimize it. We use existing access points where possible and make neat, small openings. We don't do drywall repair/painting, but we can recommend trusted contractors or you can repair yourself.",
+    "serviceSlug": "water-line-replacement",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "71c333d7-369e-4cb8-bf6b-a0d526394efa",
+    "question": "How do I know if I have a gas leak?",
+    "answer": "Warning signs include: sulfur/rotten egg smell (added to natural gas), hissing sounds near gas lines, dead vegetation near gas lines, physical symptoms (headaches, nausea, dizziness), and higher than normal gas bills. If you suspect a leak, evacuate immediately and call 911, then call us.",
+    "serviceSlug": "gas-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "36c07dd3-8c0a-422a-b950-b53323747c5d",
+    "question": "Are gas leaks dangerous?",
+    "answer": "Yes. Gas leaks pose serious risks including fire, explosion, asphyxiation, and carbon monoxide poisoning. Never ignore gas leak signs. Evacuate, don't use electrical switches or create sparks, and call for emergency help immediately.",
+    "serviceSlug": "gas-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "4926f691-c940-408f-85e0-a597c2dd3526",
+    "question": "Do you provide emergency gas leak service?",
+    "answer": "Yes, we provide 24/7 emergency gas leak detection and repair throughout Southern Arizona. Gas emergencies are always our top priority for immediate dispatch and response.",
+    "serviceSlug": "gas-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "c5c2b3b2-dc09-4eae-997b-ea166fdb3667",
+    "question": "How often should gas lines be inspected?",
+    "answer": "We recommend professional gas line inspection every 1-2 years, or immediately if you smell gas, are buying/selling a home, or have made modifications to gas appliances or piping.",
+    "serviceSlug": "gas-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "da916043-e607-4114-92cd-e4dbf0edb15d",
+    "question": "Can you install gas lines for new appliances?",
+    "answer": "Yes! We install gas lines for ranges, dryers, water heaters, pool heaters, fireplaces, and outdoor appliances. All installations meet current codes and include pressure testing and safety certification.",
+    "serviceSlug": "gas-leak-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "bb7b19e6-4088-4931-94b5-06d246805dea",
+    "question": "How do I know if I have a gas leak?",
+    "answer": "Warning signs include: sulfur/rotten egg smell (added to natural gas), hissing sounds near gas lines, dead vegetation near gas lines, physical symptoms (headaches, nausea, dizziness), and higher than normal gas bills. If you suspect a leak, evacuate immediately and call 911, then call us.",
+    "serviceSlug": "gas-pipe-testing",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "4be8b4ee-8867-4cb3-801d-cf0c9c88bcb6",
+    "question": "Are gas leaks dangerous?",
+    "answer": "Yes. Gas leaks pose serious risks including fire, explosion, asphyxiation, and carbon monoxide poisoning. Never ignore gas leak signs. Evacuate, don't use electrical switches or create sparks, and call for emergency help immediately.",
+    "serviceSlug": "gas-pipe-testing",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "0dbbe4f3-38cc-4f82-99c1-4daa0449232f",
+    "question": "Do you provide emergency gas leak service?",
+    "answer": "Yes, we provide 24/7 emergency gas leak detection and repair throughout Southern Arizona. Gas emergencies are always our top priority for immediate dispatch and response.",
+    "serviceSlug": "gas-pipe-testing",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "8c4b4dbe-373c-4038-a9d7-f58fabb33031",
+    "question": "How often should gas lines be inspected?",
+    "answer": "We recommend professional gas line inspection every 1-2 years, or immediately if you smell gas, are buying/selling a home, or have made modifications to gas appliances or piping.",
+    "serviceSlug": "gas-pipe-testing",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "add0c119-7733-4fbe-8df8-7f03d0c3e69a",
+    "question": "Can you install gas lines for new appliances?",
+    "answer": "Yes! We install gas lines for ranges, dryers, water heaters, pool heaters, fireplaces, and outdoor appliances. All installations meet current codes and include pressure testing and safety certification.",
+    "serviceSlug": "gas-pipe-testing",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "c7d2793a-70a0-402f-aff6-ade0994ca7bc",
+    "question": "How do I know if I have a gas leak?",
+    "answer": "Warning signs include: sulfur/rotten egg smell (added to natural gas), hissing sounds near gas lines, dead vegetation near gas lines, physical symptoms (headaches, nausea, dizziness), and higher than normal gas bills. If you suspect a leak, evacuate immediately and call 911, then call us.",
+    "serviceSlug": "gas-line-relocation",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "05907a78-6947-47fd-8dee-811f794bc1fd",
+    "question": "Are gas leaks dangerous?",
+    "answer": "Yes. Gas leaks pose serious risks including fire, explosion, asphyxiation, and carbon monoxide poisoning. Never ignore gas leak signs. Evacuate, don't use electrical switches or create sparks, and call for emergency help immediately.",
+    "serviceSlug": "gas-line-relocation",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "779dca3f-b0d2-41ed-8dd1-d62cf5dba86d",
+    "question": "Do you provide emergency gas leak service?",
+    "answer": "Yes, we provide 24/7 emergency gas leak detection and repair throughout Southern Arizona. Gas emergencies are always our top priority for immediate dispatch and response.",
+    "serviceSlug": "gas-line-relocation",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "79c04083-b243-4553-9f1c-c9311f298d35",
+    "question": "How often should gas lines be inspected?",
+    "answer": "We recommend professional gas line inspection every 1-2 years, or immediately if you smell gas, are buying/selling a home, or have made modifications to gas appliances or piping.",
+    "serviceSlug": "gas-line-relocation",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "cb066a8a-3b33-4881-8f5f-5d543be48b97",
+    "question": "Can you install gas lines for new appliances?",
+    "answer": "Yes! We install gas lines for ranges, dryers, water heaters, pool heaters, fireplaces, and outdoor appliances. All installations meet current codes and include pressure testing and safety certification.",
+    "serviceSlug": "gas-line-relocation",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "a29e37c6-e77d-454f-b790-3bd5a14bc678",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "commercial-plumbing",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "233305ef-3149-40f6-9a68-3e905e70c897",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "commercial-plumbing",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "4e1928ba-2394-42ef-862f-e3fee9d00159",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "commercial-plumbing",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "d431e076-ff05-4bac-abef-63a1389c6f2c",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "commercial-plumbing",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "92c7d11c-23d7-47fd-ac8d-0d393f0005e9",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "commercial-plumbing",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "cf9789e4-0489-4292-85b4-a4e323e0b25c",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "backflow-prevention",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "0a1c6d29-47a8-4f60-933d-13d41caefcdf",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "backflow-prevention",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "a4b05826-7ac4-4465-a428-b2ec0051b626",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "backflow-prevention",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "a9dd641e-889a-440e-895a-3ce6ed2e036d",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "backflow-prevention",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "108cfa81-178b-4f14-b8be-6da86d7c4f16",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "backflow-prevention",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "7e09f1f6-8415-45b6-8067-ba87aba5e3b9",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "septic-system-service",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "31d9e371-6903-47a8-8e78-e57d682cbe36",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "septic-system-service",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "e2b6c9a0-6ec2-4962-aac0-f1a3c4fdff3b",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "septic-system-service",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "8ef70296-2ee9-4dd9-b4ba-f704686bfd7c",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "septic-system-service",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "fbad40c6-e5c7-4b44-93a8-d22d22965839",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "septic-system-service",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "ab321537-d3d5-4810-a7f7-dbb21b5cf2b3",
+    "question": "Do I need a water softener in Southern Arizona?",
+    "answer": "Southern Arizona has very hard water (300+ ppm in many areas). A water softener prevents scale buildup in pipes and appliances, extends their lifespan, improves soap effectiveness, and makes water feel better on skin and hair. Most homes benefit significantly.",
+    "serviceSlug": "water-pressure-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "065ee081-20be-4158-8d51-41bf8783db5e",
+    "question": "How much does water softener installation cost?",
+    "answer": "Complete water softener installation typically costs $1,500-$3,500 depending on system capacity, features, and installation complexity. Operating costs are approximately $50-$100/year for salt and maintenance.",
+    "serviceSlug": "water-pressure-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "22d0a04d-0053-4a2a-ae76-1ddb8c5080aa",
+    "question": "What's the difference between water softeners and filtration systems?",
+    "answer": "Water softeners remove hardness minerals (calcium, magnesium) through ion exchange. Filtration systems remove sediment, chlorine, and other contaminants. Reverse osmosis provides drinking-quality water. Many homes benefit from multiple systems addressing different needs.",
+    "serviceSlug": "water-pressure-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "757f12ff-096f-4178-832a-c39b18f67000",
+    "question": "How often does a water softener need maintenance?",
+    "answer": "Water softeners need salt refills every 4-8 weeks depending on usage and tank size. Annual professional maintenance includes cleaning the brine tank, checking settings, and inspecting for salt bridges or resin bed issues.",
+    "serviceSlug": "water-pressure-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "d7596b70-e9d3-4f98-9ea7-46c6c10cdd80",
+    "question": "Will a water softener improve my water taste?",
+    "answer": "Water softeners remove minerals but don't typically improve taste. For better-tasting drinking water, we recommend a reverse osmosis system in addition to whole-house softening. RO systems remove chlorine, sediment, and other taste-affecting contaminants.",
+    "serviceSlug": "water-pressure-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "e7fcee8d-00bb-4f55-a864-a6ba7fc6dae2",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "frozen-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "fb92cd12-8069-42d8-a910-871017b108ff",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "frozen-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "39f6cabf-24d7-47ad-96dd-8b3b486d4bec",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "frozen-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "0d93b0e5-339d-4939-a6ff-f31355a4b264",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "frozen-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "65538ecd-929d-47d0-8ed7-d3f8fcc757bc",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "frozen-pipe-repair",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "2f59bbb9-3daa-4bb7-9c01-0bf352d5f424",
+    "question": "How much does drain cleaning cost?",
+    "answer": "Basic drain cleaning typically costs $150-$400 depending on clog severity and location. More complex issues requiring hydro jetting or camera inspection may cost $400-$800. We provide upfront pricing and free estimates.",
+    "serviceSlug": "plumbing-maintenance",
+    "locationSlug": null,
+    "displayOrder": 1
+  },
+  {
+    "id": "daf3dbed-5506-4bca-8c0c-c324fea20e6c",
+    "question": "How long does drain cleaning take?",
+    "answer": "Most drain cleaning jobs take 1-2 hours. Simple clogs may be cleared in 30-45 minutes, while severe blockages or main sewer line clogs requiring hydro jetting can take 2-4 hours.",
+    "serviceSlug": "plumbing-maintenance",
+    "locationSlug": null,
+    "displayOrder": 2
+  },
+  {
+    "id": "15701162-845b-4bdb-ba32-82744542ab12",
+    "question": "Will drain cleaning damage my pipes?",
+    "answer": "Professional drain cleaning performed by licensed plumbers is safe and won't damage pipes. We use appropriate methods for your pipe material and age. Hydro jetting may not be suitable for very old or damaged pipes, which we'll identify during inspection.",
+    "serviceSlug": "plumbing-maintenance",
+    "locationSlug": null,
+    "displayOrder": 3
+  },
+  {
+    "id": "ef7b2546-1990-450e-8634-90c538490f0f",
+    "question": "How can I prevent future drain clogs?",
+    "answer": "Avoid pouring grease down drains, use drain screens to catch hair and debris, don't flush anything except toilet paper, run hot water after each use, and schedule annual preventive drain cleaning to remove buildup before it causes clogs.",
+    "serviceSlug": "plumbing-maintenance",
+    "locationSlug": null,
+    "displayOrder": 4
+  },
+  {
+    "id": "883cf417-9d2a-4146-a1ac-cd37d1eafaf7",
+    "question": "What causes recurring drain clogs?",
+    "answer": "Recurring clogs often indicate deeper issues like tree root intrusion, pipe damage, severe scale buildup, or improper slope. We recommend camera inspection to identify the root cause and provide a permanent solution.",
+    "serviceSlug": "plumbing-maintenance",
+    "locationSlug": null,
+    "displayOrder": 5
+  },
+  {
+    "id": "9a94ebff-fa58-4f9f-92f6-d14afc9fd091",
+    "question": "What areas do you serve in Tucson?",
+    "answer": "We serve all of Tucson including zip codes: 85701, 85702, 85704, 85705, 85706, 85707, 85708, 85709, 85710, 85711, 85712, 85713, 85714, 85715, 85716, 85718, 85719. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 1
+  },
+  {
+    "id": "152ab7b1-1922-418e-b58b-473f95c6f8af",
+    "question": "Do you charge a trip fee to come to Tucson?",
+    "answer": "No, we do not charge trip fees for service calls in Tucson or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 2
+  },
+  {
+    "id": "10e2484e-673f-439c-b9cf-156f2085f018",
+    "question": "How quickly can you get to Tucson for an emergency?",
+    "answer": "We typically reach Tucson within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 3
+  },
+  {
+    "id": "e22c52f0-e4bb-4c82-b805-ca90ffe38357",
+    "question": "Are your plumbers licensed to work in Tucson?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Tucson.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 4
+  },
+  {
+    "id": "b34d6cd2-052f-4dbf-87d6-bd69b59ce0ac",
+    "question": "Do you provide free estimates in Tucson?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Tucson. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 5
+  },
+  {
+    "id": "aa69f03e-8099-41c6-952f-eff5f0194325",
+    "question": "What plumbing services do you offer in Tucson?",
+    "answer": "We provide comprehensive plumbing services in Tucson including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 6
+  },
+  {
+    "id": "060f55e9-7faf-4549-86e3-ada2fc9ff1e5",
+    "question": "Do you offer 24/7 service in Tucson?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Tucson and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 7
+  },
+  {
+    "id": "551bb290-7acf-4dba-86ff-76762c479259",
+    "question": "How long have you been serving Tucson?",
+    "answer": "Wood's Plumbing has been serving Tucson and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "tucson",
+    "displayOrder": 8
+  },
+  {
+    "id": "d5773c6f-91e8-444e-85cb-4a2b8a5d7236",
+    "question": "What areas do you serve in Marana?",
+    "answer": "We serve all of Marana including zip codes: 85653, 85658. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 1
+  },
+  {
+    "id": "58b59c35-b626-4ce3-be50-edede4155a92",
+    "question": "Do you charge a trip fee to come to Marana?",
+    "answer": "No, we do not charge trip fees for service calls in Marana or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 2
+  },
+  {
+    "id": "3c01d720-b1d6-45b0-9b35-27609007570f",
+    "question": "How quickly can you get to Marana for an emergency?",
+    "answer": "We typically reach Marana within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 3
+  },
+  {
+    "id": "ffe7b605-5bb0-4644-9930-87ef35d23427",
+    "question": "Are your plumbers licensed to work in Marana?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Marana.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 4
+  },
+  {
+    "id": "a4773079-653b-4af1-8748-ddf97ab0e85c",
+    "question": "Do you provide free estimates in Marana?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Marana. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 5
+  },
+  {
+    "id": "ad933407-8370-45b2-82aa-94166ac5d288",
+    "question": "What plumbing services do you offer in Marana?",
+    "answer": "We provide comprehensive plumbing services in Marana including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 6
+  },
+  {
+    "id": "0bdf8b26-e30f-49a4-9348-f51125dfe791",
+    "question": "Do you offer 24/7 service in Marana?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Marana and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 7
+  },
+  {
+    "id": "15ec70b2-a009-494e-b807-995825f1130e",
+    "question": "How long have you been serving Marana?",
+    "answer": "Wood's Plumbing has been serving Marana and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "marana",
+    "displayOrder": 8
+  },
+  {
+    "id": "872c9360-906c-49e8-ba29-319dfe709fa8",
+    "question": "What areas do you serve in Oro Valley?",
+    "answer": "We serve all of Oro Valley including zip codes: 85737, 85739, 85742, 85755. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 1
+  },
+  {
+    "id": "0d57c89d-1ec4-4e79-8a87-a288a9f1210e",
+    "question": "Do you charge a trip fee to come to Oro Valley?",
+    "answer": "No, we do not charge trip fees for service calls in Oro Valley or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 2
+  },
+  {
+    "id": "2845a59f-7b06-4e9a-8de9-3e230a7b0332",
+    "question": "How quickly can you get to Oro Valley for an emergency?",
+    "answer": "We typically reach Oro Valley within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 3
+  },
+  {
+    "id": "6b09ea39-2340-4d41-babf-987fd9ef5d4b",
+    "question": "Are your plumbers licensed to work in Oro Valley?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Oro Valley.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 4
+  },
+  {
+    "id": "0a6e3a22-d6f4-4a04-aa37-6fa8701d1475",
+    "question": "Do you provide free estimates in Oro Valley?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Oro Valley. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 5
+  },
+  {
+    "id": "df7802e5-9991-4ee4-8292-e0be9ac99cd9",
+    "question": "What plumbing services do you offer in Oro Valley?",
+    "answer": "We provide comprehensive plumbing services in Oro Valley including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 6
+  },
+  {
+    "id": "f9c296dd-b309-4cf0-91cc-eb63480679bd",
+    "question": "Do you offer 24/7 service in Oro Valley?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Oro Valley and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 7
+  },
+  {
+    "id": "29723d46-141c-440b-b989-f4366abebb7c",
+    "question": "How long have you been serving Oro Valley?",
+    "answer": "Wood's Plumbing has been serving Oro Valley and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "oro-valley",
+    "displayOrder": 8
+  },
+  {
+    "id": "fdf3ef86-a561-4d4f-a8d4-28b925e09967",
+    "question": "What areas do you serve in Catalina Foothills?",
+    "answer": "We serve all of Catalina Foothills including zip codes: 85718, 85750. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 1
+  },
+  {
+    "id": "0620b85a-bf39-4ede-ab7e-0b522b9819c5",
+    "question": "Do you charge a trip fee to come to Catalina Foothills?",
+    "answer": "No, we do not charge trip fees for service calls in Catalina Foothills or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 2
+  },
+  {
+    "id": "44a95b53-7594-40c2-a2a5-3919c4dcb0a8",
+    "question": "How quickly can you get to Catalina Foothills for an emergency?",
+    "answer": "We typically reach Catalina Foothills within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 3
+  },
+  {
+    "id": "8a093477-36b7-43fb-830c-ae7f4d4db50c",
+    "question": "Are your plumbers licensed to work in Catalina Foothills?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Catalina Foothills.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 4
+  },
+  {
+    "id": "e8de482c-67d4-4d9c-9a8a-6089666d00c2",
+    "question": "Do you provide free estimates in Catalina Foothills?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Catalina Foothills. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 5
+  },
+  {
+    "id": "32ec0b1c-a3c6-495d-8eed-82327f8e4f18",
+    "question": "What plumbing services do you offer in Catalina Foothills?",
+    "answer": "We provide comprehensive plumbing services in Catalina Foothills including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 6
+  },
+  {
+    "id": "f6549b25-1671-486e-b4cc-e209916272ac",
+    "question": "Do you offer 24/7 service in Catalina Foothills?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Catalina Foothills and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 7
+  },
+  {
+    "id": "cb46859a-9564-4629-b22f-0c5efc1c18ce",
+    "question": "How long have you been serving Catalina Foothills?",
+    "answer": "Wood's Plumbing has been serving Catalina Foothills and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "catalina-foothills",
+    "displayOrder": 8
+  },
+  {
+    "id": "85bf57fc-f9c6-4aad-afe5-0aa60c9e9dd8",
+    "question": "What areas do you serve in Green Valley?",
+    "answer": "We serve all of Green Valley including zip codes: 85614, 85622. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 1
+  },
+  {
+    "id": "7b601ecb-b2c9-4fe9-bba5-c0d7e772f850",
+    "question": "Do you charge a trip fee to come to Green Valley?",
+    "answer": "No, we do not charge trip fees for service calls in Green Valley or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 2
+  },
+  {
+    "id": "bf192898-b50c-4a0a-b81d-bec0317e33ba",
+    "question": "How quickly can you get to Green Valley for an emergency?",
+    "answer": "We typically reach Green Valley within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 3
+  },
+  {
+    "id": "edd3968d-16d6-409f-a107-49c087601c0d",
+    "question": "Are your plumbers licensed to work in Green Valley?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Green Valley.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 4
+  },
+  {
+    "id": "30b07c2b-8a9c-4443-ba83-96cbd6fead66",
+    "question": "Do you provide free estimates in Green Valley?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Green Valley. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 5
+  },
+  {
+    "id": "2f43ce6f-d997-4141-9313-81b3a892912d",
+    "question": "What plumbing services do you offer in Green Valley?",
+    "answer": "We provide comprehensive plumbing services in Green Valley including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 6
+  },
+  {
+    "id": "d6a81b27-59fe-4b62-9d7f-35bcc9f538b1",
+    "question": "Do you offer 24/7 service in Green Valley?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Green Valley and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 7
+  },
+  {
+    "id": "8fe8815b-9ab7-46b1-91a6-b6b8ddcfe070",
+    "question": "How long have you been serving Green Valley?",
+    "answer": "Wood's Plumbing has been serving Green Valley and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "green-valley",
+    "displayOrder": 8
+  },
+  {
+    "id": "0d76bde2-fba8-4d91-abc2-8d1695623390",
+    "question": "What areas do you serve in Sahuarita?",
+    "answer": "We serve all of Sahuarita including zip codes: 85629, 85614. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 1
+  },
+  {
+    "id": "5dbb78f2-ed26-4e8f-9bff-20137e7f1959",
+    "question": "Do you charge a trip fee to come to Sahuarita?",
+    "answer": "No, we do not charge trip fees for service calls in Sahuarita or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 2
+  },
+  {
+    "id": "6452de55-08ef-4a2e-9cd6-b5329a8cfa19",
+    "question": "How quickly can you get to Sahuarita for an emergency?",
+    "answer": "We typically reach Sahuarita within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 3
+  },
+  {
+    "id": "5d081e4a-2b53-4cc7-842d-0d2f23f2da26",
+    "question": "Are your plumbers licensed to work in Sahuarita?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Sahuarita.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 4
+  },
+  {
+    "id": "fd11efef-2d8d-4a8f-8bfa-0980ef827308",
+    "question": "Do you provide free estimates in Sahuarita?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Sahuarita. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 5
+  },
+  {
+    "id": "70a03559-dae9-41f3-9db5-1c0073f0c5a1",
+    "question": "What plumbing services do you offer in Sahuarita?",
+    "answer": "We provide comprehensive plumbing services in Sahuarita including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 6
+  },
+  {
+    "id": "05c56c1a-ccdb-4ff4-942f-631a3cbcc874",
+    "question": "Do you offer 24/7 service in Sahuarita?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Sahuarita and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 7
+  },
+  {
+    "id": "2afbbe37-ec05-468c-98a5-d2dad7b79372",
+    "question": "How long have you been serving Sahuarita?",
+    "answer": "Wood's Plumbing has been serving Sahuarita and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "sahuarita",
+    "displayOrder": 8
+  },
+  {
+    "id": "d7f3f937-2386-42ac-af11-d4615f31b0ee",
+    "question": "What areas do you serve in Vail?",
+    "answer": "We serve all of Vail including zip codes: 85641, 85747. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 1
+  },
+  {
+    "id": "d39c151e-190d-4ca4-8e9d-7812dc1b26e8",
+    "question": "Do you charge a trip fee to come to Vail?",
+    "answer": "No, we do not charge trip fees for service calls in Vail or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 2
+  },
+  {
+    "id": "e5df1c84-0ef8-4ac0-a4bd-6b21443adbab",
+    "question": "How quickly can you get to Vail for an emergency?",
+    "answer": "We typically reach Vail within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 3
+  },
+  {
+    "id": "eb3347a7-f4bb-4902-8885-de3fea6b35d9",
+    "question": "Are your plumbers licensed to work in Vail?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Vail.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 4
+  },
+  {
+    "id": "48a59cf8-cffc-4f1e-b706-ca2348ccacfb",
+    "question": "Do you provide free estimates in Vail?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Vail. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 5
+  },
+  {
+    "id": "b4d6031b-5bc0-47dd-a2bc-ef3a24fc76a3",
+    "question": "What plumbing services do you offer in Vail?",
+    "answer": "We provide comprehensive plumbing services in Vail including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 6
+  },
+  {
+    "id": "e202229a-f4fd-456f-8ec6-c922a2b4f337",
+    "question": "Do you offer 24/7 service in Vail?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Vail and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 7
+  },
+  {
+    "id": "735e3a2a-38b3-46de-9461-7f2789f160c8",
+    "question": "How long have you been serving Vail?",
+    "answer": "Wood's Plumbing has been serving Vail and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "vail",
+    "displayOrder": 8
+  },
+  {
+    "id": "8c7806b0-42de-415d-bd72-510b5289cd90",
+    "question": "What areas do you serve in Picture Rocks?",
+    "answer": "We serve all of Picture Rocks including zip codes: 85743. Our plumbers are familiar with the area and can reach you quickly for both emergency and scheduled service.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 1
+  },
+  {
+    "id": "968aef87-4445-443b-8242-6385a1040c38",
+    "question": "Do you charge a trip fee to come to Picture Rocks?",
+    "answer": "No, we do not charge trip fees for service calls in Picture Rocks or anywhere in Southern Arizona. You only pay for the work we perform, with upfront pricing provided before we start.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 2
+  },
+  {
+    "id": "39da5749-dcd3-44c8-b79e-312187545248",
+    "question": "How quickly can you get to Picture Rocks for an emergency?",
+    "answer": "We typically reach Picture Rocks within 60-90 minutes for emergency calls. We dispatch the nearest available plumber and prioritize critical emergencies like burst pipes and gas leaks.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 3
+  },
+  {
+    "id": "df6fa715-1a94-4364-b314-5c8eb4de940d",
+    "question": "Are your plumbers licensed to work in Picture Rocks?",
+    "answer": "Yes. All Wood's Plumbing technicians are licensed by the Arizona Registrar of Contractors (ROC #340049). We're fully licensed, bonded, and insured to work throughout Southern Arizona including Picture Rocks.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 4
+  },
+  {
+    "id": "45920482-cd5e-41fc-9612-46fc9bb3e824",
+    "question": "Do you provide free estimates in Picture Rocks?",
+    "answer": "Yes! We provide free, no-obligation estimates for all plumbing projects in Picture Rocks. For service calls, we provide upfront pricing before starting any work.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 5
+  },
+  {
+    "id": "a6c185b8-9037-4cfb-9a6b-02848e09c159",
+    "question": "What plumbing services do you offer in Picture Rocks?",
+    "answer": "We provide comprehensive plumbing services in Picture Rocks including emergency repairs, drain cleaning, water heater installation and repair, leak detection, sewer line service, repiping, fixture installation, gas line work, and water treatment systems.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 6
+  },
+  {
+    "id": "a1ee31a1-3d88-4ecd-9195-8fcc1fe0108d",
+    "question": "Do you offer 24/7 service in Picture Rocks?",
+    "answer": "Yes, Wood's Plumbing provides 24/7/365 emergency plumbing service throughout Picture Rocks and all of Southern Arizona. No extra charges for nights, weekends, or holidays.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 7
+  },
+  {
+    "id": "6be9567e-fa08-4994-a57e-959c1b986775",
+    "question": "How long have you been serving Picture Rocks?",
+    "answer": "Wood's Plumbing has been serving Picture Rocks and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "serviceSlug": null,
+    "locationSlug": "picture-rocks",
+    "displayOrder": 8
   }
 ]

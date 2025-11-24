@@ -4,19 +4,21 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { Phone, CheckCircle, Star, Wrench } from 'lucide-react';
+import { Phone, CheckCircle, Star, Wrench, ChevronDown } from 'lucide-react';
 import { trackLocationView, trackPhoneClick } from '@/lib/analytics';
 import { HeroSplit } from '@/components/HeroSplit';
 
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
+import faqsData from '@/lib/data/faqs.json';
 
 interface LocationPageProps {
   location: typeof locationsData[0];
   popularServices: typeof servicesData;
+  locationFaqs: typeof faqsData;
 }
 
-const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }) => {
+const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, locationFaqs }) => {
   useEffect(() => {
     trackLocationView(location.name);
   }, [location.name]);
@@ -46,6 +48,19 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
     }
   };
 
+  const faqSchema = locationFaqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": locationFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <div>
       <Head>
@@ -60,8 +75,20 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
         
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`Plumber in ${location.name}, AZ`} />
+        <meta name="twitter:description" content={`${location.description} Call ${BUSINESS.phone}.`} />
         
+        {/* AI Search Optimization */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="keywords" content={`plumber ${location.name}, plumbing ${location.name}, emergency plumber ${location.name}, ${location.zipCodes.join(', ')}, Southern Arizona plumber, drain cleaning ${location.name}, water heater ${location.name}`} />
+        <meta name="author" content={BUSINESS.name} />
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content={location.name} />
+        
+        {/* Schema.org Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        {faqSchema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        )}
       </Head>
 
       {/* Hero Section - Roto-Rooter Split Layout */}
@@ -244,6 +271,32 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices }
         </div>
       </section>
 
+      {/* FAQ Section */}
+      {locationFaqs.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-8">
+                Frequently Asked Questions - {location.name}
+              </h2>
+              <div className="space-y-4">
+                {locationFaqs.map((faq) => (
+                  <details key={faq.id} className="group border border-gray-200 rounded-lg bg-white">
+                    <summary className="cursor-pointer p-6 font-semibold text-lg text-navy-900 flex justify-between items-center hover:bg-gray-50">
+                      {faq.question}
+                      <ChevronDown className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-700 text-lg whitespace-pre-line">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Final CTA */}
       <section className="py-16 bg-red-500 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -281,11 +334,16 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
   }
 
   const popularServices = servicesData.filter(s => s.featured).slice(0, 12);
+  
+  const locationFaqs = faqsData
+    .filter((faq) => faq.locationSlug === location.slug)
+    .slice(0, 10);
 
   return {
     props: {
       location,
       popularServices,
+      locationFaqs,
     },
   };
 };
