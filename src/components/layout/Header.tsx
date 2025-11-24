@@ -234,10 +234,13 @@ export function Header() {
                       </Link>
 
                       {/* Service Areas with nested dropdown */}
-                      <div className="relative">
+                      <div 
+                        className="relative"
+                        onMouseEnter={() => handleMouseEnter('about-service-areas')}
+                        onMouseLeave={() => handleMouseEnter('about')}
+                      >
                         <button
                           className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all group"
-                          onMouseEnter={() => handleMouseEnter('about-service-areas')}
                         >
                           <div className="flex items-center gap-3">
                             <MapPin className="w-5 h-5 text-red-600" />
@@ -249,9 +252,7 @@ export function Header() {
                         {/* Nested Service Areas Dropdown */}
                         {activeDropdown === 'about-service-areas' && (
                           <div 
-                            className="absolute left-full top-0 ml-2 z-50"
-                            onMouseEnter={() => handleMouseEnter('about-service-areas')}
-                            onMouseLeave={() => handleMouseEnter('about')}
+                            className="absolute left-full top-0 pl-2 z-50"
                           >
                             <div className="bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[400px]">
                               <div className="p-6">
