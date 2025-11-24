@@ -8,7 +8,7 @@ import {
   Home, Zap, AlertCircle, Pipette, Sparkles, AlertTriangle, Droplets, Wind, AlertOctagon,
   RefreshCw, ThermometerSun, Shield, ClipboardCheck, ShowerHead, Gauge, Factory,
   Waves, Trash2, Search, Camera, WrenchIcon, Settings, Package, CircleAlert,
-  BadgeCheck, TreePine, Users
+  BadgeCheck, TreePine, Users, BookOpen, Info, ChevronRight
 } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
@@ -204,50 +204,94 @@ export function Header() {
               </div>
             ))}
 
-            {/* Service Areas Dropdown */}
+            {/* About Dropdown with nested Service Areas */}
             <div
               className="relative group"
             >
               <button 
                 className="text-navy-700 hover:text-red-600 font-bold text-base uppercase transition-colors flex items-center gap-1"
-                onMouseEnter={() => handleMouseEnter('service-areas')}
+                onMouseEnter={() => handleMouseEnter('about')}
               >
-                SERVICE AREAS
+                ABOUT
                 <ChevronDown className="w-4 h-4" />
               </button>
               
-              {activeDropdown === 'service-areas' && (
+              {(activeDropdown === 'about' || activeDropdown === 'about-service-areas') && (
                 <div 
                   className="absolute top-full left-1/2 transform -translate-x-1/2 pt-2 z-50"
-                  onMouseEnter={() => handleMouseEnter('service-areas')}
+                  onMouseEnter={() => handleMouseEnter('about')}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[450px]">
-                    <div className="p-8">
-                      <h3 className="font-bold text-navy-700 text-sm mb-4 uppercase flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-red-600" />
-                        We Serve Southern Arizona
-                      </h3>
-                      <div className="grid grid-cols-2 gap-3 ml-7">
-                        {locations.map((location) => (
-                          <Link
-                            key={location.slug}
-                            href={`/locations/${location.slug}`}
-                            className="text-gray-600 hover:text-red-600 text-sm transition-colors py-1.5 hover:translate-x-1 transform duration-200 flex items-center gap-2"
-                          >
-                            <MapPin className="w-3 h-3 flex-shrink-0" />
-                            <span>{location.name}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="border-t border-gray-200 px-8 py-4 bg-gradient-to-r from-gray-50 to-white rounded-b-lg">
-                      <Link 
-                        href="/locations" 
-                        className="text-red-600 hover:text-red-700 font-bold text-sm flex items-center gap-2 group"
+                  <div className="bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[350px]">
+                    <div className="p-6 space-y-1">
+                      {/* About Us Link */}
+                      <Link
+                        href="/about"
+                        className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all group"
                       >
-                        <span>View All Service Areas</span>
-                        <span className="group-hover:translate-x-1 transform transition-transform">→</span>
+                        <Info className="w-5 h-5 text-red-600" />
+                        <span className="font-semibold text-sm">About Us</span>
+                      </Link>
+
+                      {/* Service Areas with nested dropdown */}
+                      <div className="relative">
+                        <button
+                          className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all group"
+                          onMouseEnter={() => handleMouseEnter('about-service-areas')}
+                        >
+                          <div className="flex items-center gap-3">
+                            <MapPin className="w-5 h-5 text-red-600" />
+                            <span className="font-semibold text-sm">Service Areas</span>
+                          </div>
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+
+                        {/* Nested Service Areas Dropdown */}
+                        {activeDropdown === 'about-service-areas' && (
+                          <div 
+                            className="absolute left-full top-0 ml-2 z-50"
+                            onMouseEnter={() => handleMouseEnter('about-service-areas')}
+                            onMouseLeave={() => handleMouseEnter('about')}
+                          >
+                            <div className="bg-white border border-gray-200 rounded-lg shadow-2xl min-w-[400px]">
+                              <div className="p-6">
+                                <h4 className="font-bold text-navy-700 text-xs mb-3 uppercase">
+                                  We Serve Southern Arizona
+                                </h4>
+                                <div className="grid grid-cols-2 gap-2">
+                                  {locations.map((location) => (
+                                    <Link
+                                      key={location.slug}
+                                      href={`/locations/${location.slug}`}
+                                      className="text-gray-600 hover:text-red-600 text-sm transition-colors py-2 hover:translate-x-1 transform duration-200 flex items-center gap-2"
+                                    >
+                                      <MapPin className="w-3 h-3 flex-shrink-0" />
+                                      <span>{location.name}</span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                              <div className="border-t border-gray-200 px-6 py-3 bg-gradient-to-r from-gray-50 to-white rounded-b-lg">
+                                <Link 
+                                  href="/locations" 
+                                  className="text-red-600 hover:text-red-700 font-bold text-sm flex items-center gap-2 group"
+                                >
+                                  <span>View All Service Areas</span>
+                                  <span className="group-hover:translate-x-1 transform transition-transform">→</span>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Blog Link */}
+                      <Link
+                        href="/blog"
+                        className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all group"
+                      >
+                        <BookOpen className="w-5 h-5 text-red-600" />
+                        <span className="font-semibold text-sm">Blog & Tips</span>
                       </Link>
                     </div>
                   </div>
@@ -329,18 +373,23 @@ export function Header() {
                 </Link>
               </li>
               <li>
+                <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
+                  ABOUT US
+                </Link>
+              </li>
+              <li>
                 <Link href="/locations" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
                   SERVICE AREAS
                 </Link>
               </li>
               <li>
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
-                  CONTACT
+                <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
+                  BLOG
                 </Link>
               </li>
               <li>
-                <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
-                  BLOG
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
+                  CONTACT
                 </Link>
               </li>
               <li className="pt-2 border-t border-gray-200">
