@@ -50,6 +50,14 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Hand-Crafted Content:** 8 priority services and 2 locations (Tucson, Marana) have unique longDescription, serviceSteps, neighborhoods, and serviceHighlights
 - **Canonical URLs:** All alias pages point to canonical slugs for proper SEO
 
+**SEO Content Expansion (Nov 2025):**
+- **All 66 Services** now have 500+ words of unique, SEO-optimized content
+- **Content Sections:** Each service includes longDescription, benefits array, process steps, commonIssues array, arizonaContext paragraph, and 3 service-specific FAQs
+- **Arizona-Specific Context:** All content includes regional factors (hard water 15-25 grains/gallon, extreme heat, monsoon impacts, HOA considerations)
+- **Category-Specific Templates:** Content generated using templates tailored to each service category (water-heater, sewer, gas, leak, repair, plumbing-services, additional-services)
+- **Schema.org Enhancement:** Service pages now include combined FAQPage markup from both embedded FAQs and external faqs.json
+- **Content Generation Script:** `scripts/expand-service-content.ts` provides automated content expansion capability
+
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
 - The project structure is organized for scalability and maintainability, separating pages, components, data, and utilities.
