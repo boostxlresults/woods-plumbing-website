@@ -50,13 +50,23 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Hand-Crafted Content:** 8 priority services and 2 locations (Tucson, Marana) have unique longDescription, serviceSteps, neighborhoods, and serviceHighlights
 - **Canonical URLs:** All alias pages point to canonical slugs for proper SEO
 
-**SEO Content Expansion (Nov 2025):**
-- **All 66 Services** now have 500+ words of unique, SEO-optimized content
-- **Content Sections:** Each service includes longDescription, benefits array, process steps, commonIssues array, arizonaContext paragraph, and 3 service-specific FAQs
-- **Arizona-Specific Context:** All content includes regional factors (hard water 15-25 grains/gallon, extreme heat, monsoon impacts, HOA considerations)
-- **Category-Specific Templates:** Content generated using templates tailored to each service category (water-heater, sewer, gas, leak, repair, plumbing-services, additional-services)
-- **Schema.org Enhancement:** Service pages now include combined FAQPage markup from both embedded FAQs and external faqs.json
-- **Content Generation Script:** `scripts/expand-service-content.ts` provides automated content expansion capability
+**SEO Content Expansion V2 (Nov 2025):**
+- **All 66 Services** now have 1,630-1,887 words of unique, SEO-optimized content (average: 1,785 words)
+- **Enhanced Content Sections:** Each service includes:
+  - Extended longDescription (800+ words with Arizona-specific context)
+  - 13 benefits per service (6 base + 7 category-specific)
+  - 5-6 detailed process steps
+  - 6 service-specific FAQs with comprehensive answers
+  - 10 common issues/warning signs
+  - Arizona-specific context paragraph
+  - "Why Choose Us" section with 6 compelling reasons
+  - Warranty & guarantee information
+  - Pricing factors affecting service cost
+- **Category-Specific Templates:** Content generated using templates tailored to 12 service categories (gas, water-heater, sewer, drain, leak, pipe, water-treatment, fixture, commercial, emergency, inspection, hydro-jetting)
+- **Schema.org Enhancement:** Service pages include combined FAQPage markup from embedded and external FAQs
+- **Content Generation Scripts:** 
+  - `scripts/expand-service-content.ts` - Original expansion script
+  - `scripts/expand-service-content-v2.ts` - Enhanced expansion with all new sections
 
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
