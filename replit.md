@@ -40,6 +40,15 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **About Page:** Business information.
 - **Emergency Banner:** Sticky CTA for emergency services.
 - **Popular Services Widget:** Featured services in the footer.
+- **Category Pages:** 7 category overview pages (gas-services, sewer, leak, water-heater, repair, plumbing-services, additional-services) with filtered service listings, SEO meta tags, Schema.org markup, and FAQ sections.
+
+**Legacy URL Preservation (SEO Migration):**
+- **17 Priority Legacy URLs** mapped and preserved for SEO value
+- **URL Alias System:** Services and locations support multiple slugs via "aliases" array in JSON data
+  - Service aliases: gas-pipe-leaks, gas-pipe-installation, repiping, clogged-drain-services, emergency-plumber-in-tucson
+  - Location aliases: plumbers-tucson-az, marana-az
+- **Hand-Crafted Content:** 8 priority services and 2 locations (Tucson, Marana) have unique longDescription, serviceSteps, neighborhoods, and serviceHighlights
+- **Canonical URLs:** All alias pages point to canonical slugs for proper SEO
 
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
