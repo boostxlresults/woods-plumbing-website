@@ -114,10 +114,21 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
     "description": service.shortDescription
   };
 
-  const faqSchema = serviceFaqs.length > 0 ? {
+  const allFaqs = [
+    ...((service as any).faqs || []).map((faq: { question: string; answer: string }) => ({
+      question: faq.question,
+      answer: faq.answer
+    })),
+    ...serviceFaqs.map(faq => ({
+      question: faq.question,
+      answer: faq.answer
+    }))
+  ];
+
+  const faqSchema = allFaqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": serviceFaqs.map(faq => ({
+    "mainEntity": allFaqs.map(faq => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -288,11 +299,41 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
               </div>
             )}
 
+            {/* Common Issues Section */}
+            {(service as any).commonIssues && Array.isArray((service as any).commonIssues) && (service as any).commonIssues.length > 0 && (
+              <div className="mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+                  Signs You Need {service.name}
+                </h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  Don&apos;t ignore these warning signs. Early action prevents costly repairs and property damage:
+                </p>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {(service as any).commonIssues.map((issue: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{issue}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Arizona-Specific Context */}
+            {(service as any).arizonaContext && (
+              <div className="mb-12 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <h3 className="font-display text-xl font-bold text-navy-900 mb-3">
+                  {service.name} in Southern Arizona
+                </h3>
+                <p className="text-gray-700 text-lg">{(service as any).arizonaContext}</p>
+              </div>
+            )}
+
             {/* Process / How It Works */}
             {service.process && Array.isArray(service.process) && service.process.length > 0 && (
               <div className="mb-12 bg-gray-50 rounded-lg p-8">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-                  Service Done Right
+                  Our {service.name} Process
                 </h2>
                 <p className="text-lg text-gray-700 mb-8">
                   Unlike many plumbing companies, we don&apos;t just fix the immediate problem. We provide complete solutions that ensure lasting results.
@@ -338,15 +379,28 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
         </div>
       </section>
 
-      {/* FAQ Section */}
-      {serviceFaqs.length > 0 && (
+      {/* FAQ Section - Combines external FAQs and service-embedded FAQs */}
+      {(serviceFaqs.length > 0 || ((service as any).faqs && (service as any).faqs.length > 0)) && (
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-8">
-                Frequently Asked Questions
+                Frequently Asked Questions About {service.name}
               </h2>
               <div className="space-y-4">
+                {/* Service-embedded FAQs first */}
+                {(service as any).faqs && (service as any).faqs.map((faq: { question: string; answer: string }, index: number) => (
+                  <details key={`service-faq-${index}`} className="group border border-gray-200 rounded-lg">
+                    <summary className="cursor-pointer p-6 font-semibold text-lg text-navy-900 flex justify-between items-center hover:bg-gray-50">
+                      {faq.question}
+                      <ChevronDown className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-700 text-lg whitespace-pre-line">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+                {/* External FAQs from faqs.json */}
                 {serviceFaqs.map((faq) => (
                   <details key={faq.id} className="group border border-gray-200 rounded-lg">
                     <summary className="cursor-pointer p-6 font-semibold text-lg text-navy-900 flex justify-between items-center hover:bg-gray-50">
