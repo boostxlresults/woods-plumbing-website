@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
-import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users } from 'lucide-react';
+import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users, DollarSign } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
 
 import servicesData from '@/lib/data/services.json';
@@ -351,6 +351,64 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {/* Why Choose Us Section */}
+            {(service as any).whyChooseUs && Array.isArray((service as any).whyChooseUs) && (service as any).whyChooseUs.length > 0 && (
+              <div className="mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+                  Why Choose {BUSINESS.name} for {service.name}?
+                </h2>
+                <div className="space-y-4">
+                  {(service as any).whyChooseUs.map((reason: string, index: number) => {
+                    const [title, ...descParts] = reason.split(': ');
+                    const description = descParts.join(': ');
+                    return (
+                      <div key={index} className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center">
+                          <CheckCircle className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-navy-900">{title}</h3>
+                          {description && <p className="text-gray-700 mt-1">{description}</p>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Pricing Factors Section */}
+            {(service as any).pricingFactors && Array.isArray((service as any).pricingFactors) && (service as any).pricingFactors.length > 0 && (
+              <div className="mb-12 bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h3 className="font-display text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                  <DollarSign className="w-6 h-6 text-amber-600" />
+                  What Affects {service.name} Cost?
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  We provide free estimates with upfront pricing. Here are factors that influence the cost of your project:
+                </p>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {(service as any).pricingFactors.map((factor: string, index: number) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-amber-600 mt-1">•</span>
+                      {factor}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Warranty Information Section */}
+            {(service as any).warrantyInfo && (
+              <div className="mb-12 bg-green-50 border border-green-200 rounded-lg p-6">
+                <h3 className="font-display text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                  <Shield className="w-6 h-6 text-green-600" />
+                  Our Warranty & Guarantee
+                </h3>
+                <p className="text-gray-700 text-lg">{(service as any).warrantyInfo}</p>
               </div>
             )}
           </div>
