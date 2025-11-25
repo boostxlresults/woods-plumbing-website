@@ -41,7 +41,10 @@
     "featured": true,
     "displayOrder": 1,
     "createdAt": "2025-11-19T16:22:44.837Z",
-    "updatedAt": "2025-11-25T14:57:48.938Z"
+    "updatedAt": "2025-11-25T14:57:48.938Z",
+    "aliases": [
+      "emergency-plumber-in-tucson"
+    ]
   },
   {
     "id": "4bb1b170-2143-4af0-a481-cab546bc9785",
@@ -657,7 +660,10 @@
     "featured": true,
     "displayOrder": 15,
     "createdAt": "2025-11-19T16:22:45.781Z",
-    "updatedAt": "2025-11-25T14:57:48.943Z"
+    "updatedAt": "2025-11-25T14:57:48.943Z",
+    "aliases": [
+      "clogged-drain-services"
+    ]
   },
   {
     "id": "401271b0-54a9-4ca8-9b30-6fad46f3b265",
@@ -1933,7 +1939,10 @@
     "featured": false,
     "displayOrder": 44,
     "createdAt": "2025-11-19T16:22:47.702Z",
-    "updatedAt": "2025-11-25T14:57:48.944Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z",
+    "aliases": [
+      "repiping"
+    ]
   },
   {
     "id": "3ce602f4-03c5-4f40-9c56-1726a1107d96",
@@ -2373,7 +2382,10 @@
     "featured": false,
     "displayOrder": 54,
     "createdAt": "2025-11-19T16:22:48.359Z",
-    "updatedAt": "2025-11-25T14:57:48.944Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z",
+    "aliases": [
+      "gas-pipe-installation"
+    ]
   },
   {
     "id": "b67a8bfe-00b4-4bdb-ba73-07107ec865ad",
@@ -2461,7 +2473,10 @@
     "featured": false,
     "displayOrder": 56,
     "createdAt": "2025-11-19T16:22:48.493Z",
-    "updatedAt": "2025-11-25T14:57:48.944Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z",
+    "aliases": [
+      "gas-pipe-leaks"
+    ]
   },
   {
     "id": "94835a73-d259-4d74-ae0c-47af85de62d6",

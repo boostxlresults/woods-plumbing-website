@@ -193,57 +193,74 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - Hand-Crafted Content */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-              Plumber in {location.name}, AZ
+              Your Trusted Plumber in {location.name}, AZ
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-4">
-                In {location.name}, where plumbing needs are as diverse as the residents, {BUSINESS.name} stands out for our commitment to excellence. We&apos;re not just another plumbing company in Pima County; we&apos;re your neighborhood problem-solvers, with skilled plumbers available 24/7 to ensure your pipes, drains, and water systems function flawlessly.
-              </p>
-              <p className="mb-4">
-                Trusted and recommended since {BUSINESS.trust.founded}, {BUSINESS.name} is the obvious choice when people in {location.name} need a professional plumber. More families and businesses depend on Wood&apos;s Plumbing than any other local plumbing company. When you work with us, you get:
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Same day service</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>24/7 availability</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>No additional charges for nights, weekends, or holidays</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Free onsite and upfront cost estimates</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Highly trained, insured, and experienced plumbers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Industry-leading equipment</span>
-                </li>
-              </ul>
-              <p className="mb-6">
-                For service with a smile from the most dependable plumbers in {location.name}, <Link href="/contact" className="text-red-600 hover:text-red-700 font-semibold">reach out through our online scheduling form</Link> or call our round-the-clock service line at <a href={`tel:${BUSINESS.phone}`} className="text-red-600 hover:text-red-700 font-semibold">{BUSINESS.phone}</a>.
-              </p>
+            
+            {location.longDescription ? (
+              <div className="prose prose-lg max-w-none text-gray-700">
+                {location.longDescription.split('\n\n').map((paragraph, idx) => (
+                  <p key={idx} className="mb-4">{paragraph}</p>
+                ))}
+              </div>
+            ) : (
+              <div className="prose prose-lg max-w-none text-gray-700">
+                <p className="mb-4">
+                  In {location.name}, where plumbing needs are as diverse as the residents, {BUSINESS.name} stands out for our commitment to excellence. We&apos;re your neighborhood problem-solvers, with skilled plumbers available 24/7 to ensure your pipes, drains, and water systems function flawlessly.
+                </p>
+                <p className="mb-4">
+                  Trusted and recommended since {BUSINESS.trust.founded}, {BUSINESS.name} is the obvious choice when people in {location.name} need a professional plumber.
+                </p>
+              </div>
+            )}
+            
+            {location.serviceHighlights && location.serviceHighlights.length > 0 && (
+              <div className="mt-8">
+                <h3 className="font-display text-2xl font-bold text-navy-900 mb-4">
+                  Why {location.name} Chooses Wood&apos;s Plumbing
+                </h3>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {location.serviceHighlights.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {location.neighborhoods && location.neighborhoods.length > 0 && (
+              <div className="mt-8 p-6 bg-white rounded-lg border border-gray-200">
+                <h3 className="font-display text-xl font-bold text-navy-900 mb-3">
+                  Neighborhoods We Serve in {location.name}
+                </h3>
+                <p className="text-gray-700">
+                  {location.neighborhoods.join(' • ')}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
-              <h3 className="text-2xl font-bold text-navy-900 mb-4 mt-8">
-                Serving {location.name} Zip Codes
-              </h3>
-              <p>
-                We proudly serve all zip codes in {location.name} including: {location.zipCodes.join(', ')}.
-              </p>
-            </div>
+      {/* Zip Codes Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="font-display text-2xl font-bold text-navy-900 mb-4">
+              Serving {location.name} Zip Codes
+            </h3>
+            <p className="text-gray-700 text-lg">
+              We proudly serve all zip codes in {location.name} including: <span className="font-semibold">{location.zipCodes.join(', ')}</span>
+            </p>
+            <p className="mt-4">
+              For service from the most dependable plumbers in {location.name}, <Link href="/contact" className="text-red-600 hover:text-red-700 font-semibold">schedule online</Link> or call <a href={`tel:${BUSINESS.phone}`} className="text-red-600 hover:text-red-700 font-semibold">{BUSINESS.phone}</a>.
+            </p>
           </div>
         </div>
       </section>
@@ -319,15 +336,28 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = locationsData.map((location) => ({
-    params: { slug: location.slug },
-  }));
+  const paths: { params: { slug: string } }[] = [];
+  
+  locationsData.forEach((location) => {
+    paths.push({ params: { slug: location.slug } });
+    if (location.aliases) {
+      location.aliases.forEach((alias: string) => {
+        paths.push({ params: { slug: alias } });
+      });
+    }
+  });
 
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params }) => {
-  const location = locationsData.find((l) => l.slug === params?.slug);
+  const slug = params?.slug as string;
+  
+  let location = locationsData.find((l) => l.slug === slug);
+  
+  if (!location) {
+    location = locationsData.find((l) => l.aliases?.includes(slug));
+  }
 
   if (!location) {
     return { notFound: true };
@@ -336,7 +366,7 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
   const popularServices = servicesData.filter(s => s.featured).slice(0, 12);
   
   const locationFaqs = faqsData
-    .filter((faq) => faq.locationSlug === location.slug)
+    .filter((faq) => faq.locationSlug === location!.slug)
     .slice(0, 10);
 
   return {

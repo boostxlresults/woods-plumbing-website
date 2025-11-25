@@ -417,26 +417,39 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = servicesData.map((service) => ({
-    params: { slug: service.slug },
-  }));
+  const paths: { params: { slug: string } }[] = [];
+  
+  servicesData.forEach((service) => {
+    paths.push({ params: { slug: service.slug } });
+    if (service.aliases) {
+      service.aliases.forEach((alias: string) => {
+        paths.push({ params: { slug: alias } });
+      });
+    }
+  });
 
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<ServicePageProps> = async ({ params }) => {
-  const service = servicesData.find((s) => s.slug === params?.slug);
+  const slug = params?.slug as string;
+  
+  let service = servicesData.find((s) => s.slug === slug);
+  
+  if (!service) {
+    service = servicesData.find((s) => s.aliases?.includes(slug));
+  }
 
   if (!service) {
     return { notFound: true };
   }
 
   const relatedServices = servicesData
-    .filter((s) => s.id !== service.id)
+    .filter((s) => s.id !== service!.id)
     .slice(0, 8);
 
   const serviceFaqs = faqsData
-    .filter((faq) => faq.serviceSlug === service.slug)
+    .filter((faq) => faq.serviceSlug === service!.slug)
     .slice(0, 8);
 
   return {

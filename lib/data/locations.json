@@ -4,25 +4,107 @@
     "name": "Tucson",
     "slug": "tucson",
     "description": "Professional plumbing services throughout Tucson, AZ. Serving all neighborhoods with 24/7 emergency response.",
-    "zipCodes": ["85701", "85702", "85704", "85705", "85706", "85707", "85708", "85709", "85710", "85711", "85712", "85713", "85714", "85715", "85716", "85718", "85719"],
+    "zipCodes": [
+      "85701",
+      "85702",
+      "85704",
+      "85705",
+      "85706",
+      "85707",
+      "85708",
+      "85709",
+      "85710",
+      "85711",
+      "85712",
+      "85713",
+      "85714",
+      "85715",
+      "85716",
+      "85718",
+      "85719"
+    ],
     "featured": true,
-    "displayOrder": 1
+    "displayOrder": 1,
+    "aliases": [
+      "plumbers-tucson-az"
+    ],
+    "longDescription": "As Tucson's most trusted plumbing company for over 46 years, Wood's Plumbing has built our reputation on reliability, honest pricing, and expert workmanship. From the historic neighborhoods of downtown to the newer developments on the east side, we know Tucson plumbing inside and out.\n\nTucson's unique desert climate creates specific plumbing challenges. Hard water from local aquifers causes mineral buildup that destroys water heaters and clogs fixtures. Summer monsoons can overwhelm drainage systems and flood basements. The extreme heat puts stress on outdoor plumbing and irrigation systems. Our technicians are experts in addressing these regional issues.\n\nWe service every Tucson neighborhood: Midtown, Sam Hughes, El Presidio, Barrio Historico, Armory Park, West University, Iron Horse, Civano, Rillito, Flowing Wells, and everywhere in between. Whether you're in a 1920s bungalow with original plumbing or a modern custom home in the foothills, we have the expertise to keep your water flowing.\n\nOur fleet is positioned throughout Tucson for rapid emergency response. When pipes burst at 3 AM or sewage backs up during a dinner party, we're there fast—no extra charges for nights, weekends, or holidays. That's the Wood's Plumbing promise.",
+    "neighborhoods": [
+      "Downtown Tucson",
+      "Midtown",
+      "Sam Hughes",
+      "El Presidio",
+      "Barrio Historico",
+      "Armory Park",
+      "West University",
+      "Iron Horse",
+      "Civano",
+      "Rillito",
+      "Flowing Wells",
+      "The Foothills",
+      "East Tucson",
+      "Northwest Tucson",
+      "South Tucson"
+    ],
+    "serviceHighlights": [
+      "24/7 emergency plumbing with no extra after-hours charges",
+      "Hard water treatment specialists for Tucson's mineral-rich water",
+      "Monsoon season drainage solutions and flood prevention",
+      "Historic home plumbing experts—knowledgeable about older systems",
+      "Commercial plumbing for Tucson businesses of all sizes",
+      "Licensed gas line installation and repair",
+      "Water heater specialists—traditional and tankless systems",
+      "Sewer camera inspection and trenchless repair"
+    ]
   },
   {
     "id": "2",
     "name": "Marana",
     "slug": "marana",
     "description": "Expert plumbing services in Marana, AZ. Fast response times for residential and commercial properties.",
-    "zipCodes": ["85653", "85658"],
+    "zipCodes": [
+      "85653",
+      "85658"
+    ],
     "featured": true,
-    "displayOrder": 2
+    "displayOrder": 2,
+    "aliases": [
+      "marana-az"
+    ],
+    "longDescription": "Wood's Plumbing has been serving Marana since before it was one of Arizona's fastest-growing towns. From our headquarters right here in Marana, we've watched this community grow from a quiet agricultural area to a thriving suburb—and we've been here to handle the plumbing needs every step of the way.\n\nMarana's rapid development brings unique plumbing considerations. New construction homes need to be connected to municipal water and sewer systems. Master-planned communities like Dove Mountain, Gladden Farms, and Continental Ranch require service from contractors who understand modern plumbing systems and HOA requirements. We work with builders, homeowners, and property managers throughout Marana.\n\nOur location on West Ina Road means Marana calls get priority response. We're not driving in from Tucson or Phoenix—we're your neighbors, and we can reach most Marana addresses in 15-20 minutes. For emergencies, that proximity makes a real difference in preventing water damage and minimizing disruption.\n\nWhether you need routine drain cleaning in Gladden Farms, a water heater replacement in Dove Mountain, or emergency sewer service in Continental Ranch, Wood's Plumbing is Marana's home-town plumber. We're proud to be part of this growing community and committed to providing the responsive, reliable service Marana families deserve.",
+    "neighborhoods": [
+      "Dove Mountain",
+      "Gladden Farms",
+      "Continental Ranch",
+      "Tortolita",
+      "Saguaro Bloom",
+      "Marana Main",
+      "Tangerine Crossing",
+      "Silverbell Estates",
+      "Picture Rocks Road Area"
+    ],
+    "serviceHighlights": [
+      "Headquarters in Marana—fastest response times in town",
+      "New construction plumbing for growing developments",
+      "HOA-compliant service for master-planned communities",
+      "Well system service for rural Marana properties",
+      "Septic system pumping and maintenance",
+      "Commercial plumbing for Marana businesses",
+      "Emergency service with 15-20 minute typical response",
+      "Honest pricing—the same rates whether you're residential or commercial"
+    ]
   },
   {
     "id": "3",
     "name": "Oro Valley",
     "slug": "oro-valley",
     "description": "Trusted plumbing contractor serving Oro Valley with comprehensive residential and commercial services.",
-    "zipCodes": ["85737", "85739", "85742", "85755"],
+    "zipCodes": [
+      "85737",
+      "85739",
+      "85742",
+      "85755"
+    ],
     "featured": true,
     "displayOrder": 3
   },
@@ -31,7 +113,10 @@
     "name": "Catalina Foothills",
     "slug": "catalina-foothills",
     "description": "Premium plumbing services for Catalina Foothills homes and businesses since 1979.",
-    "zipCodes": ["85718", "85750"],
+    "zipCodes": [
+      "85718",
+      "85750"
+    ],
     "featured": true,
     "displayOrder": 4
   },
@@ -40,7 +125,10 @@
     "name": "Green Valley",
     "slug": "green-valley",
     "description": "Reliable plumbing services in Green Valley, AZ. Specializing in senior community plumbing needs.",
-    "zipCodes": ["85614", "85622"],
+    "zipCodes": [
+      "85614",
+      "85622"
+    ],
     "featured": false,
     "displayOrder": 5
   },
@@ -49,7 +137,10 @@
     "name": "Sahuarita",
     "slug": "sahuarita",
     "description": "Full-service plumbing for Sahuarita residents. Emergency and scheduled service available.",
-    "zipCodes": ["85629", "85614"],
+    "zipCodes": [
+      "85629",
+      "85614"
+    ],
     "featured": false,
     "displayOrder": 6
   },
@@ -58,7 +149,10 @@
     "name": "Vail",
     "slug": "vail",
     "description": "Professional plumbing services in Vail, AZ. Serving residential and commercial customers.",
-    "zipCodes": ["85641", "85747"],
+    "zipCodes": [
+      "85641",
+      "85747"
+    ],
     "featured": false,
     "displayOrder": 7
   },
@@ -67,7 +161,9 @@
     "name": "Picture Rocks",
     "slug": "picture-rocks",
     "description": "Experienced plumbing contractor serving Picture Rocks and surrounding areas.",
-    "zipCodes": ["85743"],
+    "zipCodes": [
+      "85743"
+    ],
     "featured": false,
     "displayOrder": 8
   }
