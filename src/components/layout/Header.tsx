@@ -333,8 +333,25 @@ export function Header() {
               </a>
             </div>
 
-            {/* Mobile: Call Button + Hamburger */}
-            <div className="lg:hidden flex items-center gap-2">
+            {/* Mobile: Hamburger + Call Button */}
+            <div className="lg:hidden flex items-center gap-3">
+              {/* Larger Hamburger Menu */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-navy-700 hover:text-red-600 flex flex-col justify-center items-center"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-9 h-9" />
+                ) : (
+                  <div className="flex flex-col gap-[6px]">
+                    <span className="block w-8 h-[4px] bg-navy-700 rounded-full"></span>
+                    <span className="block w-8 h-[4px] bg-navy-700 rounded-full"></span>
+                    <span className="block w-8 h-[4px] bg-navy-700 rounded-full"></span>
+                  </div>
+                )}
+              </button>
+
               <a 
                 href={`tel:${BUSINESS.phone}`} 
                 onClick={() => trackPhoneClick('header')}
@@ -347,14 +364,6 @@ export function Header() {
                   <span>CALL</span>
                 </Button>
               </a>
-              
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-navy-700 hover:text-red-600"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
             </div>
           </div>
         </div>
