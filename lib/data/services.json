@@ -4,44 +4,44 @@
     "name": "Emergency Plumbing",
     "slug": "emergency-plumbing",
     "shortDescription": "24/7 emergency plumbing services for urgent repairs, burst pipes, and plumbing disasters.",
-    "longDescription": "24/7 emergency plumbing services for urgent repairs, burst pipes, and plumbing disasters. Wood's Plumbing Enterprises LLC provides 24/7 emergency response throughout Southern Arizona with no extra charges for after-hours service. Our licensed emergency plumbers arrive quickly in fully stocked trucks, ready to handle urgent emergency plumbing situations. With over 46 years of experience serving Tucson, Marana, Oro Valley, and surrounding areas, we stop damage fast and restore your plumbing system safely.",
+    "longDescription": "When plumbing disasters strike at 2 AM or during holiday gatherings, Wood's Plumbing is your lifeline. Our emergency plumbers understand that every minute counts when water is flooding your home or sewage is backing up into your bathroom. We maintain a dedicated fleet of fully-equipped service vehicles stationed throughout Southern Arizona, enabling response times that minimize damage and restore normalcy quickly.\n\nUnlike companies that charge premium rates for after-hours calls, we believe emergencies shouldn't cost you extra. Our transparent pricing applies 24/7, whether it's a Sunday morning or New Year's Eve. Our technicians carry specialized equipment including high-powered extraction tools, pipe freezing kits for live-line repairs, and thermal imaging cameras to locate hidden leaks behind walls.\n\nFrom burst supply lines flooding basements to failed water heaters threatening electrical systems, our emergency team has handled every scenario during 46+ years serving Tucson, Marana, Oro Valley, and surrounding communities. We coordinate with restoration companies when needed and document damage for insurance claims. When seconds matter, trust the plumber who answers the phone and shows up fast.",
     "icon": "AlertCircle",
     "benefits": [
-      "24/7 emergency response availability",
-      "No extra charges for nights, weekends, holidays",
-      "Rapid dispatch and response times",
-      "Fully stocked emergency service vehicles",
-      "Licensed and experienced emergency plumbers",
-      "Stop damage and prevent further issues",
-      "Upfront emergency pricing",
-      "46+ years serving Southern Arizona"
+      "Guaranteed response within 60 minutes for critical emergencies",
+      "Same rates 24/7—no overtime or holiday surcharges ever",
+      "GPS-dispatched trucks positioned throughout Southern Arizona",
+      "Pipe freezing technology for live-line repairs without water shutoff",
+      "Thermal imaging cameras locate hidden leaks behind walls and floors",
+      "Direct coordination with water damage restoration companies",
+      "Insurance documentation and photography for claims assistance",
+      "46 years of emergency experience across 50,000+ service calls"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for emergency plumbing. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Immediate Phone Triage",
+        "description": "Our emergency dispatcher answers your call within seconds, asks targeted questions to assess severity, and provides immediate guidance to minimize damage while help is en route—like where to find your main shutoff valve."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your emergency plumbing needs."
+        "title": "Rapid GPS Dispatch",
+        "description": "We locate the nearest available technician using real-time GPS tracking, routing them directly to your location. Most emergency calls see a plumber on-site within 30-60 minutes."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Damage Mitigation First",
+        "description": "Before discussing costs, our plumber focuses on stopping active water flow, preventing electrical hazards, and protecting your property from further damage. Safety and damage control come first."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the emergency plumbing using professional techniques, quality materials, and industry best practices."
+        "title": "Transparent Emergency Pricing",
+        "description": "Once the immediate crisis is contained, we provide a clear quote for permanent repair. No surprises—the price we quote is the price you pay, regardless of how long the repair takes."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Complete Restoration & Documentation",
+        "description": "We complete the repair, test all systems, document the damage and repairs with photos for your insurance, and ensure your plumbing is fully functional before leaving."
       }
     ],
     "featured": true,
     "displayOrder": 1,
     "createdAt": "2025-11-19T16:22:44.837Z",
-    "updatedAt": "2025-11-24T23:41:43.592Z"
+    "updatedAt": "2025-11-25T14:57:48.938Z"
   },
   {
     "id": "4bb1b170-2143-4af0-a481-cab546bc9785",
@@ -620,44 +620,44 @@
     "name": "Drain Cleaning",
     "slug": "drain-cleaning",
     "shortDescription": "Professional drain cleaning for kitchen, bathroom, and floor drains.",
-    "longDescription": "Professional drain cleaning for kitchen, bathroom, and floor drains. Wood's Plumbing uses professional-grade drain and sewer equipment including power snakes, hydro-jetting systems, and video camera inspection to provide expert drain cleaning services. Our licensed plumbers serve homes and businesses throughout Tucson and Southern Arizona. We clear stubborn clogs, remove tree roots, and provide lasting solutions—not just temporary fixes.",
+    "longDescription": "Slow drains and recurring clogs aren't just inconvenient—they're warning signs of larger problems developing in your plumbing system. Wood's Plumbing uses advanced drain cleaning technology that goes far beyond the chemical solutions and basic snakes that only provide temporary relief. Our approach eliminates the clog AND the conditions that caused it.\n\nWe begin every drain cleaning with a thorough camera inspection to understand exactly what we're dealing with. Is it grease buildup from kitchen use? Tree roots infiltrating your sewer line? Years of mineral scale narrowing your pipes? Each situation requires a different solution. Our hydro-jetting equipment delivers up to 4,000 PSI of water pressure, scouring pipe walls clean and restoring full flow capacity—something no chemical or cable machine can achieve.\n\nFor kitchen drains plagued by grease, bathroom drains clogged with hair and soap scum, or main sewer lines blocked by debris, our technicians have the right tool for every situation. We also identify potential problems before they become emergencies, like developing root intrusions or deteriorating pipe sections. Serving Tucson and Southern Arizona for over four decades, we've cleared millions of feet of drains and can handle everything from a slow bathroom sink to a completely blocked commercial sewer main.",
     "icon": "Wind",
     "benefits": [
-      "Professional drain and sewer equipment",
-      "Hydro-jetting for stubborn blockages",
-      "Video camera inspection available",
-      "Clear all types of clogs and blockages",
-      "Tree root removal services",
-      "Preventive maintenance programs",
-      "Same-day service available",
-      "Guaranteed workmanship"
+      "HD camera inspection reveals the exact cause and location of clogs",
+      "Hydro-jetting at 4,000 PSI scours pipes clean—not just punches through",
+      "Removes grease, roots, mineral scale, and years of buildup completely",
+      "Identifies developing problems before they cause emergencies",
+      "Safe for all pipe types including older clay and cast iron lines",
+      "Environmentally friendly—no harsh chemicals enter the water system",
+      "Restores original pipe diameter and flow capacity",
+      "Preventive maintenance plans keep drains flowing year-round"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for drain cleaning. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Video Camera Diagnosis",
+        "description": "We insert a high-definition waterproof camera into your drain to see exactly what's causing the blockage—whether it's grease buildup, tree roots, collapsed pipe, or foreign objects. This prevents guesswork and ensures the right solution."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your drain cleaning needs."
+        "title": "Blockage Assessment Report",
+        "description": "Based on camera findings, we explain what we discovered, show you the footage on our tablet, and recommend the most effective cleaning method for your specific situation."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Professional Drain Clearing",
+        "description": "Using the appropriate equipment—motorized cable machines for minor clogs, high-pressure hydro-jetting for heavy buildup and roots—we completely clear the obstruction and restore full drainage."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the drain cleaning using professional techniques, quality materials, and industry best practices."
+        "title": "Post-Cleaning Verification",
+        "description": "We run the camera through again after cleaning to confirm the drain is completely clear and inspect for any damage or developing issues that could cause future problems."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Prevention Recommendations",
+        "description": "Based on what caused your clog, we provide specific tips to prevent recurrence and can recommend a maintenance schedule for drains prone to buildup, like kitchen lines in heavy-use homes."
       }
     ],
     "featured": true,
     "displayOrder": 15,
     "createdAt": "2025-11-19T16:22:45.781Z",
-    "updatedAt": "2025-11-24T23:41:43.593Z"
+    "updatedAt": "2025-11-25T14:57:48.943Z"
   },
   {
     "id": "401271b0-54a9-4ca8-9b30-6fad46f3b265",
@@ -1896,44 +1896,44 @@
     "name": "Whole House Repiping",
     "slug": "whole-house-repiping",
     "shortDescription": "Complete home repiping with modern PEX or copper piping.",
-    "longDescription": "Complete home repiping with modern PEX or copper piping. Wood's Plumbing specializes in whole house repiping using modern PEX and copper piping systems. Our experienced plumbers serve Southern Arizona with professional repiping services that minimize disruption to your property. With over 46 years of experience, we complete pipe replacement projects efficiently while maintaining quality workmanship and code compliance.",
+    "longDescription": "When your home's pipes reach the end of their lifespan, repairs become a game of whack-a-mole—fix one leak, another appears. Whole-house repiping replaces your entire water supply system with modern materials designed to last 50+ years, eliminating the cycle of recurring repairs and giving you peace of mind for decades.\n\nWood's Plumbing has repiped hundreds of Southern Arizona homes, from 1950s ranch houses with deteriorating galvanized steel to 1980s homes with failing polybutylene. We specialize in minimally-invasive repiping techniques that preserve your walls, ceilings, and landscaping. Using flexible PEX tubing, we can often route new supply lines through existing pathways, requiring far fewer wall openings than traditional rigid copper installations.\n\nOur repiping crews work systematically room by room, typically completing an average home in 2-3 days. We coordinate with drywall contractors and painters if needed, managing the entire project so you deal with one company from start to finish. The result is consistent water pressure throughout your home, elimination of rusty discolored water, and protection against the flooding that aging pipes inevitably cause. We'll help you understand the warning signs that indicate repiping is necessary and provide a detailed assessment of your current plumbing system.",
     "icon": "Home",
     "benefits": [
-      "Modern PEX and copper piping systems",
-      "Minimize disruption to your property",
-      "Experienced repiping specialists",
-      "Improve water pressure and quality",
-      "Eliminate recurring leak problems",
-      "Increase property value",
-      "Licensed and insured plumbers",
-      "Warranty on materials and workmanship"
+      "Eliminates recurring leaks and the damage they cause",
+      "Modern PEX piping carries 50+ year manufacturer warranties",
+      "Minimally-invasive techniques reduce wall and ceiling repairs",
+      "Restores full water pressure lost to corroded galvanized pipes",
+      "Ends rusty, discolored water from deteriorating steel lines",
+      "Flexible PEX resists freezing better than rigid copper",
+      "Single-source project management from pipes to wall repair",
+      "Increases home value and eliminates buyer concerns about old plumbing"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for whole house repiping. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Comprehensive Plumbing Assessment",
+        "description": "We inspect your entire water supply system, identify all problem areas, test water pressure at multiple points, and determine the scope of work needed. We'll explain why repiping is recommended versus continued repairs."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your whole house repiping needs."
+        "title": "Custom Installation Design",
+        "description": "Our team designs the new piping layout to optimize water pressure and minimize wall penetrations. We identify the least invasive routing paths and plan the installation sequence room by room."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Systematic Room-by-Room Installation",
+        "description": "We work through your home methodically, replacing old pipes with new PEX supply lines. We install modern ball-valve shutoffs at each fixture, enabling easy future maintenance without shutting off the whole house."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the whole house repiping using professional techniques, quality materials, and industry best practices."
+        "title": "Pressure Testing & Inspection",
+        "description": "Before closing any walls, we pressure-test the entire new system to verify zero leaks. We photograph all connections for your records and conduct a final walkthrough to confirm every fixture has strong, clean water flow."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Wall Repair Coordination",
+        "description": "We patch all access holes we created and can coordinate drywall finishing and painting through our network of trusted contractors—one point of contact for your complete repiping project."
       }
     ],
     "featured": false,
     "displayOrder": 44,
     "createdAt": "2025-11-19T16:22:47.702Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z"
   },
   {
     "id": "3ce602f4-03c5-4f40-9c56-1726a1107d96",
@@ -2292,88 +2292,88 @@
     "name": "Water Conditioning",
     "slug": "water-conditioning",
     "shortDescription": "Comprehensive water treatment solutions for better water quality.",
-    "longDescription": "Comprehensive water treatment solutions for better water quality. Southern Arizona's hard water and water quality issues make water treatment systems essential for many homes. Wood's Plumbing installs and services water conditioning systems throughout the Tucson area. Our water treatment specialists help you choose the right system for your needs, install it professionally, and provide ongoing maintenance to ensure optimal performance and water quality.",
+    "longDescription": "Southern Arizona's water is among the hardest in the nation, with mineral content that destroys appliances, clogs pipes, and leaves stubborn deposits on everything it touches. Wood's Plumbing installs and services water conditioning systems that transform harsh desert water into the soft, clean water your home deserves.\n\nHard water costs you money in ways you might not realize. Water heaters fail years early because calcium scale insulates heating elements, forcing them to work harder and eventually burn out. Dishwashers and washing machines clog with mineral deposits. Faucets and showerheads need constant replacement. Your skin and hair suffer from the drying effects of mineral-laden water. A properly sized water conditioning system eliminates all of these problems.\n\nWe offer multiple conditioning technologies to match your water quality, usage patterns, and preferences. Traditional salt-based softeners remain the most effective for extremely hard water. Salt-free conditioning systems prevent scale without adding sodium, ideal for those on low-sodium diets. Whole-house filtration removes chlorine taste and odor. We test your water, analyze your usage, and recommend the right system—then handle professional installation and teach you simple maintenance. With decades of experience with Tucson's unique water chemistry, we size systems correctly the first time.",
     "icon": "Droplets",
     "benefits": [
-      "Solve hard water and quality problems",
-      "Expert system sizing and selection",
-      "Professional installation services",
-      "All major brands and systems",
-      "Improve water taste and quality",
-      "Protect plumbing and appliances",
-      "Ongoing maintenance and support",
-      "Licensed water treatment specialists"
+      "Extends water heater lifespan by 5-8 years by preventing scale buildup",
+      "Eliminates spotted dishes, shower doors, and fixtures",
+      "Reduces soap and detergent usage by up to 50%",
+      "Protects pipes and appliances from damaging mineral deposits",
+      "Softer skin and more manageable hair from scale-free water",
+      "Multiple technologies available: salt-based, salt-free, and filtration",
+      "Custom sizing based on actual water testing and household usage",
+      "Local service and maintenance for all major conditioning brands"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for water conditioning. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Professional Water Testing",
+        "description": "We test your water for hardness, iron content, pH, chlorine, and other factors that affect water quality. This analysis determines exactly what conditioning equipment your home needs."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your water conditioning needs."
+        "title": "Usage Analysis & System Sizing",
+        "description": "Based on your household size, water usage patterns, and test results, we recommend the appropriately sized system. Undersized systems fail prematurely; oversized systems waste salt and water."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Technology Selection",
+        "description": "We explain the pros and cons of different conditioning technologies for your situation—traditional softeners, salt-free conditioners, whole-house filtration, or combination systems—so you can make an informed choice."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the water conditioning using professional techniques, quality materials, and industry best practices."
+        "title": "Professional Installation",
+        "description": "Our technicians install your system to manufacturer specifications, including proper drainage, electrical connections if needed, and bypass valves for maintenance. We ensure optimal placement for easy salt filling and service."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Operation Training & Maintenance Setup",
+        "description": "We walk you through system operation, show you how to add salt and check settings, and explain maintenance requirements. We can schedule annual service visits to keep your system performing optimally."
       }
     ],
     "featured": false,
     "displayOrder": 53,
     "createdAt": "2025-11-19T16:22:48.293Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z"
   },
   {
     "id": "65d19341-f4c9-4d0a-87e2-35eee968e456",
     "name": "Gas Line Installation",
     "slug": "gas-line-installation",
     "shortDescription": "Safe installation of gas lines for appliances and heating.",
-    "longDescription": "Safe installation of gas lines for appliances and heating. Gas line work requires specialized training, licensing, and safety expertise. Wood's Plumbing's licensed gas line technicians have over 46 years of experience safely handling gas line installation throughout Southern Arizona. We follow strict safety protocols, test all work thoroughly, and ensure full compliance with local codes. Available 24/7 for gas emergencies because your safety is our top priority.",
+    "longDescription": "Converting to gas or extending gas service to new appliances requires precision work by licensed professionals. Gas line installation isn't a DIY project—improperly installed gas piping creates explosion and carbon monoxide risks that endanger your family. Wood's Plumbing holds the specialized licenses required for gas work in Arizona and follows strict safety protocols on every installation.\n\nWhether you're running a new line for a gas range, connecting a backup generator, extending service to an outdoor grill or fire pit, or converting your water heater to more economical natural gas, our technicians have the expertise to do it right. We calculate pipe sizing based on total BTU demand, ensuring adequate gas flow to all appliances without pressure drops. We use only approved materials rated for natural gas or propane, and we leak-test every connection before putting the system in service.\n\nOur gas line installations meet all local codes and pass inspection the first time. We coordinate with Southwest Gas for meter upgrades when needed and handle all permit applications. From the initial design through final inspection, you're working with one experienced team that takes full responsibility for a safe, code-compliant installation. Serving Southern Arizona for 46+ years, we've installed thousands of gas lines for homes and businesses throughout the region.",
     "icon": "Flame",
     "benefits": [
-      "Licensed gas line specialists",
-      "Strict safety protocols and procedures",
-      "Complete code compliance",
-      "Pressure testing and certification",
-      "Gas leak detection services",
-      "24/7 emergency gas service",
-      "New installation and repairs",
-      "46+ years of gas line expertise"
+      "Licensed and certified for gas work under Arizona regulations",
+      "Proper BTU load calculations ensure adequate gas flow to all appliances",
+      "Only code-approved materials rated for natural gas and propane",
+      "Pressure testing and leak detection on every connection",
+      "Permit handling and inspection coordination included",
+      "Coordination with Southwest Gas for meter sizing and upgrades",
+      "Clean installation with proper support and protection",
+      "Written documentation for warranty and insurance records"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for gas line installation. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Site Survey & BTU Calculation",
+        "description": "We assess where the new gas line needs to run, measure distances, and calculate total BTU requirements based on all appliances that will use the line. This determines proper pipe sizing."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your gas line installation needs."
+        "title": "Code-Compliant Design",
+        "description": "We design the piping route to meet all code requirements for clearances, support, and protection. If permits are required, we handle the application and schedule the inspection."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Professional Pipe Installation",
+        "description": "Using properly sized black iron or CSST flexible gas piping, we install the new line with approved fittings and connections. All joints are secured and protected per manufacturer specifications."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the gas line installation using professional techniques, quality materials, and industry best practices."
+        "title": "Pressure Testing & Leak Detection",
+        "description": "Before connecting any appliances, we pressure-test the new line and check every connection with gas-detection solution. The system must hold pressure and show zero leaks before we proceed."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Appliance Connection & System Verification",
+        "description": "We connect your appliances, verify proper operation, check for correct flame patterns, and test safety shutoffs. We walk you through the new installation and provide documentation for your records."
       }
     ],
     "featured": false,
     "displayOrder": 54,
     "createdAt": "2025-11-19T16:22:48.359Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z"
   },
   {
     "id": "b67a8bfe-00b4-4bdb-ba73-07107ec865ad",
@@ -2424,44 +2424,44 @@
     "name": "Gas Leak Repair",
     "slug": "gas-leak-repair",
     "shortDescription": "Immediate response to gas leak emergencies.",
-    "longDescription": "Immediate response to gas leak emergencies. Gas line work requires specialized training, licensing, and safety expertise. Wood's Plumbing's licensed gas line technicians have over 46 years of experience safely handling gas leak repair throughout Southern Arizona. We follow strict safety protocols, test all work thoroughly, and ensure full compliance with local codes. Available 24/7 for gas emergencies because your safety is our top priority.",
+    "longDescription": "The smell of gas in your home demands immediate action—gas leaks can cause explosions, fires, and deadly carbon monoxide poisoning. Wood's Plumbing provides emergency gas leak repair with the urgency these dangerous situations require. If you smell rotten eggs or sulfur, hear hissing near gas lines, or notice dead vegetation near buried gas lines, leave immediately and call us.\n\nOur gas leak specialists carry advanced electronic detection equipment that locates leaks with pinpoint accuracy, even in buried lines or behind walls. Unlike the soap bubble test that only works on accessible fittings, our combustible gas detectors sense minute concentrations in the air, leading us directly to the source. Once located, we isolate the section, make the repair with approved materials, and retest to confirm the system is safe.\n\nNot all gas leaks present obvious warning signs. Slow leaks at old corroded fittings or aging flexible connectors may not produce a noticeable odor until concentrations reach dangerous levels. If you have older gas piping or appliances, we recommend periodic inspection to identify problems before they become emergencies. Our technicians are licensed and trained specifically for gas work, following strict safety protocols that protect your family and property.",
     "icon": "AlertTriangle",
     "benefits": [
-      "Licensed gas line specialists",
-      "Strict safety protocols and procedures",
-      "Complete code compliance",
-      "Pressure testing and certification",
-      "Gas leak detection services",
-      "24/7 emergency gas service",
-      "New installation and repairs",
-      "46+ years of gas line expertise"
+      "24/7 emergency response for gas leak situations",
+      "Electronic combustible gas detectors pinpoint hidden leaks",
+      "Trained to locate leaks in buried lines and behind walls",
+      "Licensed specifically for gas line repair in Arizona",
+      "Repairs made with code-approved materials and techniques",
+      "Post-repair pressure testing confirms system integrity",
+      "Coordination with Southwest Gas for meter-side issues",
+      "Safety inspection identifies other potential problems"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for gas leak repair. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Emergency Safety Protocol",
+        "description": "Upon arrival, we survey for immediate hazards, ensure ventilation, and verify the area is safe to work. If gas concentration is dangerous, we coordinate evacuation and contact the gas utility for meter shutoff."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your gas leak repair needs."
+        "title": "Electronic Leak Detection",
+        "description": "Using professional combustible gas detectors, we trace the leak to its exact source—whether at a visible fitting, behind drywall, or underground. We won't start repairs until we've found every leak point."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Isolation & Repair",
+        "description": "We shut off gas to the affected section and make repairs using approved materials and techniques. Whether it's a corroded fitting, damaged flex connector, or cracked pipe, we replace the failed component completely."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the gas leak repair using professional techniques, quality materials, and industry best practices."
+        "title": "Pressure Test & Verification",
+        "description": "After repairs, we pressure-test the system and recheck with gas detectors to confirm zero leaks. We won't restore service until we're certain the system is completely safe."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "System Safety Inspection",
+        "description": "Before leaving, we inspect other gas connections and appliances for developing problems—catching potential future leaks while we're there. We document all work for your records and the gas company."
       }
     ],
     "featured": false,
     "displayOrder": 56,
     "createdAt": "2025-11-19T16:22:48.493Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z"
   },
   {
     "id": "94835a73-d259-4d74-ae0c-47af85de62d6",
@@ -2512,88 +2512,88 @@
     "name": "Gas Pipe Testing",
     "slug": "gas-pipe-testing",
     "shortDescription": "Professional gas pipe pressure testing and leak detection to ensure safety and code compliance.",
-    "longDescription": "Professional gas pipe pressure testing and leak detection to ensure safety and code compliance. Gas line work requires specialized training, licensing, and safety expertise. Wood's Plumbing's licensed gas line technicians have over 46 years of experience safely handling gas pipe testing throughout Southern Arizona. We follow strict safety protocols, test all work thoroughly, and ensure full compliance with local codes. Available 24/7 for gas emergencies because your safety is our top priority.",
+    "longDescription": "Gas pipe testing is a critical safety service that verifies the integrity of your gas piping system. Whether required for real estate transactions, after remodeling work, following earthquake activity, or as part of regular safety maintenance, professional pressure testing confirms that your gas lines are leak-free and safe to operate.\n\nWood's Plumbing performs gas pipe testing to the standards required by Arizona code and accepted by Southwest Gas. We isolate the gas piping from appliances, pressurize the system with air or inert gas, and monitor for pressure drop over a specified period. Even tiny leaks that wouldn't be detectable by smell show up as pressure loss during testing. If a leak is found, our detection equipment locates it precisely for repair.\n\nMany home buyers now require gas pipe testing before purchase, and lenders may make it a condition of financing for older homes. Real estate agents throughout Tucson and Southern Arizona rely on Wood's Plumbing for fast, documented testing that satisfies transaction requirements. We also test gas systems after major renovation work, following seismic activity, and for businesses that require regular safety documentation. Our test reports include pressure readings, duration, and certification that the system meets code requirements.",
     "icon": "Gauge",
     "benefits": [
-      "Licensed gas line specialists",
-      "Strict safety protocols and procedures",
-      "Complete code compliance",
-      "Pressure testing and certification",
-      "Gas leak detection services",
-      "24/7 emergency gas service",
-      "New installation and repairs",
-      "46+ years of gas line expertise"
+      "Certified testing meets Arizona code and Southwest Gas requirements",
+      "Detects even microscopic leaks invisible to other methods",
+      "Documentation accepted for real estate transactions",
+      "Required testing for post-construction and renovation sign-off",
+      "Identifies problems before they become dangerous leaks",
+      "Electronic leak detection pinpoints any failures for repair",
+      "Fast scheduling accommodates real estate closing timelines",
+      "Written certification for permanent records and insurance"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for gas pipe testing. We'll dispatch a licensed plumber to your location promptly."
+        "title": "System Preparation",
+        "description": "We turn off gas supply and isolate the piping from all appliances. Each appliance is disconnected from the test to ensure we're testing only the permanent piping—not appliance valves or flex connectors."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your gas pipe testing needs."
+        "title": "Pressurization",
+        "description": "Using a calibrated pressure gauge, we pressurize the gas piping system to the required test pressure using air or nitrogen. The pressure is monitored for the code-required duration—typically 15-30 minutes."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Leak Determination",
+        "description": "If pressure drops during the test period, the system has failed. We then use electronic detection equipment and approved leak detection solution to locate every leak point in the piping."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the gas pipe testing using professional techniques, quality materials, and industry best practices."
+        "title": "Repair If Needed",
+        "description": "When leaks are found, we provide repair options and can make corrections using code-approved materials. After repairs, we repeat the pressure test to verify success."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Certification & Documentation",
+        "description": "Upon successful testing, we provide written certification documenting the test procedure, pressures, duration, and results. This documentation satisfies requirements for real estate transactions, permits, and insurance."
       }
     ],
     "featured": false,
     "displayOrder": 58,
     "createdAt": "2025-11-19T16:22:48.622Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.944Z"
   },
   {
     "id": "c21dbb77-de3a-486a-9ec5-b9c792d0c6aa",
     "name": "Gas Line Relocation",
     "slug": "gas-line-relocation",
     "shortDescription": "Safe gas line relocation for remodels, additions, and outdoor kitchens.",
-    "longDescription": "Safe gas line relocation for remodels, additions, and outdoor kitchens. Gas line work requires specialized training, licensing, and safety expertise. Wood's Plumbing's licensed gas line technicians have over 46 years of experience safely handling gas line relocation throughout Southern Arizona. We follow strict safety protocols, test all work thoroughly, and ensure full compliance with local codes. Available 24/7 for gas emergencies because your safety is our top priority.",
+    "longDescription": "Kitchen remodels, room additions, and appliance upgrades often require moving existing gas lines to new locations. Gas line relocation isn't simply extending a pipe—it requires proper sizing calculations, code-compliant routing, and professional-grade connections that will serve safely for decades. Wood's Plumbing handles gas line relocation projects from simple stove repositioning to complex whole-room reconfigurations.\n\nWhen you move a gas stove across the kitchen, add a fireplace to a remodeled living room, or relocate your water heater to a new utility area, the gas supply must follow. Our technicians evaluate the entire gas system to ensure adequate capacity, then design and install new piping that maintains proper pressure to all appliances. We properly cap and abandon old line segments, meeting code requirements that prevent future confusion about active versus inactive piping.\n\nGas line relocation work requires permits in most Arizona jurisdictions, and we handle all permit applications and inspections as part of our service. Our experience with Tucson-area building departments means we know exactly what inspectors require and get approvals efficiently. After completing the relocation, we pressure-test the entire system and verify proper operation of all connected appliances. Whether you're working with a general contractor on a major renovation or handling a smaller project yourself, our gas specialists deliver safe, code-compliant results.",
     "icon": "Move",
     "benefits": [
-      "Licensed gas line specialists",
-      "Strict safety protocols and procedures",
-      "Complete code compliance",
-      "Pressure testing and certification",
-      "Gas leak detection services",
-      "24/7 emergency gas service",
-      "New installation and repairs",
-      "46+ years of gas line expertise"
+      "Proper sizing ensures adequate gas flow after relocation",
+      "Code-compliant routing meets all clearance and protection requirements",
+      "Old lines properly capped and marked as abandoned per code",
+      "Permit handling and inspection coordination included",
+      "Seamless coordination with your general contractor or remodeler",
+      "Minimal disruption to other renovation work in progress",
+      "Pressure testing verifies complete system integrity",
+      "Appliance reconnection and operation verification included"
     ],
     "process": [
       {
-        "title": "Contact Us",
-        "description": "Call (520) 682-2233 or schedule online for gas line relocation. We'll dispatch a licensed plumber to your location promptly."
+        "title": "Project Consultation",
+        "description": "We review your remodel plans to understand where appliances are moving and what gas capacity is needed. We identify the optimal route for new piping and plan how to tie into existing supply."
       },
       {
-        "title": "Professional Assessment",
-        "description": "Our plumber inspects your plumbing system, diagnoses the issue, and determines the best solution for your gas line relocation needs."
+        "title": "Permit & Coordination",
+        "description": "We handle permit applications and coordinate timing with your general contractor or project schedule. Gas work typically needs to happen at specific construction phases for inspection access."
       },
       {
-        "title": "Upfront Pricing",
-        "description": "We provide clear, transparent pricing before starting any work—no hidden fees or surprises."
+        "title": "Old Line Capping",
+        "description": "We properly cap and abandon gas lines at their source, clearly marking abandoned sections per code. This prevents confusion during future work and ensures old lines can never be accidentally reconnected."
       },
       {
-        "title": "Expert Service",
-        "description": "We complete the gas line relocation using professional techniques, quality materials, and industry best practices."
+        "title": "New Line Installation",
+        "description": "We install properly sized gas piping to the new appliance locations, with all connections made using approved materials and techniques. Support and protection meet code requirements for exposed and concealed piping."
       },
       {
-        "title": "Quality Assurance",
-        "description": "We test the work thoroughly, clean up our work area, and ensure you're completely satisfied with the results."
+        "title": "Testing & Commissioning",
+        "description": "After installation, we pressure-test the modified system, reconnect all appliances, verify proper operation, and schedule the required inspection. We document everything for your project records."
       }
     ],
     "featured": false,
     "displayOrder": 59,
     "createdAt": "2025-11-19T16:22:48.688Z",
-    "updatedAt": "2025-11-24T23:41:43.594Z"
+    "updatedAt": "2025-11-25T14:57:48.945Z"
   },
   {
     "id": "239511b7-c8ea-4089-9f22-cd2d7f56aeb1",
