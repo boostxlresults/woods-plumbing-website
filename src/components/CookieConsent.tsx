@@ -12,9 +12,26 @@ export const CookieConsent: React.FC = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       try {
-        const consent = sessionStorage.getItem('cookie-consent-checked');
-        if (consent === 'accepted' || consent === 'declined') {
+        const sessionConsent = sessionStorage.getItem('cookie-consent-checked');
+        const storedConsent = localStorage.getItem('cookie-consent');
+        
+        if (sessionConsent === 'accepted' || sessionConsent === 'declined') {
           setIsVisible(false);
+          if (sessionConsent === 'accepted' && storedConsent === 'accepted' && (window as any).gtag) {
+            (window as any).gtag('consent', 'update', {
+              'analytics_storage': 'granted',
+              'ad_storage': 'granted'
+            });
+          }
+        } else if (storedConsent === 'accepted') {
+          sessionStorage.setItem('cookie-consent-checked', 'accepted');
+          setIsVisible(false);
+          if ((window as any).gtag) {
+            (window as any).gtag('consent', 'update', {
+              'analytics_storage': 'granted',
+              'ad_storage': 'granted'
+            });
+          }
         } else {
           const timer = setTimeout(() => {
             setIsVisible(true);
@@ -37,7 +54,8 @@ export const CookieConsent: React.FC = () => {
       localStorage.setItem('cookie-consent', 'accepted');
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted'
         });
       }
     } catch {
@@ -48,9 +66,11 @@ export const CookieConsent: React.FC = () => {
   const handleDecline = () => {
     try {
       sessionStorage.setItem('cookie-consent-checked', 'declined');
+      localStorage.removeItem('cookie-consent');
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('consent', 'update', {
-          'analytics_storage': 'denied'
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied'
         });
       }
     } catch {

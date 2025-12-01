@@ -78,6 +78,26 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
   - `scripts/expand-service-content.ts` - Original expansion script
   - `scripts/expand-service-content-v2.ts` - Enhanced expansion with all new sections
 
+**GDPR/CCPA Compliance & Legal Pages (Dec 2025):**
+- **Privacy Policy Page** (`/privacy-policy`): Comprehensive GDPR/CCPA compliant privacy policy with Arizona-specific legal terms
+- **Terms of Use Page** (`/terms`): Full terms of service with liability disclaimers, IP protection, dispute resolution
+- **Cookie Consent Banner** (`src/components/CookieConsent.tsx`):
+  - GDPR-compliant: Analytics blocked by default using gtag consent mode
+  - Dual options: "Accept All" (enables analytics) vs "Essential Only" (blocks analytics)
+  - Persists preference via localStorage (only after acceptance)
+  - Uses sessionStorage to prevent re-prompting during session
+  - Properly clears consent on decline
+- **Google Analytics Integration**: gtag consent mode with `analytics_storage: 'denied'` default in `_document.tsx`
+- **Sitemap**: Legal pages added to XML sitemap with noindex robots tags
+
+**AI Search Optimization Enhancements (Dec 2025):**
+- **Blog Post Schema**: Enhanced BlogPosting with detailed author (Person type), worksFor (Organization), publisher logo (ImageObject), dateModified, mainEntityOfPage
+- **Service Page AI Formatting**:
+  - `<blockquote>` elements for Arizona-specific context with `<figcaption>` attribution
+  - Comparison tables (Wood's Plumbing vs. Other Plumbers) for AI parsing
+  - Semantic HTML5 elements (`<figure>`, `<table>`) for structured data extraction
+- **Google Business Profile**: Embedded iframe on contact page, footer link for local SEO signals
+
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
 - The project structure is organized for scalability and maintainability, separating pages, components, data, and utilities.
