@@ -67,7 +67,7 @@ export const GoogleReviewsWidget: React.FC<GoogleReviewsWidgetProps> = ({
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-3 line-clamp-4">
-                  "{review.reviewBody}"
+                  &ldquo;{review.reviewBody}&rdquo;
                 </p>
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <span className="font-medium text-gray-900">{review.author}</span>

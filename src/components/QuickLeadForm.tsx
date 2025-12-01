@@ -76,7 +76,7 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
     return (
       <div className={`bg-green-50 border border-green-200 rounded-lg p-4 text-center ${className}`}>
         <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-        <p className="text-green-800 font-medium">Thank you! We'll call you shortly.</p>
+        <p className="text-green-800 font-medium">Thank you! We&apos;ll call you shortly.</p>
       </div>
     );
   }
