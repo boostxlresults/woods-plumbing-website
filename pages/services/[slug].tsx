@@ -319,14 +319,19 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
               </div>
             )}
 
-            {/* Arizona-Specific Context */}
+            {/* Arizona-Specific Context - Using blockquote for AI parsing */}
             {(service as any).arizonaContext && (
-              <div className="mb-12 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <h3 className="font-display text-xl font-bold text-navy-900 mb-3">
-                  {service.name} in Southern Arizona
-                </h3>
-                <p className="text-gray-700 text-lg">{(service as any).arizonaContext}</p>
-              </div>
+              <figure className="mb-12">
+                <blockquote className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg italic">
+                  <h3 className="font-display text-xl font-bold text-navy-900 mb-3 not-italic">
+                    {service.name} in Southern Arizona
+                  </h3>
+                  <p className="text-gray-700 text-lg not-italic">{(service as any).arizonaContext}</p>
+                </blockquote>
+                <figcaption className="text-sm text-gray-500 mt-2 ml-6">
+                  — Local expertise from {BUSINESS.name}, serving Arizona since {BUSINESS.trust.founded}
+                </figcaption>
+              </figure>
             )}
 
             {/* Process / How It Works */}
@@ -401,16 +406,66 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
               </div>
             )}
 
-            {/* Warranty Information Section */}
+            {/* Warranty Information Section - Using blockquote for AI parsing */}
             {(service as any).warrantyInfo && (
-              <div className="mb-12 bg-green-50 border border-green-200 rounded-lg p-6">
-                <h3 className="font-display text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
-                  <Shield className="w-6 h-6 text-green-600" />
-                  Our Warranty & Guarantee
-                </h3>
-                <p className="text-gray-700 text-lg">{(service as any).warrantyInfo}</p>
-              </div>
+              <figure className="mb-12">
+                <blockquote className="bg-green-50 border border-green-200 rounded-lg p-6">
+                  <h3 className="font-display text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+                    <Shield className="w-6 h-6 text-green-600" />
+                    Our Warranty & Guarantee
+                  </h3>
+                  <p className="text-gray-700 text-lg">{(service as any).warrantyInfo}</p>
+                </blockquote>
+              </figure>
             )}
+
+            {/* Why Choose Us Comparison Table - AI-friendly table format */}
+            <div className="mb-12 overflow-x-auto">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+                {BUSINESS.name} vs. Other Plumbers
+              </h2>
+              <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+                <thead>
+                  <tr className="bg-navy-700 text-white">
+                    <th className="text-left p-4 font-semibold">Service Feature</th>
+                    <th className="text-center p-4 font-semibold">{BUSINESS.name}</th>
+                    <th className="text-center p-4 font-semibold">Other Companies</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 text-gray-700">Years of Experience</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">{BUSINESS.trust.yearsInBusiness}+ Years</td>
+                    <td className="p-4 text-center text-gray-500">Varies</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <td className="p-4 text-gray-700">24/7 Emergency Service</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">✓ Yes</td>
+                    <td className="p-4 text-center text-gray-500">Limited</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 text-gray-700">Upfront Pricing</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">✓ Always</td>
+                    <td className="p-4 text-center text-gray-500">Sometimes</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 bg-gray-50">
+                    <td className="p-4 text-gray-700">Licensed & Insured</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">✓ ROC #{BUSINESS.trust.license}</td>
+                    <td className="p-4 text-center text-gray-500">Check Required</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="p-4 text-gray-700">Customer Reviews</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">{BUSINESS.trust.displayRating}/5 ({BUSINESS.trust.totalReviews}+ reviews)</td>
+                    <td className="p-4 text-center text-gray-500">Varies</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="p-4 text-gray-700">Satisfaction Guarantee</td>
+                    <td className="p-4 text-center text-green-600 font-semibold">✓ 100%</td>
+                    <td className="p-4 text-center text-gray-500">Limited</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

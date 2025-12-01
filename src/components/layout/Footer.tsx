@@ -165,6 +165,24 @@ export function Footer() {
             © 2025 {BUSINESS.legalName}. All rights reserved. |{' '}
             <span className="text-red-400">License: {BUSINESS.trust.license}</span>
           </p>
+          <div className="mt-3 flex flex-wrap justify-center gap-4 text-gray-500">
+            <Link href="/privacy-policy" className="hover:text-red-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link href="/terms" className="hover:text-red-400 transition-colors">
+              Terms of Use
+            </Link>
+            <span className="text-gray-600">|</span>
+            <a 
+              href={BUSINESS.social.googleBusiness} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-red-400 transition-colors"
+            >
+              Google Business Profile
+            </a>
+          </div>
           <p className="mt-2 text-gray-500">
             Proudly serving Southern Arizona since {BUSINESS.trust.founded}
           </p>

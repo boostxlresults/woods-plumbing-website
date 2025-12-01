@@ -234,6 +234,25 @@ const ContactPage: NextPage = () => {
                   </Link>
                 </CardContent>
               </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle>Find Us on Google</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7241.52024404527!2d-111.2083739!3d32.45883450000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d5e4946b344903%3A0xa0d7cf9d3dd6f0c3!2sWood&#39;s%20Plumbing%20Enterprises%20LLC!5e1!3m2!1sen!2sus!4v1764620181207!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="250" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Wood's Plumbing Enterprises LLC on Google Maps"
+                    className="rounded-b-lg"
+                  />
+                </CardContent>
+              </Card>
             </div>
 
             {/* Contact Form */}

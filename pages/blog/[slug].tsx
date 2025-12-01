@@ -41,16 +41,34 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
     "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt,
+    "image": `${BUSINESS.website}/og-image.jpg`,
     "author": {
       "@type": "Person",
-      "name": post.author
+      "name": post.author,
+      "url": `${BUSINESS.website}/about`,
+      "worksFor": {
+        "@type": "Organization",
+        "name": BUSINESS.name,
+        "url": BUSINESS.website
+      }
     },
     "publisher": {
       "@type": "Organization",
-      "name": BUSINESS.name
+      "name": BUSINESS.name,
+      "url": BUSINESS.website,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${BUSINESS.website}/images/woods-plumbing-logo.png`
+      }
     },
     "datePublished": post.publishedAt,
-    "articleSection": post.category
+    "dateModified": post.publishedAt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${BUSINESS.website}/blog/${post.slug}`
+    },
+    "articleSection": post.category,
+    "keywords": post.tags.join(", ")
   };
 
   return (

@@ -6,6 +6,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { EmergencyBanner } from '@/components/EmergencyBanner'
+import { CookieConsent } from '@/components/CookieConsent'
 import { pageview } from '@/lib/analytics'
 
 // Optimize font loading with next/font
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   )
 }
