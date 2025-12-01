@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "author": "Michael R.",
+    "location": "Marana, AZ",
+    "ratingValue": 5,
+    "reviewBody": "Wood's Plumbing saved us during a late-night emergency. Our water heater burst at 11 PM and they had someone out within an hour. Professional, courteous, and fair pricing. They've been our go-to plumber for 10 years now.",
+    "datePublished": "2024-11-15",
+    "reviewPlatform": "Google",
+    "service": "Emergency Plumbing"
+  },
+  {
+    "id": "2",
+    "author": "Sarah K.",
+    "location": "Oro Valley, AZ",
+    "ratingValue": 5,
+    "reviewBody": "Had them install a new tankless water heater. The technician explained all my options clearly, provided an upfront quote, and completed the work beautifully. No hidden fees, no surprises. Highly recommend!",
+    "datePublished": "2024-10-22",
+    "reviewPlatform": "Google",
+    "service": "Water Heater Installation"
+  },
+  {
+    "id": "3",
+    "author": "Robert T.",
+    "location": "Tucson, AZ",
+    "ratingValue": 5,
+    "reviewBody": "We had a suspected gas leak and Wood's Plumbing responded immediately. Their technician was extremely knowledgeable and identified the issue quickly. They fixed it the same day and made sure everything was safe before leaving. Can't thank them enough!",
+    "datePublished": "2024-09-18",
+    "reviewPlatform": "Google",
+    "service": "Gas Line Services"
+  },
+  {
+    "id": "4",
+    "author": "Jennifer M.",
+    "location": "Green Valley, AZ",
+    "ratingValue": 5,
+    "reviewBody": "After dealing with recurring drain clogs, Wood's Plumbing used their camera inspection to find tree roots in our sewer line. They explained everything with the video footage and gave us options. Great experience from start to finish.",
+    "datePublished": "2024-08-25",
+    "reviewPlatform": "Yelp",
+    "service": "Sewer Camera Inspection"
+  },
+  {
+    "id": "5",
+    "author": "David H.",
+    "location": "Vail, AZ",
+    "ratingValue": 5,
+    "reviewBody": "We've used Wood's Plumbing for years. They installed our whole-house water softener and maintain it annually. Always professional, always on time, and their work lasts. Worth every penny.",
+    "datePublished": "2024-07-12",
+    "reviewPlatform": "Google",
+    "service": "Water Softener Installation"
+  },
+  {
+    "id": "6",
+    "author": "Lisa P.",
+    "location": "Sahuarita, AZ",
+    "ratingValue": 5,
+    "reviewBody": "The team at Wood's Plumbing completely repiped our 1970s home. They were careful with our property, cleaned up after themselves, and the difference in water pressure is incredible. A+ service!",
+    "datePublished": "2024-06-08",
+    "reviewPlatform": "Google",
+    "service": "Whole House Repiping"
+  },
+  {
+    "id": "7",
+    "author": "James W.",
+    "location": "Marana, AZ",
+    "ratingValue": 5,
+    "reviewBody": "Called for a slab leak detection. Their technician used electronic equipment to pinpoint the exact location without tearing up our whole floor. Fixed it with minimal disruption. Very impressed with their technology and expertise.",
+    "datePublished": "2024-05-20",
+    "reviewPlatform": "Google",
+    "service": "Slab Leak Detection"
+  },
+  {
+    "id": "8",
+    "author": "Patricia C.",
+    "location": "Tucson, AZ",
+    "ratingValue": 5,
+    "reviewBody": "46 years in business says it all. Wood's Plumbing has earned our trust over multiple projects. From fixing a stubborn toilet to installing a new gas line for our outdoor grill, they do it all and do it right.",
+    "datePublished": "2024-04-15",
+    "reviewPlatform": "BBB",
+    "service": "Gas Line Installation"
+  }
+]

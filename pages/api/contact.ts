@@ -65,19 +65,30 @@ export default async function handler(
       });
     }
 
-    const { name, email, phone, service, location, message } = req.body;
+    const { name, email, phone, service, location, message, website, source } = req.body;
 
-    // Validation
-    if (!name || !email || !message) {
-      return res.status(400).json({ 
-        error: 'Name, email, and message are required' 
+    // Honeypot anti-spam check - if the hidden 'website' field is filled, it's a bot
+    if (website) {
+      console.log('Bot submission blocked:', { ip, website });
+      return res.status(200).json({ 
+        success: true, 
+        message: 'Thank you for contacting us! We will get back to you shortly.'
       });
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: 'Invalid email address' });
+    // Validation - require name and message, email optional for quick lead forms
+    if (!name || !message) {
+      return res.status(400).json({ 
+        error: 'Name and message are required' 
+      });
+    }
+
+    // Email validation - only if email is provided
+    if (email && email.trim() !== '') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({ error: 'Invalid email address' });
+      }
     }
 
     // Insert into database

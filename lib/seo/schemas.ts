@@ -220,3 +220,120 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; href?: str
     })),
   };
 }
+
+// Individual Review Schema with testimonials
+export function generateReviewSchema(reviews: Array<{
+  author: string;
+  reviewBody: string;
+  ratingValue: number;
+  datePublished: string;
+  reviewPlatform?: string;
+}>) {
+  return reviews.map((review) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: review.author,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.ratingValue,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: review.reviewBody,
+    datePublished: review.datePublished,
+    itemReviewed: {
+      "@type": "Plumber",
+      name: BUSINESS.name,
+      telephone: BUSINESS.phone,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: BUSINESS.address.city,
+        addressRegion: BUSINESS.address.state,
+      },
+    },
+    publisher: review.reviewPlatform ? {
+      "@type": "Organization",
+      name: review.reviewPlatform,
+    } : undefined,
+  }));
+}
+
+// E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) Schema
+export function generateEEATSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "@id": `${BUSINESS.website}#business`,
+    name: BUSINESS.name,
+    description: `${BUSINESS.name} has been providing expert plumbing services in Southern Arizona since ${BUSINESS.trust.founded}. With ${BUSINESS.trust.yearsInBusiness}+ years of hands-on experience, Arizona ROC License #${BUSINESS.trust.license}, and over ${BUSINESS.trust.totalReviews} verified customer reviews, we are the trusted choice for residential and commercial plumbing.`,
+    foundingDate: String(BUSINESS.trust.founded),
+    telephone: BUSINESS.phone,
+    email: BUSINESS.email,
+    url: BUSINESS.website,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS.address.street,
+      addressLocality: BUSINESS.address.city,
+      addressRegion: BUSINESS.address.state,
+      postalCode: BUSINESS.address.zip,
+      addressCountry: BUSINESS.address.country,
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Arizona Registrar of Contractors License",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Arizona Registrar of Contractors",
+        },
+        validIn: {
+          "@type": "AdministrativeArea",
+          name: "Arizona",
+        },
+      },
+    ],
+    knowsAbout: [
+      "Emergency Plumbing",
+      "Water Heater Installation and Repair",
+      "Drain Cleaning",
+      "Sewer Line Services",
+      "Gas Line Services",
+      "Leak Detection",
+      "Pipe Repair and Repiping",
+      "Water Treatment Systems",
+      "Commercial Plumbing",
+    ],
+    areaServed: {
+      "@type": "State",
+      name: "Arizona",
+      containsPlace: [
+        { "@type": "City", name: "Tucson" },
+        { "@type": "City", name: "Marana" },
+        { "@type": "City", name: "Oro Valley" },
+        { "@type": "City", name: "Vail" },
+        { "@type": "City", name: "Sahuarita" },
+        { "@type": "City", name: "Green Valley" },
+        { "@type": "City", name: "Casa Grande" },
+        { "@type": "City", name: "Sierra Vista" },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: BUSINESS.trust.displayRating,
+      reviewCount: BUSINESS.trust.totalReviews,
+      bestRating: 5,
+    },
+    award: [
+      "BBB A+ Rating",
+      `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
+    ],
+    memberOf: {
+      "@type": "Organization",
+      name: "Better Business Bureau",
+    },
+  };
+}

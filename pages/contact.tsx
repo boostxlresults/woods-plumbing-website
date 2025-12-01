@@ -23,6 +23,7 @@ const contactSchema = z.object({
   service: z.string().optional(),
   location: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
+  website: z.string().optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -351,6 +352,18 @@ const ContactPage: NextPage = () => {
                       {errors.message && (
                         <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
                       )}
+                    </div>
+
+                    {/* Honeypot anti-spam field - hidden from humans, visible to bots */}
+                    <div className="absolute -left-[9999px] opacity-0 h-0 w-0 overflow-hidden" aria-hidden="true">
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        id="website"
+                        {...register('website')}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
                     </div>
 
                     {/* Submit Button */}

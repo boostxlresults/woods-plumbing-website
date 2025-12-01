@@ -6,10 +6,12 @@ import { Phone, CheckCircle, Clock, Shield, Users, Award, ThumbsUp, Wrench, Star
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { trackPhoneClick } from '@/lib/analytics';
+import { generateReviewSchema, generateEEATSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 import reviewsData from '@/lib/data/reviews.json';
+import testimonials from '@/lib/data/testimonials.json';
 
 interface HomeProps {
   services: typeof servicesData;
@@ -19,6 +21,9 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => {
   const featuredServices = services.filter(s => s.featured).slice(0, 7);
+
+  const reviewSchemas = generateReviewSchema(testimonials.slice(0, 5));
+  const eeatSchema = generateEEATSchema();
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -71,6 +76,21 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        
+        {/* E-E-A-T Schema for expertise and trust signals */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eeatSchema) }}
+        />
+        
+        {/* Individual Review schemas for rich snippets */}
+        {reviewSchemas.map((schema, index) => (
+          <script
+            key={`review-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
       </Head>
 
       {/* Hero Section - Roto-Rooter Layout */}

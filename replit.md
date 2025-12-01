@@ -97,6 +97,15 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
   - Comparison tables (Wood's Plumbing vs. Other Plumbers) for AI parsing
   - Semantic HTML5 elements (`<figure>`, `<table>`) for structured data extraction
 - **Google Business Profile**: Embedded iframe on contact page, footer link for local SEO signals
+- **Review Schema**: Individual Review schema with 8 customer testimonials (`lib/data/testimonials.json`)
+- **E-E-A-T Schema**: Experience, Expertise, Authoritativeness, Trustworthiness signals with credentials, awards, and knowledge areas
+
+**Conversion Optimization (Dec 2025):**
+- **Google Reviews Widget** (`src/components/GoogleReviewsWidget.tsx`): Displays customer testimonials with star ratings and links to Google
+- **Floating Lead Form** (`src/components/FloatingLeadForm.tsx`): Appears on every page after 3 seconds, with QuickLeadForm popup
+- **Quick Lead Form** (`src/components/QuickLeadForm.tsx`): Short 3-field form (name, phone, service) for fast conversions
+- **Honeypot Anti-Spam**: Hidden field protection on all forms to block bots without CAPTCHA friction
+- **ServiceTitan DNI**: Dynamic Number Insertion script for call tracking (ID: 227669022) loaded in `_document.tsx`
 
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
