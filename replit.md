@@ -29,6 +29,7 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
     - **Schema.org Structured Data:** Comprehensive markup for LocalBusiness, Service, FAQPage, BlogPosting, Organization, WebSite, and Reviews, handled by helper functions in `lib/seo/schemas.ts`.
 - **Contact Form System:** Features PostgreSQL database storage, database-backed rate limiting (5 requests/hour per IP), Zod validation, and React Hook Form integration.
 - **AI-Optimized Knowledge Base:** Consolidates all business information, services, locations, and FAQs for easy AI parsing.
+- **llms.txt File:** `/llms.txt` markdown file following the proposed standard for LLM crawlers, providing structured site overview with services, locations, and credentials.
 - **Performance:** Next.js Image component with AVIF/WebP support, preconnect hints, gzip compression, and font optimization with `next/font`.
 
 **Feature Specifications:**
