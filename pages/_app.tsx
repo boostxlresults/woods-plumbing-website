@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer'
 import { EmergencyBanner } from '@/components/EmergencyBanner'
 import { CookieConsent } from '@/components/CookieConsent'
 import { FloatingLeadForm } from '@/components/FloatingLeadForm'
+import { StickyCTA } from '@/components/StickyCTA'
 import { pageview } from '@/lib/analytics'
 
 // Optimize font loading with next/font
@@ -47,6 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
       <Footer />
+      <StickyCTA />
       <FloatingLeadForm />
       <CookieConsent />
     </div>

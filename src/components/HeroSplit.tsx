@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { ScheduleButton } from '@/components/ScheduleButton';
 import { trackPhoneClick } from '@/lib/analytics';
 import { BUSINESS } from '@/lib/constants';
 import { TrustBadges } from './TrustBadges';
@@ -94,15 +94,14 @@ export function HeroSplit({
                 </a>
               )}
               
-              <Link href={buttonLink}>
-                <Button 
-                  size="lg" 
-                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg flex items-center gap-2"
-                >
-                  <span>{buttonText}</span>
-                  <span className="text-xl">✓</span>
-                </Button>
-              </Link>
+              <ScheduleButton 
+                size="lg" 
+                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
+                showIcon={false}
+              >
+                <span>{buttonText}</span>
+                <span className="text-xl ml-2">✓</span>
+              </ScheduleButton>
             </div>
           </div>
         </div>

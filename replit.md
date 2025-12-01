@@ -107,6 +107,9 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Quick Lead Form** (`src/components/QuickLeadForm.tsx`): Short 3-field form (name, phone, service) for fast conversions
 - **Honeypot Anti-Spam**: Hidden field protection on all forms to block bots without CAPTCHA friction
 - **ServiceTitan DNI**: Dynamic Number Insertion script for call tracking (ID: 227669022) loaded in `_document.tsx`
+- **ServiceTitan Scheduler**: Online booking widget integrated across all Schedule buttons (scheduler ID: sched_dup1lncrqzibtdq0swxu05r8)
+- **Sticky CTA Bar** (`src/components/StickyCTA.tsx`): Appears after scrolling, with Call and Schedule buttons on every page
+- **ScheduleButton Component** (`src/components/ScheduleButton.tsx`): Reusable button component that triggers ServiceTitan scheduler popup
 
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.

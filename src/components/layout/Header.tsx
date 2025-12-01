@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+import { ScheduleButton } from '@/components/ScheduleButton';
 import { trackPhoneClick } from '@/lib/analytics';
 import { serviceCategories } from '@/lib/data/service-categories';
 import locationsData from '@/lib/data/locations.json';
@@ -318,15 +319,12 @@ export function Header() {
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link href="/contact">
-                <Button 
-                  size="sm"
-                  className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase px-6 py-3 text-sm flex items-center gap-2"
-                >
-                  <Calendar className="w-4 h-4" />
-                  <span>SCHEDULE</span>
-                </Button>
-              </Link>
+              <ScheduleButton 
+                size="sm"
+                className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase px-6 py-3 text-sm"
+              >
+                SCHEDULE
+              </ScheduleButton>
 
               <a 
                 href={`tel:${BUSINESS.phone}`} 
@@ -417,12 +415,13 @@ export function Header() {
                 </Link>
               </li>
               <li className="pt-2 border-t border-gray-200">
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold uppercase flex items-center justify-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    <span>SCHEDULE ONLINE</span>
-                  </Button>
-                </Link>
+                <ScheduleButton 
+                  fullWidth
+                  className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase"
+                  showIcon={true}
+                >
+                  SCHEDULE ONLINE
+                </ScheduleButton>
               </li>
             </ul>
           </nav>

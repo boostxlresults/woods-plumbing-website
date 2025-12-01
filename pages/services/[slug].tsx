@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+import { ScheduleButton } from '@/components/ScheduleButton';
 import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users, DollarSign } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
 
@@ -221,15 +222,14 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                 </p>
               </a>
               
-              <Link href="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg flex items-center gap-2"
-                >
-                  <span>SCHEDULE ONLINE</span>
-                  <span className="text-xl">✓</span>
-                </Button>
-              </Link>
+              <ScheduleButton 
+                size="lg" 
+                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
+                showIcon={false}
+              >
+                <span>SCHEDULE ONLINE</span>
+                <span className="text-xl ml-2">✓</span>
+              </ScheduleButton>
             </div>
           </div>
         </div>

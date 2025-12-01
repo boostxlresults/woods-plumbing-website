@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Phone, CheckCircle, Clock, Shield, Users, Award, ThumbsUp, Wrench, Star } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+import { ScheduleButton } from '@/components/ScheduleButton';
 import { trackPhoneClick } from '@/lib/analytics';
 import { generateReviewSchema, generateEEATSchema } from '@/lib/seo/schemas';
 
@@ -130,15 +131,14 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
                 </p>
               </a>
               
-              <Link href="/contact">
-                <Button 
-                  size="lg" 
-                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg flex items-center gap-2"
-                >
-                  <span>SCHEDULE ONLINE</span>
-                  <span className="text-xl">✓</span>
-                </Button>
-              </Link>
+              <ScheduleButton 
+                size="lg" 
+                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
+                showIcon={false}
+              >
+                <span>SCHEDULE ONLINE</span>
+                <span className="text-xl ml-2">✓</span>
+              </ScheduleButton>
             </div>
           </div>
         </div>

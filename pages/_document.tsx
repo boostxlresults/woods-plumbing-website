@@ -56,6 +56,12 @@ export default function Document() {
             `,
           }}
         />
+        
+        {/* ServiceTitan Scheduler Widget */}
+        <script
+          async
+          src="https://static.servicetitan.com/js/scheduler/v1/scheduler.js"
+        />
       </Head>
       <body>
         <Main />
