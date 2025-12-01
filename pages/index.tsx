@@ -55,8 +55,8 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
   return (
     <div>
       <Head>
-        <title>{`${BUSINESS.name} - ${BUSINESS.tagline}`}</title>
-        <meta name="description" content={`Professional plumbing services in Southern Arizona since ${BUSINESS.trust.founded}. 24/7 emergency repairs, water heaters, drain cleaning, and more. BBB ${BUSINESS.trust.bbbRating} rated with ${BUSINESS.trust.totalReviews}+ reviews.`} />
+        <title>{`${BUSINESS.name} - Plumber in Marana, Tucson & Southern Arizona`}</title>
+        <meta name="description" content={`Wood's Plumbing is your first choice for top-quality plumbing solutions in Tucson and Marana. Professional plumbing service in Marana, emergency plumber available 24/7. Trusted since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated.`} />
         <link rel="canonical" href={BUSINESS.website} />
         
         <meta property="og:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
@@ -226,110 +226,173 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section - SEO Optimized */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-              Plumber in Marana, AZ
+              About Wood&apos;s Plumbing
             </h2>
             <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-4">
-                In the heart of Southern Arizona, where plumbing needs are as diverse as the residents, {BUSINESS.name} stands out for our commitment to excellence. We&apos;re not just another plumbing company in Pima County; we&apos;re your neighborhood problem-solvers, with skilled plumbers available 24/7 to ensure your pipes, drains, and water systems function flawlessly.
+              <p className="mb-4 text-xl font-medium text-navy-800">
+                Wood&apos;s Plumbing is your first choice for top-quality plumbing solutions in Tucson and Marana, as well as the surrounding areas.
               </p>
               <p className="mb-4">
-                Trusted and recommended since {BUSINESS.trust.founded}, {BUSINESS.name} is the obvious choice when people need a professional plumber in Southern Arizona. More families and businesses depend on Wood&apos;s Plumbing than any other local plumbing company. When you work with us, you get:
+                If you are looking for reliable plumbing companies that are always professional, accurate, and on time, then you have come to the right place. Our <strong>plumbing services in Marana</strong>, Tucson and its surrounding areas are unmatched, and we are also proud to be the plumbing company you can always rely on even for last-minute emergencies. As a trusted option for anyone seeking an <strong>emergency plumber in Marana</strong>, Tucson, and its surrounding areas, our team is known for fast response and dependable service.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Same day service</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>24/7 availability</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>No additional charges for nights, weekends, or holidays</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Free onsite and upfront cost estimates</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Highly trained, insured, and experienced plumbers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Industry-leading equipment</span>
-                </li>
-              </ul>
+              <p className="mb-4">
+                Many homeowners also rely on us when they need a <strong>plumbing service in Marana</strong>, Tucson, and its surrounding areas, whether it is for routine maintenance or unexpected issues. We work hard to ensure complete customer satisfaction, so you will always have someone to call when you need a <strong>plumber in Marana</strong> or anywhere in Southern Arizona.
+              </p>
               <p>
-                For service with a smile from the most dependable plumbers in Southern Arizona, <Link href="/contact" className="text-red-600 hover:text-red-700 font-semibold">reach out through our online scheduling form</Link> or call our round-the-clock service line at <a href={`tel:${BUSINESS.phone}`} className="text-red-600 hover:text-red-700 font-semibold">{BUSINESS.phone}</a>.
+                If you&apos;re ready to learn more, then <Link href="/contact" className="text-red-600 hover:text-red-700 font-semibold">contact us today</Link> or call <a href={`tel:${BUSINESS.phone}`} onClick={() => trackPhoneClick('about_section')} className="text-red-600 hover:text-red-700 font-semibold">{BUSINESS.phone}</a>!
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Comprehensive Solutions */}
+      {/* Our Comprehensive Services - SEO Optimized */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-6">
-              Comprehensive Plumbing Solutions in Southern Arizona
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-10 text-center">
+              Our Comprehensive Services
             </h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-4">
-                Wondering whether we provide the plumbing service you need? Any Wood&apos;s Plumbing technician will tell you: &quot;Yeah, we do that, too!&quot; We&apos;re your do-it-all local plumbing heroes, bringing you a comprehensive range of plumbing services to meet all of your needs, including:
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Repairs */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <Wrench className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Repairs</h3>
+                <p className="text-gray-700">
+                  There may be a million and one common repair problems, but we are prepared for all of them.
+                </p>
+              </div>
+
+              {/* Leak Detection */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Leak Detection</h3>
+                <p className="text-gray-700">
+                  We are highly experienced at diagnosing water line leaks, gas line leaks, and sewer line leaks.
+                </p>
+              </div>
+
+              {/* Water Heaters */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Water Heaters</h3>
+                <p className="text-gray-700">
+                  We are the trusted name with regard to American and AO Smith water heater sales, installation, repair, and service. In addition, we are ACT hot water-certified.
+                </p>
+              </div>
+
+              {/* Water Conditioning */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Water Conditioning</h3>
+                <p className="text-gray-700">
+                  Our water treatment and conditioning services restore the quality of your water, giving your family the healthiest, safest water possible.
+                </p>
+              </div>
+
+              {/* Repiping */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Repiping</h3>
+                <p className="text-gray-700">
+                  We can replace any type of piping for your entire home. No job is too small or too big for us, so you can count on our expertise to get the job done right.
+                </p>
+              </div>
+
+              {/* Sewer */}
+              <div className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Sewer</h3>
+                <p className="text-gray-700">
+                  One of the worst issues a property owner can encounter is a sewer problem, but Wood&apos;s Plumbing has the expertise to help quickly.
+                </p>
+              </div>
+            </div>
+
+            {/* Gas Services - Full Width */}
+            <div className="mt-8 bg-navy-50 border border-navy-200 rounded-xl p-8">
+              <h3 className="font-bold text-2xl text-navy-900 mb-4">Gas Services</h3>
+              <p className="text-gray-700 mb-4">
+                If your gas piping system requires a professional touch, then Wood&apos;s Plumbing can help. Whether you are reaching out for routine inspections or sudden concerns, many customers contacting us for gas-related needs also look for an <strong>emergency plumber in Marana</strong>, Tucson, and its surrounding areas to ensure fast, dependable support.
               </p>
-              <ul className="grid md:grid-cols-2 gap-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Emergency plumbing services</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Sewer & drain cleaning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Faucet repair & replacement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Water heater repairs and installation</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Toilet repair and replacement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Garbage disposal repair and replacement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Sewer line repair and replacement</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Water line and gas line services</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Leak detection</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                  <span>Whole home re-piping</span>
-                </li>
-              </ul>
-              <p>
-                There are competent plumbers, and then there are trusted local experts. That&apos;s why {BUSINESS.name} is the go-to plumbing service for Southern Arizona — because our professionals understand older homes, water supply management in the desert, and other unique challenges of Arizona plumbing. We tailor our solutions to address these factors, and we know how to spot issues that less experienced plumbers might miss.
+              <p className="text-gray-700 mb-4">
+                As part of our commitment to quality, we continue to offer a full range of solutions that complement any <strong>plumbing service in Marana</strong>, Tucson and its surrounding areas, keeping homes and businesses functioning safely.
               </p>
+              <p className="text-gray-700">
+                We offer a wide array of essential gas services to residential and commercial customers throughout the Tucson area. We have been serving the community since {BUSINESS.trust.founded}, so we&apos;re ready to provide you with the services you need. Our team will work to ensure that you&apos;re never at a loss when it comes to getting fast, safe and dependable gas services.
+              </p>
+            </div>
+
+            <div className="text-center mt-10">
+              <Link href="/services">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8">
+                  View All Services
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work - SEO Optimized */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-10 text-center">
+              How We Work
+            </h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Step 1 */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                  1
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">Make an Appointment</h3>
+                <p className="text-gray-700">
+                  If you need a plumber, then you&apos;re in luck! We&apos;re one of Tucson&apos;s top plumbing companies, so get in touch with us today.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                  2
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">In-Depth Diagnosis</h3>
+                <p className="text-gray-700">
+                  We assess the situation so we can come up with a solution to fix the problem. Then, we give you an upfront price.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                  3
+                </div>
+                <h3 className="font-bold text-xl text-navy-900 mb-3">We Get the Job Done</h3>
+                <p className="text-gray-700">
+                  If you accept our proposal, then our trucks are fully stocked and ready to complete the job! We work fast, so you can get back to normal as soon as possible.
+                </p>
+              </div>
             </div>
           </div>
         </div>

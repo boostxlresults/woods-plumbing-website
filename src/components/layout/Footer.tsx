@@ -139,6 +139,11 @@ export function Footer() {
                   Knowledge Base
                 </Link>
               </li>
+              <li>
+                <Link href="/faq" className="hover:text-red-400 transition-colors">
+                  FAQs
+                </Link>
+              </li>
             </ul>
 
             <div className="mt-6 p-5 bg-red-600 rounded-lg shadow-medium hover:shadow-large transition-shadow">

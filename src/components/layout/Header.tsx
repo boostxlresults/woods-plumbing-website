@@ -294,6 +294,15 @@ export function Header() {
                         <BookOpen className="w-5 h-5 text-red-600" />
                         <span className="font-semibold text-sm">Blog & Tips</span>
                       </Link>
+
+                      {/* FAQ Link */}
+                      <Link
+                        href="/faq"
+                        className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded-lg transition-all group"
+                      >
+                        <Info className="w-5 h-5 text-red-600" />
+                        <span className="font-semibold text-sm">FAQs</span>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -395,6 +404,11 @@ export function Header() {
               <li>
                 <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
                   BLOG
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="text-navy-700 hover:text-red-600 font-bold uppercase text-sm block py-2">
+                  FAQs
                 </Link>
               </li>
               <li>
