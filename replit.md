@@ -32,15 +32,25 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Performance:** Next.js Image component with AVIF/WebP support, preconnect hints, gzip compression, and font optimization with `next/font`.
 
 **Feature Specifications:**
-- **Homepage:** Hero section, trust signals, services overview.
+- **Homepage:** Hero section, trust signals, SEO-optimized About section, Comprehensive Services grid, How We Work process, and value propositions.
 - **Service Pages:** Dynamic content for 66 services, with related services components.
 - **Location Pages:** Dynamic content for 8 locations with zip code targeting and Google Maps embeds.
 - **Blog:** Category filtering and dynamic post pages.
+- **FAQ Page:** SEO-optimized FAQ page (`/faq`) with 7 questions targeting emergency plumber/plumbing service keywords, FAQPage Schema.org markup for AI search visibility.
 - **Contact Page:** Form submission to database.
 - **About Page:** Business information.
 - **Emergency Banner:** Sticky CTA for emergency services.
 - **Popular Services Widget:** Featured services in the footer.
 - **Category Pages:** 7 category overview pages (gas-services, sewer, leak, water-heater, repair, plumbing-services, additional-services) with filtered service listings, SEO meta tags, Schema.org markup, and FAQ sections.
+
+**Homepage SEO Optimization (Dec 2025):**
+- **Target Keywords:** Plumber in Marana, Plumbing service in Marana, Emergency plumber in Marana
+- **SEO-Optimized Sections:**
+  - About Wood's Plumbing: Keyword-rich intro paragraph with natural keyword placement
+  - Our Comprehensive Services: 7 service cards (Repairs, Leak Detection, Water Heaters, Water Conditioning, Repiping, Sewer, Gas Services)
+  - Gas Services: Extended description with emergency plumber keywords
+  - How We Work: 3-step process (Appointment → Diagnosis → Completion)
+- **Meta Tags:** Updated title and description with target location keywords
 
 **Legacy URL Preservation (SEO Migration):**
 - **17 Priority Legacy URLs** mapped and preserved for SEO value
