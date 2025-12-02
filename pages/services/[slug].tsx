@@ -13,6 +13,32 @@ import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
 import reviewsData from '@/lib/data/reviews.json';
 
+const getServiceImage = (slug: string): string => {
+  const emergencyServices = ['emergency-plumbing', 'burst-pipe-repair', 'emergency-leak-repair', 'emergency-drain-cleaning', 'sewer-backup-emergency', 'frozen-pipe-repair'];
+  const waterHeaterServices = ['water-heater-installation', 'water-heater-repair', 'water-heater-replacement', 'tankless-water-heaters', 'tank-water-heaters', 'water-heater-maintenance', 'water-heater-flushing', 'gas-water-heater-service', 'electric-water-heater-service'];
+  const drainSewerServices = ['drain-cleaning', 'sewer-line-repair', 'sewer-line-replacement', 'sewer-camera-inspection', 'hydro-jetting', 'trenchless-sewer-repair', 'sewer-line-cleaning', 'rooter-service', 'clogged-drain-repair', 'septic-system-service', 'backflow-prevention'];
+  const leakServices = ['leak-detection', 'water-leak-repair', 'gas-leak-detection', 'slab-leak-detection', 'slab-leak-repair', 'pipe-leak-repair', 'water-pressure-repair'];
+  const toiletServices = ['toilet-repair', 'toilet-installation'];
+  const fixtureServices = ['plumbing-repairs', 'faucet-repair', 'faucet-installation', 'sink-installation', 'sink-repair', 'garbage-disposal-repair', 'garbage-disposal-installation', 'shower-repair', 'bathtub-installation', 'shower-installation', 'fixture-installation', 'plumbing-maintenance', 'plumbing-inspection'];
+  const pipeServices = ['pipe-repair', 'whole-house-repiping', 'pipe-replacement', 'water-line-installation', 'water-line-repair', 'water-line-replacement'];
+  const waterTreatmentServices = ['water-softener-installation', 'water-softener-repair', 'water-filtration-systems', 'reverse-osmosis-systems', 'water-conditioning'];
+  const gasServices = ['gas-line-installation', 'gas-line-repair', 'gas-leak-repair', 'gas-line-inspection', 'gas-pipe-testing', 'gas-line-relocation'];
+  const commercialServices = ['commercial-plumbing'];
+
+  if (emergencyServices.includes(slug)) return '/images/services/emergency.png';
+  if (waterHeaterServices.includes(slug)) return '/images/services/water-heater.png';
+  if (drainSewerServices.includes(slug)) return '/images/services/drain-sewer.png';
+  if (leakServices.includes(slug)) return '/images/services/leak-detection.png';
+  if (toiletServices.includes(slug)) return '/images/services/toilet.png';
+  if (fixtureServices.includes(slug)) return '/images/services/fixture-repair.png';
+  if (pipeServices.includes(slug)) return '/images/services/pipe-repair.png';
+  if (waterTreatmentServices.includes(slug)) return '/images/services/water-treatment.png';
+  if (gasServices.includes(slug)) return '/images/services/gas-service.png';
+  if (commercialServices.includes(slug)) return '/images/services/commercial.png';
+  
+  return '/images/services/fixture-repair.png';
+};
+
 interface ServicePageProps {
   service: typeof servicesData[0];
   relatedServices: typeof servicesData;
@@ -188,7 +214,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
             {/* Left Side: Image */}
             <div className="relative h-[400px] md:h-[500px]">
               <Image
-                src="/images/service_-_plumbing_repair_work.png"
+                src={getServiceImage(service.slug)}
                 alt={`Professional ${service.name} service in Tucson and Southern Arizona`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
