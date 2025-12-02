@@ -3,6 +3,7 @@
 import { Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 const SCHEDULER_ID = process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID || '';
 
@@ -13,6 +14,14 @@ declare global {
     };
   }
 }
+
+const isWhitelistedDomain = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  const hostname = window.location.hostname;
+  return hostname === 'woodsplumbing.com' || 
+         hostname === 'www.woodsplumbing.com' ||
+         hostname.endsWith('.woodsplumbing.com');
+};
 
 interface ScheduleButtonProps {
   variant?: 'default' | 'outline' | 'ghost' | 'link' | 'destructive' | 'secondary';
@@ -32,12 +41,17 @@ export function ScheduleButton({
   fullWidth = false,
 }: ScheduleButtonProps) {
   const router = useRouter();
+  const [canUseScheduler, setCanUseScheduler] = useState(false);
+  
+  useEffect(() => {
+    setCanUseScheduler(isWhitelistedDomain() && typeof window !== 'undefined' && !!window._scheduler);
+  }, []);
   
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     
-    if (typeof window !== 'undefined' && window._scheduler) {
+    if (canUseScheduler && window._scheduler) {
       try {
         window._scheduler.show({ schedulerId: SCHEDULER_ID });
       } catch (error) {
@@ -64,7 +78,7 @@ export function ScheduleButton({
 }
 
 export function openScheduler() {
-  if (typeof window !== 'undefined' && window._scheduler) {
+  if (isWhitelistedDomain() && typeof window !== 'undefined' && window._scheduler) {
     window._scheduler.show({ schedulerId: SCHEDULER_ID });
   } else {
     window.location.href = '/contact';
