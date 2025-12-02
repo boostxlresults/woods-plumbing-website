@@ -101,8 +101,8 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             {/* Left Side: Image */}
             <div className="relative h-[400px] md:h-[500px]">
               <Image
-                src="/images/hero_-_plumber_with_customers_arizona.png"
-                alt="Professional plumber with van serving Southern Arizona"
+                src="/images/hero-plumber.png"
+                alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
