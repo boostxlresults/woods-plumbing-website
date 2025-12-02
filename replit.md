@@ -107,9 +107,20 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Quick Lead Form** (`src/components/QuickLeadForm.tsx`): Short 3-field form (name, phone, service) for fast conversions
 - **Honeypot Anti-Spam**: Hidden field protection on all forms to block bots without CAPTCHA friction
 - **ServiceTitan DNI**: Dynamic Number Insertion script for call tracking (ID: 227669022) loaded in `_document.tsx`
-- **ServiceTitan Scheduler**: Online booking widget integrated across all Schedule buttons (scheduler ID: sched_dup1lncrqzibtdq0swxu05r8)
-- **Sticky CTA Bar** (`src/components/StickyCTA.tsx`): Appears after scrolling, with Call and Schedule buttons on every page
-- **ScheduleButton Component** (`src/components/ScheduleButton.tsx`): Reusable button component that triggers ServiceTitan scheduler popup
+- **ServiceTitan Scheduling Pro Integration**:
+  - Script: `https://embed.scheduler.servicetitan.com/scheduler-v1.js`
+  - Configured via environment variables: `NEXT_PUBLIC_SERVICETITAN_API_KEY`, `NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID`
+  - Method: `_scheduler.show({ schedulerId })` triggers popup
+  - Whitelisted domains: woodsplumbing.com, www.woodsplumbing.com
+  - Fallback: Redirects to /contact page if scheduler unavailable
+- **Schedule Button Placement (3+ per page)**:
+  - Emergency Banner (`src/components/EmergencyBanner.tsx`): "Schedule" button in top bar
+  - Header (`src/components/layout/Header.tsx`): "SCHEDULE" button in navigation
+  - Hero Section (`pages/index.tsx`, `pages/services/[slug].tsx`): "SCHEDULE ONLINE" button
+  - Sticky CTA Bar (`src/components/StickyCTA.tsx`): Appears after 30% scroll with Call + Schedule buttons
+  - Footer (`src/components/layout/Footer.tsx`): Schedule button in company info section
+  - Floating Lead Form (`src/components/FloatingLeadForm.tsx`): Appears after 3 seconds
+- **ScheduleButton Component** (`src/components/ScheduleButton.tsx`): Reusable button that triggers ServiceTitan Scheduling Pro popup
 
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
