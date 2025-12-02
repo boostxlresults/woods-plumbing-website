@@ -122,6 +122,21 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
   - Floating Lead Form (`src/components/FloatingLeadForm.tsx`): Appears after 3 seconds
 - **ScheduleButton Component** (`src/components/ScheduleButton.tsx`): Reusable button that triggers ServiceTitan Scheduling Pro popup
 
+**Service Page Category Images (Dec 2025):**
+- **10 Unique Branded Images** generated with "WOOD'S PLUMBING" uniforms for service categories:
+  - Emergency services (burst pipes, water spraying action)
+  - Water heater installation/repair
+  - Drain cleaning and sewer services
+  - Leak detection with diagnostic equipment
+  - Toilet installation/repair
+  - Fixture repair (faucets, sinks, showers)
+  - Pipe repair and repiping
+  - Water treatment/softener installation
+  - Gas line services (yellow pipes, safety equipment)
+  - Commercial plumbing
+- **Dynamic Image Selection**: `getServiceImage()` helper function maps 66 service slugs to category-appropriate images
+- **Images Location**: `/public/images/services/` directory
+
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
 - The project structure is organized for scalability and maintainability, separating pages, components, data, and utilities.
