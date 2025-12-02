@@ -57,11 +57,16 @@ export default function Document() {
           }}
         />
         
-        {/* ServiceTitan Scheduler Widget */}
-        <script
-          async
-          src="https://static.servicetitan.com/js/scheduler/v1/scheduler.js"
-        />
+        {/* ServiceTitan Scheduling Pro Widget - API key and scheduler ID configured via environment variables */}
+        {process.env.NEXT_PUBLIC_SERVICETITAN_API_KEY && process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID && (
+          <script
+            data-api-key={process.env.NEXT_PUBLIC_SERVICETITAN_API_KEY}
+            data-schedulerid={process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID}
+            defer
+            id="se-widget-embed"
+            src="https://embed.scheduler.servicetitan.com/scheduler-v1.js"
+          />
+        )}
       </Head>
       <body>
         <Main />

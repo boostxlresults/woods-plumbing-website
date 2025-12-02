@@ -2,16 +2,17 @@
 
 import { Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/router';
+
+const SCHEDULER_ID = process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID || '';
 
 declare global {
   interface Window {
     _scheduler?: {
-      show: (config: { schedulerId: string }) => void;
+      show: (config?: { schedulerId?: string }) => void;
     };
   }
 }
-
-const SCHEDULER_ID = 'sched_dup1lncrqzibtdq0swxu05r8';
 
 interface ScheduleButtonProps {
   variant?: 'default' | 'outline' | 'ghost' | 'link' | 'destructive' | 'secondary';
@@ -30,9 +31,21 @@ export function ScheduleButton({
   showIcon = true,
   fullWidth = false,
 }: ScheduleButtonProps) {
-  const handleClick = () => {
+  const router = useRouter();
+  
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
     if (typeof window !== 'undefined' && window._scheduler) {
-      window._scheduler.show({ schedulerId: SCHEDULER_ID });
+      try {
+        window._scheduler.show({ schedulerId: SCHEDULER_ID });
+      } catch (error) {
+        console.error('Error opening scheduler:', error);
+        router.push('/contact');
+      }
+    } else {
+      router.push('/contact');
     }
   };
 
@@ -42,7 +55,7 @@ export function ScheduleButton({
       variant={variant}
       size={size}
       onClick={handleClick}
-      className={`${fullWidth ? 'w-full' : ''} ${className}`}
+      className={`cursor-pointer ${fullWidth ? 'w-full' : ''} ${className}`}
     >
       {showIcon && <Calendar className="w-4 h-4 mr-2" />}
       {children}
@@ -53,5 +66,7 @@ export function ScheduleButton({
 export function openScheduler() {
   if (typeof window !== 'undefined' && window._scheduler) {
     window._scheduler.show({ schedulerId: SCHEDULER_ID });
+  } else {
+    window.location.href = '/contact';
   }
 }

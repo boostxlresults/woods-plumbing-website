@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Calendar } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { trackPhoneClick } from '@/lib/analytics';
+import { ScheduleButton } from '@/components/ScheduleButton';
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 
@@ -69,6 +70,14 @@ export function Footer() {
               >
                 <Instagram className="w-5 h-5" />
               </a>
+            </div>
+
+            {/* Schedule Button in Footer */}
+            <div className="mt-6">
+              <ScheduleButton 
+                className="bg-red-600 hover:bg-red-700 text-white w-full"
+                size="lg"
+              />
             </div>
           </div>
 

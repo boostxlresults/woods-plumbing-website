@@ -1,8 +1,9 @@
 'use client';
 
-import { Phone, Clock } from 'lucide-react';
+import { Phone, Clock, Calendar } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { trackPhoneClick } from '@/lib/analytics';
+import { ScheduleButton } from '@/components/ScheduleButton';
 
 export const EmergencyBanner: React.FC = () => {
   return (
@@ -12,14 +13,23 @@ export const EmergencyBanner: React.FC = () => {
           <Clock className="w-4 h-4" />
           <span className="font-medium">24/7 Emergency Service Available</span>
         </div>
-        <a 
-          href={`tel:${BUSINESS.phone}`}
-          onClick={() => trackPhoneClick('emergency_banner')}
-          className="flex items-center gap-2 bg-red-600 text-white px-5 py-2 rounded font-bold hover:bg-red-700 transition-all duration-200"
-        >
-          <Phone className="w-4 h-4" />
-          <span className="text-base">Call Now: {BUSINESS.phone}</span>
-        </a>
+        <div className="flex items-center gap-3">
+          <a 
+            href={`tel:${BUSINESS.phone}`}
+            onClick={() => trackPhoneClick('emergency_banner')}
+            className="flex items-center gap-2 bg-red-600 text-white px-5 py-2 rounded font-bold hover:bg-red-700 transition-all duration-200"
+          >
+            <Phone className="w-4 h-4" />
+            <span className="text-base">Call Now: {BUSINESS.phone}</span>
+          </a>
+          <ScheduleButton 
+            className="bg-white text-navy-700 hover:bg-gray-100 font-bold"
+            size="default"
+            showIcon={true}
+          >
+            Schedule
+          </ScheduleButton>
+        </div>
       </div>
     </div>
   );
