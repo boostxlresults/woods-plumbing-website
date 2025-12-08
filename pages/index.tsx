@@ -112,8 +112,8 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             {/* Right Side: Content */}
-            <div className="py-12 md:py-16 px-6 md:px-12">
-              <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase">
+            <div className="py-12 md:py-16 px-6 md:px-12 flex flex-col items-center text-center md:items-start md:text-left">
+              <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl">
                 THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
               </h1>
               
@@ -133,7 +133,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
               
               <ScheduleButton 
                 size="lg" 
-                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
+                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg mx-auto md:mx-0"
                 showIcon={false}
               >
                 <span>SCHEDULE ONLINE</span>
