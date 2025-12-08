@@ -96,10 +96,10 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
 
       {/* Hero Section - Roto-Rooter Layout */}
       <section className="bg-gray-100">
-        <div className="container mx-auto px-4">
+        <div className="md:container md:mx-auto md:px-4">
           <div className="grid md:grid-cols-2 gap-0 items-center">
             {/* Left Side: Image */}
-            <div className="relative h-[400px] md:h-[500px]">
+            <div className="relative h-[400px] md:h-[500px] w-full">
               <Image
                 src="/images/hero-plumber.png"
                 alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
@@ -112,7 +112,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             </div>
 
             {/* Right Side: Content */}
-            <div className="py-12 md:py-16 px-6 md:px-12 flex flex-col items-center text-center md:items-start md:text-left">
+            <div className="py-12 md:py-16 px-4 md:px-12 flex flex-col items-center text-center md:items-start md:text-left">
               <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl">
                 THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
               </h1>
