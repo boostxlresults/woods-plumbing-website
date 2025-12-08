@@ -96,49 +96,92 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
 
       {/* Hero Section - Roto-Rooter Layout */}
       <section className="bg-gray-100">
-        <div className="md:container md:mx-auto md:px-4">
-          <div className="grid md:grid-cols-2 gap-0 items-center">
-            {/* Left Side: Image */}
-            <div className="relative h-[400px] md:h-[500px] w-full">
-              <Image
-                src="/images/hero-plumber.png"
-                alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center"
-                priority
-                quality={90}
-              />
-            </div>
-
-            {/* Right Side: Content */}
-            <div className="py-12 md:py-16 px-4 md:px-12 flex flex-col items-center text-center md:items-start md:text-left">
-              <h1 className="text-navy-700 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl">
-                THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
-              </h1>
-              
-              <p className="text-red-600 font-bold text-2xl md:text-3xl mb-4">
-                Call Us Now!
+        {/* Mobile: Stack layout */}
+        <div className="md:hidden">
+          <div className="relative h-[350px] w-full">
+            <Image
+              src="/images/hero-plumber.png"
+              alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+              priority
+              quality={90}
+            />
+          </div>
+          <div className="py-8 px-4 flex flex-col items-center text-center">
+            <h1 className="text-navy-700 font-bold text-3xl leading-tight mb-4 uppercase">
+              THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
+            </h1>
+            
+            <p className="text-red-600 font-bold text-2xl mb-3">
+              Call Us Now!
+            </p>
+            
+            <a 
+              href={`tel:${BUSINESS.phone}`}
+              onClick={() => trackPhoneClick('hero')}
+              className="block mb-5"
+            >
+              <p className="text-navy-700 font-bold text-4xl hover:text-red-600 transition-colors">
+                {BUSINESS.phone}
               </p>
-              
-              <a 
-                href={`tel:${BUSINESS.phone}`}
-                onClick={() => trackPhoneClick('hero')}
-                className="block mb-6"
-              >
-                <p className="text-navy-700 font-bold text-4xl md:text-5xl lg:text-6xl hover:text-red-600 transition-colors">
-                  {BUSINESS.phone}
+            </a>
+            
+            <ScheduleButton 
+              size="lg" 
+              className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-5 text-lg"
+              showIcon={false}
+            >
+              <span>SCHEDULE ONLINE</span>
+              <span className="text-xl ml-2">✓</span>
+            </ScheduleButton>
+          </div>
+        </div>
+        
+        {/* Desktop: Side-by-side layout */}
+        <div className="hidden md:block">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-0 items-center">
+              <div className="relative h-[500px]">
+                <Image
+                  src="/images/hero-plumber.png"
+                  alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-center"
+                  priority
+                  quality={90}
+                />
+              </div>
+              <div className="py-16 px-12">
+                <h1 className="text-navy-700 font-bold text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl">
+                  THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
+                </h1>
+                
+                <p className="text-red-600 font-bold text-3xl mb-4">
+                  Call Us Now!
                 </p>
-              </a>
-              
-              <ScheduleButton 
-                size="lg" 
-                className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg mx-auto md:mx-0"
-                showIcon={false}
-              >
-                <span>SCHEDULE ONLINE</span>
-                <span className="text-xl ml-2">✓</span>
-              </ScheduleButton>
+                
+                <a 
+                  href={`tel:${BUSINESS.phone}`}
+                  onClick={() => trackPhoneClick('hero')}
+                  className="block mb-6"
+                >
+                  <p className="text-navy-700 font-bold text-5xl lg:text-6xl hover:text-red-600 transition-colors">
+                    {BUSINESS.phone}
+                  </p>
+                </a>
+                
+                <ScheduleButton 
+                  size="lg" 
+                  className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
+                  showIcon={false}
+                >
+                  <span>SCHEDULE ONLINE</span>
+                  <span className="text-xl ml-2">✓</span>
+                </ScheduleButton>
+              </div>
             </div>
           </div>
         </div>
