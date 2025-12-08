@@ -137,6 +137,11 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Dynamic Image Selection**: `getServiceImage()` helper function maps 66 service slugs to category-appropriate images
 - **Images Location**: `/public/images/services/` directory
 
+**SEO: Unique Service Intros (Dec 2025):**
+- **66 Unique First Paragraphs**: Each service page now has a completely unique opening paragraph to eliminate duplicate content concerns
+- **Topical Alignment**: Each intro is specifically written for that service's context, pain points, and value proposition
+- **Duplicate Content Mitigation**: Replaced templated "[Service] is one of the most important..." pattern with individually crafted intros
+
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
 - The project structure is organized for scalability and maintainability, separating pages, components, data, and utilities.
