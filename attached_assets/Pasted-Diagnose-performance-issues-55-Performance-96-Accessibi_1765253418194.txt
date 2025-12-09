@@ -1,0 +1,391 @@
+Diagnose performance issues
+55
+Performance
+96
+Accessibility
+81
+Best Practices
+100
+SEO
+55
+FCP
++1
+LCP
++0
+TBT
++26
+CLS
++25
+SI
++3
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+4.7 s
+Largest Contentful Paint
+12.4 s
+Total Blocking Time
+250 ms
+Cumulative Layout Shift
+0
+Speed Index
+7.0 s
+Captured at Dec 8, 2025, 9:08 PM MST
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 137.0.7151.119 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+Insights
+Render blocking requests Est savings of 150 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+Google Fonts cdn 
+1.6 KiB	750 ms
+/css2?family=…(fonts.googleapis.com)
+1.6 KiB
+750 ms
+Use efficient cache lifetimes Est savings of 128 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+Azure Web Services cdn
+112 KiB
+…1.0.50/webfields.js(stpaymentspciprod.blob.core.windows.net)
+None
+112 KiB
+servicetitan.com
+13 KiB
+/scheduler-v1.js(embed.scheduler.servicetitan.com)
+5m
+7 KiB
+/marketing-ads/dni.js(static.servicetitan.com)
+None
+6 KiB
+Cloudflare utility 
+7 KiB
+/beacon.min.js/vcd15cbe…(static.cloudflareinsights.com)
+1d
+7 KiB
+Improve image delivery Est savings of 8 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+woodsplumbing.com 1st party
+40.2 KiB	8.1 KiB
+Wood's Plumbing professional technician greeting homeowners in Arizona
+<img alt="Wood's Plumbing professional technician greeting homeowners in Arizona" decoding="async" data-nimg="fill" class="object-cover object-center" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="100vw" srcset="/_next/image?url=%2Fimages%2Fhero-plumber.png&amp;w=640&amp;q=90 640w, /_next/imag…" src="https://www.woodsplumbing.com/_next/image?url=%2Fimages%2Fhero-plumber.png…">
+/_next/image?url=%2Fimages%2Fhero-plumber.png&w=750&q=90(www.woodsplumbing.com)
+40.2 KiB
+8.1 KiB
+Increasing the image compression factor could improve this image's download size.
+8.1 KiB
+Legacy JavaScript Est savings of 13 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCPUnscored
+URL
+Wasted bytes
+woodsplumbing.com 1st party
+12.8 KiB
+…chunks/main-9721….js?dpl=dpl_aQa5T…(www.woodsplumbing.com)
+12.8 KiB
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:18646(www.woodsplumbing.com)
+Array.prototype.at
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:18034(www.woodsplumbing.com)
+Array.prototype.flat
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:18147(www.woodsplumbing.com)
+Array.prototype.flatMap
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:18523(www.woodsplumbing.com)
+Object.fromEntries
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:18781(www.woodsplumbing.com)
+Object.hasOwn
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:17776(www.woodsplumbing.com)
+String.prototype.trimEnd
+…chunks/main-9721….js?dpl=dpl_aQa5T…:1:17691(www.woodsplumbing.com)
+String.prototype.trimStart
+LCP request discovery
+Optimize LCP by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loadingLCPUnscored
+lazy load not applied
+fetchpriority=high should be applied
+Request is discoverable in initial document
+Wood's Plumbing professional technician greeting homeowners in Arizona
+<img alt="Wood's Plumbing professional technician greeting homeowners in Arizona" decoding="async" data-nimg="fill" class="object-cover object-center" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="100vw" srcset="/_next/image?url=%2Fimages%2Fhero-plumber.png&amp;w=640&amp;q=90 640w, /_next/imag…" src="https://www.woodsplumbing.com/_next/image?url=%2Fimages%2Fhero-plumber.png…">
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 757 ms
+Initial Navigation
+https://www.woodsplumbing.com - 322 ms, 67.63 KiB
+/css2?family=…(fonts.googleapis.com) - 324 ms, 1.61 KiB
+…v20/UcC73FwrK….woff2(fonts.gstatic.com) - 757 ms, 48.09 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+Origin
+Est LCP savings
+https://stpaymentspciprod.blob.core.windows.net
+500 ms
+https://mads-dni-go.servicetitan.com
+300 ms
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+0 ms
+Resource load delay
+310 ms
+Resource load duration
+300 ms
+Element render delay
+1,840 ms
+Wood's Plumbing professional technician greeting homeowners in Arizona
+<img alt="Wood's Plumbing professional technician greeting homeowners in Arizona" decoding="async" data-nimg="fill" class="object-cover object-center" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="100vw" srcset="/_next/image?url=%2Fimages%2Fhero-plumber.png&amp;w=640&amp;q=90 640w, /_next/imag…" src="https://www.woodsplumbing.com/_next/image?url=%2Fimages%2Fhero-plumber.png…">
+3rd parties
+3rd party code can significantly impact load performance. Reduce and defer loading of 3rd party code to prioritize your page's content.Unscored
+3rd party
+Transfer size
+Main thread time
+servicetitan.com
+896 KiB	211 ms
+…pages/_app-86eddb172b08b773.js(scheduler.servicetitan.com)
+262 KiB
+65 ms
+…chunks/framework-c8e35e2698c130fc.js(scheduler.servicetitan.com)
+45 KiB
+57 ms
+…chunks/143-a3e88bdbf88af5e5.js(scheduler.servicetitan.com)
+107 KiB
+25 ms
+…chunks/main-d4171fa585074fae.js(scheduler.servicetitan.com)
+33 KiB
+14 ms
+…chunks/24353afe-15cd92081b9193e9.js(scheduler.servicetitan.com)
+82 KiB
+9 ms
+…chunks/915-2b01896d193e6088.js(scheduler.servicetitan.com)
+62 KiB
+8 ms
+…chunks/932-abed1cda24476f95.js(scheduler.servicetitan.com)
+39 KiB
+7 ms
+…chunks/765-0c2d0e1aeced45f3.js(scheduler.servicetitan.com)
+19 KiB
+6 ms
+/marketing-ads/dni.js(static.servicetitan.com)
+6 KiB
+4 ms
+/scheduler-v1.js(embed.scheduler.servicetitan.com)
+7 KiB
+4 ms
+…chunks/427-6c57d026c1513092.js(scheduler.servicetitan.com)
+16 KiB
+3 ms
+/?brandId=…(scheduler.servicetitan.com)
+7 KiB
+2 ms
+…chunks/481-3d318497e8fcfc6d.js(scheduler.servicetitan.com)
+14 KiB
+2 ms
+…chunks/254-e15a336860e5b11e.js(scheduler.servicetitan.com)
+11 KiB
+2 ms
+…chunks/webpack-b9cc4591042aa758.js(scheduler.servicetitan.com)
+3 KiB
+1 ms
+…chunks/990-d65ca28fd4958504.js(scheduler.servicetitan.com)
+4 KiB
+1 ms
+…pages/index-6d73d9a875757cae.js(scheduler.servicetitan.com)
+2 KiB
+0 ms
+…wwgnY8Qz1WerCtuDCHFhK/_buildManifest.js(scheduler.servicetitan.com)
+2 KiB
+0 ms
+…wwgnY8Qz1WerCtuDCHFhK/_ssgManifest.js(scheduler.servicetitan.com)
+1 KiB
+0 ms
+/cdn-cgi/rum(scheduler.servicetitan.com)
+1 KiB
+0 ms
+/api/dni?tenantId=…(mads-dni-go.servicetitan.com)
+0 KiB
+0 ms
+…css/8575e3d6d8d7ef2e.css(scheduler.servicetitan.com)
+171 KiB
+0 ms
+…css/19bf393a1bbbfc02.css(scheduler.servicetitan.com)
+2 KiB
+0 ms
+/graphql/graphql(api.scheduler.servicetitan.com)
+1 KiB
+0 ms
+Google Tag Manager tag-manager 
+156 KiB	108 ms
+/gtag/js?id=G-0R9CC2EJZ2(www.googletagmanager.com)
+156 KiB
+108 ms
+Azure Web Services cdn
+112 KiB	16 ms
+…1.0.50/webfields.js(stpaymentspciprod.blob.core.windows.net)
+112 KiB
+16 ms
+Cloudflare utility 
+7 KiB	5 ms
+/beacon.min.js/vcd15cbe…(static.cloudflareinsights.com)
+7 KiB
+5 ms
+Google Fonts cdn 
+51 KiB	0 ms
+…v20/UcC73FwrK….woff2(fonts.gstatic.com)
+48 KiB
+0 ms
+/css?family=…(fonts.googleapis.com)
+2 KiB
+0 ms
+/css2?family=…(fonts.googleapis.com)
+2 KiB
+0 ms
+Google Analytics analytics 
+1 KiB	0 ms
+/g/collect?v=…(www.google-analytics.com)
+1 KiB
+0 ms
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused CSS Est savings of 170 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.LCPFCPUnscored
+Next.js
+Consider setting up PurgeCSS in Next.js configuration to remove unused rules from stylesheets. Learn more.
+URL
+Transfer Size
+Est Savings
+servicetitan.com
+170.1 KiB	169.9 KiB
+…css/8575e3d6d8d7ef2e.css(scheduler.servicetitan.com)
+170.1 KiB
+169.9 KiB
+Reduce unused JavaScript Est savings of 515 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+Next.js
+Use Webpack Bundle Analyzer to detect unused JavaScript code. Learn more
+URL
+Transfer Size
+Est Savings
+servicetitan.com
+466.0 KiB	339.2 KiB
+…pages/_app-86eddb172b08b773.js(scheduler.servicetitan.com)
+261.3 KiB
+178.8 KiB
+…chunks/143-a3e88bdbf88af5e5.js(scheduler.servicetitan.com)
+105.9 KiB
+77.8 KiB
+…chunks/915-2b01896d193e6088.js(scheduler.servicetitan.com)
+61.1 KiB
+50.6 KiB
+…chunks/932-abed1cda24476f95.js(scheduler.servicetitan.com)
+37.7 KiB
+31.9 KiB
+Azure Web Services cdn
+112.0 KiB	93.8 KiB
+…1.0.50/webfields.js(stpaymentspciprod.blob.core.windows.net)
+112.0 KiB
+93.8 KiB
+Google Tag Manager tag-manager 
+155.2 KiB	58.2 KiB
+/gtag/js?id=G-0R9CC2EJZ2(www.googletagmanager.com)
+155.2 KiB
+58.2 KiB
+woodsplumbing.com 1st party
+57.0 KiB	23.5 KiB
+…chunks/framework….js?dpl=dpl_aQa5T…(www.woodsplumbing.com)
+57.0 KiB
+23.5 KiB
+Avoid long main-thread tasks 5 long tasks found
+User Timing marks and measures 17 user timings
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (15)
+Show
+96
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+Low-contrast text is difficult or impossible for many users to read. Learn how to provide sufficient color contrast.
+Failing Elements
+Privacy Policy
+<a class="hover:text-red-400 transition-colors" href="/privacy-policy">
+Southern Arizona's Trusted Plumber Since 1979 (520) 682-2233 info@woodsplumbin…
+<footer class="bg-navy-950 text-gray-300">
+Terms of Use
+<a class="hover:text-red-400 transition-colors" href="/terms">
+Southern Arizona's Trusted Plumber Since 1979 (520) 682-2233 info@woodsplumbin…
+<footer class="bg-navy-950 text-gray-300">
+Google Business Profile
+<a href="https://g.page/woods-plumbing-tucson" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors">
+Southern Arizona's Trusted Plumber Since 1979 (520) 682-2233 info@woodsplumbin…
+<footer class="bg-navy-950 text-gray-300">
+Proudly serving Southern Arizona since 1979
+<p class="mt-2 text-gray-500">
+Southern Arizona's Trusted Plumber Since 1979 (520) 682-2233 info@woodsplumbin…
+<footer class="bg-navy-950 text-gray-300">
+These are opportunities to improve the legibility of your content.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (24)
+Show
+Not applicable (35)
+Show
+81
+Best Practices
+General
+Uses deprecated APIs 1 warning found
+Deprecated APIs will eventually be removed from the browser. Learn more about deprecated APIs.
+Deprecation / Warning
+Source
+Google Tag Manager tag-manager 
+H1UserAgentFontSizeInSection
+/gtag/js?id=G-0R9CC2EJZ2:866:14(www.googletagmanager.com)
+Detected JavaScript libraries
+All front-end JavaScript libraries detected on the page. Learn more about this JavaScript library detection diagnostic audit.Unscored
+Name
+Version
+Next.js
+15.2.6
+Missing source maps for large first-party JavaScript
+Source maps translate minified code to the original source code. This helps developers debug in production. In addition, Lighthouse is able to provide further insights. Consider deploying source maps to take advantage of these benefits. Learn more about source maps.Unscored
+URL
+Map URL
+woodsplumbing.com 1st party
+…pages/_app-047f….js?dpl=dpl_aQa5T…(www.woodsplumbing.com)
+Large JavaScript file is missing a source map
