@@ -94,7 +94,7 @@ export default async function handler(
     // Insert into database
     const [contact] = await db.insert(contactSubmissions).values({
       name,
-      email,
+      email: email || '',
       phone: phone || '',
       service: service || null,
       message,
