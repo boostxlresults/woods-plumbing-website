@@ -117,7 +117,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
               className="object-cover object-center"
               priority
               fetchPriority="high"
-              quality={90}
+              quality={75}
             />
           </div>
           <div className="py-8 px-4 flex flex-col items-center text-center">
