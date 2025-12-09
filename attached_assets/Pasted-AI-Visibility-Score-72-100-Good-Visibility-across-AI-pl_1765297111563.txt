@@ -1,0 +1,45 @@
+AI Visibility Score
+
+72/100
+Good Visibility across AI platforms
+
+https://www.woodsplumbing.com/
+
+Hi Joseph Schwartz,
+Thank you for scanning 23 Ways LLC with BoostXL! Here's your complete AI visibility analysis with actionable insights to boost your presence in ChatGPT, Gemini, and other AI search platforms.
+
+Key Insights & Recommendations
+⚠ Structured Data
+Missing LocalBusiness Schema
+The website lacks a LocalBusiness schema, which is crucial for local SEO and helps search engines understand the business's location and services. Implementing this schema can improve visibility in local search results.
+
+high IMPACT
+✓ Crawlability & Technical
+Comprehensive Technical Setup
+The website has a well-configured technical setup with a valid robots.txt, sitemap.xml, and canonical tags, ensuring good crawlability and indexability by search engines.
+
+medium IMPACT
+⚠ Content for LLMs
+Lack of Answer-Style Content
+The website does not feature answer-style content or FAQ blocks, which are beneficial for AI-driven search engines to extract concise answers. Adding these can enhance the site's ability to appear in AI-generated responses.
+
+high IMPACT
+✓ Local Signals
+Strong Local Content
+The website effectively uses local content and service area information, which strengthens its local SEO signals and helps in ranking for location-based queries.
+
+medium IMPACT
+⚠ E-A-T & Citations
+Missing Author Bios and Citations
+The absence of author bios and citations can affect the website's perceived expertise and trustworthiness. Including these elements can enhance credibility and trust signals.
+
+medium IMPACT
+✓ Intent Optimization
+Effective Use of Internal Links
+The website has a good internal linking structure, which helps in distributing page authority and improving user navigation, aligning well with user intent.
+
+low IMPACT
+🎯 Top 3 Priority Fixes
+Add FAQ Schema Markup: Implement structured data to help AI extract Q&A content
+Optimize Your Sitemap: Remove low-quality URLs and prioritize high-value pages
+Strengthen Brand Entity Signals: Complete your JSON-LD organization markup

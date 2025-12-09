@@ -11,6 +11,7 @@ const AboutPage: NextPage = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
+    "@id": `${BUSINESS.website}/#organization`,
     "name": BUSINESS.name,
     "legalName": BUSINESS.legalName,
     "url": BUSINESS.website,
@@ -94,6 +95,34 @@ const AboutPage: NextPage = () => {
     }))
   };
 
+  const authorSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joseph Wood",
+    "jobTitle": "Owner & Master Plumber",
+    "description": "Joseph Wood is the owner of Wood's Plumbing Enterprises LLC, a licensed Master Plumber with over 40 years of experience serving Southern Arizona.",
+    "knowsAbout": ["Plumbing", "Gas Line Services", "Water Heater Installation", "Leak Detection", "Emergency Plumbing", "Residential Plumbing", "Commercial Plumbing"],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "Arizona ROC Contractor License",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Arizona Registrar of Contractors"
+        }
+      }
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": BUSINESS.name,
+      "@id": `${BUSINESS.website}/#organization`
+    },
+    "sameAs": [
+      BUSINESS.social.googleBusiness
+    ]
+  };
+
   return (
     <div>
       <Head>
@@ -125,6 +154,7 @@ const AboutPage: NextPage = () => {
         {/* Schema.org */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }} />
       </Head>
 
       {/* Hero */}
@@ -159,6 +189,43 @@ const AboutPage: NextPage = () => {
               <p className="text-lg text-gray-700 leading-relaxed">
                 {`From emergency repairs to planned installations, from residential homes to commercial facilities, we've seen it all and fixed it all. Our BBB A+ rating and ${BUSINESS.trust.displayRating}-star average across ${BUSINESS.trust.totalReviews}+ reviews reflect our unwavering commitment to customer satisfaction and quality work.`}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Owner - E-E-A-T Author Bio */}
+      <section className="py-16 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Meet the Owner</h2>
+            <div className="bg-white rounded-xl shadow-lg p-8 md:flex md:items-start md:gap-8">
+              <div className="flex-shrink-0 mb-6 md:mb-0 text-center md:text-left">
+                <div className="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto md:mx-0">
+                  <Users className="w-16 h-16 text-blue-600" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Joseph Wood</h3>
+                <p className="text-blue-600 font-medium mb-4">Owner & Master Plumber</p>
+                <div className="prose text-gray-700">
+                  <p className="mb-4">
+                    With over 40 years of hands-on experience in the plumbing industry, Joseph Wood has built 
+                    Wood&apos;s Plumbing Enterprises into one of Southern Arizona&apos;s most trusted plumbing companies. 
+                    A licensed Master Plumber (ROC #{BUSINESS.trust.license}), Joseph personally oversees operations 
+                    to ensure every job meets the highest standards.
+                  </p>
+                  <p className="mb-4">
+                    Joseph&apos;s expertise spans residential and commercial plumbing, gas line services, water heater 
+                    installation, and emergency repairs. His commitment to honest service and fair pricing has earned 
+                    the company a BBB A+ rating and {BUSINESS.trust.totalReviews}+ positive customer reviews.
+                  </p>
+                  <p>
+                    <strong>Certifications:</strong> Arizona ROC Licensed Contractor, Certified in Gas Line Services, 
+                    Backflow Prevention Certified, OSHA Safety Trained
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

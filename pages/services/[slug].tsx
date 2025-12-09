@@ -167,7 +167,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
 
   const serviceAreas = "Tucson, Marana, Oro Valley, Sahuarita & Southern Arizona";
   const localSeoTitle = `${service.name} in ${serviceAreas} | ${BUSINESS.name}`;
-  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in ${serviceAreas}. ${service.shortDescription} Licensed ROC ${BUSINESS.trust.license}. Call (520) 682-2233.`;
+  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in ${serviceAreas}. ${service.shortDescription} Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`;
 
   // AI-optimized keywords for this specific service
   const aiKeywords = `${service.name}, plumbing ${service.name.toLowerCase()}, ${service.name} Tucson, ${service.name} Southern Arizona, ${service.name} Marana, ${service.name} Oro Valley, licensed plumber, emergency plumber, ROC ${BUSINESS.trust.license}`;

@@ -44,7 +44,7 @@ const GasServicesPage: NextPage = () => {
         "name": "Do you offer emergency gas leak repair?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Wood's Plumbing provides 24/7 emergency gas leak detection and repair services. If you smell gas, leave the area immediately and call us at (520) 682-2233."
+          "text": `Yes, Wood's Plumbing provides 24/7 emergency gas leak detection and repair services. If you smell gas, leave the area immediately and call us at ${BUSINESS.phone}.`
         }
       },
       {

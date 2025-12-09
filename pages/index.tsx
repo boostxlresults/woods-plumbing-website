@@ -38,12 +38,17 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "Plumber",
+    "@type": ["LocalBusiness", "Plumber"],
     "name": BUSINESS.name,
+    "alternateName": "Wood's Plumbing",
+    "description": "Licensed plumbing contractor serving Southern Arizona since 1979. Professional plumbing services including repairs, water heaters, leak detection, drain cleaning, and 24/7 emergency service.",
     "image": `${BUSINESS.website}/logo.png`,
-    "@id": BUSINESS.website,
+    "logo": `${BUSINESS.website}/logo.png`,
+    "@id": `${BUSINESS.website}/#organization`,
     "url": BUSINESS.website,
     "telephone": BUSINESS.phone,
+    "email": "info@woodsplumbing.com",
+    "foundingDate": "1979",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": BUSINESS.address.street,
@@ -57,8 +62,47 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
       "latitude": BUSINESS.geo.latitude,
       "longitude": BUSINESS.geo.longitude
     },
-    "openingHours": "Mo-Fr 07:00-17:00,Sa 08:00-16:00",
+    "areaServed": [
+      { "@type": "City", "name": "Marana", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Tucson", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Oro Valley", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Sahuarita", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Green Valley", "addressRegion": "AZ" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "16:00"
+      }
+    ],
     "priceRange": "$$",
+    "paymentAccepted": "Cash, Credit Card, Check",
+    "currenciesAccepted": "USD",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Plumbing Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Plumbing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water Heater Repair & Installation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Leak Detection" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drain Cleaning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gas Line Services" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repiping" } }
+      ]
+    },
+    "sameAs": [
+      BUSINESS.social.googleBusiness,
+      BUSINESS.social.facebook,
+      BUSINESS.social.yelp
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": BUSINESS.trust.displayRating,
@@ -66,6 +110,55 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
       "bestRating": "5",
       "worstRating": "1"
     }
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": BUSINESS.name,
+    "url": BUSINESS.website,
+    "description": "Wood's Plumbing Enterprises LLC - Licensed plumbing contractor serving Marana, Tucson, and Southern Arizona since 1979.",
+    "publisher": {
+      "@type": "Organization",
+      "name": BUSINESS.name,
+      "@id": `${BUSINESS.website}/#organization`
+    }
+  };
+
+  const homepageFaqs = [
+    {
+      question: "Do you offer 24/7 emergency plumbing service?",
+      answer: "Yes! Wood's Plumbing provides 24/7 emergency plumbing services throughout Marana, Tucson, and Southern Arizona. Whether you have a burst pipe, major leak, or gas emergency, our licensed plumbers are available around the clock."
+    },
+    {
+      question: "How much does a plumber cost in Marana, AZ?",
+      answer: "Plumbing service costs in Marana vary based on the job. We provide free estimates for most services. Our rates are competitive and transparent, with no hidden fees. Call us at " + BUSINESS.phone + " for a quote."
+    },
+    {
+      question: "Are your plumbers licensed and insured?",
+      answer: "Yes, Wood's Plumbing is fully licensed (ROC #" + BUSINESS.trust.license + ") and insured. We've been serving Southern Arizona since 1979 and maintain all required state certifications."
+    },
+    {
+      question: "What areas do you serve?",
+      answer: "We serve Marana, Tucson, Oro Valley, Sahuarita, Green Valley, Vail, and all of Southern Arizona. Our service area covers most of Pima County and surrounding communities."
+    },
+    {
+      question: "Do you offer financing for plumbing repairs?",
+      answer: "Yes, we offer flexible financing options for larger plumbing projects including water heater installations, repiping, and major repairs. Contact us to learn about available payment plans."
+    }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homepageFaqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
   };
 
   return (
@@ -86,6 +179,18 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        
+        {/* WebSite Schema for search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        
+        {/* FAQ Schema for AI search visibility */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         
         {/* E-E-A-T Schema for expertise and trust signals */}
@@ -543,6 +648,30 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
                 BBB {BUSINESS.trust.bbbRating} rated with {BUSINESS.trust.totalReviews}+ satisfied customers. 100% satisfaction guaranteed.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section for AI Search Visibility */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-navy-900 mb-10 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {homepageFaqs.map((faq, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg p-6">
+                <h3 className="font-bold text-lg text-navy-900 mb-3">{faq.question}</h3>
+                <p className="text-gray-700">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/faq">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold">
+                View All FAQs
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
