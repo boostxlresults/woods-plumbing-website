@@ -95,10 +95,10 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
       </Head>
 
       {/* Hero Section - Roto-Rooter Layout */}
-      <section className="bg-gray-100 overflow-x-hidden">
+      <section className="bg-gray-100">
         {/* Mobile: Stack layout */}
         <div className="md:hidden">
-          <div className="relative h-[350px] w-screen -ml-[calc((100vw-100%)/2)]">
+          <div className="relative h-[350px] w-full">
             <Image
               src="/images/hero-plumber.png"
               alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
