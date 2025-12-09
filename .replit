@@ -5,6 +5,7 @@ modules = ["nodejs-22", "postgresql-16", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
+packages = ["imagemagick"]
 
 [env]
 NEXT_TELEMETRY_DISABLED = "1"
@@ -25,10 +26,6 @@ externalPort = 3001
 [[ports]]
 localPort = 38033
 externalPort = 3000
-
-[[ports]]
-localPort = 41737
-externalPort = 5173
 
 [[ports]]
 localPort = 42545

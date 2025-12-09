@@ -100,7 +100,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
         <div className="md:hidden">
           <div className="relative h-[350px] w-full">
             <Image
-              src="/images/hero-plumber.png"
+              src="/images/hero-plumber.jpg"
               alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
               fill
               sizes="100vw"
@@ -145,7 +145,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
             <div className="grid md:grid-cols-2 gap-0 items-center">
               <div className="relative h-[500px]">
                 <Image
-                  src="/images/hero-plumber.png"
+                  src="/images/hero-plumber.jpg"
                   alt="Wood's Plumbing professional technician greeting homeowners in Arizona"
                   fill
                   sizes="50vw"

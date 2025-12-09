@@ -8,13 +8,10 @@ export default function Document() {
       <Head>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://static.servicetitan.com" />
         <link rel="preconnect" href="https://embed.scheduler.servicetitan.com" />
         <link rel="preconnect" href="https://scheduler.servicetitan.com" />
         <link rel="preconnect" href="https://mads-dni-go.servicetitan.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         
         {GA_MEASUREMENT_ID && (
           <>
