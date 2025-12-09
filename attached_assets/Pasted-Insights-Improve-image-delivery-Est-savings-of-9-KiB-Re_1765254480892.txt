@@ -1,0 +1,37 @@
+Insights
+Improve image delivery Est savings of 9 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+woodsplumbing.com 1st party
+41.0 KiB	8.9 KiB
+Wood's Plumbing professional technician greeting homeowners in Arizona
+<img alt="Wood's Plumbing professional technician greeting homeowners in Arizona" decoding="async" data-nimg="fill" class="object-cover object-center" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="100vw" srcset="/_next/image?url=%2Fimages%2Fhero-plumber.jpg&amp;w=640&amp;q=90 640w, /_next/imag…" src="https://www.woodsplumbing.com/_next/image?url=%2Fimages%2Fhero-plumber.jpg…">
+/_next/image?url=%2Fimages%2Fhero-plumber.jpg&w=750&q=90(www.woodsplumbing.com)
+41.0 KiB
+8.9 KiB
+Increasing the image compression factor could improve this image's download size.
+8.9 KiB
+Legacy JavaScript Est savings of 13 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCPUnscored
+URL
+Wasted bytes
+woodsplumbing.com 1st party
+12.8 KiB
+…chunks/main-618d….js?dpl=dpl_DjuMn…(www.woodsplumbing.com)
+12.8 KiB
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:18646(www.woodsplumbing.com)
+Array.prototype.at
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:18034(www.woodsplumbing.com)
+Array.prototype.flat
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:18147(www.woodsplumbing.com)
+Array.prototype.flatMap
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:18523(www.woodsplumbing.com)
+Object.fromEntries
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:18781(www.woodsplumbing.com)
+Object.hasOwn
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:17776(www.woodsplumbing.com)
+String.prototype.trimEnd
+…chunks/main-618d….js?dpl=dpl_DjuMn…:1:17691(www.woodsplumbing.com)
+String.prototype.trimStart

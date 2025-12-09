@@ -106,6 +106,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
               sizes="100vw"
               className="object-cover object-center"
               priority
+              fetchPriority="high"
               quality={90}
             />
           </div>
@@ -151,6 +152,7 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
                   sizes="50vw"
                   className="object-cover object-center"
                   priority
+                  fetchPriority="high"
                   quality={90}
                 />
               </div>
