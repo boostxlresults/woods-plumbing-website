@@ -58,16 +58,7 @@ export default function Document() {
           }}
         />
         
-        {/* ServiceTitan Scheduling Pro Widget - API key and scheduler ID configured via environment variables */}
-        {process.env.NEXT_PUBLIC_SERVICETITAN_API_KEY && process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID && (
-          <script
-            data-api-key={process.env.NEXT_PUBLIC_SERVICETITAN_API_KEY}
-            data-schedulerid={process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID}
-            defer
-            id="se-widget-embed"
-            src="https://embed.scheduler.servicetitan.com/scheduler-v1.js"
-          />
-        )}
+        {/* ServiceTitan Scheduling Pro Widget - Now lazy-loaded in ScheduleButton component for performance */}
       </Head>
       <body>
         <Main />
