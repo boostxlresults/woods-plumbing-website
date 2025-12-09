@@ -11,17 +11,27 @@ import { generateReviewSchema, generateEEATSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
-import reviewsData from '@/lib/data/reviews.json';
 import testimonials from '@/lib/data/testimonials.json';
 
-interface HomeProps {
-  services: typeof servicesData;
-  locations: typeof locationsData;
-  featuredReviews: typeof reviewsData;
+interface MinimalService {
+  id: string;
+  slug: string;
+  name: string;
+  featured: boolean;
 }
 
-const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => {
-  const featuredServices = services.filter(s => s.featured).slice(0, 7);
+interface MinimalLocation {
+  id: string;
+  slug: string;
+  name: string;
+}
+
+interface HomeProps {
+  featuredServices: MinimalService[];
+  locations: MinimalLocation[];
+}
+
+const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
 
   const reviewSchemas = generateReviewSchema(testimonials.slice(0, 5));
   const eeatSchema = generateEEATSchema();
@@ -588,11 +598,17 @@ const Home: NextPage<HomeProps> = ({ services, locations, featuredReviews }) => 
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const featuredServices = servicesData
+    .filter(s => s.featured)
+    .slice(0, 7)
+    .map(({ id, slug, name, featured }) => ({ id, slug, name, featured }));
+
+  const locations = locationsData.map(({ id, slug, name }) => ({ id, slug, name }));
+
   return {
     props: {
-      services: servicesData,
-      locations: locationsData,
-      featuredReviews: reviewsData.slice(0, 10),
+      featuredServices,
+      locations,
     },
   };
 };
