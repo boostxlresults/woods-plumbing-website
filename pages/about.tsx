@@ -98,9 +98,9 @@ const AboutPage: NextPage = () => {
   const authorSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Joseph Wood",
+    "name": "Bill Wood",
     "jobTitle": "Owner & Master Plumber",
-    "description": "Joseph Wood is the owner of Wood's Plumbing Enterprises LLC, a licensed Master Plumber with over 40 years of experience serving Southern Arizona.",
+    "description": "Bill Wood is the owner of Wood's Plumbing Enterprises LLC, a licensed Master Plumber with over 40 years of experience serving Southern Arizona.",
     "knowsAbout": ["Plumbing", "Gas Line Services", "Water Heater Installation", "Leak Detection", "Emergency Plumbing", "Residential Plumbing", "Commercial Plumbing"],
     "hasCredential": [
       {
@@ -206,17 +206,17 @@ const AboutPage: NextPage = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Joseph Wood</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Bill Wood</h3>
                 <p className="text-blue-600 font-medium mb-4">Owner & Master Plumber</p>
                 <div className="prose text-gray-700">
                   <p className="mb-4">
-                    With over 40 years of hands-on experience in the plumbing industry, Joseph Wood has built 
+                    With over 40 years of hands-on experience in the plumbing industry, Bill Wood has built 
                     Wood&apos;s Plumbing Enterprises into one of Southern Arizona&apos;s most trusted plumbing companies. 
-                    A licensed Master Plumber (ROC #{BUSINESS.trust.license}), Joseph personally oversees operations 
+                    A licensed Master Plumber (ROC #{BUSINESS.trust.license}), Bill personally oversees operations 
                     to ensure every job meets the highest standards.
                   </p>
                   <p className="mb-4">
-                    Joseph&apos;s expertise spans residential and commercial plumbing, gas line services, water heater 
+                    Bill&apos;s expertise spans residential and commercial plumbing, gas line services, water heater 
                     installation, and emergency repairs. His commitment to honest service and fair pricing has earned 
                     the company a BBB A+ rating and {BUSINESS.trust.totalReviews}+ positive customer reviews.
                   </p>
