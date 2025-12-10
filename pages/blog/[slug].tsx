@@ -74,8 +74,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   return (
     <div>
       <Head>
-        <title>{`${post.title} | ${BUSINESS.name} Blog`}</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{(post.metaTitle || post.title).slice(0, 55) + (post.metaTitle?.length > 55 || post.title.length > 55 ? '...' : '')}</title>
+        <meta name="description" content={post.metaDescription || `${post.excerpt.slice(0, 140)}...`} />
         <link rel="canonical" href={`${BUSINESS.website}/blog/${post.slug}`} />
         
         {/* Open Graph */}

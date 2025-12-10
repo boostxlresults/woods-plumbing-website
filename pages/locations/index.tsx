@@ -43,8 +43,8 @@ const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
   return (
     <div>
       <Head>
-        <title>{`Service Areas - Plumbing Services Across Southern Arizona | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Professional plumbing services across Southern Arizona including Tucson, Marana, Oro Valley, Sahuarita, and ${locations.length}+ communities. Call ${BUSINESS.phone}.`} />
+        <title>Service Areas - Tucson, Marana & Southern AZ</title>
+        <meta name="description" content="Plumbing in Tucson, Marana, Oro Valley, Sahuarita & 8+ areas. Call (520) 682-2233." />
         <meta name="keywords" content="plumber Tucson, plumber Marana, plumber Oro Valley, plumber Sahuarita, Southern Arizona plumbing, service areas" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/locations`} />

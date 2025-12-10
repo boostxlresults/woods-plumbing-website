@@ -164,8 +164,8 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
   return (
     <div>
       <Head>
-        <title>{`${BUSINESS.name} - Plumber in Marana, Tucson & Southern Arizona`}</title>
-        <meta name="description" content={`Wood's Plumbing is your first choice for top-quality plumbing solutions in Tucson and Marana. Professional plumbing service in Marana, emergency plumber available 24/7. Trusted since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated.`} />
+        <title>Plumber in Marana & Tucson AZ | Wood&apos;s Plumbing</title>
+        <meta name="description" content="24/7 emergency plumber in Marana & Tucson. Licensed, BBB A+ rated. Water heaters, drains, leaks & gas lines. Free estimates. Call now!" />
         <link rel="canonical" href={BUSINESS.website} />
         
         <meta property="og:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />

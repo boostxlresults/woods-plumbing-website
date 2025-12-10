@@ -1,7 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../src/components/ui/card';
 import { Button } from '../../src/components/ui/button';
 import { Clock, Calendar } from 'lucide-react';
@@ -30,7 +31,15 @@ interface BlogIndexProps {
 }
 
 const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  
+  useEffect(() => {
+    const categoryFromUrl = router.query.category as string;
+    if (categoryFromUrl && categories.includes(categoryFromUrl)) {
+      setSelectedCategory(categoryFromUrl);
+    }
+  }, [router.query.category, categories]);
   
   const filteredPosts = selectedCategory === 'All' 
     ? posts 
@@ -63,10 +72,11 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
   return (
     <div>
       <Head>
-        <title>{`Plumbing Blog & Tips | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Expert plumbing tips, maintenance guides, and industry insights from Tucson's most trusted plumbing company. Learn from our ${BUSINESS.trust.yearsInBusiness}+ years of experience.`} />
+        <title>{selectedCategory === 'All' ? 'Plumbing Blog & Tips | Wood\'s Plumbing' : `${selectedCategory} Articles | Wood's Plumbing`}</title>
+        <meta name="description" content={selectedCategory === 'All' ? 'Expert plumbing tips and maintenance guides. Learn from 46+ years of experience in Tucson.' : `Expert ${selectedCategory.toLowerCase()} articles and guides from Wood's Plumbing in Tucson.`} />
         <meta name="keywords" content="plumbing blog, plumbing tips, plumbing maintenance, Arizona plumbing, water heater guide, drain cleaning tips" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        {selectedCategory !== 'All' && <meta name="robots" content="noindex, follow" />}
+        {selectedCategory === 'All' && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
         <link rel="canonical" href={`${BUSINESS.website}/blog`} />
         
         {/* Open Graph */}
@@ -93,10 +103,12 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Plumbing Blog & Resources
+              {selectedCategory === 'All' ? 'Plumbing Blog & Resources' : `${selectedCategory} Articles`}
             </h1>
             <p className="text-xl text-blue-100">
-              {`Expert tips, maintenance guides, and plumbing insights from our ${BUSINESS.trust.yearsInBusiness}+ years of experience`}
+              {selectedCategory === 'All' 
+                ? `Expert tips, maintenance guides, and plumbing insights from our ${BUSINESS.trust.yearsInBusiness}+ years of experience`
+                : `Expert ${selectedCategory.toLowerCase()} tips and guides from Wood's Plumbing`}
             </p>
           </div>
         </div>

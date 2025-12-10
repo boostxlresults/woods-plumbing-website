@@ -126,8 +126,8 @@ const AboutPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>{`About Us - Tucson's Trusted Plumber Since ${BUSINESS.trust.founded} | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Learn about ${BUSINESS.name}, Tucson's most trusted plumbing company since ${BUSINESS.trust.founded}. BBB A+ rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews.`} />
+        <title>About Us - Trusted Plumber Since 1979 | Wood&apos;s Plumbing</title>
+        <meta name="description" content="Family-owned plumbing company serving Tucson since 1979. BBB A+ rated, 4.9 stars, 200+ reviews. Licensed ROC #146498." />
         <meta name="keywords" content={`about ${BUSINESS.name}, plumber history, Tucson plumber since ${BUSINESS.trust.founded}, licensed plumber Arizona, BBB A+ plumber, family owned plumbing`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/about`} />

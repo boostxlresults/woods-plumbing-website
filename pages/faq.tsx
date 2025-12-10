@@ -85,10 +85,10 @@ const FAQPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Frequently Asked Questions | Emergency Plumber in Marana & Tucson | {BUSINESS.name}</title>
+        <title>Plumbing FAQs - Emergency Plumber Marana & Tucson</title>
         <meta 
           name="description" 
-          content="Get answers to common plumbing questions. Wood's Plumbing provides emergency plumber services in Marana, Tucson, and surrounding areas. 24/7 availability, licensed technicians."
+          content="Common plumbing questions answered. 24/7 emergency plumber in Marana & Tucson. Licensed technicians, fast response."
         />
         <link rel="canonical" href={`${BUSINESS.website}/faq`} />
         

@@ -165,9 +165,8 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
     }))
   } : null;
 
-  const serviceAreas = "Tucson, Marana, Oro Valley, Sahuarita & Southern Arizona";
-  const localSeoTitle = `${service.name} in ${serviceAreas} | ${BUSINESS.name}`;
-  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in ${serviceAreas}. ${service.shortDescription} Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`;
+  const localSeoTitle = `${service.name} Tucson & Marana | Wood's Plumbing`;
+  const localSeoDescription = `${service.shortDescription.slice(0, 120)} 24/7 service. Call (520) 682-2233.`;
 
   // AI-optimized keywords for this specific service
   const aiKeywords = `${service.name}, plumbing ${service.name.toLowerCase()}, ${service.name} Tucson, ${service.name} Southern Arizona, ${service.name} Marana, ${service.name} Oro Valley, licensed plumber, emergency plumber, ROC ${BUSINESS.trust.license}`;

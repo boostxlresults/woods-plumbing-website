@@ -78,8 +78,8 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
   return (
     <div className="bg-white">
       <Head>
-        <title>{`AI Knowledge Base - Complete Business Information | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Complete business information about ${BUSINESS.name}. ${services.length} plumbing services across Southern Arizona. ${BUSINESS.hours.emergency}. Licensed ROC ${BUSINESS.trust.license}.`} />
+        <title>Knowledge Base - Wood&apos;s Plumbing Information</title>
+        <meta name="description" content="Complete info: 66 plumbing services across Southern Arizona. 24/7 emergency. Licensed ROC #146498." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BUSINESS.website}/knowledge-base`} />
         

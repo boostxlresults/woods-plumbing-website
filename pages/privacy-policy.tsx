@@ -10,8 +10,8 @@ const PrivacyPolicyPage: NextPage = () => {
   return (
     <div className="bg-white">
       <Head>
-        <title>{`Privacy Policy | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Privacy Policy for ${BUSINESS.name}. Learn how we collect, use, and protect your personal information.`} />
+        <title>Privacy Policy | Wood&apos;s Plumbing Enterprises LLC</title>
+        <meta name="description" content="Privacy Policy: Learn how Wood's Plumbing collects, uses, and protects your personal information. GDPR and CCPA compliant." />
         <link rel="canonical" href={`${BUSINESS.website}/privacy-policy`} />
         <meta name="robots" content="index, follow" />
       </Head>

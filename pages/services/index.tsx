@@ -57,8 +57,8 @@ const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServi
   return (
     <div>
       <Head>
-        <title>{`Plumbing Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
-        <meta name="description" content={`Complete plumbing services in Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, and more. Licensed ROC ${BUSINESS.trust.license}. ${totalServices}+ professional services available.`} />
+        <title>Plumbing Services Tucson & Southern AZ | 66+ Services</title>
+        <meta name="description" content="Emergency repairs, water heaters, drains, leaks & more. Licensed ROC #146498. 24/7 service." />
         <meta name="keywords" content="plumbing services Tucson, emergency plumber, water heater repair, drain cleaning, leak detection, gas line repair, Southern Arizona plumber" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/services`} />
