@@ -272,9 +272,9 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
                 />
               </div>
               <div className="py-16 px-12">
-                <h1 className="text-navy-700 font-bold text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl">
+                <p className="text-navy-700 font-bold text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl" role="presentation" aria-hidden="true">
                   THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
-                </h1>
+                </p>
                 
                 <p className="text-red-600 font-bold text-3xl mb-4">
                   Call Us Now!
