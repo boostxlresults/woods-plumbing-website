@@ -31,6 +31,10 @@ interface BlogPostPageProps {
   relatedPosts: Array<BlogPost & { readTime: number }>;
 }
 
+function slugifyCategory(category: string): string {
+  return category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+}
+
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   useEffect(() => {
     trackBlogView(post.title, post.category);
@@ -97,7 +101,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
       {/* Breadcrumb */}
       <Breadcrumb items={[
         { label: 'Blog', href: '/blog' },
-        { label: post.category, href: `/blog?category=${encodeURIComponent(post.category)}` },
+        { label: post.category, href: `/blog/category/${slugifyCategory(post.category)}` },
         { label: post.title }
       ]} />
 

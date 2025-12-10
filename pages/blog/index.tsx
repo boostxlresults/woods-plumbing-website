@@ -1,8 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../../src/components/ui/card';
 import { Button } from '../../src/components/ui/button';
 import { Clock, Calendar } from 'lucide-react';
@@ -30,21 +28,11 @@ interface BlogIndexProps {
   categories: string[];
 }
 
-const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
-  const router = useRouter();
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  
-  useEffect(() => {
-    const categoryFromUrl = router.query.category as string;
-    if (categoryFromUrl && categories.includes(categoryFromUrl)) {
-      setSelectedCategory(categoryFromUrl);
-    }
-  }, [router.query.category, categories]);
-  
-  const filteredPosts = selectedCategory === 'All' 
-    ? posts 
-    : posts.filter(post => post.category === selectedCategory);
+function slugifyCategory(category: string): string {
+  return category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+}
 
+const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -72,11 +60,10 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
   return (
     <div>
       <Head>
-        <title>{selectedCategory === 'All' ? 'Plumbing Blog & Tips | Wood\'s Plumbing' : `${selectedCategory} Articles | Wood's Plumbing`}</title>
-        <meta name="description" content={selectedCategory === 'All' ? 'Expert plumbing tips and maintenance guides. Learn from 46+ years of experience in Tucson.' : `Expert ${selectedCategory.toLowerCase()} articles and guides from Wood's Plumbing in Tucson.`} />
+        <title>Plumbing Blog & Tips | Wood&apos;s Plumbing</title>
+        <meta name="description" content="Expert plumbing tips and maintenance guides. Learn from 46+ years of experience in Tucson." />
         <meta name="keywords" content="plumbing blog, plumbing tips, plumbing maintenance, Arizona plumbing, water heater guide, drain cleaning tips" />
-        {selectedCategory !== 'All' && <meta name="robots" content="noindex, follow" />}
-        {selectedCategory === 'All' && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/blog`} />
         
         {/* Open Graph */}
@@ -103,12 +90,10 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {selectedCategory === 'All' ? 'Plumbing Blog & Resources' : `${selectedCategory} Articles`}
+              Plumbing Blog & Resources
             </h1>
             <p className="text-xl text-blue-100">
-              {selectedCategory === 'All' 
-                ? `Expert tips, maintenance guides, and plumbing insights from our ${BUSINESS.trust.yearsInBusiness}+ years of experience`
-                : `Expert ${selectedCategory.toLowerCase()} tips and guides from Wood's Plumbing`}
+              Expert tips, maintenance guides, and plumbing insights from our {BUSINESS.trust.yearsInBusiness}+ years of experience
             </p>
           </div>
         </div>
@@ -118,20 +103,15 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
       <section className="py-8 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-3 justify-center">
-            <Button
-              variant={selectedCategory === 'All' ? 'default' : 'outline'}
-              onClick={() => setSelectedCategory('All')}
-            >
+            <Button variant="default">
               All Posts
             </Button>
             {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? 'default' : 'outline'}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </Button>
+              <Link key={category} href={`/blog/category/${slugifyCategory(category)}`}>
+                <Button variant="outline">
+                  {category}
+                </Button>
+              </Link>
             ))}
           </div>
         </div>
@@ -141,13 +121,15 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
+            {posts.map((post) => (
               <Card key={post.slug} className="hover:shadow-lg transition-shadow flex flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs bg-blue-100 text-blue-900 px-2 py-1 rounded">
-                      {post.category}
-                    </span>
+                    <Link href={`/blog/category/${slugifyCategory(post.category)}`}>
+                      <span className="text-xs bg-blue-100 text-blue-900 px-2 py-1 rounded hover:bg-blue-200 transition-colors">
+                        {post.category}
+                      </span>
+                    </Link>
                   </div>
                   <CardTitle className="text-xl">{post.title}</CardTitle>
                   <CardDescription>{post.excerpt}</CardDescription>
@@ -172,12 +154,6 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
               </Card>
             ))}
           </div>
-
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No posts found in this category.</p>
-            </div>
-          )}
         </div>
       </section>
     </div>
@@ -198,7 +174,7 @@ export const getStaticProps: GetStaticProps = async () => {
       readTime: calculateReadTime(post.content)
     }));
 
-  const categories = Array.from(new Set(blogPostsData.map(post => post.category)));
+  const categories = Array.from(new Set(blogPostsData.map(post => post.category))).sort();
 
   return {
     props: {
