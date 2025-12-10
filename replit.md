@@ -92,7 +92,14 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Sitemap**: Legal pages added to XML sitemap with noindex robots tags
 
 **AI Search Optimization Enhancements (Dec 2025):**
+- **Meta Robots Tag**: Global meta robots tag in `_document.tsx` with "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 - **Blog Post Schema**: Enhanced BlogPosting with detailed author (Person type), worksFor (Organization), publisher logo (ImageObject), dateModified, mainEntityOfPage
+- **Blog Post BreadcrumbList JSON-LD**: 4-level hierarchy (Home > Blog > Category > Post Title) with matching visual breadcrumb
+- **Blog Post FAQ Schema + Answer-Style Content**: 
+  - 8 category-specific FAQ sets (Emergency Plumbing, Drain Cleaning, Plumbing Maintenance, Plumbing Tips, Leak Detection, Water Heaters, Repiping, Water Conditioning)
+  - 24 total Q&A pairs for AI extraction
+  - Visual FAQ section with semantic H2/H3 markup
+  - FAQPage JSON-LD schema on all 22 blog posts
 - **Service Page AI Formatting**:
   - `<blockquote>` elements for Arizona-specific context with `<figcaption>` attribution
   - Comparison tables (Wood's Plumbing vs. Other Plumbers) for AI parsing
