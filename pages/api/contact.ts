@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '@/lib/db';
 import { contactSubmissions, rateLimits } from '@/lib/db/schema';
 import { eq, sql } from 'drizzle-orm';
+import { sendContactNotification } from '@/lib/email';
 
 const RATE_LIMIT = 5; // max 5 requests
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
@@ -99,6 +100,18 @@ export default async function handler(
       service: service || null,
       message,
     }).returning();
+
+    // Send email notification (don't block response if email fails)
+    sendContactNotification({
+      name,
+      email: email || undefined,
+      phone: phone || undefined,
+      service: service || undefined,
+      message,
+      source: source || 'Website Contact Form',
+    }).catch((err) => {
+      console.error('Email notification failed:', err);
+    });
 
     return res.status(200).json({ 
       success: true, 
