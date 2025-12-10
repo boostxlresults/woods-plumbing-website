@@ -1,0 +1,156 @@
+Issue Summary
+This table lists all of the issues found across your website, ordered by issue priority. Click on individual issues to see the pages affected.
+
+Search:
+Issue Type	Priority	Pages	Frequency
+Title Tag Text Too Long	Medium	43	
+Page
+/
+/about
+/contact
+/faq
+/knowledge-base
+/locations
+/services
+/blog/a-guide-to-whole-house-repiping
+/blog/a-look-at-your-water-conditioning-options
+/blog/common-plumbing-emergencies-and-how-to-handle-them
+/blog/hidden-plumbing-leaks-how-to-spot-the-warning-signs
+/blog/how-drain-cleaning-can-improve-your-homes-water-flow
+/blog/how-drain-cleaning-prevents-major-plumbing-disasters
+/blog/how-professional-plumbing-services-can-prevent-future-leaks
+/blog/how-to-handle-burst-pipes-or-sudden-plumbing-emergencies-safely
+/blog/how-to-prepare-your-home-plumbing-for-seasonal-change
+/blog/how-water-leaks-can-damage-your-property
+/blog/signs-your-plumbing-system-needs-immediate-service
+/blog/the-importance-of-innovative-pipeline-technologies-ipt-liners-in-residential-plumbing
+/blog/the-importance-of-using-a-professional-plumbing-service-at-home
+/blog/the-negative-effects-of-hard-water-in-the-home-and-the-role-of-water-softeners
+/blog/the-vital-role-of-water-heater-service-in-tucson-az
+/blog/top-tips-for-managing-emergency-plumbing-situations
+/blog/what-are-the-advantages-of-a-tankless-water-heater
+/blog/what-are-the-perks-of-a-plumbing-service-agreement
+/blog/what-homeowners-should-know-about-water-leaks
+/blog/why-drain-cleaning-should-be-part-of-your-annual-home-maintenance
+/blog/why-you-should-hire-a-professional-plumbing-service-for-your-home
+/blog/why-you-should-never-ignore-a-slow-drain
+/locations/catalina-foothills
+/locations/green-valley
+/locations/picture-rocks
+/services/burst-pipe-repair
+/services/drain-cleaning
+/services/emergency-drain-cleaning
+/services/emergency-leak-repair
+/services/emergency-plumbing
+/services/sewer-backup-emergency
+/services/sewer-line-repair
+/services/tankless-water-heaters
+/services/water-heater-installation
+/services/water-heater-repair
+/services/water-heater-replacement
+Meta Description Too Long	Medium	24	
+Page
+/
+/contact
+/faq
+/knowledge-base
+/services
+/locations/catalina-foothills
+/locations/green-valley
+/locations/marana
+/locations/oro-valley
+/locations/picture-rocks
+/locations/sahuarita
+/locations/tucson
+/locations/vail
+/services/burst-pipe-repair
+/services/drain-cleaning
+/services/emergency-drain-cleaning
+/services/emergency-leak-repair
+/services/emergency-plumbing
+/services/sewer-backup-emergency
+/services/sewer-line-repair
+/services/tankless-water-heaters
+/services/water-heater-installation
+/services/water-heater-repair
+/services/water-heater-replacement
+More Than One H1 Tag	Medium	1	
+Page
+/
+Poor Header Tag Usage	Medium	12	
+Page
+/blog
+/blog?category=Drain Cleaning
+/blog?category=Emergency Plumbing
+/blog?category=Leak Detection
+/blog?category=Plumbing Maintenance
+/blog?category=Plumbing Tips
+/blog?category=Repiping
+/blog?category=Water Conditioning
+/blog?category=Water Heaters
+/contact
+/knowledge-base
+/services
+Missing H1 Header Tag	Medium	2	
+Page
+/knowledge-base
+/services
+Title Tag Text Too Short	Medium	2	
+Page
+/privacy-policy
+/terms
+Meta Description Too Short	Medium	16	
+Page
+/privacy-policy
+/blog/a-guide-to-whole-house-repiping
+/blog/a-look-at-your-water-conditioning-options
+/blog/common-plumbing-emergencies-and-how-to-handle-them
+/blog/hidden-plumbing-leaks-how-to-spot-the-warning-signs
+/blog/how-drain-cleaning-can-improve-your-homes-water-flow
+/blog/how-professional-plumbing-services-can-prevent-future-leaks
+/blog/how-to-handle-burst-pipes-or-sudden-plumbing-emergencies-safely
+/blog/how-to-prepare-your-home-plumbing-for-seasonal-change
+/blog/how-water-leaks-can-damage-your-property
+/blog/the-importance-of-innovative-pipeline-technologies-ipt-liners-in-residential-plumbing
+/blog/the-importance-of-using-a-professional-plumbing-service-at-home
+/blog/what-are-the-advantages-of-a-tankless-water-heater
+/blog/what-homeowners-should-know-about-water-leaks
+/blog/why-drain-cleaning-should-be-part-of-your-annual-home-maintenance
+/blog/why-you-should-never-ignore-a-slow-drain
+Page Text Content Too Short	Low	23	
+Page
+/contact
+/faq
+/knowledge-base
+/locations
+/services
+/blog/a-guide-to-whole-house-repiping
+/blog/a-look-at-your-water-conditioning-options
+/blog/common-plumbing-emergencies-and-how-to-handle-them
+/blog/hidden-plumbing-leaks-how-to-spot-the-warning-signs
+/blog/how-drain-cleaning-can-improve-your-homes-water-flow
+/blog/how-to-handle-burst-pipes-or-sudden-plumbing-emergencies-safely
+/blog/how-to-prepare-your-home-plumbing-for-seasonal-change
+/blog/how-water-leaks-can-damage-your-property
+/blog/signs-your-plumbing-system-needs-immediate-service
+/blog/the-importance-of-innovative-pipeline-technologies-ipt-liners-in-residential-plumbing
+/blog/the-negative-effects-of-hard-water-in-the-home-and-the-role-of-water-softeners
+/blog/the-vital-role-of-water-heater-service-in-tucson-az
+/blog/top-tips-for-managing-emergency-plumbing-situations
+/blog/what-are-the-advantages-of-a-tankless-water-heater
+/blog/what-homeowners-should-know-about-water-leaks
+/blog/why-drain-cleaning-should-be-part-of-your-annual-home-maintenance
+/blog/why-you-should-hire-a-professional-plumbing-service-for-your-home
+/blog/why-you-should-never-ignore-a-slow-drain
+URL Not Friendly	Low	10	
+Page
+/blog?category=Drain Cleaning
+/blog?category=Emergency Plumbing
+/blog?category=Leak Detection
+/blog?category=Plumbing Maintenance
+/blog?category=Plumbing Tips
+/blog?category=Repiping
+/blog?category=Water Conditioning
+/blog?category=Water Heaters
+/blog/the-importance-of-innovative-pipeline-technologies-ipt-liners-in-residential-plumbing
+/blog/the-negative-effects-of-hard-water-in-the-home-and-the-role-of-water-softeners
