@@ -142,6 +142,18 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Topical Alignment**: Each intro is specifically written for that service's context, pain points, and value proposition
 - **Duplicate Content Mitigation**: Replaced templated "[Service] is one of the most important..." pattern with individually crafted intros
 
+**SEO Audit Fixes (Dec 2025):**
+- **Title Tag Optimization**: All page titles shortened to under 60 characters across 43+ pages
+- **Meta Description Optimization**: All meta descriptions shortened to under 155 characters across 24+ pages
+- **Homepage H1 Fix**: Fixed duplicate H1 issue (desktop version uses visually hidden paragraph)
+- **Blog Post Titles**: Truncated to 55 characters with ellipsis to prevent overflow
+- **Static Blog Category Pages**: Created `/blog/category/[slug]` routes with proper SSR
+  - Dynamic slug-to-category mapping from blog post data
+  - Correct title, H1, and meta description for each category
+  - 8 category pages: Drain Cleaning, Emergency Plumbing, Leak Detection, Plumbing Maintenance, Plumbing Tips, Repiping, Water Conditioning, Water Heaters
+- **Legacy URL Redirect**: Middleware (`middleware.ts`) 301 redirects `/blog?category=...` to static routes
+- **Breadcrumb Updates**: Blog post breadcrumbs link to static category pages
+
 **System Design Choices:**
 - All business constants are centralized in `lib/constants.ts` and data in JSON files, ensuring zero hardcoded business data.
 - The project structure is organized for scalability and maintainability, separating pages, components, data, and utilities.
