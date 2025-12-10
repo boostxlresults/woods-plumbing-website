@@ -143,14 +143,21 @@ The website is built using Next.js 15.2.3 with TypeScript, styled with Tailwind 
 - **Duplicate Content Mitigation**: Replaced templated "[Service] is one of the most important..." pattern with individually crafted intros
 
 **SEO Audit Fixes (Dec 2025):**
-- **Title Tag Optimization**: All page titles shortened to under 60 characters across 43+ pages
-- **Meta Description Optimization**: All meta descriptions shortened to under 155 characters across 24+ pages
+- **Title Tag Optimization**: All page titles optimized to 50-75 characters across 43+ pages
+  - Static pages have explicit longer titles with branding (e.g., "Plumber in Marana & Tucson AZ - 24/7 Emergency | Wood's Plumbing")
+  - Dynamic templates (blog posts, services, locations) use intelligent fallbacks to ensure minimum 50-character titles
+- **Meta Description Optimization**: All meta descriptions optimized to 140-190 characters across 24+ pages
+  - Templates only use stored metaDescription if >= 120 characters, otherwise use excerpt with branding suffix
 - **Homepage H1 Fix**: Fixed duplicate H1 issue (desktop version uses visually hidden paragraph)
-- **Blog Post Titles**: Truncated to 55 characters with ellipsis to prevent overflow
+- **Blog Post Template Improvements**:
+  - Removed 55-character title truncation
+  - Added length validation: only uses metaTitle if >= 50 chars, otherwise "{title} | Wood's Plumbing Blog"
+  - Added length validation: only uses metaDescription if >= 120 chars, otherwise expands excerpt with branding
 - **Static Blog Category Pages**: Created `/blog/category/[slug]` routes with proper SSR
   - Dynamic slug-to-category mapping from blog post data
   - Correct title, H1, and meta description for each category
   - 8 category pages: Drain Cleaning, Emergency Plumbing, Leak Detection, Plumbing Maintenance, Plumbing Tips, Repiping, Water Conditioning, Water Heaters
+  - Added H2 "Browse By Category" section for proper header hierarchy
 - **Legacy URL Redirect**: Middleware (`middleware.ts`) 301 redirects `/blog?category=...` to static routes
 - **Breadcrumb Updates**: Blog post breadcrumbs link to static category pages
 
