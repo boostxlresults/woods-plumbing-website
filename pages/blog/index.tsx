@@ -60,8 +60,8 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
   return (
     <div>
       <Head>
-        <title>Plumbing Blog & Tips | Wood&apos;s Plumbing</title>
-        <meta name="description" content="Expert plumbing tips and maintenance guides. Learn from 46+ years of experience in Tucson." />
+        <title>Plumbing Blog & Tips - Expert Guides for Homeowners | Wood&apos;s Plumbing</title>
+        <meta name="description" content="Expert plumbing tips, maintenance guides, and DIY advice from licensed Arizona plumbers. Learn from 46+ years of experience serving Tucson, Marana, and Southern Arizona homeowners." />
         <meta name="keywords" content="plumbing blog, plumbing tips, plumbing maintenance, Arizona plumbing, water heater guide, drain cleaning tips" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/blog`} />
@@ -102,6 +102,7 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
       {/* Category Filter */}
       <section className="py-8 bg-gray-100">
         <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">Browse By Category</h2>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button variant="default">
               All Posts

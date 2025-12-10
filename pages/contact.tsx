@@ -121,8 +121,8 @@ const ContactPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Contact Us - Free Plumbing Estimate | Wood&apos;s Plumbing</title>
-        <meta name="description" content="Get a free plumbing estimate. Call (520) 682-2233 or request online. 24/7 emergency service in Tucson & Marana." />
+        <title>Contact Us - Free Plumbing Estimate & 24/7 Service | Wood&apos;s Plumbing</title>
+        <meta name="description" content="Contact Wood's Plumbing for a free estimate on any plumbing service. Call (520) 682-2233 or request online. 24/7 emergency plumbing service available in Tucson, Marana & Southern Arizona." />
         <meta name="keywords" content={`contact ${BUSINESS.name}, plumber phone number Tucson, free plumbing estimate, emergency plumber contact, ${BUSINESS.phone}`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/contact`} />

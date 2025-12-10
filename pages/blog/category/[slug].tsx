@@ -51,8 +51,8 @@ const BlogCategoryPage: NextPage<CategoryPageProps> = ({ posts, category, allCat
   return (
     <div>
       <Head>
-        <title>{`${category} Articles | Wood's Plumbing`}</title>
-        <meta name="description" content={`Expert ${category} tips and guides from Wood's Plumbing in Southern Arizona.`} />
+        <title>{`${category} Articles - Expert Plumbing Tips & Guides | Wood's Plumbing`}</title>
+        <meta name="description" content={`Read expert ${category} articles, tips, and guides from licensed Arizona plumbers. Learn from 46+ years of experience serving Tucson, Marana & Southern Arizona homeowners.`} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BUSINESS.website}/blog/category/${slugifyCategory(category)}`} />
         
@@ -78,6 +78,7 @@ const BlogCategoryPage: NextPage<CategoryPageProps> = ({ posts, category, allCat
 
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">Browse By Category</h2>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               <Link href="/blog">
                 <Button variant="outline" className="bg-white hover:bg-gray-100">
@@ -100,6 +101,7 @@ const BlogCategoryPage: NextPage<CategoryPageProps> = ({ posts, category, allCat
 
         <section className="py-16">
           <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-8 text-gray-900">{posts.length} {category} Articles</h2>
             {posts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-600 text-lg">No articles found in this category.</p>

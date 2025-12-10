@@ -64,8 +64,8 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
   return (
     <div>
       <Head>
-        <title>{`Plumber in ${location.name} AZ | Wood's Plumbing`}</title>
-        <meta name="description" content={`${location.description.slice(0, 100)} 24/7 emergency. Call (520) 682-2233.`} />
+        <title>{`Plumber in ${location.name} AZ - 24/7 Emergency Service | Wood's Plumbing`}</title>
+        <meta name="description" content={`Professional plumber in ${location.name}, Arizona. ${location.description.slice(0, 80)} Licensed, BBB A+ rated. 24/7 emergency service. Call (520) 682-2233.`} />
         <link rel="canonical" href={`${BUSINESS.website}/locations/${location.slug}`} />
         
         <meta property="og:title" content={`Plumber in ${location.name}, AZ | ${BUSINESS.name}`} />

@@ -43,8 +43,8 @@ const LocationsPage: NextPage<LocationsPageProps> = ({ locations }) => {
   return (
     <div>
       <Head>
-        <title>Service Areas - Tucson, Marana & Southern AZ</title>
-        <meta name="description" content="Plumbing in Tucson, Marana, Oro Valley, Sahuarita & 8+ areas. Call (520) 682-2233." />
+        <title>Service Areas - Plumbers in Tucson, Marana & Southern Arizona</title>
+        <meta name="description" content="Professional plumbing services in Tucson, Marana, Oro Valley, Sahuarita, Green Valley, Vail & more. 8+ communities served since 1979. 24/7 emergency service available. Call (520) 682-2233." />
         <meta name="keywords" content="plumber Tucson, plumber Marana, plumber Oro Valley, plumber Sahuarita, Southern Arizona plumbing, service areas" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/locations`} />

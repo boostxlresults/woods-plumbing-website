@@ -78,8 +78,8 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
   return (
     <div className="bg-white">
       <Head>
-        <title>Knowledge Base - Wood&apos;s Plumbing Information</title>
-        <meta name="description" content="Complete info: 66 plumbing services across Southern Arizona. 24/7 emergency. Licensed ROC #146498." />
+        <title>Knowledge Base - Complete Plumbing Information | Wood&apos;s Plumbing Arizona</title>
+        <meta name="description" content="Complete plumbing knowledge base with 66 services, 8 service areas, FAQs, and business information. Serving Tucson, Marana & Southern Arizona since 1979. Licensed ROC #146498." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BUSINESS.website}/knowledge-base`} />
         

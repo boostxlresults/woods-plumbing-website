@@ -85,10 +85,10 @@ const FAQPage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Plumbing FAQs - Emergency Plumber Marana & Tucson</title>
+        <title>Plumbing FAQs - Your Questions Answered | Emergency Plumber Marana & Tucson</title>
         <meta 
           name="description" 
-          content="Common plumbing questions answered. 24/7 emergency plumber in Marana & Tucson. Licensed technicians, fast response."
+          content="Get answers to common plumbing questions from licensed Arizona plumbers. 24/7 emergency service in Marana & Tucson. Learn about repairs, water heaters, drains, and more from our expert team."
         />
         <link rel="canonical" href={`${BUSINESS.website}/faq`} />
         

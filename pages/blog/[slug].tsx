@@ -78,8 +78,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   return (
     <div>
       <Head>
-        <title>{(post.metaTitle || post.title).slice(0, 55) + (post.metaTitle?.length > 55 || post.title.length > 55 ? '...' : '')}</title>
-        <meta name="description" content={post.metaDescription || `${post.excerpt.slice(0, 140)}...`} />
+        <title>{post.metaTitle && post.metaTitle.length >= 50 ? post.metaTitle : `${post.title} | Wood's Plumbing Blog`}</title>
+        <meta name="description" content={post.metaDescription && post.metaDescription.length >= 120 ? post.metaDescription : `${post.excerpt.slice(0, 120)} Expert plumbing tips from Wood's Plumbing in Tucson, AZ.`} />
         <link rel="canonical" href={`${BUSINESS.website}/blog/${post.slug}`} />
         
         {/* Open Graph */}

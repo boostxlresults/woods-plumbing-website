@@ -10,8 +10,8 @@ const TermsPage: NextPage = () => {
   return (
     <div className="bg-white">
       <Head>
-        <title>Terms of Use | Wood&apos;s Plumbing Enterprises LLC</title>
-        <meta name="description" content="Terms of Use for Wood's Plumbing website and services. Read our terms, conditions, and service policies." />
+        <title>Terms of Use - Service Agreement & Policies | Wood&apos;s Plumbing Enterprises LLC</title>
+        <meta name="description" content="Review the terms of use for Wood's Plumbing Enterprises LLC website and plumbing services. Includes service policies, pricing terms, warranties, and customer rights for Arizona residents." />
         <link rel="canonical" href={`${BUSINESS.website}/terms`} />
         <meta name="robots" content="index, follow" />
       </Head>
