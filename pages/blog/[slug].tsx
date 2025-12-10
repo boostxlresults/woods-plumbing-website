@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { marked } from 'marked';
 import { Button } from '../../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
@@ -9,7 +10,7 @@ import { Breadcrumb } from '../../src/components/layout/Breadcrumb';
 import { BUSINESS } from '../../lib/constants';
 import { trackBlogView } from '../../lib/analytics';
 import { formatDate } from '../../lib/formatDate';
-import { generateBreadcrumbSchema, generateFAQSchema } from '../../lib/seo/schemas';
+import { generateFAQSchema } from '../../lib/seo/schemas';
 import blogPostsData from '../../lib/data/blog-posts.json';
 
 const categoryFAQs: Record<string, Array<{ question: string; answer: string }>> = {
@@ -119,13 +120,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
     "keywords": post.tags.join(", ")
   };
 
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', href: '/' },
-    { name: 'Blog', href: '/blog' },
-    { name: post.category, href: `/blog/category/${slugifyCategory(post.category)}` },
-    { name: post.title }
-  ]);
-
   const faqs = categoryFAQs[post.category] || categoryFAQs["Plumbing Tips"];
   const faqSchema = generateFAQSchema(faqs);
 
@@ -150,13 +144,11 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
         <meta name="twitter:description" content={post.excerpt} />
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
       {/* Breadcrumb */}
       <Breadcrumb items={[
-        { label: 'Home', href: '/' },
         { label: 'Blog', href: '/blog' },
         { label: post.category, href: `/blog/category/${slugifyCategory(post.category)}` },
         { label: post.title }
@@ -205,7 +197,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
             {/* Content */}
             <div 
               className="prose prose-lg max-w-none mb-12"
-              dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }}
+              dangerouslySetInnerHTML={{ __html: marked.parse(post.content) as string }}
             />
 
             {/* FAQ Section for AI Search Optimization */}
