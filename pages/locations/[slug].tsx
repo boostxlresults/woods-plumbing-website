@@ -94,7 +94,7 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
 
       {/* Hero Section - Roto-Rooter Split Layout */}
       <HeroSplit
-        title={`${location.name.toUpperCase()}'S TRUSTED PLUMBING, DRAIN & WATER SERVICES`}
+        title={`${location.name.toUpperCase()}${location.name.toUpperCase().endsWith('S') ? "'" : "'S"} TRUSTED PLUMBING, DRAIN & WATER SERVICES`}
         subtitle={location.description}
         ctaText="Call Us Now!"
         imageSrc={`/images/locations/${location.slug}.png`}
