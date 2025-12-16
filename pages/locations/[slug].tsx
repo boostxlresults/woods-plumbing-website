@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import { marked } from 'marked';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Star, Wrench, ChevronDown } from 'lucide-react';
@@ -64,8 +65,8 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
   return (
     <div>
       <Head>
-        <title>{`Plumber in ${location.name} AZ - 24/7 Emergency Service | Wood's Plumbing`}</title>
-        <meta name="description" content={`Professional plumber in ${location.name}, Arizona. ${location.description.slice(0, 80)} Licensed, BBB A+ rated. 24/7 emergency service. Call (520) 682-2233.`} />
+        <title>{(location as any).metaTitle || `Plumber in ${location.name} AZ - 24/7 Emergency Service | Wood's Plumbing`}</title>
+        <meta name="description" content={(location as any).metaDescription || `Professional plumber in ${location.name}, Arizona. ${location.description.slice(0, 80)} Licensed, BBB A+ rated. 24/7 emergency service. Call (520) 682-2233.`} />
         <link rel="canonical" href={`${BUSINESS.website}/locations/${location.slug}`} />
         
         <meta property="og:title" content={`Plumber in ${location.name}, AZ | ${BUSINESS.name}`} />
@@ -202,11 +203,10 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
             </h2>
             
             {location.longDescription ? (
-              <div className="prose prose-lg max-w-none text-gray-700">
-                {location.longDescription.split('\n\n').map((paragraph, idx) => (
-                  <p key={idx} className="mb-4">{paragraph}</p>
-                ))}
-              </div>
+              <div 
+                className="prose prose-lg max-w-none text-gray-700"
+                dangerouslySetInnerHTML={{ __html: marked.parse(location.longDescription) as string }}
+              />
             ) : (
               <div className="prose prose-lg max-w-none text-gray-700">
                 <p className="mb-4">
