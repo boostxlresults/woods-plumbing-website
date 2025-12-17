@@ -1,0 +1,47 @@
+SEO & AI Search Optimization Audit Request
+
+Please conduct a comprehensive audit of the woodplumbing.com website covering:
+
+1. Technical SEO:
+
+Check all pages have unique, descriptive title tags (under 60 characters)
+Verify meta descriptions exist and are compelling (under 160 characters)
+Confirm canonical URLs are properly set on all pages
+Check for proper heading hierarchy (H1 → H2 → H3)
+Verify robots.txt allows all important pages and AI crawlers (GPTBot, Claude-Web, PerplexityBot, Google-Extended)
+Check sitemap.xml exists and includes all important pages
+Verify 308/301 redirects are in place for any legacy URLs
+Check for broken internal links
+2. Schema Markup / Structured Data:
+
+Verify LocalBusiness schema with accurate NAP (Name, Address, Phone)
+Check Service schemas for each service offered
+Verify FAQPage schema on pages with FAQ sections
+Check for BreadcrumbList schema
+Verify Organization schema with logo, founding date, social profiles
+Check for Review/AggregateRating schemas if applicable
+3. AI Search Optimization:
+
+Does the site have an llms.txt file for AI crawlers?
+Are FAQ sections written in natural Q&A format that AI can extract?
+Is content structured with clear, direct answers to common questions?
+Are service descriptions comprehensive enough for AI summarization?
+Do pages include "People Also Ask" style content?
+4. Local SEO:
+
+Verify service area pages exist for each location served
+Check location-specific content (not just city name swapped)
+Verify Google Business Profile embed or link
+Check for local keywords in title tags and content
+5. Performance & Core Web Vitals:
+
+Check image optimization (WebP/AVIF, proper sizing, lazy loading)
+Verify Next.js Image component usage for images
+Check for render-blocking resources
+6. Content Quality:
+
+Are service pages comprehensive (500+ words)?
+Do pages answer the who, what, where, when, why, and how?
+Is there unique content differentiating from competitors?
+Are CTAs clear and conversion-focused?
+Please provide findings with specific file paths and recommended fixes.
