@@ -7,7 +7,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { ScheduleButton } from '@/components/ScheduleButton';
 import { trackPhoneClick } from '@/lib/analytics';
-import { generateReviewSchema, generateEEATSchema } from '@/lib/seo/schemas';
+import { generateReviewSchema, generateEEATSchema, generateOrganizationSchema, generateFounderSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
@@ -35,20 +35,25 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
 
   const reviewSchemas = generateReviewSchema(testimonials.slice(0, 5));
   const eeatSchema = generateEEATSchema();
+  const organizationSchema = generateOrganizationSchema();
+  const founderSchema = generateFounderSchema();
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Plumber"],
     "name": BUSINESS.name,
-    "alternateName": "Wood's Plumbing",
+    "alternateName": ["Wood's Plumbing", "Woods Plumbing", "Wood's Plumbing Marana", "Woods Plumbing AZ"],
     "description": "Licensed plumbing contractor serving Southern Arizona since 1979. Professional plumbing services including repairs, water heaters, leak detection, drain cleaning, and 24/7 emergency service.",
     "image": `${BUSINESS.website}/logo.png`,
     "logo": `${BUSINESS.website}/logo.png`,
-    "@id": `${BUSINESS.website}/#organization`,
+    "@id": `${BUSINESS.website}#organization`,
     "url": BUSINESS.website,
     "telephone": BUSINESS.phone,
-    "email": "info@woodsplumbing.com",
+    "email": BUSINESS.email,
     "foundingDate": "1979",
+    "founder": {
+      "@id": `${BUSINESS.website}#founder`,
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": BUSINESS.address.street,
@@ -64,6 +69,10 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
     },
     "areaServed": [
       { "@type": "City", "name": "Marana", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Gladden Farms", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Continental Ranch", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Avra Valley", "addressRegion": "AZ" },
+      { "@type": "City", "name": "Dove Mountain", "addressRegion": "AZ" },
       { "@type": "City", "name": "Tucson", "addressRegion": "AZ" },
       { "@type": "City", "name": "Oro Valley", "addressRegion": "AZ" },
       { "@type": "City", "name": "Sahuarita", "addressRegion": "AZ" },
@@ -83,8 +92,34 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
         "closes": "16:00"
       }
     ],
+    "knowsAbout": [
+      "Emergency Plumbing Repairs",
+      "Water Heater Installation",
+      "Tankless Water Heaters",
+      "Drain Cleaning",
+      "Sewer Line Repair",
+      "Gas Line Services",
+      "Leak Detection",
+      "Whole House Repiping",
+      "Water Softener Installation",
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "Arizona Registrar of Contractors License",
+      "identifier": `ROC #${BUSINESS.trust.license}`,
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "Arizona Registrar of Contractors"
+      }
+    },
+    "award": [
+      "BBB A+ Rated Business",
+      `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
+      "Family-Owned & Operated Since 1979",
+    ],
     "priceRange": "$$",
-    "paymentAccepted": "Cash, Credit Card, Check",
+    "paymentAccepted": "Cash, Credit Card, Check, Financing Available",
     "currenciesAccepted": "USD",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -98,11 +133,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repiping" } }
       ]
     },
-    "sameAs": [
-      BUSINESS.social.googleBusiness,
-      BUSINESS.social.facebook,
-      BUSINESS.social.yelp
-    ],
+    "sameAs": Object.values(BUSINESS.social).filter(Boolean),
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": BUSINESS.trust.displayRating,
@@ -119,9 +150,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
     "url": BUSINESS.website,
     "description": "Wood's Plumbing Enterprises LLC - Licensed plumbing contractor serving Marana, Tucson, and Southern Arizona since 1979.",
     "publisher": {
-      "@type": "Organization",
-      "name": BUSINESS.name,
-      "@id": `${BUSINESS.website}/#organization`
+      "@id": `${BUSINESS.website}#organization`
     }
   };
 
@@ -197,6 +226,18 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(eeatSchema) }}
+        />
+        
+        {/* Organization Schema with AI trust signals */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        
+        {/* Founder/Owner Schema for E-E-A-T */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
         />
         
         {/* Individual Review schemas for rich snippets */}

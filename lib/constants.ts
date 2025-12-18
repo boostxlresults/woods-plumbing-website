@@ -41,6 +41,14 @@ export const BUSINESS = {
     instagram: "https://instagram.com/woodsplumbingaz",
     yelp: "https://yelp.com/biz/woods-plumbing-tucson",
     googleBusiness: "https://g.page/woods-plumbing-tucson",
+    bbb: "https://www.bbb.org/us/az/marana/profile/plumber/woods-plumbing-enterprises-llc-1286-1000065937",
+  },
+  
+  owner: {
+    name: "Bill Wood",
+    title: "Owner & Master Plumber",
+    yearsExperience: 40,
+    credentials: ["Arizona Master Plumber License", "Arizona ROC Licensed Contractor"],
   },
   
   emergencyServices: {

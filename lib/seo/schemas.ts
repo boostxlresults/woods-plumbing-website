@@ -28,12 +28,22 @@ export function generateOrganizationSchema() {
     "@id": `${BUSINESS.website}#organization`,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
+    alternateName: [
+      "Wood's Plumbing",
+      "Woods Plumbing",
+      "Wood's Plumbing Marana",
+      "Wood's Plumbing Tucson",
+      "Woods Plumbing AZ",
+    ],
     url: BUSINESS.website,
     logo: `${BUSINESS.website}/logo.png`,
     description: `${BUSINESS.tagline}. Professional plumbing services in Southern Arizona since ${BUSINESS.trust.founded}.`,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     foundingDate: String(BUSINESS.trust.founded),
+    founder: {
+      "@id": `${BUSINESS.website}#founder`,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: BUSINESS.address.street,
@@ -75,11 +85,86 @@ export function generateOrganizationSchema() {
         description: "Emergency Services Only",
       },
     ],
+    knowsAbout: [
+      "Emergency Plumbing Repairs",
+      "Water Heater Installation",
+      "Tankless Water Heaters",
+      "Drain Cleaning",
+      "Sewer Line Repair",
+      "Sewer Line Replacement",
+      "Gas Line Installation",
+      "Gas Line Repair",
+      "Leak Detection",
+      "Whole House Repiping",
+      "Water Softener Installation",
+      "Reverse Osmosis Systems",
+      "Garbage Disposal Repair",
+      "Faucet Installation",
+      "Toilet Repair",
+      "Commercial Plumbing",
+      "Hydro Jetting",
+      "Camera Sewer Inspection",
+      "Backflow Prevention",
+      "Water Pressure Issues",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Arizona Registrar of Contractors License",
+        identifier: `ROC #${BUSINESS.trust.license}`,
+        recognizedBy: {
+          "@type": "GovernmentOrganization",
+          name: "Arizona Registrar of Contractors",
+          url: "https://roc.az.gov",
+        },
+        validIn: {
+          "@type": "State",
+          name: "Arizona",
+          sameAs: "https://en.wikipedia.org/wiki/Arizona",
+        },
+      },
+    ],
+    award: [
+      "BBB A+ Rated Business",
+      `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
+      "Family-Owned & Operated Since 1979",
+      `${BUSINESS.trust.totalReviews}+ Verified Customer Reviews`,
+    ],
+    memberOf: [
+      {
+        "@type": "Organization",
+        name: "Better Business Bureau",
+        url: "https://www.bbb.org",
+      },
+    ],
     sameAs: Object.values(BUSINESS.social).filter(Boolean),
     hasMap: `https://www.google.com/maps/search/?api=1&query=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}`,
     slogan: BUSINESS.tagline,
-    paymentAccepted: "Cash, Credit Card, Check",
+    paymentAccepted: "Cash, Credit Card, Check, Financing Available",
     currenciesAccepted: "USD",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: BUSINESS.phone,
+        contactType: "customer service",
+        areaServed: "US-AZ",
+        availableLanguage: ["English", "Spanish"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: BUSINESS.phone,
+        contactType: "emergency",
+        areaServed: "US-AZ",
+        availableLanguage: ["English", "Spanish"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      },
+    ],
   };
 }
 
@@ -259,6 +344,63 @@ export function generateReviewSchema(reviews: Array<{
       name: review.reviewPlatform,
     } : undefined,
   }));
+}
+
+// Person Schema for Bill Wood (Founder/Owner) - E-E-A-T Signal
+export function generateFounderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BUSINESS.website}#founder`,
+    name: BUSINESS.owner.name,
+    jobTitle: BUSINESS.owner.title,
+    worksFor: {
+      "@id": `${BUSINESS.website}#organization`,
+    },
+    description: `${BUSINESS.owner.name} is the owner and master plumber at ${BUSINESS.name}, bringing over ${BUSINESS.owner.yearsExperience} years of hands-on plumbing experience to Southern Arizona. As a licensed Arizona contractor, Bill leads a team of skilled professionals dedicated to quality workmanship and customer satisfaction.`,
+    knowsAbout: [
+      "Residential Plumbing",
+      "Commercial Plumbing",
+      "Water Heater Systems",
+      "Drain and Sewer Services",
+      "Gas Line Installation",
+      "Emergency Plumbing Repairs",
+      "Water Treatment Systems",
+      "Plumbing Code Compliance",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Arizona Master Plumber License",
+        recognizedBy: {
+          "@type": "GovernmentOrganization",
+          name: "Arizona Registrar of Contractors",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Arizona ROC Licensed Contractor",
+        identifier: `ROC #${BUSINESS.trust.license}`,
+        recognizedBy: {
+          "@type": "GovernmentOrganization",
+          name: "Arizona Registrar of Contractors",
+          url: "https://roc.az.gov",
+        },
+      },
+    ],
+    memberOf: {
+      "@type": "Organization",
+      name: BUSINESS.name,
+      url: BUSINESS.website,
+    },
+    award: [
+      `${BUSINESS.owner.yearsExperience}+ Years Master Plumber Experience`,
+      "Arizona ROC Licensed Contractor",
+    ],
+    sameAs: Object.values(BUSINESS.social).filter(Boolean),
+  };
 }
 
 // E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) Schema

@@ -11,7 +11,7 @@ const AboutPage: NextPage = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
-    "@id": `${BUSINESS.website}/#organization`,
+    "@id": `${BUSINESS.website}#organization`,
     "name": BUSINESS.name,
     "legalName": BUSINESS.legalName,
     "url": BUSINESS.website,
@@ -114,9 +114,7 @@ const AboutPage: NextPage = () => {
       }
     ],
     "worksFor": {
-      "@type": "Organization",
-      "name": BUSINESS.name,
-      "@id": `${BUSINESS.website}/#organization`
+      "@id": `${BUSINESS.website}#organization`
     },
     "sameAs": [
       BUSINESS.social.googleBusiness
