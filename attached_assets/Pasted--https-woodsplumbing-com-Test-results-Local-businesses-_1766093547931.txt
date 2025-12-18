@@ -1,0 +1,758 @@
+
+https://woodsplumbing.com/
+Test results
+
+Local businesses
+check_circle
+7 valid items detected
+Valid items are eligible for Google Search's rich results. Learn more
+Details
+Crawl
+check_circle
+Crawled successfully on Dec 18, 2025, 2:30:47 PM
+Crawled as
+Google Inspection Tool smartphone
+Crawl allowed?
+Yes
+Page fetch
+Successful
+Indexing allowed?
+Yes
+Detected items
+check_circle
+Wood's Plumbing Enterprises LLC
+type
+LocalBusiness
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+alternateName
+Wood's Plumbing
+alternateName
+Woods Plumbing
+alternateName
+Wood's Plumbing Marana
+alternateName
+Woods Plumbing AZ
+description
+Licensed plumbing contractor serving Southern Arizona since 1979. Professional plumbing services including repairs, water heaters, leak detection, drain cleaning, and 24/7 emergency service.
+image
+https://woodsplumbing.com/logo.png
+logo
+https://woodsplumbing.com/logo.png
+id
+https://woodsplumbing.com/#organization
+url
+https://woodsplumbing.com/
+telephone
+(520) 682-2233
+email
+info@woodsplumbingaz.com
+foundingDate
+1979
+founder
+id
+https://woodsplumbing.com/#founder
+type
+Person
+name
+Bill Wood
+jobTitle
+Owner & Master Plumber
+description
+Bill Wood is the owner and master plumber at Wood's Plumbing Enterprises LLC, bringing over 40 years of hands-on plumbing experience to Southern Arizona. As a licensed Arizona contractor, Bill leads a team of skilled professionals dedicated to quality workmanship and customer satisfaction.
+knowsAbout
+Residential Plumbing
+knowsAbout
+Commercial Plumbing
+knowsAbout
+Water Heater Systems
+knowsAbout
+Drain and Sewer Services
+knowsAbout
+Gas Line Installation
+knowsAbout
+Emergency Plumbing Repairs
+knowsAbout
+Water Treatment Systems
+knowsAbout
+Plumbing Code Compliance
+hasCredential
+type
+EducationalOccupationalCredential
+credentialCategory
+license
+name
+Arizona Master Plumber License
+recognizedBy
+type
+GovernmentOrganization
+name
+Arizona Registrar of Contractors
+hasCredential
+type
+EducationalOccupationalCredential
+credentialCategory
+license
+name
+Arizona ROC Licensed Contractor
+identifier
+ROC #296386
+recognizedBy
+type
+GovernmentOrganization
+name
+Arizona Registrar of Contractors
+url
+https://roc.az.gov/
+memberOf
+type
+Organization
+name
+Wood's Plumbing Enterprises LLC
+url
+https://woodsplumbing.com/
+award
+40+ Years Master Plumber Experience
+award
+Arizona ROC Licensed Contractor
+sameAs
+https://facebook.com/woodsplumbingaz
+sameAs
+https://instagram.com/woodsplumbingaz
+sameAs
+https://yelp.com/biz/woods-plumbing-tucson
+sameAs
+https://g.page/woods-plumbing-tucson
+sameAs
+https://www.bbb.org/us/az/marana/profile/plumber/woods-plumbing-enterprises-llc-1286-1000065937
+address
+type
+PostalAddress
+streetAddress
+13880 N Adonis Rd
+addressLocality
+Marana
+addressRegion
+AZ
+postalCode
+85658
+addressCountry
+type
+Country
+name
+US
+geo
+type
+GeoCoordinates
+latitude
+32.4185
+longitude
+-111.1926
+areaServed
+type
+City
+name
+Marana
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Gladden Farms
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Continental Ranch
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Avra Valley
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Dove Mountain
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Tucson
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Oro Valley
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Sahuarita
+addressRegion
+AZ
+areaServed
+type
+City
+name
+Green Valley
+addressRegion
+AZ
+openingHoursSpecification
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Monday
+dayOfWeek
+http://schema.org/Tuesday
+dayOfWeek
+http://schema.org/Wednesday
+dayOfWeek
+http://schema.org/Thursday
+dayOfWeek
+http://schema.org/Friday
+opens
+T07:00
+closes
+T17:00
+openingHoursSpecification
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Saturday
+opens
+T08:00
+closes
+T16:00
+knowsAbout
+Emergency Plumbing Repairs
+knowsAbout
+Water Heater Installation
+knowsAbout
+Tankless Water Heaters
+knowsAbout
+Drain Cleaning
+knowsAbout
+Sewer Line Repair
+knowsAbout
+Gas Line Services
+knowsAbout
+Leak Detection
+knowsAbout
+Whole House Repiping
+knowsAbout
+Water Softener Installation
+hasCredential
+type
+EducationalOccupationalCredential
+credentialCategory
+license
+name
+Arizona Registrar of Contractors License
+identifier
+ROC #296386
+recognizedBy
+type
+GovernmentOrganization
+name
+Arizona Registrar of Contractors
+award
+BBB A+ Rated Business
+award
+46+ Years Serving Southern Arizona
+award
+Family-Owned & Operated Since 1979
+priceRange
+$$
+paymentAccepted
+Cash, Credit Card, Check, Financing Available
+currenciesAccepted
+USD
+hasOfferCatalog
+type
+OfferCatalog
+name
+Plumbing Services
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Emergency Plumbing
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Water Heater Repair & Installation
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Leak Detection
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Drain Cleaning
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Gas Line Services
+itemListElement
+type
+Offer
+itemOffered
+type
+Service
+name
+Repiping
+sameAs
+https://facebook.com/woodsplumbingaz
+sameAs
+https://instagram.com/woodsplumbingaz
+sameAs
+https://yelp.com/biz/woods-plumbing-tucson
+sameAs
+https://g.page/woods-plumbing-tucson
+sameAs
+https://www.bbb.org/us/az/marana/profile/plumber/woods-plumbing-enterprises-llc-1286-1000065937
+aggregateRating
+type
+AggregateRating
+ratingValue
+4.9
+reviewCount
+300
+bestRating
+5
+worstRating
+1
+type
+Organization
+additionalType
+https://schema.org/Plumber
+legalName
+Wood's Plumbing Enterprises LLC
+alternateName
+Wood's Plumbing Tucson
+description
+Southern Arizona's Trusted Plumber Since 1979. Professional plumbing services in Southern Arizona since 1979.
+address
+type
+PostalAddress
+streetAddress
+13880 N Adonis Rd
+addressLocality
+Marana
+addressRegion
+AZ
+postalCode
+85658
+addressCountry
+type
+Country
+name
+US
+geo
+type
+GeoCoordinates
+latitude
+32.4185
+longitude
+-111.1926
+openingHoursSpecification
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Monday
+dayOfWeek
+http://schema.org/Tuesday
+dayOfWeek
+http://schema.org/Wednesday
+dayOfWeek
+http://schema.org/Thursday
+dayOfWeek
+http://schema.org/Friday
+opens
+T07:00
+closes
+T17:00
+openingHoursSpecification
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Saturday
+opens
+T08:00
+closes
+T16:00
+openingHoursSpecification
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Sunday
+opens
+T00:00
+closes
+T23:59
+description
+Emergency Services Only
+knowsAbout
+Sewer Line Replacement
+knowsAbout
+Gas Line Installation
+knowsAbout
+Gas Line Repair
+knowsAbout
+Reverse Osmosis Systems
+knowsAbout
+Garbage Disposal Repair
+knowsAbout
+Faucet Installation
+knowsAbout
+Toilet Repair
+knowsAbout
+Commercial Plumbing
+knowsAbout
+Hydro Jetting
+knowsAbout
+Camera Sewer Inspection
+knowsAbout
+Backflow Prevention
+knowsAbout
+Water Pressure Issues
+hasCredential
+type
+EducationalOccupationalCredential
+credentialCategory
+license
+name
+Arizona Registrar of Contractors License
+identifier
+ROC #296386
+recognizedBy
+type
+GovernmentOrganization
+name
+Arizona Registrar of Contractors
+url
+https://roc.az.gov/
+validIn
+type
+State
+name
+Arizona
+sameAs
+https://en.wikipedia.org/wiki/Arizona
+award
+300+ Verified Customer Reviews
+memberOf
+type
+Organization
+name
+Better Business Bureau
+url
+https://www.bbb.org/
+hasMap
+https://www.google.com/maps/search/?api=1&query=32.4185,-111.1926
+slogan
+Southern Arizona's Trusted Plumber Since 1979
+contactPoint
+type
+ContactPoint
+telephone
+(520) 682-2233
+contactType
+customer service
+areaServed
+US-AZ
+availableLanguage
+English
+availableLanguage
+Spanish
+contactPoint
+type
+ContactPoint
+telephone
+(520) 682-2233
+contactType
+emergency
+areaServed
+US-AZ
+availableLanguage
+English
+availableLanguage
+Spanish
+hoursAvailable
+type
+OpeningHoursSpecification
+dayOfWeek
+http://schema.org/Monday
+dayOfWeek
+http://schema.org/Tuesday
+dayOfWeek
+http://schema.org/Wednesday
+dayOfWeek
+http://schema.org/Thursday
+dayOfWeek
+http://schema.org/Friday
+dayOfWeek
+http://schema.org/Saturday
+dayOfWeek
+http://schema.org/Sunday
+opens
+T00:00
+closes
+T23:59
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+telephone
+(520) 682-2233
+address
+type
+PostalAddress
+addressLocality
+Marana
+addressRegion
+AZ
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+id
+https://woodsplumbing.com/#business
+name
+Wood's Plumbing Enterprises LLC
+description
+Wood's Plumbing Enterprises LLC has been providing expert plumbing services in Southern Arizona since 1979. With 46+ years of hands-on experience, Arizona ROC License #296386, and over 300 verified customer reviews, we are the trusted choice for residential and commercial plumbing.
+foundingDate
+1979
+telephone
+(520) 682-2233
+email
+info@woodsplumbingaz.com
+url
+https://woodsplumbing.com/
+address
+type
+PostalAddress
+streetAddress
+13880 N Adonis Rd
+addressLocality
+Marana
+addressRegion
+AZ
+postalCode
+85658
+addressCountry
+type
+Country
+name
+US
+hasCredential
+type
+EducationalOccupationalCredential
+credentialCategory
+license
+name
+Arizona Registrar of Contractors License
+recognizedBy
+type
+Organization
+name
+Arizona Registrar of Contractors
+validIn
+type
+AdministrativeArea
+name
+Arizona
+knowsAbout
+Emergency Plumbing
+knowsAbout
+Water Heater Installation and Repair
+knowsAbout
+Drain Cleaning
+knowsAbout
+Sewer Line Services
+knowsAbout
+Gas Line Services
+knowsAbout
+Leak Detection
+knowsAbout
+Pipe Repair and Repiping
+knowsAbout
+Water Treatment Systems
+knowsAbout
+Commercial Plumbing
+areaServed
+type
+State
+name
+Arizona
+containsPlace
+type
+City
+name
+Tucson
+containsPlace
+type
+City
+name
+Marana
+containsPlace
+type
+City
+name
+Oro Valley
+containsPlace
+type
+City
+name
+Vail
+containsPlace
+type
+City
+name
+Sahuarita
+containsPlace
+type
+City
+name
+Green Valley
+containsPlace
+type
+City
+name
+Casa Grande
+containsPlace
+type
+City
+name
+Sierra Vista
+award
+BBB A+ Rating
+award
+46+ Years Serving Southern Arizona
+memberOf
+type
+Organization
+name
+Better Business Bureau
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+telephone
+(520) 682-2233
+address
+type
+PostalAddress
+addressLocality
+Marana
+addressRegion
+AZ
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+telephone
+(520) 682-2233
+address
+type
+PostalAddress
+addressLocality
+Marana
+addressRegion
+AZ
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+telephone
+(520) 682-2233
+address
+type
+PostalAddress
+addressLocality
+Marana
+addressRegion
+AZ
+check_circle
+Wood's Plumbing Enterprises LLC
+2 non-critical issues
+
+Missing field "priceRange" (optional)
+Missing field "image" (optional)
+type
+Plumber
+name
+Wood's Plumbing Enterprises LLC
+telephone
+(520) 682-2233
+address
+type
+PostalAddress
+addressLocality
+Marana
+addressRegion
+AZ
