@@ -24,12 +24,20 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
     trackLocationView(location.name);
   }, [location.name]);
 
+  const locationGeo = (location as any).geo || BUSINESS.geo;
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
+    "@id": `${BUSINESS.website}/locations/${location.slug}#localbusiness`,
     "name": `${BUSINESS.name} - ${location.name}`,
     "image": `${BUSINESS.website}/logo.png`,
+    "url": `${BUSINESS.website}/locations/${location.slug}`,
     "telephone": BUSINESS.phone,
+    "email": BUSINESS.email,
+    "parentOrganization": {
+      "@id": `${BUSINESS.website}#organization`
+    },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": location.name,
@@ -37,16 +45,46 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
       "postalCode": location.zipCodes[0],
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": location.name
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": locationGeo.latitude,
+      "longitude": locationGeo.longitude
+    },
+    "hasMap": `https://www.google.com/maps/search/?api=1&query=${locationGeo.latitude},${locationGeo.longitude}`,
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": location.name,
+        "sameAs": `https://en.wikipedia.org/wiki/${location.name.replace(/\s+/g, '_')},_Arizona`
+      },
+      ...location.zipCodes.map((zip: string) => ({
+        "@type": "DefinedRegion",
+        "postalCode": zip,
+        "addressCountry": "US"
+      }))
+    ],
+    "knowsAbout": [
+      "Emergency Plumbing",
+      "Drain Cleaning",
+      "Water Heater Installation",
+      "Leak Detection",
+      "Sewer Repair",
+      "Gas Line Services"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "Arizona ROC License",
+      "identifier": `ROC #${BUSINESS.trust.license}`
     },
     "priceRange": "$$",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": BUSINESS.trust.displayRating,
-      "reviewCount": BUSINESS.trust.totalReviews
-    }
+      "reviewCount": BUSINESS.trust.totalReviews,
+      "bestRating": "5"
+    },
+    "sameAs": Object.values(BUSINESS.social).filter(Boolean)
   };
 
   const faqSchema = locationFaqs.length > 0 ? {

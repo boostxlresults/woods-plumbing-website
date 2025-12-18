@@ -70,6 +70,10 @@
       "85653",
       "85658"
     ],
+    "geo": {
+      "latitude": 32.4185,
+      "longitude": -111.1926
+    },
     "featured": true,
     "displayOrder": 1,
     "aliases": [
@@ -121,6 +125,10 @@
     "zipCodes": [
       "85653"
     ],
+    "geo": {
+      "latitude": 32.3995,
+      "longitude": -111.1650
+    },
     "featured": true,
     "displayOrder": 2,
     "aliases": [
@@ -158,6 +166,10 @@
       "85653",
       "85743"
     ],
+    "geo": {
+      "latitude": 32.3850,
+      "longitude": -111.0750
+    },
     "featured": true,
     "displayOrder": 3,
     "aliases": [
@@ -195,6 +207,10 @@
       "85653",
       "85743"
     ],
+    "geo": {
+      "latitude": 32.3500,
+      "longitude": -111.2800
+    },
     "featured": true,
     "displayOrder": 4,
     "aliases": [
@@ -233,6 +249,10 @@
       "85658",
       "85653"
     ],
+    "geo": {
+      "latitude": 32.4450,
+      "longitude": -111.0500
+    },
     "featured": true,
     "displayOrder": 5,
     "aliases": [
