@@ -57,12 +57,6 @@ export function generateOrganizationSchema() {
       latitude: BUSINESS.geo.latitude,
       longitude: BUSINESS.geo.longitude,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS.trust.displayRating,
-      reviewCount: BUSINESS.trust.totalReviews,
-      bestRating: 5,
-    },
     priceRange: "$$",
     openingHoursSpecification: [
       {
@@ -462,12 +456,6 @@ export function generateEEATSchema() {
         { "@type": "City", name: "Casa Grande" },
         { "@type": "City", name: "Sierra Vista" },
       ],
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS.trust.displayRating,
-      reviewCount: BUSINESS.trust.totalReviews,
-      bestRating: 5,
     },
     award: [
       "BBB A+ Rating",
