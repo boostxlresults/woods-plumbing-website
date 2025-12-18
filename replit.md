@@ -33,6 +33,11 @@ The website is built with Next.js 15.2.3, TypeScript, Tailwind CSS, shadcn/ui co
 - **SEO Content Expansion:** All 66 service pages feature unique, SEO-optimized content (1,600+ words each) with detailed descriptions, benefits, process steps, FAQs, and Arizona-specific context.
 - **GDPR/CCPA Compliance:** Comprehensive Privacy Policy and Terms of Use pages, and a GDPR-compliant Cookie Consent Banner with `gtag` consent mode for Google Analytics.
 - **AI Search Optimization Enhancements:** Global meta robots tag, enhanced BlogPosting schema with author and publisher details, Blog Post BreadcrumbList JSON-LD, Blog Post FAQ Schema with answer-style content, and semantic HTML5 for structured data extraction on service pages.
+- **Advanced Schema Markup (Tier 1-3):**
+    - Organization schema with `alternateName`, `knowsAbout`, `hasCredential` (ROC License), `award`, `memberOf`, `contactPoint`, and `founder` linking.
+    - Location pages with GeoCoordinates, DefinedRegion with ZIP clusters, and parentOrganization linking.
+    - Service pages with `@id` references, `provider` linking to Organization, `offers` (Free Estimates, Financing Available, No Extra Charge for Evenings/Weekends), and priority areas (Gladden Farms, Continental Ranch, Avra Valley, Dove Mountain).
+    - HowTo schema for instructional blog posts with step-by-step guidance.
 - **Conversion Optimization:** Google Reviews Widget, Floating Lead Form, Quick Lead Form, honeypot anti-spam, ServiceTitan DNI for call tracking, and ServiceTitan Scheduling Pro integration with multiple "Schedule" button placements across the site.
 - **Local SEO Expansion:** 5 priority location pages targeting 54 service keywords each, with custom meta tags, Markdown content rendering, and inclusion of local neighborhoods and service highlights.
 - **Email Notification System:** SMTP email via Google Workspace for form submissions with professional HTML templates, ensuring non-blocking asynchronous delivery.
