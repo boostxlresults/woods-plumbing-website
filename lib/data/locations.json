@@ -3,6 +3,8 @@
     "id": "1",
     "name": "Tucson",
     "slug": "tucson",
+    "metaTitle": "Plumber in Tucson AZ | 24/7 Emergency Plumbing Service | Wood's Plumbing",
+    "metaDescription": "Trusted Tucson plumber since 1979. Wood's Plumbing offers 24/7 emergency service, drain cleaning, water heaters, leak detection, sewer repair & more. Call now!",
     "description": "Professional plumbing services throughout Tucson, AZ. Serving all neighborhoods with 24/7 emergency response.",
     "zipCodes": [
       "85701",
@@ -262,6 +264,8 @@
     "id": "3",
     "name": "Oro Valley",
     "slug": "oro-valley",
+    "metaTitle": "Plumber in Oro Valley AZ | 24/7 Emergency Service | Wood's Plumbing",
+    "metaDescription": "Oro Valley's trusted plumber for 46+ years. Wood's Plumbing provides emergency plumbing, water heater service, drain cleaning, leak detection & gas lines. Call 24/7!",
     "description": "Trusted plumbing contractor serving Oro Valley with comprehensive residential and commercial services.",
     "zipCodes": [
       "85737",
@@ -276,6 +280,8 @@
     "id": "4",
     "name": "Catalina Foothills",
     "slug": "catalina-foothills",
+    "metaTitle": "Plumber in Catalina Foothills AZ | Premium Plumbing Service | Wood's",
+    "metaDescription": "Catalina Foothills plumber for luxury homes. Wood's Plumbing offers 24/7 emergency service, water heaters, leak detection, drain cleaning & expert repairs. Call now!",
     "description": "Premium plumbing services for Catalina Foothills homes and businesses since 1979.",
     "zipCodes": [
       "85718",
@@ -288,6 +294,8 @@
     "id": "5",
     "name": "Green Valley",
     "slug": "green-valley",
+    "metaTitle": "Plumber in Green Valley AZ | Senior-Friendly Plumbing | Wood's Plumbing",
+    "metaDescription": "Green Valley's trusted plumber. Wood's Plumbing offers 24/7 emergency service, water heaters, drain cleaning, leak detection & accessible plumbing solutions. Call today!",
     "description": "Reliable plumbing services in Green Valley, AZ. Specializing in senior community plumbing needs.",
     "zipCodes": [
       "85614",
@@ -300,6 +308,8 @@
     "id": "6",
     "name": "Sahuarita",
     "slug": "sahuarita",
+    "metaTitle": "Plumber in Sahuarita AZ | 24/7 Emergency Plumbing | Wood's Plumbing",
+    "metaDescription": "Sahuarita plumber you can trust. Wood's Plumbing provides 24/7 emergency service, drain cleaning, water heaters, leak detection & sewer repair. Call for fast service!",
     "description": "Full-service plumbing for Sahuarita residents. Emergency and scheduled service available.",
     "zipCodes": [
       "85629",
@@ -312,6 +322,8 @@
     "id": "7",
     "name": "Vail",
     "slug": "vail",
+    "metaTitle": "Plumber in Vail AZ | Emergency Plumbing & Drain Service | Wood's Plumbing",
+    "metaDescription": "Vail's reliable plumber for homes and businesses. Wood's Plumbing offers 24/7 emergency service, water heaters, drain cleaning, leak repair & more. Call today!",
     "description": "Professional plumbing services in Vail, AZ. Serving residential and commercial customers.",
     "zipCodes": [
       "85641",
@@ -324,6 +336,8 @@
     "id": "8",
     "name": "Picture Rocks",
     "slug": "picture-rocks",
+    "metaTitle": "Plumber in Picture Rocks AZ | Rural Plumbing Experts | Wood's Plumbing",
+    "metaDescription": "Picture Rocks plumber specializing in rural properties. Wood's Plumbing offers 24/7 emergency service, well systems, water heaters, septic & drain cleaning. Call now!",
     "description": "Experienced plumbing contractor serving Picture Rocks and surrounding areas.",
     "zipCodes": [
       "85743"

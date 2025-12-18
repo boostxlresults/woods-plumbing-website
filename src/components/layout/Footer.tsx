@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Facebook, Instagram, Calendar } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Calendar, Star } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { trackPhoneClick } from '@/lib/analytics';
 import { ScheduleButton } from '@/components/ScheduleButton';
@@ -69,6 +69,15 @@ export function Footer() {
                 rel="noopener noreferrer"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href={BUSINESS.social.googleBusiness} 
+                className="hover:text-red-400 transition-colors" 
+                aria-label="Google Business Profile - Leave a Review" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Star className="w-5 h-5" />
               </a>
             </div>
 
