@@ -10,8 +10,50 @@ import { Breadcrumb } from '../../src/components/layout/Breadcrumb';
 import { BUSINESS } from '../../lib/constants';
 import { trackBlogView } from '../../lib/analytics';
 import { formatDate } from '../../lib/formatDate';
-import { generateFAQSchema } from '../../lib/seo/schemas';
+import { generateFAQSchema, generateHowToSchema, HowToStep } from '../../lib/seo/schemas';
 import blogPostsData from '../../lib/data/blog-posts.json';
+
+const howToPostData: Record<string, { totalTime?: string; steps: HowToStep[] }> = {
+  "how-to-handle-burst-pipes-or-sudden-plumbing-emergencies-safely": {
+    totalTime: "PT15M",
+    steps: [
+      { name: "Locate and Shut Off Water", text: "Find your main water valve and turn it clockwise to close. Every homeowner should know where this is located before an emergency occurs. For frozen pipes, also shut off electricity to prevent electrical hazards." },
+      { name: "Control the Damage", text: "Move furniture, electronics, and valuables away from water. Place buckets under active leaks and use towels to contain spreading water. Open cabinet doors under sinks to allow air circulation." },
+      { name: "Call for Professional Help", text: "Contact a licensed emergency plumber immediately. Wood's Plumbing offers 24/7 emergency service at (520) 682-2233 with 60-90 minute response times." },
+      { name: "Document for Insurance", text: "While waiting for help, take photos and videos of all damage for insurance purposes. Don't attempt major repairs yourself as this can worsen the situation and void insurance claims." }
+    ]
+  },
+  "how-professional-plumbing-services-can-prevent-future-leaks": {
+    totalTime: "PT1H",
+    steps: [
+      { name: "Schedule a Professional Inspection", text: "Contact a licensed plumber to schedule an annual plumbing inspection. Professionals use advanced equipment including acoustic sensors, thermal imaging, and video cameras to find hidden issues." },
+      { name: "Identify Weak Points", text: "Have the plumber check pipe connections, water pressure, fixture conditions, and shut-off valves. They will identify corrosion, mineral buildup, and weak points in your system." },
+      { name: "Make Preventive Repairs", text: "Replace worn washers, tighten connections, and address minor issues before they become major problems. A $10 washer replacement today prevents a $5,000 flood tomorrow." },
+      { name: "Consider System Upgrades", text: "If you have outdated plumbing with galvanized pipes or old fixtures, discuss strategic upgrades. Modern materials like PEX and copper last decades with minimal maintenance." },
+      { name: "Address Hard Water Issues", text: "In Southern Arizona, hard water accelerates pipe deterioration. Consider water softening solutions to protect your entire plumbing system." }
+    ]
+  },
+  "how-drain-cleaning-prevents-major-plumbing-disasters": {
+    totalTime: "PT2H",
+    steps: [
+      { name: "Recognize Warning Signs", text: "Watch for multiple slow drains, gurgling sounds, foul smells, and water backing up in unexpected places. These indicate partial blockages that will worsen over time." },
+      { name: "Avoid Chemical Drain Cleaners", text: "Skip store-bought chemical drain cleaners as they're harsh and can damage pipes while providing only temporary relief." },
+      { name: "Schedule Professional Hydro Jetting", text: "Contact a professional plumber for hydro jetting service. This removes years of hair, grease, soap scum, and mineral deposits from pipe walls using high-pressure water." },
+      { name: "Request Camera Inspection", text: "Ask for video camera inspection to reveal tree root intrusion, pipe damage, and hidden blockages. This helps identify root causes and prevent future problems." },
+      { name: "Set Up Annual Maintenance", text: "Establish an annual professional drain cleaning schedule to maintain optimal flow, prevent backups, and extend your plumbing system's lifespan." }
+    ]
+  },
+  "top-tips-for-managing-emergency-plumbing-situations": {
+    totalTime: "PT20M",
+    steps: [
+      { name: "Know Your Shutoff Locations", text: "Before any emergency, locate your main water shutoff valve and individual fixture shutoffs. This preparation is critical for quick response." },
+      { name: "Shut Off Water and Electricity", text: "For severe leaks, shut off both water and electricity to prevent electrocution and electrical fires. Turn the main valve clockwise to close." },
+      { name: "Contain the Damage", text: "Move valuables away from water, use towels and buckets to contain spreading water, and open cabinet doors for air circulation." },
+      { name: "Call Professionals Immediately", text: "Don't attempt major repairs yourself. Call a licensed emergency plumber for immediate assistance." },
+      { name: "Document Everything", text: "Take photos and videos of all damage for insurance purposes while waiting for professional help." }
+    ]
+  }
+};
 
 const categoryFAQs: Record<string, Array<{ question: string; answer: string }>> = {
   "Emergency Plumbing": [
@@ -123,6 +165,15 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
   const faqs = categoryFAQs[post.category] || categoryFAQs["Plumbing Tips"];
   const faqSchema = generateFAQSchema(faqs);
 
+  const howToData = howToPostData[post.slug];
+  const howToSchema = howToData ? generateHowToSchema({
+    name: post.title,
+    description: post.excerpt,
+    totalTime: howToData.totalTime,
+    steps: howToData.steps,
+    image: `${BUSINESS.website}/og-image.jpg`
+  }) : null;
+
   return (
     <div>
       <Head>
@@ -145,6 +196,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        {howToSchema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+        )}
       </Head>
 
       {/* Breadcrumb */}

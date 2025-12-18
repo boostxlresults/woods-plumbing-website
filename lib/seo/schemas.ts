@@ -479,3 +479,69 @@ export function generateEEATSchema() {
     },
   };
 }
+
+// HowTo Schema - For DIY/instructional blog posts
+export interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+}
+
+export interface HowToSchemaParams {
+  name: string;
+  description: string;
+  totalTime?: string;
+  estimatedCost?: { currency: string; value: string };
+  supply?: string[];
+  tool?: string[];
+  steps: HowToStep[];
+  image?: string;
+}
+
+export function generateHowToSchema(params: HowToSchemaParams) {
+  const schema: Record<string, any> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": params.name,
+    "description": params.description,
+    "step": params.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text,
+      ...(step.image && { "image": step.image }),
+    })),
+  };
+
+  if (params.totalTime) {
+    schema.totalTime = params.totalTime;
+  }
+
+  if (params.estimatedCost) {
+    schema.estimatedCost = {
+      "@type": "MonetaryAmount",
+      "currency": params.estimatedCost.currency,
+      "value": params.estimatedCost.value,
+    };
+  }
+
+  if (params.supply && params.supply.length > 0) {
+    schema.supply = params.supply.map(item => ({
+      "@type": "HowToSupply",
+      "name": item,
+    }));
+  }
+
+  if (params.tool && params.tool.length > 0) {
+    schema.tool = params.tool.map(item => ({
+      "@type": "HowToTool",
+      "name": item,
+    }));
+  }
+
+  if (params.image) {
+    schema.image = params.image;
+  }
+
+  return schema;
+}

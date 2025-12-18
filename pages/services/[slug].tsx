@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { ScheduleButton } from '@/components/ScheduleButton';
 import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users, DollarSign } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
+import { generateOrganizationSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
@@ -53,24 +54,11 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${BUSINESS.website}/services/${service.slug}#service`,
+    "name": service.name,
     "serviceType": service.name,
     "provider": {
-      "@type": "Plumber",
-      "name": BUSINESS.name,
-      "telephone": BUSINESS.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": BUSINESS.address.street,
-        "addressLocality": BUSINESS.address.city,
-        "addressRegion": BUSINESS.address.state,
-        "postalCode": BUSINESS.address.zip
-      },
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": BUSINESS.trust.displayRating,
-        "reviewCount": BUSINESS.trust.totalReviews
-      }
+      "@id": `${BUSINESS.website}#organization`
     },
     "areaServed": [
       {
@@ -136,9 +124,84 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
           "@type": "State",
           "name": "Arizona"
         }
+      },
+      {
+        "@type": "Place",
+        "name": "Gladden Farms",
+        "containedInPlace": {
+          "@type": "City",
+          "name": "Marana",
+          "containedInPlace": { "@type": "State", "name": "Arizona" }
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Continental Ranch",
+        "containedInPlace": {
+          "@type": "City",
+          "name": "Marana",
+          "containedInPlace": { "@type": "State", "name": "Arizona" }
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Avra Valley",
+        "containedInPlace": {
+          "@type": "City",
+          "name": "Marana",
+          "containedInPlace": { "@type": "State", "name": "Arizona" }
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Dove Mountain",
+        "containedInPlace": {
+          "@type": "City",
+          "name": "Marana",
+          "containedInPlace": { "@type": "State", "name": "Arizona" }
+        }
       }
     ],
-    "description": service.shortDescription
+    "description": service.shortDescription,
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free Estimates",
+        "description": "Complimentary on-site estimates for all plumbing services",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Financing Available",
+        "description": "Flexible financing options for major plumbing projects",
+        "availableAtOrFrom": {
+          "@id": `${BUSINESS.website}#organization`
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "No Extra Charge for Evenings & Weekends",
+        "description": "Same competitive rates 24/7 - no overtime charges for emergency service",
+        "availableAtOrFrom": {
+          "@id": `${BUSINESS.website}#organization`
+        }
+      }
+    ],
+    "termsOfService": `${BUSINESS.website}/terms-of-use`,
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Plumbing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": service.name
+          }
+        }
+      ]
+    }
   };
 
   const allFaqs = [
@@ -164,6 +227,8 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
       }
     }))
   } : null;
+
+  const organizationSchema = generateOrganizationSchema();
 
   const localSeoTitle = `${service.name} in Tucson & Marana AZ - 24/7 Service | Wood's Plumbing`;
   const localSeoDescription = `Professional ${service.name.toLowerCase()} services in Tucson, Marana & Southern Arizona. ${service.shortDescription.slice(0, 80)} Licensed ROC #146498. 24/7 emergency service. Call (520) 682-2233.`;
@@ -200,6 +265,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
         <meta name="geo.position" content={`${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`} />
         
         {/* Schema.org Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         {faqSchema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
