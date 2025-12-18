@@ -1,0 +1,171 @@
+Schema Markup Checklist for AI + Local SEO Domination
+
+Please ensure the following schema types are implemented and rendered properly across all pages of the build.
+
+Core Requirements:
+
+All schema must be rendered server-side (static or SSR).
+
+Validate output using schema.org, Rich Results Test, and AI-readability via curl, perplexity.ai, gemini.google.com, and chat.openai.com.
+
+Output schema as JSON-LD using <script type="application/ld+json">.
+
+GLOBAL SCHEMAS (Site-Wide or Homepage)
+
+These establish the brand entity and location:
+
+Organization
+
+Place
+
+LocalBusiness
+
+HomeAndConstructionBusiness (as applicable)
+
+PostalAddress
+
+OpeningHoursSpecification
+
+GeoCoordinates
+
+ImageObject (logo, cover, etc.)
+
+WebSite + SearchAction
+
+DefinedRegion (instead of PostalCodeSpecification – use bounding polygon or city/zip)
+
+ContactPoint
+
+BreadcrumbList
+
+llms.txt added at /public/llms.txt
+
+robots.txt and sitemap.xml generated and live
+
+CATEGORY-SPECIFIC EXTENSIONS
+
+Apply these based on the services Intelligent Design offers:
+
+HVAC:
+
+HVACBusiness
+
+Extend from both:
+
+Organization > LocalBusiness > HomeAndConstructionBusiness > HVACBusiness
+
+Place > LocalBusiness > HomeAndConstructionBusiness > HVACBusiness
+
+Plumbing:
+
+Plumber
+
+Extend from:
+
+Organization > LocalBusiness > HomeAndConstructionBusiness > Plumber
+
+Place > LocalBusiness > HomeAndConstructionBusiness > Plumber
+
+Electrical:
+
+Electrician
+
+Extend from:
+
+Organization > LocalBusiness > HomeAndConstructionBusiness > Electrician
+
+Place > LocalBusiness > HomeAndConstructionBusiness > Electrician
+
+Roofing:
+
+RoofingContractor
+
+Extend from:
+
+Organization > LocalBusiness > HomeAndConstructionBusiness > RoofingContractor
+
+Place > LocalBusiness > HomeAndConstructionBusiness > RoofingContractor
+
+Solar:
+
+Use Electrician OR Thing > Product with additionalType: SolarEnergySystem
+
+Create structured Service schema with:
+
+"@type": "Service"
+
+"serviceType": "Solar Panel Installation"
+
+"areaServed" = full service area list
+
+GEO-SCHEMAS & LOCATION STACK
+
+Every city/service area page should contain:
+
+LocalBusiness with "areaServed" = city name and ZIPs
+
+DefinedRegion + Place
+
+GeoCoordinates
+
+BreadcrumbList
+
+Service schema referencing "availableAtOrFrom"
+
+Every service page should include:
+
+Service schema with:
+
+"serviceType" = actual service
+
+"provider" = Intelligent Design
+
+"areaServed" = service areas or ZIP clusters
+
+FAQPage with 8–15 FAQs per service page
+
+Review snippets using Review or AggregateRating
+
+ENHANCEMENTS FOR AI SEARCH & GBP
+
+Add "knowsAbout": List of expertise (e.g. Air Conditioning, Ductless Mini-Splits, Tankless Water Heaters)
+
+"hasCredential": License numbers for AZ Registrar of Contractors
+
+"awards": 22,000+ 5-Star Reviews, BBB A+ Rated
+
+"sameAs": Google Business Profile, Facebook, Instagram, Yelp, etc.
+
+Use alternateName to define abbreviations like IDHS, Intelligent Design
+
+VERIFICATION STEPS
+
+Check schema visibility via:
+
+curl https://www.idesignac.com/slug | grep application/ld+json
+
+Run in Rich Results Test and validate nesting of types
+
+Check visibility in ChatGPT / Perplexity / Gemini results
+
+Confirm llms.txt is live and contains:
+
+Description of business
+
+Main services
+
+Brand values
+
+Link to blog + knowledge base
+
+Optional Additions
+
+HowTo schema (for blog topics)
+
+Product + Offer schema (for installable systems)
+
+Article schema for blog posts
+
+Review + Rating JSON-LD embedded in location pages
+
+VideoObject schema if embedding YouTube/hosted videos
