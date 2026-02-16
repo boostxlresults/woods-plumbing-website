@@ -28,4 +28,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap
-Sitemap: https://woodsplumbing.com/sitemap.xml
+Sitemap: https://www.woodsplumbing.com/sitemap.xml

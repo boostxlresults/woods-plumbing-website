@@ -73,7 +73,7 @@ export async function sendContactNotification(data: ContactFormData): Promise<bo
       
       <div style="background-color: #1e3a5f; padding: 15px; text-align: center;">
         <p style="color: #ccc; margin: 0; font-size: 12px;">
-          This is an automated notification from woodsplumbing.com
+          This is an automated notification from www.woodsplumbing.com
         </p>
       </div>
     </div>

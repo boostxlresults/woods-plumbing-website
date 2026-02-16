@@ -4,7 +4,7 @@ export const BUSINESS = {
   tagline: "Southern Arizona's Trusted Plumber Since 1979",
   phone: "(520) 682-2233",
   email: "info@woodsplumbingaz.com",
-  website: process.env.NEXT_PUBLIC_SITE_URL || "https://woodsplumbing.com",
+  website: process.env.NEXT_PUBLIC_SITE_URL || "https://www.woodsplumbing.com",
   
   address: {
     street: "13880 N Adonis Rd",

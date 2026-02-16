@@ -3,7 +3,7 @@ import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 import blogPostsData from '@/lib/data/blog-posts.json';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://woodsplumbing.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.woodsplumbing.com';
 
 function generateSiteMap() {
   const today = new Date().toISOString();
