@@ -45,6 +45,22 @@ export default function Document() {
           </>
         )}
         
+        {/* Google Ads Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-809581727"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-809581727');
+            `,
+          }}
+        />
+
         {/* ServiceTitan DNI - Dynamic Number Insertion for Call Tracking */}
         <script
           dangerouslySetInnerHTML={{
