@@ -60,6 +60,15 @@ export default function Document() {
             `,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('config', 'AW-809581727/SYC1CIbT05oZEJ_5hIID', {
+                'phone_conversion_number': '(520) 682-2233'
+              });
+            `,
+          }}
+        />
 
         {/* ServiceTitan DNI - Dynamic Number Insertion for Call Tracking */}
         <script
