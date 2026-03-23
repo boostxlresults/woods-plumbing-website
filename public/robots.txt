@@ -1,8 +1,26 @@
-# Allow all search engines and AI bots
+# ─── Wood's Plumbing robots.txt ───────────────────────────────────────────────
+# Canonical domain: https://www.woodsplumbing.com
+# Last updated: 2026-03-23
+
+# Allow all crawlers by default
 User-agent: *
 Allow: /
 
-# AI Search Engines - Explicit Allow
+# Disallow standalone duplicate service pages (all 301 redirect to /services/)
+# Listed here as belt-and-suspenders to prevent crawl budget waste
+Disallow: /water-heater
+Disallow: /repair
+Disallow: /sewer
+Disallow: /leak
+Disallow: /gas-services
+Disallow: /plumbing-services
+Disallow: /additional-services
+
+# Disallow internal Next.js paths
+Disallow: /_next/
+Disallow: /api/
+
+# ─── AI Search Engines — Explicit Allow ───────────────────────────────────────
 User-agent: GPTBot
 Allow: /
 
@@ -27,5 +45,8 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Sitemap
+User-agent: Applebot
+Allow: /
+
+# ─── Sitemap ──────────────────────────────────────────────────────────────────
 Sitemap: https://www.woodsplumbing.com/sitemap.xml

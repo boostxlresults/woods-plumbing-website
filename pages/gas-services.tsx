@@ -71,7 +71,8 @@ const GasServicesPage: NextPage = () => {
       <Head>
         <title>{`Gas Line Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional gas line installation, repair, testing, and leak detection in Southern Arizona. Licensed for gas work - ROC ${BUSINESS.trust.license}. 24/7 emergency gas leak service. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/gas-services`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/gas-line-installation`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Gas Line Services | ${BUSINESS.name}`} />
         <meta property="og:description" content="Gas line installation, repair, testing, and emergency leak detection. Licensed and certified." />

@@ -71,7 +71,8 @@ const LeakServicesPage: NextPage = () => {
       <Head>
         <title>{`Leak Detection & Repair in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional leak detection and repair services in Southern Arizona. Slab leaks, hidden leaks, water line repairs. Advanced electronic detection equipment. Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/leak`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/leak-detection`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Leak Detection & Repair | ${BUSINESS.name}`} />
         <meta property="og:description" content="Advanced leak detection and expert repair for slab leaks, hidden leaks, and water line issues." />

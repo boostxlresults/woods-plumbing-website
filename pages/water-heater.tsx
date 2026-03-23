@@ -71,7 +71,8 @@ const WaterHeaterPage: NextPage = () => {
       <Head>
         <title>{`Water Heater Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional water heater installation, repair, and replacement in Southern Arizona. Tank and tankless systems. Same-day service available. Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/water-heater`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/water-heater-repair`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Water Heater Services | ${BUSINESS.name}`} />
         <meta property="og:description" content="Water heater installation, repair, and replacement. Tank and tankless systems. Same-day service." />

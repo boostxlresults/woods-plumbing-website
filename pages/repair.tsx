@@ -72,7 +72,8 @@ const RepairServicesPage: NextPage = () => {
       <Head>
         <title>{`Plumbing Repair Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional plumbing repair services in Southern Arizona. Same-day service, no extra charges for evenings or weekends. Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/repair`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/plumbing-repairs`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Plumbing Repairs | ${BUSINESS.name}`} />
         <meta property="og:description" content="Same-day plumbing repairs. No extra charges for evenings or weekends. Free estimates." />

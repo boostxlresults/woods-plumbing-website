@@ -35,7 +35,8 @@ const PlumbingServicesPage: NextPage = () => {
       <Head>
         <title>{`Complete Plumbing Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Wood's Plumbing offers ${allServices.length}+ professional plumbing services in Tucson and Southern Arizona. Emergency repairs, water heaters, drain cleaning, leak detection, gas lines, and more. Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/plumbing-services`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Complete Plumbing Services | ${BUSINESS.name}`} />
         <meta property="og:description" content={`${allServices.length}+ professional plumbing services. Emergency repairs, water heaters, drain cleaning, and more.`} />

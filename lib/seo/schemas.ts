@@ -586,7 +586,7 @@ export function generateReviewSchema(reviews: Array<{
 // ─────────────────────────────────────────────────────────────────────────────
 // FOUNDER / OWNER SCHEMA — E-E-A-T signal
 // Updated to reflect Andrew M Dobbins as ROC license holder (CR-37)
-// while Bill Wood is the operational owner/master plumber
+// while Andrew M Dobbins is the operational owner/master plumber
 // ─────────────────────────────────────────────────────────────────────────────
 export function generateFounderSchema() {
   return {

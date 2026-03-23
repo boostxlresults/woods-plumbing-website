@@ -71,7 +71,8 @@ const SewerServicesPage: NextPage = () => {
       <Head>
         <title>{`Sewer Line Services in Tucson & Southern Arizona | ${BUSINESS.name}`}</title>
         <meta name="description" content={`Professional sewer line repair, replacement, cleaning, and camera inspection in Southern Arizona. Trenchless sewer solutions available. Licensed ROC ${BUSINESS.trust.license}. Call ${BUSINESS.phone}.`} />
-        <link rel="canonical" href={`${BUSINESS.website}/sewer`} />
+        <link rel="canonical" href={`${BUSINESS.website}/services/sewer-line-repair`} />
+        <meta name="robots" content="noindex, follow" />
         
         <meta property="og:title" content={`Sewer Services | ${BUSINESS.name}`} />
         <meta property="og:description" content="Sewer line repair, replacement, cleaning, and camera inspection. Trenchless solutions available." />
