@@ -352,6 +352,30 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
         </section>
       )}
 
+      {/* Geo-Service Intersection Links — crawlable grid linking to all /locations/[slug]/[serviceSlug] pages */}
+      <section className="py-16 bg-navy-950 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3 text-center">
+            All Plumbing Services in {location.name}, AZ
+          </h2>
+          <p className="text-gray-400 text-center mb-10 text-sm">
+            Click any service below for dedicated {location.name} pricing, availability, and details.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {popularServices.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/locations/${location.slug}/${service.slug}`}
+                className="group flex items-center gap-2 bg-navy-900 hover:bg-red-600 border border-navy-700 hover:border-red-500 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 hover:text-white transition-all"
+              >
+                <Wrench className="w-3.5 h-3.5 flex-shrink-0 text-red-400 group-hover:text-white" />
+                <span className="line-clamp-2 leading-tight">{service.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-16 bg-red-500 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -401,7 +425,8 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
     return { notFound: true };
   }
 
-  const popularServices = servicesData.filter(s => s.featured).slice(0, 12);
+  // For the geo-service grid we want all services so every intersection page gets an inbound link
+  const popularServices = servicesData;
   
   const locationFaqs = faqsData
     .filter((faq) => faq.locationSlug === location!.slug)

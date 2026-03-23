@@ -6,13 +6,14 @@ import { useEffect } from 'react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { ScheduleButton } from '@/components/ScheduleButton';
-import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users, DollarSign } from 'lucide-react';
+import { Phone, CheckCircle, Star, ChevronDown, Shield, Award, Clock, Users, DollarSign, MapPin } from 'lucide-react';
 import { trackServiceView, trackPhoneClick } from '@/lib/analytics';
 import { generateOrganizationSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
 import reviewsData from '@/lib/data/reviews.json';
+import locationsData from '@/lib/data/locations.json';
 
 const getServiceImage = (slug: string): string => {
   const emergencyServices = ['emergency-plumbing', 'burst-pipe-repair', 'emergency-leak-repair', 'emergency-drain-cleaning', 'sewer-backup-emergency', 'frozen-pipe-repair'];
@@ -44,9 +45,10 @@ interface ServicePageProps {
   service: typeof servicesData[0];
   relatedServices: typeof servicesData;
   serviceFaqs: typeof faqsData;
+  serviceAreas: typeof locationsData;
 }
 
-const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, serviceFaqs }) => {
+const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, serviceFaqs, serviceAreas }) => {
   useEffect(() => {
     trackServiceView(service.name);
   }, [service.name]);
@@ -653,6 +655,30 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
         </section>
       )}
 
+      {/* Service Areas Grid — geo-service intersection links for crawlability */}
+      <section className="py-16 bg-navy-950 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3 text-center">
+            {service.name} Near You
+          </h2>
+          <p className="text-gray-400 text-center mb-10 text-sm">
+            We serve all of Southern Arizona. Select your city for local pricing and availability.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {serviceAreas.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/locations/${loc.slug}/${service.slug}`}
+                className="group flex items-center gap-2 bg-navy-900 hover:bg-red-600 border border-navy-700 hover:border-red-500 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 hover:text-white transition-all"
+              >
+                <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-red-400 group-hover:text-white" />
+                <span className="line-clamp-1 leading-tight">{loc.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-12 bg-red-500 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -710,11 +736,14 @@ export const getStaticProps: GetStaticProps<ServicePageProps> = async ({ params 
     .filter((faq) => faq.serviceSlug === service!.slug)
     .slice(0, 8);
 
+  const serviceAreas = locationsData;
+
   return {
     props: {
       service,
       relatedServices,
       serviceFaqs,
+      serviceAreas,
     },
   };
 };

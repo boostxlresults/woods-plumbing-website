@@ -177,6 +177,36 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Geo-Service Quick Links — crawlable internal links for top location x service combos */}
+        <div className="mt-10 pt-8 border-t border-navy-800">
+          <h3 className="text-white text-sm font-bold mb-4 text-center tracking-wide uppercase">Popular Services by Location</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-1 text-xs">
+            {[
+              { loc: 'marana', locName: 'Marana' },
+              { loc: 'tucson', locName: 'Tucson' },
+              { loc: 'oro-valley', locName: 'Oro Valley' },
+              { loc: 'gladden-farms', locName: 'Gladden Farms' },
+            ].map(({ loc, locName }) =>
+              [
+                { slug: 'emergency-plumbing', name: 'Emergency Plumbing' },
+                { slug: 'drain-cleaning', name: 'Drain Cleaning' },
+                { slug: 'water-heater-repair', name: 'Water Heater Repair' },
+                { slug: 'leak-detection', name: 'Leak Detection' },
+                { slug: 'slab-leak-detection', name: 'Slab Leak Detection' },
+                { slug: 'tankless-water-heaters', name: 'Tankless Water Heaters' },
+              ].map((svc) => (
+                <Link
+                  key={`${loc}-${svc.slug}`}
+                  href={`/locations/${loc}/${svc.slug}`}
+                  className="text-gray-500 hover:text-red-400 transition-colors py-0.5 truncate"
+                >
+                  {svc.name} in {locName}
+                </Link>
+              ))
+            )}
+          </div>
+        </div>
+
         {/* Google Maps Embed */}
         <div className="mt-12 pt-8 border-t border-navy-800">
           <div className="flex flex-col md:flex-row items-center gap-6">
