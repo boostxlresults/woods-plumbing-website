@@ -407,17 +407,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     'reverse-osmosis-systems',
   ];
 
-  const paths: Array<{ params: { locationSlug: string; serviceSlug: string } }> = [];
+  const paths: Array<{ params: { slug: string; serviceSlug: string } }> = [];
 
-  for (const locationSlug of priorityLocationSlugs) {
-    const locationExists = locationsData.find((l: any) => l.slug === locationSlug);
+  for (const slug of priorityLocationSlugs) {
+    const locationExists = locationsData.find((l: any) => l.slug === slug);
     if (!locationExists) continue;
 
     for (const serviceSlug of priorityServiceSlugs) {
       const serviceExists = servicesData.find((s: any) => s.slug === serviceSlug);
       if (!serviceExists) continue;
 
-      paths.push({ params: { locationSlug, serviceSlug } });
+      paths.push({ params: { slug, serviceSlug } });
     }
   }
 
@@ -431,9 +431,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // Static Props
 // ─────────────────────────────────────────────────────────────────────────────
 export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ params }) => {
-  const { locationSlug, serviceSlug } = params as { locationSlug: string; serviceSlug: string };
+  const { slug, serviceSlug } = params as { slug: string; serviceSlug: string };
 
-  const location = locationsData.find((l: any) => l.slug === locationSlug);
+  const location = locationsData.find((l: any) => l.slug === slug);
   const service = servicesData.find((s: any) => s.slug === serviceSlug);
 
   if (!location || !service) {
@@ -448,12 +448,12 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
 
   // Related locations (nearby cities, same service)
   const relatedLocations = locationsData
-    .filter((l: any) => l.slug !== locationSlug && l.featured)
+    .filter((l: any) => l.slug !== slug && l.featured)
     .slice(0, 4) as Location[];
 
   // FAQs for this service + location combination
   const serviceFaqs = (faqsData as any[])
-    .filter((f: any) => f.serviceSlug === serviceSlug || f.locationSlug === locationSlug)
+    .filter((f: any) => f.serviceSlug === serviceSlug || f.slug === slug)
     .slice(0, 5)
     .map((f: any) => ({ question: f.question, answer: f.answer }));
 
