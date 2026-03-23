@@ -231,7 +231,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
   const organizationSchema = generateOrganizationSchema();
 
   const localSeoTitle = `${service.name} in Tucson & Marana AZ - 24/7 Service | Wood's Plumbing`;
-  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in Tucson, Marana & Southern Arizona. ${service.shortDescription.slice(0, 80)} Licensed ROC #146498. 24/7 emergency service. Call (520) 682-2233.`;
+  const localSeoDescription = `Professional ${service.name.toLowerCase()} services in Marana, Tucson & Oro Valley, AZ. ${service.shortDescription.slice(0, 80)} Licensed ROC #${BUSINESS.trust.license}, CR-37 Plumbing. 24/7 emergency service. Call ${BUSINESS.phone}.`;
 
   // AI-optimized keywords for this specific service
   const aiKeywords = `${service.name}, plumbing ${service.name.toLowerCase()}, ${service.name} Tucson, ${service.name} Southern Arizona, ${service.name} Marana, ${service.name} Oro Valley, licensed plumber, emergency plumber, ROC ${BUSINESS.trust.license}`;

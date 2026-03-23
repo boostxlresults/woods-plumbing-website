@@ -92,6 +92,29 @@ function generateSiteMap() {
   </url>`;
   }).join('')}
   
+  <!-- Geo-Service Intersection Pages (Location x Service Matrix) -->
+  ${(() => {
+    const priorityLocationSlugs = ['marana', 'tucson', 'oro-valley', 'gladden-farms', 'continental-ranch', 'dove-mountain', 'avra-valley', 'catalina-foothills', 'sahuarita', 'green-valley', 'vail', 'picture-rocks'];
+    const priorityServiceSlugs = ['emergency-plumbing', 'drain-cleaning', 'water-heater-repair', 'water-heater-installation', 'tankless-water-heaters', 'leak-detection', 'slab-leak-detection', 'sewer-line-repair', 'hydro-jetting', 'gas-line-installation', 'water-softener-installation', 'burst-pipe-repair', 'toilet-repair', 'faucet-installation', 'garbage-disposal-repair', 'whole-house-repiping', 'sewer-camera-inspection', 'trenchless-sewer-repair', 'gas-leak-detection', 'reverse-osmosis-systems'];
+    const geoServiceUrls: string[] = [];
+    for (const locSlug of priorityLocationSlugs) {
+      const locExists = locationsData.find((l: any) => l.slug === locSlug);
+      if (!locExists) continue;
+      for (const svcSlug of priorityServiceSlugs) {
+        const svcExists = servicesData.find((s: any) => s.slug === svcSlug);
+        if (!svcExists) continue;
+        geoServiceUrls.push(`
+  <url>
+    <loc>${SITE_URL}/locations/${locSlug}/${svcSlug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>`);
+      }
+    }
+    return geoServiceUrls.join('');
+  })()}
+  
   <!-- Blog Index -->
   <url>
     <loc>${SITE_URL}/blog</loc>

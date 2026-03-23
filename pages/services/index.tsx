@@ -57,8 +57,8 @@ const ServicesPage: NextPage<ServicesPageProps> = ({ groupedServices, totalServi
   return (
     <div>
       <Head>
-        <title>66+ Plumbing Services in Tucson & Southern Arizona | Wood&apos;s Plumbing</title>
-        <meta name="description" content="Browse our complete list of 66+ professional plumbing services. Emergency repairs, water heaters, drain cleaning, leak detection, gas lines & more. Licensed ROC #146498. 24/7 service available." />
+        <title>{totalServices}+ Plumbing Services in Marana, Tucson & Oro Valley AZ | Wood&apos;s Plumbing</title>
+        <meta name="description" content={`Browse ${totalServices}+ professional plumbing services in Marana, Tucson & Oro Valley, AZ. Emergency repairs, water heaters, drain cleaning, leak detection, gas lines & more. Licensed ROC #${BUSINESS.trust.license}, CR-37 Plumbing. 24/7 service available.`} />
         <meta name="keywords" content="plumbing services Tucson, emergency plumber, water heater repair, drain cleaning, leak detection, gas line repair, Southern Arizona plumber" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/services`} />

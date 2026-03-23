@@ -45,10 +45,10 @@ export const BUSINESS = {
   },
   
   owner: {
-    name: "Bill Wood",
+    name: "Andrew M Dobbins",
     title: "Owner & Master Plumber",
     yearsExperience: 40,
-    credentials: ["Arizona Master Plumber License", "Arizona ROC Licensed Contractor"],
+    credentials: ["Arizona Master Plumber License", "Arizona ROC Licensed Contractor (CR-37 Plumbing)", "ROC #296386"],
   },
   
   emergencyServices: {

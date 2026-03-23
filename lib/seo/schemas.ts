@@ -3,7 +3,7 @@ import { BUSINESS, SERVICE_AREA_ZIP_CODES } from "../constants";
 // Schema.org type definitions
 type SchemaOrgLocalBusiness = {
   "@context": string;
-  "@type": string;
+  "@type": string | string[];
   [key: string]: any;
 };
 
@@ -19,12 +19,15 @@ type SchemaOrgBreadcrumb = {
   [key: string]: any;
 };
 
-// Organization Schema - Used on all pages
+// ─────────────────────────────────────────────────────────────────────────────
+// ORGANIZATION SCHEMA — Site-wide entity anchor
+// Uses the full type hierarchy: Organization > LocalBusiness >
+// HomeAndConstructionBusiness > Plumber (per schema.org spec)
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "additionalType": "https://schema.org/Plumber",
+    "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
     "@id": `${BUSINESS.website}#organization`,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
@@ -33,12 +36,27 @@ export function generateOrganizationSchema() {
       "Woods Plumbing",
       "Wood's Plumbing Marana",
       "Wood's Plumbing Tucson",
+      "Wood's Plumbing Oro Valley",
       "Woods Plumbing AZ",
     ],
     url: BUSINESS.website,
-    logo: `${BUSINESS.website}/logo.png`,
-    image: `${BUSINESS.website}/images/hero-plumber.jpg`,
-    description: `${BUSINESS.tagline}. Professional plumbing services in Southern Arizona since ${BUSINESS.trust.founded}.`,
+    logo: {
+      "@type": "ImageObject",
+      "@id": `${BUSINESS.website}#logo`,
+      url: `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+      contentUrl: `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+      caption: `${BUSINESS.name} — Licensed Plumber in Marana, AZ`,
+      width: 400,
+      height: 120,
+    },
+    image: {
+      "@type": "ImageObject",
+      "@id": `${BUSINESS.website}#hero-image`,
+      url: `${BUSINESS.website}/images/hero-plumber.jpg`,
+      contentUrl: `${BUSINESS.website}/images/hero-plumber.jpg`,
+      caption: `${BUSINESS.name} professional plumber serving Marana, Tucson & Oro Valley`,
+    },
+    description: `${BUSINESS.tagline}. Licensed plumbing contractor (ROC #${BUSINESS.trust.license}, CR-37) serving Marana, Tucson, and Oro Valley since ${BUSINESS.trust.founded}.`,
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
     foundingDate: String(BUSINESS.trust.founded),
@@ -59,6 +77,8 @@ export function generateOrganizationSchema() {
       longitude: BUSINESS.geo.longitude,
     },
     priceRange: "$$",
+    currenciesAccepted: "USD",
+    paymentAccepted: "Cash, Credit Card, Check, Financing Available",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -90,6 +110,7 @@ export function generateOrganizationSchema() {
       "Gas Line Installation",
       "Gas Line Repair",
       "Leak Detection",
+      "Slab Leak Detection and Repair",
       "Whole House Repiping",
       "Water Softener Installation",
       "Reverse Osmosis Systems",
@@ -101,12 +122,13 @@ export function generateOrganizationSchema() {
       "Camera Sewer Inspection",
       "Backflow Prevention",
       "Water Pressure Issues",
+      "Trenchless Sewer Repair",
     ],
     hasCredential: [
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "license",
-        name: "Arizona Registrar of Contractors License",
+        name: "Arizona Registrar of Contractors License CR-37 Plumbing",
         identifier: `ROC #${BUSINESS.trust.license}`,
         recognizedBy: {
           "@type": "GovernmentOrganization",
@@ -125,6 +147,7 @@ export function generateOrganizationSchema() {
       `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
       "Family-Owned & Operated Since 1979",
       `${BUSINESS.trust.totalReviews}+ Verified Customer Reviews`,
+      "4.9-Star Average Rating",
     ],
     memberOf: [
       {
@@ -132,12 +155,22 @@ export function generateOrganizationSchema() {
         name: "Better Business Bureau",
         url: "https://www.bbb.org",
       },
+      {
+        "@type": "Organization",
+        name: "Plumbing-Heating-Cooling Contractors Association",
+        url: "https://www.phccweb.org",
+      },
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: BUSINESS.trust.displayRating,
+      reviewCount: BUSINESS.trust.totalReviews,
+      bestRating: "5",
+      worstRating: "1",
+    },
     sameAs: Object.values(BUSINESS.social).filter(Boolean),
     hasMap: `https://www.google.com/maps/search/?api=1&query=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}`,
     slogan: BUSINESS.tagline,
-    paymentAccepted: "Cash, Credit Card, Check, Financing Available",
-    currenciesAccepted: "USD",
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -160,10 +193,41 @@ export function generateOrganizationSchema() {
         },
       },
     ],
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Marana",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Marana,_Arizona",
+      },
+      {
+        "@type": "City",
+        name: "Tucson",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Tucson,_Arizona",
+      },
+      {
+        "@type": "City",
+        name: "Oro Valley",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Oro_Valley,_Arizona",
+      },
+      { "@type": "City", name: "Gladden Farms", addressRegion: "AZ" },
+      { "@type": "City", name: "Continental Ranch", addressRegion: "AZ" },
+      { "@type": "City", name: "Dove Mountain", addressRegion: "AZ" },
+      { "@type": "City", name: "Avra Valley", addressRegion: "AZ" },
+      { "@type": "City", name: "Sahuarita", addressRegion: "AZ" },
+      { "@type": "City", name: "Green Valley", addressRegion: "AZ" },
+      { "@type": "City", name: "Catalina Foothills", addressRegion: "AZ" },
+      { "@type": "City", name: "Vail", addressRegion: "AZ" },
+      { "@type": "City", name: "Picture Rocks", addressRegion: "AZ" },
+    ],
   };
 }
 
-// LocalBusiness Schema with DefinedRegion for zip codes
+// ─────────────────────────────────────────────────────────────────────────────
+// LOCAL BUSINESS SCHEMA — With DefinedRegion zip codes
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateLocalBusinessSchema(
   options: {
     includezipCodes?: boolean;
@@ -183,7 +247,8 @@ export function generateLocalBusinessSchema(
 
   return {
     "@context": "https://schema.org",
-    "@type": "Plumber",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
+    "@id": `${BUSINESS.website}#localbusiness`,
     name: BUSINESS.name,
     description: specificLocation
       ? `Professional plumbing services in ${specificLocation} and surrounding areas. ${BUSINESS.tagline}`
@@ -209,22 +274,28 @@ export function generateLocalBusinessSchema(
       "@type": "AggregateRating",
       ratingValue: BUSINESS.trust.displayRating,
       reviewCount: BUSINESS.trust.totalReviews,
-      bestRating: 5,
+      bestRating: "5",
+      worstRating: "1",
     },
     priceRange: "$$",
-    image: [`${BUSINESS.website}/og-image.jpg`],
+    image: `${BUSINESS.website}/images/hero-plumber.jpg`,
   };
 }
 
-// Service Schema
+// ─────────────────────────────────────────────────────────────────────────────
+// SERVICE SCHEMA — For individual service pages
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateServiceSchema(options: {
   serviceType: string;
   serviceName: string;
   description?: string;
   location?: string;
   zipCodes?: string[];
+  ratingValue?: string;
+  reviewCount?: number;
+  url?: string;
 }): SchemaOrgService {
-  const { serviceType, serviceName, description, location, zipCodes } = options;
+  const { serviceType, serviceName, description, location, zipCodes, ratingValue, reviewCount, url } = options;
 
   const areaServed = zipCodes
     ? zipCodes.map((zip) => ({
@@ -237,26 +308,150 @@ export function generateServiceSchema(options: {
         {
           "@type": "City" as const,
           name: location,
+          addressRegion: "AZ",
         },
       ]
-    : undefined;
+    : [
+        { "@type": "City", name: "Marana", addressRegion: "AZ" },
+        { "@type": "City", name: "Tucson", addressRegion: "AZ" },
+        { "@type": "City", name: "Oro Valley", addressRegion: "AZ" },
+      ];
 
-  return {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": url ? `${url}#service` : undefined,
     serviceType: serviceType,
+    name: serviceName,
     provider: {
-      "@type": "Plumber",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
+      "@id": `${BUSINESS.website}#organization`,
       name: BUSINESS.name,
+      telephone: BUSINESS.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: BUSINESS.address.street,
+        addressLocality: BUSINESS.address.city,
+        addressRegion: BUSINESS.address.state,
+        postalCode: BUSINESS.address.zip,
+        addressCountry: BUSINESS.address.country,
+      },
     },
     areaServed,
     description:
       description ||
-      `Professional ${serviceName} services in Southern Arizona. Expert installations, repairs, and maintenance.`,
+      `Professional ${serviceName} services in Marana, Tucson & Oro Valley, AZ. Expert installations, repairs, and maintenance by licensed plumber ROC #${BUSINESS.trust.license}.`,
+    availableChannel: {
+      "@type": "ServiceChannel",
+      servicePhone: {
+        "@type": "ContactPoint",
+        telephone: BUSINESS.phone,
+        contactType: "customer service",
+      },
+    },
+  };
+
+  // Add service-specific AggregateRating if data is provided
+  if (ratingValue && reviewCount) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: ratingValue,
+      reviewCount: reviewCount,
+      bestRating: "5",
+      worstRating: "1",
+    };
+  }
+
+  return schema;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GEO-SERVICE INTERSECTION SCHEMA
+// For /locations/[city]/[service] pages — hyper-local service+city targeting
+// ─────────────────────────────────────────────────────────────────────────────
+export function generateGeoServiceSchema(options: {
+  serviceName: string;
+  serviceType: string;
+  serviceDescription: string;
+  cityName: string;
+  cityZipCodes: string[];
+  cityLatitude: number;
+  cityLongitude: number;
+  pageUrl: string;
+  faqs?: Array<{ question: string; answer: string }>;
+}) {
+  const {
+    serviceName,
+    serviceType,
+    serviceDescription,
+    cityName,
+    cityZipCodes,
+    cityLatitude,
+    cityLongitude,
+    pageUrl,
+  } = options;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: `${serviceName} in ${cityName}, AZ`,
+    serviceType: serviceType,
+    description: serviceDescription,
+    provider: {
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
+      "@id": `${BUSINESS.website}#organization`,
+      name: BUSINESS.name,
+      telephone: BUSINESS.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: BUSINESS.address.street,
+        addressLocality: BUSINESS.address.city,
+        addressRegion: "AZ",
+        postalCode: BUSINESS.address.zip,
+        addressCountry: "US",
+      },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Arizona ROC License CR-37 Plumbing",
+        identifier: `ROC #${BUSINESS.trust.license}`,
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: BUSINESS.trust.displayRating,
+        reviewCount: BUSINESS.trust.totalReviews,
+        bestRating: "5",
+      },
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: cityName,
+        addressRegion: "AZ",
+        sameAs: `https://en.wikipedia.org/wiki/${cityName.replace(/\s+/g, "_")},_Arizona`,
+      },
+      ...cityZipCodes.map((zip) => ({
+        "@type": "DefinedRegion",
+        postalCode: zip,
+        addressCountry: "US",
+      })),
+    ],
+    availableAtOrFrom: {
+      "@type": "Place",
+      name: `${BUSINESS.name} — ${cityName} Service Area`,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: cityLatitude,
+        longitude: cityLongitude,
+      },
+    },
   };
 }
 
-// WebSite Schema
+// ─────────────────────────────────────────────────────────────────────────────
+// WEBSITE SCHEMA — With SearchAction for sitelinks searchbox
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
@@ -268,10 +463,52 @@ export function generateWebSiteSchema() {
     publisher: {
       "@id": `${BUSINESS.website}#organization`,
     },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BUSINESS.website}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
-// FAQ Schema for frequently asked questions
+// ─────────────────────────────────────────────────────────────────────────────
+// IMAGE OBJECT SCHEMA — For logo and hero images
+// ─────────────────────────────────────────────────────────────────────────────
+export function generateImageObjectSchema() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "@id": `${BUSINESS.website}#logo`,
+      url: `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+      contentUrl: `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+      caption: `${BUSINESS.name} — Licensed Plumber in Marana, AZ`,
+      description: `Official logo of ${BUSINESS.name}, licensed plumbing contractor serving Marana, Tucson, and Oro Valley since ${BUSINESS.trust.founded}.`,
+      width: 400,
+      height: 120,
+      representativeOfPage: false,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "@id": `${BUSINESS.website}#og-image`,
+      url: `${BUSINESS.website}/images/og-image.jpg`,
+      contentUrl: `${BUSINESS.website}/images/og-image.jpg`,
+      caption: `${BUSINESS.name} — Marana's Trusted Plumber Since ${BUSINESS.trust.founded}`,
+      description: `Wood's Plumbing Enterprises LLC serves Marana, Tucson, and Oro Valley with 24/7 emergency plumbing, water heater service, drain cleaning, and more.`,
+      width: 1200,
+      height: 630,
+      representativeOfPage: true,
+    },
+  ];
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FAQ SCHEMA
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
   return {
     "@context": "https://schema.org",
@@ -287,7 +524,9 @@ export function generateFAQSchema(faqs: Array<{ question: string; answer: string
   };
 }
 
-// BreadcrumbList Schema for navigation
+// ─────────────────────────────────────────────────────────────────────────────
+// BREADCRUMB SCHEMA
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateBreadcrumbSchema(items: Array<{ name: string; href?: string }>) {
   return {
     "@context": "https://schema.org",
@@ -301,7 +540,9 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; href?: str
   };
 }
 
-// Individual Review Schema with testimonials
+// ─────────────────────────────────────────────────────────────────────────────
+// REVIEW SCHEMA
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateReviewSchema(reviews: Array<{
   author: string;
   reviewBody: string;
@@ -325,7 +566,8 @@ export function generateReviewSchema(reviews: Array<{
     reviewBody: review.reviewBody,
     datePublished: review.datePublished,
     itemReviewed: {
-      "@type": "Plumber",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
+      "@id": `${BUSINESS.website}#organization`,
       name: BUSINESS.name,
       telephone: BUSINESS.phone,
       address: {
@@ -341,7 +583,11 @@ export function generateReviewSchema(reviews: Array<{
   }));
 }
 
-// Person Schema for Bill Wood (Founder/Owner) - E-E-A-T Signal
+// ─────────────────────────────────────────────────────────────────────────────
+// FOUNDER / OWNER SCHEMA — E-E-A-T signal
+// Updated to reflect Andrew M Dobbins as ROC license holder (CR-37)
+// while Bill Wood is the operational owner/master plumber
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateFounderSchema() {
   return {
     "@context": "https://schema.org",
@@ -352,7 +598,7 @@ export function generateFounderSchema() {
     worksFor: {
       "@id": `${BUSINESS.website}#organization`,
     },
-    description: `${BUSINESS.owner.name} is the owner and master plumber at ${BUSINESS.name}, bringing over ${BUSINESS.owner.yearsExperience} years of hands-on plumbing experience to Southern Arizona. As a licensed Arizona contractor, Bill leads a team of skilled professionals dedicated to quality workmanship and customer satisfaction.`,
+    description: `${BUSINESS.owner.name} is the owner and master plumber at ${BUSINESS.name}, bringing over ${BUSINESS.owner.yearsExperience} years of hands-on plumbing experience to Southern Arizona. As a licensed Arizona contractor (ROC #${BUSINESS.trust.license}, CR-37 Plumbing), the team at Wood's Plumbing is dedicated to quality workmanship and customer satisfaction in Marana, Tucson, and Oro Valley.`,
     knowsAbout: [
       "Residential Plumbing",
       "Commercial Plumbing",
@@ -362,6 +608,8 @@ export function generateFounderSchema() {
       "Emergency Plumbing Repairs",
       "Water Treatment Systems",
       "Plumbing Code Compliance",
+      "Slab Leak Detection",
+      "Trenchless Sewer Repair",
     ],
     hasCredential: [
       {
@@ -371,12 +619,13 @@ export function generateFounderSchema() {
         recognizedBy: {
           "@type": "GovernmentOrganization",
           name: "Arizona Registrar of Contractors",
+          url: "https://roc.az.gov",
         },
       },
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "license",
-        name: "Arizona ROC Licensed Contractor",
+        name: "Arizona ROC License CR-37 Plumbing",
         identifier: `ROC #${BUSINESS.trust.license}`,
         recognizedBy: {
           "@type": "GovernmentOrganization",
@@ -392,21 +641,24 @@ export function generateFounderSchema() {
     },
     award: [
       `${BUSINESS.owner.yearsExperience}+ Years Master Plumber Experience`,
-      "Arizona ROC Licensed Contractor",
+      "Arizona ROC Licensed Contractor CR-37",
+      "BBB A+ Rated Business",
     ],
     sameAs: Object.values(BUSINESS.social).filter(Boolean),
   };
 }
 
-// E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) Schema
+// ─────────────────────────────────────────────────────────────────────────────
+// E-E-A-T SCHEMA — Comprehensive trust signal for AI engines
+// ─────────────────────────────────────────────────────────────────────────────
 export function generateEEATSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Plumber",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
     "@id": `${BUSINESS.website}#business`,
     name: BUSINESS.name,
     image: `${BUSINESS.website}/images/hero-plumber.jpg`,
-    description: `${BUSINESS.name} has been providing expert plumbing services in Southern Arizona since ${BUSINESS.trust.founded}. With ${BUSINESS.trust.yearsInBusiness}+ years of hands-on experience, Arizona ROC License #${BUSINESS.trust.license}, and over ${BUSINESS.trust.totalReviews} verified customer reviews, we are the trusted choice for residential and commercial plumbing.`,
+    description: `${BUSINESS.name} has been providing expert plumbing services in Marana, Tucson, and Oro Valley since ${BUSINESS.trust.founded}. With ${BUSINESS.trust.yearsInBusiness}+ years of hands-on experience, Arizona ROC License #${BUSINESS.trust.license} (CR-37 Plumbing), and over ${BUSINESS.trust.totalReviews} verified customer reviews, we are the trusted choice for residential and commercial plumbing in Southern Arizona.`,
     foundingDate: String(BUSINESS.trust.founded),
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -424,10 +676,12 @@ export function generateEEATSchema() {
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "license",
-        name: "Arizona Registrar of Contractors License",
+        name: "Arizona Registrar of Contractors License CR-37 Plumbing",
+        identifier: `ROC #${BUSINESS.trust.license}`,
         recognizedBy: {
-          "@type": "Organization",
+          "@type": "GovernmentOrganization",
           name: "Arizona Registrar of Contractors",
+          url: "https://roc.az.gov",
         },
         validIn: {
           "@type": "AdministrativeArea",
@@ -445,33 +699,61 @@ export function generateEEATSchema() {
       "Pipe Repair and Repiping",
       "Water Treatment Systems",
       "Commercial Plumbing",
+      "Slab Leak Repair",
+      "Hydro Jetting",
     ],
-    areaServed: {
-      "@type": "State",
-      name: "Arizona",
-      containsPlace: [
-        { "@type": "City", name: "Tucson" },
-        { "@type": "City", name: "Marana" },
-        { "@type": "City", name: "Oro Valley" },
-        { "@type": "City", name: "Vail" },
-        { "@type": "City", name: "Sahuarita" },
-        { "@type": "City", name: "Green Valley" },
-        { "@type": "City", name: "Casa Grande" },
-        { "@type": "City", name: "Sierra Vista" },
-      ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: BUSINESS.trust.displayRating,
+      reviewCount: BUSINESS.trust.totalReviews,
+      bestRating: "5",
+      worstRating: "1",
     },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Marana",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Marana,_Arizona",
+      },
+      {
+        "@type": "City",
+        name: "Tucson",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Tucson,_Arizona",
+      },
+      {
+        "@type": "City",
+        name: "Oro Valley",
+        addressRegion: "AZ",
+        sameAs: "https://en.wikipedia.org/wiki/Oro_Valley,_Arizona",
+      },
+      { "@type": "City", name: "Gladden Farms", addressRegion: "AZ" },
+      { "@type": "City", name: "Continental Ranch", addressRegion: "AZ" },
+      { "@type": "City", name: "Dove Mountain", addressRegion: "AZ" },
+      { "@type": "City", name: "Avra Valley", addressRegion: "AZ" },
+      { "@type": "City", name: "Sahuarita", addressRegion: "AZ" },
+      { "@type": "City", name: "Green Valley", addressRegion: "AZ" },
+      { "@type": "City", name: "Vail", addressRegion: "AZ" },
+    ],
     award: [
       "BBB A+ Rating",
       `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
+      "Family-Owned & Operated",
     ],
-    memberOf: {
-      "@type": "Organization",
-      name: "Better Business Bureau",
-    },
+    memberOf: [
+      {
+        "@type": "Organization",
+        name: "Better Business Bureau",
+        url: "https://www.bbb.org",
+      },
+    ],
   };
 }
 
-// HowTo Schema - For DIY/instructional blog posts
+// ─────────────────────────────────────────────────────────────────────────────
+// HOWTO SCHEMA — For DIY/instructional blog posts
+// ─────────────────────────────────────────────────────────────────────────────
 export interface HowToStep {
   name: string;
   text: string;
@@ -504,10 +786,7 @@ export function generateHowToSchema(params: HowToSchemaParams) {
     })),
   };
 
-  if (params.totalTime) {
-    schema.totalTime = params.totalTime;
-  }
-
+  if (params.totalTime) schema.totalTime = params.totalTime;
   if (params.estimatedCost) {
     schema.estimatedCost = {
       "@type": "MonetaryAmount",
@@ -515,24 +794,13 @@ export function generateHowToSchema(params: HowToSchemaParams) {
       "value": params.estimatedCost.value,
     };
   }
-
   if (params.supply && params.supply.length > 0) {
-    schema.supply = params.supply.map(item => ({
-      "@type": "HowToSupply",
-      "name": item,
-    }));
+    schema.supply = params.supply.map(item => ({ "@type": "HowToSupply", "name": item }));
   }
-
   if (params.tool && params.tool.length > 0) {
-    schema.tool = params.tool.map(item => ({
-      "@type": "HowToTool",
-      "name": item,
-    }));
+    schema.tool = params.tool.map(item => ({ "@type": "HowToTool", "name": item }));
   }
-
-  if (params.image) {
-    schema.image = params.image;
-  }
+  if (params.image) schema.image = params.image;
 
   return schema;
 }

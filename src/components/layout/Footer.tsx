@@ -219,7 +219,7 @@ export function Footer() {
         <div className="border-t border-navy-800 mt-8 pt-8 text-sm text-center">
           <p className="text-gray-400">
             © 2025 {BUSINESS.legalName}. All rights reserved. |{' '}
-            <span className="text-red-400">License: {BUSINESS.trust.license}</span>
+            <span className="text-red-400">ROC #{BUSINESS.trust.license} (CR-37 Plumbing)</span>
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-4 text-gray-300">
             <Link href="/privacy-policy" className="hover:text-red-400 transition-colors">

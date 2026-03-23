@@ -31,7 +31,7 @@ export const locations: Location[] = [
     name: "Marana",
     county: "Pima County",
     description: "Expert plumbing services for Marana's growing community. From heritage ranches to new master-planned developments, we serve all of Marana with reliable plumbing solutions.",
-    zipCodes: ["85653", "85658", "85741", "85742", "85743"],
+    zipCodes: ["85658", "85653", "85741", "85742", "85743"],
     population: 51908,
     features: [
       "Residential Plumbing Specialists",

@@ -7,7 +7,7 @@ import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { ScheduleButton } from '@/components/ScheduleButton';
 import { trackPhoneClick } from '@/lib/analytics';
-import { generateReviewSchema, generateEEATSchema, generateOrganizationSchema, generateFounderSchema } from '@/lib/seo/schemas';
+import { generateReviewSchema, generateEEATSchema, generateOrganizationSchema, generateFounderSchema, generateWebSiteSchema, generateImageObjectSchema } from '@/lib/seo/schemas';
 
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
@@ -37,15 +37,21 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
   const eeatSchema = generateEEATSchema();
   const organizationSchema = generateOrganizationSchema();
   const founderSchema = generateFounderSchema();
+  const webSiteSchema = generateWebSiteSchema();
+  const imageObjectSchemas = generateImageObjectSchema();
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Plumber"],
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "Plumber"],
     "name": BUSINESS.name,
     "alternateName": ["Wood's Plumbing", "Woods Plumbing", "Wood's Plumbing Marana", "Woods Plumbing AZ"],
-    "description": "Licensed plumbing contractor serving Southern Arizona since 1979. Professional plumbing services including repairs, water heaters, leak detection, drain cleaning, and 24/7 emergency service.",
-    "image": `${BUSINESS.website}/logo.png`,
-    "logo": `${BUSINESS.website}/logo.png`,
+    "description": `Licensed plumbing contractor (ROC #${BUSINESS.trust.license}, CR-37 Plumbing) serving Marana, Tucson & Oro Valley since ${BUSINESS.trust.founded}. Professional plumbing services including repairs, water heaters, leak detection, drain cleaning, and 24/7 emergency service.`,
+    "image": `${BUSINESS.website}/images/hero-plumber.jpg`,
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${BUSINESS.website}/images/woods-plumbing-logo.png`,
+      "caption": `${BUSINESS.name} — Licensed Plumber in Marana, AZ`
+    },
     "@id": `${BUSINESS.website}#organization`,
     "url": BUSINESS.website,
     "telephone": BUSINESS.phone,
@@ -193,28 +199,51 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
   return (
     <div>
       <Head>
-        <title>Plumber in Marana & Tucson AZ - 24/7 Emergency | Wood&apos;s Plumbing</title>
-        <meta name="description" content="Licensed plumber in Marana & Tucson AZ since 1979. BBB A+ rated, 4.9 stars. 24/7 emergency service for water heaters, drains, leaks, gas lines. Free estimates - call (520) 682-2233!" />
+        <title>Wood&apos;s Plumbing | Marana, Tucson & Oro Valley&apos;s Trusted Plumber Since 1979</title>
+        <meta name="description" content={`#1 Rated plumber in Marana, Tucson & Oro Valley AZ since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service — no overtime charges. Licensed ROC #${BUSINESS.trust.license}, CR-37. Free estimates — call ${BUSINESS.phone}!`} />
         <link rel="canonical" href={BUSINESS.website} />
         
-        <meta property="og:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
-        <meta property="og:description" content={`Licensed plumbing contractor serving Southern Arizona since ${BUSINESS.trust.founded}. ${BUSINESS.hours.emergency}.`} />
+        <meta property="og:title" content={`${BUSINESS.name} — Marana, Tucson & Oro Valley’s Trusted Plumber Since ${BUSINESS.trust.founded}`} />
+        <meta property="og:description" content={`Licensed plumbing contractor (ROC #${BUSINESS.trust.license}, CR-37) serving Marana, Tucson & Oro Valley. ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews. ${BUSINESS.hours.emergency}.`} />
         <meta property="og:url" content={BUSINESS.website} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${BUSINESS.website}/images/hero-plumber.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${BUSINESS.name} — Licensed Plumber in Marana, AZ`} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content={BUSINESS.name} />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${BUSINESS.name} - ${BUSINESS.tagline}`} />
+        <meta name="twitter:title" content={`${BUSINESS.name} — Marana, Tucson & Oro Valley’s Trusted Plumber`} />
+        <meta name="twitter:description" content={`Licensed plumber in Marana, Tucson & Oro Valley. ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service. Call ${BUSINESS.phone}.`} />
+        <meta name="twitter:image" content={`${BUSINESS.website}/images/hero-plumber.jpg`} />
+        
+        {/* Geo meta tags for local SEO */}
+        <meta name="geo.region" content="US-AZ" />
+        <meta name="geo.placename" content="Marana, Arizona" />
+        <meta name="geo.position" content={`${BUSINESS.geo.latitude};${BUSINESS.geo.longitude}`} />
+        <meta name="ICBM" content={`${BUSINESS.geo.latitude}, ${BUSINESS.geo.longitude}`} />
         
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         
-        {/* WebSite Schema for search engines */}
+        {/* WebSite Schema with SearchAction for sitelinks searchbox */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
+        
+        {/* ImageObject schemas for logo and hero */}
+        {imageObjectSchemas.map((schema, index) => (
+          <script
+            key={`image-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
         
         {/* FAQ Schema for AI search visibility */}
         <script

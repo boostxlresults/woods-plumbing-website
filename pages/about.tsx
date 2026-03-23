@@ -125,7 +125,7 @@ const AboutPage: NextPage = () => {
     <div>
       <Head>
         <title>About Us - Family-Owned Plumber Since 1979 | Wood&apos;s Plumbing Arizona</title>
-        <meta name="description" content="Learn about Wood's Plumbing Enterprises LLC, a family-owned plumbing company serving Tucson & Southern Arizona since 1979. BBB A+ rated, 4.9-star reviews, Licensed ROC #146498. Meet our team." />
+        <meta name="description" content={`Learn about Wood's Plumbing Enterprises LLC — family-owned plumbing company serving Marana, Tucson & Oro Valley since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating}-star reviews. Licensed ROC #${BUSINESS.trust.license}, CR-37 Plumbing. Meet owner Andrew Dobbins.`} />
         <meta name="keywords" content={`about ${BUSINESS.name}, plumber history, Tucson plumber since ${BUSINESS.trust.founded}, licensed plumber Arizona, BBB A+ plumber, family owned plumbing`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/about`} />

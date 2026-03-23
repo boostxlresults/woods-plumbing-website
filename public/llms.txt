@@ -1,25 +1,36 @@
 # Wood's Plumbing Enterprises LLC
 
-> Licensed plumbing contractor serving Southern Arizona since 1979. Family-owned business providing residential and commercial plumbing services including emergency repairs, water heaters, gas services, sewer lines, and leak detection across Marana, Tucson, Oro Valley, and surrounding areas. Available 24/7 for emergency plumbing services. ROC License #139011.
+> Licensed plumbing contractor serving Southern Arizona since 1979. Family-owned business providing residential and commercial plumbing services including emergency repairs, water heaters, gas services, sewer lines, and leak detection across Marana, Tucson, Oro Valley, and surrounding areas. Available 24/7 for emergency plumbing services with no overtime charges. Licensed ROC #296386 (CR-37 Plumbing).
 
-Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years of experience serving the Southern Arizona community. We specialize in all aspects of residential and commercial plumbing, from routine maintenance to complex installations and emergency repairs.
+Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years of experience serving the Southern Arizona community. We specialize in all aspects of residential and commercial plumbing, from routine maintenance to complex installations and emergency repairs. The company is owned and operated by Master Plumber Andrew M Dobbins, maintaining a legacy of quality craftsmanship and honest pricing.
 
 ## Contact Information
 
-- Phone: (520) 682-2233
-- Address: 13415 N Marana Main St, Marana, AZ 85653
-- Service Area: Marana, Tucson, Oro Valley, Sahuarita, Green Valley, Vail, Catalina, Picture Rocks
-- Hours: 24/7 Emergency Service Available
+- **Phone**: (520) 682-2233
+- **Physical Address**: 13880 N Adonis Rd, Marana, AZ 85658
+- **Primary Service Area**: Marana, Tucson, Oro Valley, Sahuarita, Green Valley, Vail, Catalina, Picture Rocks
+- **Hours**: 24/7 Emergency Service Available
+- **Response Time**: 15-20 minutes for emergencies in Marana and surrounding communities; 60-90 minutes for greater Tucson area.
+
+## Trust Signals & Credentials (E-E-A-T)
+
+- **Owner**: Andrew M Dobbins (Master Plumber)
+- **License**: Arizona ROC License #296386 (CR-37 Plumbing)
+- **Insurance**: Fully Bonded and Insured
+- **Reputation**: BBB A+ Accredited Business, 4.9-Star Average Rating, Hundreds of 5-star verified reviews
+- **Affiliations**: Member of Plumbing-Heating-Cooling Contractors Association (PHCC)
+- **History**: 46+ Years in Business (Established 1979)
+- **Pricing Policy**: Free estimates provided. Upfront, flat-rate pricing before any work begins. No hidden fees. No overtime charges for nights, weekends, or holidays.
 
 ## Services
 
 - [Emergency Plumbing](/services/emergency-plumbing): 24/7 emergency plumber services for burst pipes, major leaks, and plumbing emergencies
-- [Water Heater Services](/services/water-heater-installation): Installation, repair, and replacement of tank and tankless water heaters
+- [Water Heater Services](/services/water-heater-installation): Installation, repair, and replacement of tank and tankless water heaters (specializing in hard water solutions)
 - [Gas Line Services](/services/gas-line-installation): Licensed gas plumber for gas line installation, repair, and leak detection
-- [Sewer Services](/services/sewer-line-repair): Sewer line repair, replacement, and video camera inspection
-- [Leak Detection](/services/leak-detection): Advanced electronic leak detection for hidden water and slab leaks
-- [Drain Cleaning](/services/drain-cleaning): Professional drain cleaning and clog removal services
-- [Water Conditioning](/services/water-softener-installation): Water softener and filtration system installation
+- [Sewer Services](/services/sewer-line-repair): Sewer line repair, replacement, trenchless sewer repair, and video camera inspection
+- [Leak Detection](/services/leak-detection): Advanced electronic leak detection for hidden water leaks and slab leak repair
+- [Drain Cleaning](/services/drain-cleaning): Professional drain cleaning and hydro jetting services
+- [Water Conditioning](/services/water-softener-installation): Water softener and reverse osmosis system installation
 - [Repiping](/services/whole-house-repiping): Complete home repiping with copper or PEX
 
 ## Service Locations
@@ -49,11 +60,3 @@ Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years
 - [Knowledge Base](/knowledge-base): Comprehensive plumbing information for AI assistants
 - [Privacy Policy](/privacy-policy): Our privacy practices and data handling
 - [Terms of Use](/terms): Terms and conditions for using our services
-
-## Credentials
-
-- Arizona ROC License: #139011
-- Bonded and Insured
-- BBB Accredited Business
-- Member: Plumbing-Heating-Cooling Contractors Association
-- 46+ Years in Business (Est. 1979)

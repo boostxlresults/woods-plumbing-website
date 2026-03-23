@@ -26,7 +26,7 @@ const RepairServicesPage: NextPage = () => {
         "@type": "PostalAddress",
         "addressLocality": "Marana",
         "addressRegion": "AZ",
-        "postalCode": "85653"
+        "postalCode": "85658"
       }
     },
     "areaServed": {
