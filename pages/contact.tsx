@@ -12,7 +12,7 @@ import { Label } from '../src/components/ui/label';
 import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { BUSINESS } from '../lib/constants';
-import { trackContactFormSubmission, trackPhoneClick } from '../lib/analytics';
+import { trackContactFormSubmission, trackPhoneClick, trackFormStart, trackEmergencyClick } from '../lib/analytics';
 import servicesData from '../lib/data/services.json';
 import locationsData from '../lib/data/locations.json';
 
@@ -32,6 +32,14 @@ const ContactPage: NextPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [formStarted, setFormStarted] = useState(false);
+
+  const handleFormFocus = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackFormStart('contact_page_form');
+    }
+  };
 
   const {
     register,
@@ -227,7 +235,7 @@ const ContactPage: NextPage = () => {
                   <p className="text-blue-100 text-sm mb-4">
                     Plumbing emergency? Call us now for immediate assistance.
                   </p>
-                  <Link href={`tel:${BUSINESS.phone}`}>
+                  <Link href={`tel:${BUSINESS.phone}`} onClick={() => trackEmergencyClick('contact_emergency_card')}>
                     <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900">
                       <Phone className="mr-2" />
                       Emergency: {BUSINESS.phone}
@@ -264,7 +272,7 @@ const ContactPage: NextPage = () => {
                   <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you within 24 hours</p>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={handleSubmit(onSubmit)} onFocus={handleFormFocus} className="space-y-6">
                     {/* Name */}
                     <div>
                       <Label htmlFor="name">Name *</Label>

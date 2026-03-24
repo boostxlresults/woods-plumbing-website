@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { Phone, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { BUSINESS } from '@/lib/constants';
+import { trackFormStart, trackLeadFormSubmit, trackPhoneClick } from '@/lib/analytics';
 
 const quickLeadSchema = z.object({
   name: z.string().min(2, 'Name is required'),
@@ -31,6 +32,7 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [formStarted, setFormStarted] = useState(false);
 
   const {
     register,
@@ -40,6 +42,13 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
   } = useForm<QuickLeadFormData>({
     resolver: zodResolver(quickLeadSchema),
   });
+
+  const handleFormFocus = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackFormStart(`quick_lead_form_${variant}`);
+    }
+  };
 
   const onSubmit = async (data: QuickLeadFormData) => {
     setIsSubmitting(true);
@@ -58,6 +67,8 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
       });
 
       if (response.ok) {
+        // Track successful lead form submission
+        trackLeadFormSubmit(`quick_lead_form_${variant}`, data.service);
         setIsSuccess(true);
         reset();
         setTimeout(() => setIsSuccess(false), 5000);
@@ -93,7 +104,7 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
         {title}
       </h3>
       
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" onFocus={handleFormFocus}>
         <div>
           <input
             type="text"
@@ -184,6 +195,7 @@ export const QuickLeadForm: React.FC<QuickLeadFormProps> = ({
         </p>
         <a
           href={`tel:${BUSINESS.phone}`}
+          onClick={() => trackPhoneClick(`quick_lead_form_${variant}`)}
           className={`inline-flex items-center gap-1 font-bold text-sm mt-1 ${
             variant === 'inline' ? 'text-copper-400 hover:text-copper-300' : 'text-navy-700 hover:text-navy-900'
           }`}

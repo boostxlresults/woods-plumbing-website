@@ -94,7 +94,8 @@ export function HeroSplit({
                 </a>
               )}
               
-              <ScheduleButton 
+              <ScheduleButton
+              analyticsSource="hero_split" 
                 size="lg" 
                 className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
                 showIcon={false}

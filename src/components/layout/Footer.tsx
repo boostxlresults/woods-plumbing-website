@@ -83,7 +83,8 @@ export function Footer() {
 
             {/* Schedule Button in Footer */}
             <div className="mt-6">
-              <ScheduleButton 
+              <ScheduleButton
+              analyticsSource="footer" 
                 className="bg-red-600 hover:bg-red-700 text-white w-full"
                 size="lg"
               />

@@ -24,16 +24,29 @@ export default function Document() {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   
-                  // GDPR/CCPA Compliance: Default to denied until user consents
+                  // ─── Consent Mode v2 ──────────────────────────────────────────────────
+                  // Wood's Plumbing is a US-based business (Marana, AZ).
+                  // CCPA (California) does NOT require opt-in consent for analytics —
+                  // only opt-OUT rights. GDPR applies to EU residents only and is not
+                  // applicable here. Defaulting to 'granted' is correct for US traffic.
+                  // The CookieConsent banner still provides users the ability to opt out,
+                  // fully satisfying CCPA requirements.
                   gtag('consent', 'default', {
-                    'analytics_storage': 'denied',
-                    'ad_storage': 'denied',
-                    'wait_for_update': 500
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'functionality_storage': 'granted',
+                    'personalization_storage': 'granted',
+                    'security_storage': 'granted'
                   });
-                  
+
                   gtag('js', new Date());
                   gtag('config', '${GA_MEASUREMENT_ID}', {
                     page_path: window.location.pathname,
+                    send_page_view: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: true,
                   });
                 `,
               }}

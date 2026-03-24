@@ -4,6 +4,7 @@ import { Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { trackScheduleClick, trackScheduleOpen } from '@/lib/analytics';
 
 const SCHEDULER_ID = process.env.NEXT_PUBLIC_SERVICETITAN_SCHEDULER_ID || '';
 const API_KEY = process.env.NEXT_PUBLIC_SERVICETITAN_API_KEY || '';
@@ -85,6 +86,7 @@ interface ScheduleButtonProps {
   children?: React.ReactNode;
   showIcon?: boolean;
   fullWidth?: boolean;
+  analyticsSource?: string;
 }
 
 export function ScheduleButton({
@@ -94,14 +96,18 @@ export function ScheduleButton({
   children = 'SCHEDULE ONLINE',
   showIcon = true,
   fullWidth = false,
+  analyticsSource = 'unknown',
 }: ScheduleButtonProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  
+
   const handleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
+    // Track the button click immediately — fires even if scheduler fails to load
+    trackScheduleClick(analyticsSource);
+
     if (!SCHEDULER_ID || !API_KEY) {
       router.push('/contact');
       return;
@@ -110,6 +116,7 @@ export function ScheduleButton({
     if (window._scheduler) {
       try {
         window._scheduler.show({ schedulerId: SCHEDULER_ID });
+        trackScheduleOpen(analyticsSource);
         return;
       } catch (error) {
         console.error('Error opening scheduler:', error);
@@ -121,6 +128,7 @@ export function ScheduleButton({
       await loadServiceTitanScript();
       if (window._scheduler) {
         window._scheduler.show({ schedulerId: SCHEDULER_ID });
+        trackScheduleOpen(analyticsSource);
       } else {
         router.push('/contact');
       }

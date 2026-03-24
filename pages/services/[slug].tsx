@@ -315,7 +315,8 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
                 </p>
               </a>
               
-              <ScheduleButton 
+              <ScheduleButton
+              analyticsSource="service_page" 
                 size="lg" 
                 className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
                 showIcon={false}

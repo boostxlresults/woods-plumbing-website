@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { X, MessageCircle } from 'lucide-react';
 import { QuickLeadForm } from './QuickLeadForm';
+import { trackLeadFormOpen } from '@/lib/analytics';
 
 export const FloatingLeadForm: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ export const FloatingLeadForm: React.FC = () => {
       {/* Floating Button */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => { setIsOpen(true); trackLeadFormOpen('floating_button'); }}
           className="fixed bottom-20 right-4 z-40 bg-copper-500 hover:bg-copper-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-pulse hover:animate-none"
           aria-label="Get a free estimate"
         >

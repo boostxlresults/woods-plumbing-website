@@ -314,7 +314,8 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
               </p>
             </a>
             
-            <ScheduleButton 
+            <ScheduleButton
+              analyticsSource="homepage_hero" 
               size="lg" 
               className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-5 text-lg"
               showIcon={false}
@@ -360,7 +361,8 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
                   </p>
                 </a>
                 
-                <ScheduleButton 
+                <ScheduleButton
+              analyticsSource="homepage_hero" 
                   size="lg" 
                   className="bg-navy-700 hover:bg-navy-800 text-white font-bold uppercase px-8 py-6 text-lg"
                   showIcon={false}

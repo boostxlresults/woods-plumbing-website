@@ -22,7 +22,8 @@ export const EmergencyBanner: React.FC = () => {
             <Phone className="w-4 h-4" />
             <span className="text-base">Call Now: {BUSINESS.phone}</span>
           </a>
-          <ScheduleButton 
+          <ScheduleButton
+              analyticsSource="emergency_banner" 
             className="bg-white text-navy-700 hover:bg-gray-100 font-bold"
             size="default"
             showIcon={true}

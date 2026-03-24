@@ -319,7 +319,8 @@ export function Header() {
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-3">
-              <ScheduleButton 
+              <ScheduleButton
+              analyticsSource="header" 
                 size="sm"
                 className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase px-6 py-3 text-sm"
               >
@@ -415,7 +416,8 @@ export function Header() {
                 </Link>
               </li>
               <li className="pt-2 border-t border-gray-200">
-                <ScheduleButton 
+                <ScheduleButton
+              analyticsSource="header" 
                   fullWidth
                   className="bg-red-600 hover:bg-red-700 text-white font-bold uppercase"
                   showIcon={true}

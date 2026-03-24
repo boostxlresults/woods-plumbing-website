@@ -51,6 +51,7 @@ export function StickyCTA() {
             </a>
             
             <ScheduleButton
+              analyticsSource="sticky_cta"
               className="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2.5 text-sm"
               showIcon={true}
             >

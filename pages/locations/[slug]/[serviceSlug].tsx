@@ -1,9 +1,11 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { Phone, CheckCircle, MapPin, Star, Clock, Shield, Wrench } from 'lucide-react';
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
+import { trackGeoServiceView, trackPhoneClick } from '@/lib/analytics';
 import {
   generateGeoServiceSchema,
   generateBreadcrumbSchema,
@@ -57,6 +59,11 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
   faqs,
 }) => {
   const pageUrl = `${BUSINESS.website}/locations/${location.slug}/${service.slug}`;
+
+  // Track geo-service page view for GA4
+  useEffect(() => {
+    trackGeoServiceView(location.name, service.name);
+  }, [location.name, service.name]);
 
   // Schema markup
   const geoServiceSchema = generateGeoServiceSchema({
@@ -161,7 +168,7 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={`tel:${BUSINESS.phone}`}>
+              <a href={`tel:${BUSINESS.phone}`} onClick={() => trackPhoneClick(`geo_service_hero_${location.slug}_${service.slug}`)}>
                 <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold text-lg px-8">
                   <Phone className="mr-2" />
                   {BUSINESS.phone}
