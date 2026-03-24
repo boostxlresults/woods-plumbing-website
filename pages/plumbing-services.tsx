@@ -58,7 +58,7 @@ const PlumbingServicesPage: NextPage = () => {
         title="COMPLETE PLUMBING SERVICES"
         subtitle={`${allServices.length}+ professional plumbing services for homes and businesses throughout Southern Arizona. From emergency repairs to routine maintenance, Wood's Plumbing has you covered.`}
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional plumbing services team"
         backgroundColor="gray"
         showBanner={true}

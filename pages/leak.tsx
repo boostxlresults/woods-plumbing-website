@@ -95,7 +95,7 @@ const LeakServicesPage: NextPage = () => {
         title="LEAK DETECTION & REPAIR"
         subtitle="Advanced electronic leak detection and expert repair services throughout Southern Arizona. We find hidden leaks fast—saving your property and your water bill."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional leak detection services"
         backgroundColor="gray"
         showBanner={true}

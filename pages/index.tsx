@@ -339,7 +339,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
                   className="object-cover object-center"
                   priority
                   fetchPriority="high"
-                  quality={90}
+                  quality={80}
                 />
               </div>
               <div className="py-16 px-12">

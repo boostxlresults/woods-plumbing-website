@@ -95,7 +95,7 @@ const WaterHeaterPage: NextPage = () => {
         title="WATER HEATER SERVICES"
         subtitle="Professional water heater installation, repair, and replacement throughout Southern Arizona. Tank and tankless systems from all major brands."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional water heater services"
         backgroundColor="gray"
         showBanner={true}

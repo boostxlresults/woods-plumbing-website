@@ -95,7 +95,7 @@ const GasServicesPage: NextPage = () => {
         title="GAS LINE SERVICES"
         subtitle="Professional gas line installation, repair, testing, and leak detection throughout Southern Arizona. Licensed and certified for all gas work."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional gas line services"
         backgroundColor="gray"
         showBanner={true}

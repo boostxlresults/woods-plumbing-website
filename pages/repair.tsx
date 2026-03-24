@@ -96,7 +96,7 @@ const RepairServicesPage: NextPage = () => {
         title="PLUMBING REPAIR SERVICES"
         subtitle="Professional plumbing repairs for homes and businesses throughout Southern Arizona. Same-day service available—no extra charges for evenings or weekends."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional plumbing repair services"
         backgroundColor="gray"
         showBanner={true}

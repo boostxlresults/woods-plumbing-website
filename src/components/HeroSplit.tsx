@@ -60,7 +60,7 @@ export function HeroSplit({
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-center"
                 priority
-                quality={90}
+                quality={80}
               />
             </div>
 

@@ -27,18 +27,18 @@ const getServiceImage = (slug: string): string => {
   const gasServices = ['gas-line-installation', 'gas-line-repair', 'gas-leak-repair', 'gas-line-inspection', 'gas-pipe-testing', 'gas-line-relocation'];
   const commercialServices = ['commercial-plumbing'];
 
-  if (emergencyServices.includes(slug)) return '/images/services/emergency.png';
-  if (waterHeaterServices.includes(slug)) return '/images/services/water-heater.png';
-  if (drainSewerServices.includes(slug)) return '/images/services/drain-sewer.png';
-  if (leakServices.includes(slug)) return '/images/services/leak-detection.png';
-  if (toiletServices.includes(slug)) return '/images/services/toilet.png';
-  if (fixtureServices.includes(slug)) return '/images/services/fixture-repair.png';
-  if (pipeServices.includes(slug)) return '/images/services/pipe-repair.png';
-  if (waterTreatmentServices.includes(slug)) return '/images/services/water-treatment.png';
-  if (gasServices.includes(slug)) return '/images/services/gas-service.png';
-  if (commercialServices.includes(slug)) return '/images/services/commercial.png';
+  if (emergencyServices.includes(slug)) return '/images/services/emergency.jpg';
+  if (waterHeaterServices.includes(slug)) return '/images/services/water-heater.jpg';
+  if (drainSewerServices.includes(slug)) return '/images/services/drain-sewer.jpg';
+  if (leakServices.includes(slug)) return '/images/services/leak-detection.jpg';
+  if (toiletServices.includes(slug)) return '/images/services/toilet.jpg';
+  if (fixtureServices.includes(slug)) return '/images/services/fixture-repair.jpg';
+  if (pipeServices.includes(slug)) return '/images/services/pipe-repair.jpg';
+  if (waterTreatmentServices.includes(slug)) return '/images/services/water-treatment.jpg';
+  if (gasServices.includes(slug)) return '/images/services/gas-service.jpg';
+  if (commercialServices.includes(slug)) return '/images/services/commercial.jpg';
   
-  return '/images/services/fixture-repair.png';
+  return '/images/services/fixture-repair.jpg';
 };
 
 interface ServicePageProps {

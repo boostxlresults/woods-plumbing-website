@@ -95,7 +95,7 @@ const SewerServicesPage: NextPage = () => {
         title="SEWER LINE SERVICES"
         subtitle="Professional sewer line repair, replacement, cleaning, and camera inspection throughout Southern Arizona. Trenchless solutions that save your yard and your budget."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Professional sewer line services"
         backgroundColor="gray"
         showBanner={true}

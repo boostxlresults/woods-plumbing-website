@@ -73,7 +73,7 @@ const AdditionalServicesPage: NextPage = () => {
         title="ADDITIONAL PLUMBING SERVICES"
         subtitle="Beyond emergency repairs and major projects, Wood's Plumbing handles all your plumbing needs—fixture installation, commercial service, water treatment, and more."
         ctaText="Call Us Now!"
-        imageSrc="/images/team_-_professional_plumbing_crew.png"
+        imageSrc="/images/team_-_professional_plumbing_crew.jpg"
         imageAlt="Additional plumbing services"
         backgroundColor="gray"
         showBanner={true}
