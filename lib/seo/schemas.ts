@@ -161,13 +161,10 @@ export function generateOrganizationSchema() {
         url: "https://www.phccweb.org",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS.trust.displayRating,
-      reviewCount: BUSINESS.trust.totalReviews,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // AggregateRating intentionally omitted here — only one AggregateRating
+    // block is allowed per page (Google Rich Results policy). The canonical
+    // AggregateRating lives on the LocalBusiness schema (index.tsx / location pages).
+    // This Organization schema uses @id reference instead.
     sameAs: Object.values(BUSINESS.social).filter(Boolean),
     hasMap: `https://www.google.com/maps/search/?api=1&query=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}`,
     slogan: BUSINESS.tagline,
@@ -417,12 +414,7 @@ export function generateGeoServiceSchema(options: {
         name: "Arizona ROC License CR-37 Plumbing",
         identifier: `ROC #${BUSINESS.trust.license}`,
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: BUSINESS.trust.displayRating,
-        reviewCount: BUSINESS.trust.totalReviews,
-        bestRating: "5",
-      },
+      // AggregateRating omitted from nested provider — only one allowed per page.
     },
     areaServed: [
       {
@@ -702,13 +694,8 @@ export function generateEEATSchema() {
       "Slab Leak Repair",
       "Hydro Jetting",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS.trust.displayRating,
-      reviewCount: BUSINESS.trust.totalReviews,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // AggregateRating intentionally omitted — only one allowed per page.
+    // The canonical rating lives on the primary LocalBusiness schema.
     areaServed: [
       {
         "@type": "City",

@@ -45,13 +45,8 @@ const AboutPage: NextPage = () => {
       BUSINESS.social.googleBusiness
     ].filter(Boolean) : [],
     "priceRange": "$$",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": BUSINESS.trust.displayRating,
-      "reviewCount": BUSINESS.trust.totalReviews,
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    // AggregateRating omitted — only one allowed per page per Google policy.
+    // The canonical rating is on the primary LocalBusiness schema (homepage/location pages).
   };
 
   // About FAQs

@@ -87,11 +87,8 @@ const ContactPage: NextPage = () => {
         "closes": "16:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": BUSINESS.trust.displayRating,
-      "reviewCount": BUSINESS.trust.totalReviews
-    }
+    // AggregateRating omitted — only one allowed per page per Google policy.
+    // The canonical rating is on the primary LocalBusiness schema (homepage/location pages).
   };
 
   const onSubmit = async (data: ContactFormData) => {
