@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { marked } from 'marked';
+// marked runs only in getStaticProps (build time) — NOT in the client bundle
 import { BUSINESS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle, Star, Wrench, ChevronDown } from 'lucide-react';
@@ -17,9 +17,10 @@ interface LocationPageProps {
   location: typeof locationsData[0];
   popularServices: typeof servicesData;
   locationFaqs: typeof faqsData;
+  longDescriptionHtml: string | null;
 }
 
-const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, locationFaqs }) => {
+const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, locationFaqs, longDescriptionHtml }) => {
   useEffect(() => {
     trackLocationView(location.name);
   }, [location.name]);
@@ -240,10 +241,10 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
               Your Trusted Plumber in {location.name}, AZ
             </h2>
             
-            {location.longDescription ? (
+            {longDescriptionHtml ? (
               <div 
                 className="prose prose-lg max-w-none text-gray-700"
-                dangerouslySetInnerHTML={{ __html: marked.parse(location.longDescription) as string }}
+                dangerouslySetInnerHTML={{ __html: longDescriptionHtml }}
               />
             ) : (
               <div className="prose prose-lg max-w-none text-gray-700">
@@ -432,11 +433,19 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
     .filter((faq) => faq.locationSlug === location!.slug)
     .slice(0, 10);
 
+  // Pre-render markdown at build time — marked never ships to the client bundle
+  // This eliminates the "Legacy JavaScript" and "Reduce unused JavaScript" warnings
+  const { marked } = await import('marked');
+  const longDescriptionHtml = (location as any).longDescription
+    ? (marked.parse((location as any).longDescription) as string)
+    : null;
+
   return {
     props: {
       location,
       popularServices,
       locationFaqs,
+      longDescriptionHtml,
     },
   };
 };

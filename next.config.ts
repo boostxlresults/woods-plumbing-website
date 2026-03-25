@@ -139,7 +139,23 @@ const nextConfig: NextConfig = {
   // Experimental: enable React compiler for automatic memoization
   // and partial prerendering for faster TTFB on dynamic pages.
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-slot'],
+    // Tree-shake these large packages — only import what's actually used
+    // This directly reduces the "Reduce unused JavaScript" PageSpeed warning
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-slot',
+      'react-hook-form',
+      'zod',
+    ],
+  },
+
+  // Remove console.log statements in production builds
+  // Reduces bundle size and prevents info leakage
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production'
+      ? { exclude: ['error', 'warn'] }
+      : false,
   },
 };
 

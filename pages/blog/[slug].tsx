@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { marked } from 'marked';
+// marked runs only in getStaticProps (build time) — NOT in the client bundle
 import { Button } from '../../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../src/components/ui/card';
 import { Clock, Calendar, User, ArrowLeft, Phone } from 'lucide-react';
@@ -116,13 +116,14 @@ interface BlogPost {
 interface BlogPostPageProps {
   post: BlogPost & { readTime: number };
   relatedPosts: Array<BlogPost & { readTime: number }>;
+  contentHtml: string;
 }
 
 function slugifyCategory(category: string): string {
   return category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
 }
 
-const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
+const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts, contentHtml }) => {
   useEffect(() => {
     trackBlogView(post.title, post.category);
   }, [post.title, post.category]);
@@ -251,7 +252,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts }) => {
             {/* Content */}
             <div 
               className="prose prose-lg max-w-none mb-12"
-              dangerouslySetInnerHTML={{ __html: marked.parse(post.content) as string }}
+              dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
 
             {/* FAQ Section for AI Search Optimization */}
@@ -362,6 +363,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       readTime: calculateReadTime(p.content)
     }));
 
+  // Pre-render markdown at build time — marked never ships to the client bundle
+  const { marked } = await import('marked');
+  const contentHtml = marked.parse(post.content) as string;
+
   return {
     props: {
       post: {
@@ -369,6 +374,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         readTime: calculateReadTime(post.content)
       },
       relatedPosts,
+      contentHtml,
     },
   };
 };
