@@ -16,7 +16,9 @@ import {
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
-import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
+import { allGeoPairs, geoServicesFor, isGeoPage } from '@/lib/seo/geoMatrix';
+import geoContentData from '@/lib/data/geo-content.json';
+import reviewsData from '@/lib/data/reviews.json';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -47,6 +49,17 @@ interface GeoServicePageProps {
   relatedServices: Service[];
   relatedLocations: Location[];
   faqs: Array<{ question: string; answer: string }>;
+  content: GeoContent | null;
+  review: { author: string; date: string; content: string } | null;
+}
+
+interface GeoContent {
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  localFactors: Array<{ title: string; body: string }>;
+  whatWeDo: string[];
+  faqs: Array<{ question: string; answer: string }>;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -58,6 +71,8 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
   relatedServices,
   relatedLocations,
   faqs,
+  content,
+  review,
 }) => {
   const pageUrl = `${BUSINESS.website}/locations/${location.slug}/${service.slug}`;
 
@@ -88,8 +103,8 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
   const faqSchema = generateFAQSchema(faqs);
   const orgSchema = generateOrganizationSchema();
 
-  const metaTitle = `${service.name} in ${location.name}, AZ | Wood's Plumbing`;
-  const metaDescription = `Expert ${service.name.toLowerCase()} in ${location.name}, AZ. Licensed plumber (ROC #${BUSINESS.trust.license}, CR-37). ${BUSINESS.trust.displayRating}-star rated, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service. Call ${BUSINESS.phone}.`;
+  const metaTitle = content?.metaTitle || `${service.name} in ${location.name}, AZ | Wood's Plumbing`;
+  const metaDescription = content?.metaDescription || `Expert ${service.name.toLowerCase()} in ${location.name}, AZ. Licensed plumber (ROC #${BUSINESS.trust.license}, CR-37). ${BUSINESS.trust.displayRating}-star rated, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service. Call ${BUSINESS.phone}.`;
 
   return (
     <div>
@@ -196,21 +211,61 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
                 Professional {service.name} Services in {location.name}
               </h2>
 
-              <div className="prose prose-lg max-w-none text-gray-700 mb-8">
-                <p>
-                  When you need <strong>{service.name.toLowerCase()}</strong> in {location.name}, AZ, Wood&apos;s Plumbing
-                  is the trusted choice. Our licensed plumbers (ROC #{BUSINESS.trust.license}, CR-37 Plumbing) have been
-                  serving {location.name} and all of Southern Arizona since {BUSINESS.trust.founded}. With a{' '}
-                  {BUSINESS.trust.displayRating}-star rating and {BUSINESS.trust.totalReviews}+ verified reviews, we
-                  deliver expert service at honest prices — every time.
-                </p>
-                <p>
-                  {service.longDescription || service.shortDescription} Our team is familiar with the specific plumbing
-                  challenges in {location.name}, including Arizona&apos;s hard water, extreme heat, and monsoon-season
-                  drainage issues. We&apos;re not just a plumbing company that drives through — we&apos;re your local
-                  experts, based right here in Marana.
-                </p>
-              </div>
+              {content ? (
+                <>
+                  <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+                    {content.intro.split('\n\n').map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      What to Know About {service.name} in {location.name}
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {content.localFactors.map((f, i) => (
+                        <div key={i} className="border border-gray-200 rounded-lg p-5">
+                          <h4 className="font-semibold text-gray-900 mb-2">{f.title}</h4>
+                          <p className="text-gray-700 text-sm">{f.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">How We Handle It</h3>
+                    <ol className="list-decimal pl-6 space-y-2 text-gray-700">
+                      {content.whatWeDo.map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </>
+              ) : (
+                <div className="prose prose-lg max-w-none text-gray-700 mb-8">
+                  <p>
+                    Wood&apos;s Plumbing provides <strong>{service.name.toLowerCase()}</strong> in {location.name}, AZ
+                    from our shop in Marana. We are a licensed Arizona plumbing contractor (ROC #{BUSINESS.trust.license},
+                    CR-37) serving the area since {BUSINESS.trust.founded}, with a {BUSINESS.trust.displayRating}-star
+                    average across {BUSINESS.trust.totalReviews}+ Google reviews.
+                  </p>
+                  <p>{service.shortDescription}</p>
+                  <p>
+                    For how the work is done, what affects the price and common questions, see our full{' '}
+                    <Link href={`/services/${service.slug}`}>{service.name.toLowerCase()} page</Link>.
+                  </p>
+                </div>
+              )}
+
+              {review && (
+                <figure className="bg-gray-50 border-l-4 border-yellow-500 rounded-r-lg p-6 mb-8">
+                  <blockquote className="text-gray-800 italic">&ldquo;{review.content}&rdquo;</blockquote>
+                  <figcaption className="text-sm text-gray-600 mt-3">
+                    {review.author}, Google review, {new Date(review.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}
+                  </figcaption>
+                </figure>
+              )}
 
               {/* Why Choose Us */}
               <div className="bg-blue-50 rounded-xl p-8 mb-8">
@@ -260,7 +315,7 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
               {faqs.length > 0 && (
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                    Frequently Asked Questions — {service.name} in {location.name}
+                    Frequently Asked Questions: {service.name} in {location.name}
                   </h3>
                   <div className="space-y-4">
                     {faqs.map((faq, i) => (
@@ -383,22 +438,10 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
 // Focus on the top 3 cities × top 20 services = 60 high-value pages
 // ─────────────────────────────────────────────────────────────────────────────
 export const getStaticPaths: GetStaticPaths = async () => {
-  const priorityLocationSlugs = GEO_MATRIX_LOCATION_SLUGS;
-  const priorityServiceSlugs = GEO_MATRIX_SERVICE_SLUGS;
-
-  const paths: Array<{ params: { slug: string; serviceSlug: string } }> = [];
-
-  for (const slug of priorityLocationSlugs) {
-    const locationExists = locationsData.find((l: any) => l.slug === slug);
-    if (!locationExists) continue;
-
-    for (const serviceSlug of priorityServiceSlugs) {
-      const serviceExists = servicesData.find((s: any) => s.slug === serviceSlug);
-      if (!serviceExists) continue;
-
-      paths.push({ params: { slug, serviceSlug } });
-    }
-  }
+  const paths = allGeoPairs()
+    .filter(({ locationSlug, serviceSlug }) =>
+      locationsData.some((l: any) => l.slug === locationSlug) && servicesData.some((s: any) => s.slug === serviceSlug))
+    .map(({ locationSlug, serviceSlug }) => ({ params: { slug: locationSlug, serviceSlug } }));
 
   return {
     paths,
@@ -421,20 +464,22 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
 
   // Combinations outside the maintained geo matrix were auto-generated thin pages.
   // Send them (and any links they earned) to the main service page instead.
-  if (!GEO_MATRIX_LOCATION_SLUGS.includes(slug) || !GEO_MATRIX_SERVICE_SLUGS.includes(serviceSlug)) {
+  if (!isGeoPage(slug, serviceSlug)) {
     return { redirect: { destination: `/services/${serviceSlug}`, permanent: true } };
   }
 
   // Related services (same category, different service)
   const relatedServices = servicesData
-    .filter((s: any) => s.slug !== serviceSlug && GEO_MATRIX_SERVICE_SLUGS.includes(s.slug))
+    .filter((s: any) => s.slug !== serviceSlug && geoServicesFor(slug).includes(s.slug))
     .filter((s: any) => s.featured || s.slug.includes('emergency') || s.slug.includes('water-heater') || s.slug.includes('drain'))
-    .slice(0, 6) as Service[];
+    .slice(0, 6)
+    .map((s: any) => ({ id: String(s.id), name: s.name, slug: s.slug, shortDescription: '' })) as Service[];
 
   // Related locations (nearby cities, same service)
   const relatedLocations = locationsData
-    .filter((l: any) => l.slug !== slug && l.featured && GEO_MATRIX_LOCATION_SLUGS.includes(l.slug))
-    .slice(0, 4) as Location[];
+    .filter((l: any) => l.slug !== slug && l.featured && isGeoPage(l.slug, serviceSlug))
+    .slice(0, 4)
+    .map((l: any) => ({ id: String(l.id), name: l.name, slug: l.slug, zipCodes: [] })) as Location[];
 
   // FAQs for this service + location combination
   const serviceFaqs = (faqsData as any[])
@@ -454,11 +499,17 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
     },
     {
       question: `How much does ${service.name.toLowerCase()} cost in ${location.name}?`,
-      answer: `The cost of ${service.name.toLowerCase()} in ${location.name} varies based on the scope of work. We provide free estimates and upfront pricing before any work begins — no hidden fees or surprise charges. Call us at ${BUSINESS.phone} for a quote.`,
+      answer: `The cost of ${service.name.toLowerCase()} in ${location.name} varies based on the scope of work. We provide free estimates and upfront pricing before any work begins, with no hidden fees or surprise charges. Call us at ${BUSINESS.phone} for a quote.`,
     },
   ];
 
-  const faqs = serviceFaqs.length >= 3 ? serviceFaqs : [...serviceFaqs, ...fallbackFaqs].slice(0, 5);
+  const content = ((geoContentData as Record<string, GeoContent>)[`${slug}/${serviceSlug}`]) || null;
+  const faqs = content
+    ? content.faqs
+    : serviceFaqs.length >= 3 ? serviceFaqs : [...serviceFaqs, ...fallbackFaqs].slice(0, 5);
+
+  const matched = (reviewsData as any[]).find((r) => r.serviceSlug === serviceSlug);
+  const review = matched ? { author: matched.author, date: matched.date, content: matched.content } : null;
 
   return {
     props: {
@@ -467,6 +518,8 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
       relatedServices,
       relatedLocations,
       faqs,
+      content,
+      review,
     },
     revalidate: 86400, // Revalidate every 24 hours
   };

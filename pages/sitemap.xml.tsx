@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 import blogPostsData from '@/lib/data/blog-posts.json';
-import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
+import { allGeoPairs } from '@/lib/seo/geoMatrix';
 
 const CONTENT_LASTMOD = '2026-10-27';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.woodsplumbing.com';
@@ -98,23 +98,17 @@ function generateSiteMap() {
   
   <!-- Geo-Service Intersection Pages (Location x Service Matrix) -->
   ${(() => {
-    const priorityLocationSlugs = GEO_MATRIX_LOCATION_SLUGS;
-    const priorityServiceSlugs = GEO_MATRIX_SERVICE_SLUGS;
     const geoServiceUrls: string[] = [];
-    for (const locSlug of priorityLocationSlugs) {
-      const locExists = locationsData.find((l: any) => l.slug === locSlug);
-      if (!locExists) continue;
-      for (const svcSlug of priorityServiceSlugs) {
-        const svcExists = servicesData.find((s: any) => s.slug === svcSlug);
-        if (!svcExists) continue;
-        geoServiceUrls.push(`
+    for (const { locationSlug: locSlug, serviceSlug: svcSlug } of allGeoPairs()) {
+      if (!locationsData.find((l: any) => l.slug === locSlug)) continue;
+      if (!servicesData.find((s: any) => s.slug === svcSlug)) continue;
+      geoServiceUrls.push(`
   <url>
     <loc>${SITE_URL}/locations/${locSlug}/${svcSlug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>`);
-      }
     }
     return geoServiceUrls.join('');
   })()}
