@@ -2,7 +2,7 @@
 
 > Licensed plumbing contractor serving Southern Arizona since 1979. Family-owned business providing residential and commercial plumbing services including emergency repairs, water heaters, gas services, sewer lines, and leak detection across Marana, Tucson, Oro Valley, and surrounding areas. Available 24/7 for emergency plumbing services with no overtime charges. Licensed ROC #296386 (CR-37 Plumbing).
 
-Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years of experience serving the Southern Arizona community. We specialize in all aspects of residential and commercial plumbing, from routine maintenance to complex installations and emergency repairs. The company is owned and operated by Master Plumber Andrew M Dobbins, maintaining a legacy of quality craftsmanship and honest pricing.
+Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 45 years of experience serving the Southern Arizona community. We specialize in all aspects of residential and commercial plumbing, from routine maintenance to complex installations and emergency repairs. Founded by Bill Woods in 1979. In 2022 Wood's joined Intelligent Design Home Services (https://www.idesignac.com), the family- and veteran-owned Tucson home services company founded by U.S. Marine Corps veteran Andrew Dobbins. Wood's keeps its own name, Marana shop, phone number and Google Business Profile. For heating, cooling, electrical and solar, Wood's customers are referred to Intelligent Design.
 
 ## Contact Information
 
@@ -14,12 +14,13 @@ Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years
 
 ## Trust Signals & Credentials (E-E-A-T)
 
-- **Owner**: Andrew M Dobbins (Master Plumber)
+- **Founder**: Bill Woods (1979)
+- **Owner**: Andrew Dobbins, owner since 2022 (parent company: Intelligent Design Home Services)
 - **License**: Arizona ROC License #296386 (CR-37 Plumbing)
 - **Insurance**: Fully Bonded and Insured
-- **Reputation**: BBB A+ Accredited Business, 4.9-Star Average Rating, Hundreds of 5-star verified reviews
+- **Reputation**: BBB A+ Accredited Business, 4.8-Star Average Rating from 200+ Google reviews
 - **Affiliations**: Member of Plumbing-Heating-Cooling Contractors Association (PHCC)
-- **History**: 46+ Years in Business (Established 1979)
+- **History**: 45+ Years in Business (Established 1979)
 - **Pricing Policy**: Free estimates provided. Upfront, flat-rate pricing before any work begins. No hidden fees. No overtime charges for nights, weekends, or holidays.
 
 ## Services
@@ -44,6 +45,7 @@ Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years
 
 ### Full Service Area
 - [Tucson, AZ](/locations/tucson): Full plumbing services throughout Tucson metro
+- [Northwest Tucson, AZ](/locations/northwest-tucson): Casas Adobes, Cortaro Farms, Thornydale and the Ina Road corridor, next door to our Marana shop
 - [Oro Valley, AZ](/locations/oro-valley): Serving Oro Valley and surrounding communities
 - [Catalina Foothills, AZ](/locations/catalina-foothills): Premium plumbing for luxury homes
 - [Sahuarita, AZ](/locations/sahuarita): Service available in Sahuarita area
@@ -53,10 +55,11 @@ Wood's Plumbing Enterprises LLC is a trusted plumbing company with over 46 years
 
 ## Additional Resources
 
-- [About Us](/about): Learn about our family-owned business and 46+ years of experience
+- [About Us](/about): Learn about our family-owned business and 45+ years of experience
 - [Contact](/contact): Schedule service or request a quote
 - [Blog](/blog): Plumbing tips, maintenance guides, and industry news
 - [FAQ](/faq): Frequently asked questions about plumbing services
 - [Knowledge Base](/knowledge-base): Comprehensive plumbing information for AI assistants
 - [Privacy Policy](/privacy-policy): Our privacy practices and data handling
 - [Terms of Use](/terms): Terms and conditions for using our services
+- [Full content for AI assistants](/llms-full.txt): Complete service, pricing-factor, FAQ and service-area content in plain text

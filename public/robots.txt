@@ -1,23 +1,14 @@
 # ─── Wood's Plumbing robots.txt ───────────────────────────────────────────────
 # Canonical domain: https://www.woodsplumbing.com
-# Last updated: 2026-03-23
+# Last updated: 2026-10-27
 
 # Allow all crawlers by default
 User-agent: *
 Allow: /
 
-# Disallow standalone duplicate service pages (all 301 redirect to /services/)
-# Listed here as belt-and-suspenders to prevent crawl budget waste
-Disallow: /water-heater
-Disallow: /repair
-Disallow: /sewer
-Disallow: /leak
-Disallow: /gas-services
-Disallow: /plumbing-services
-Disallow: /additional-services
-
-# Disallow internal Next.js paths
-Disallow: /_next/
+# Do not block /_next/: Google needs the JS and CSS there to render pages.
+# Redirected legacy paths (/water-heater, /repair, etc.) are left crawlable so
+# Google can follow their 301s and pass link equity to the canonical URLs.
 Disallow: /api/
 
 # ─── AI Search Engines — Explicit Allow ───────────────────────────────────────

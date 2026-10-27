@@ -76,17 +76,12 @@ const ContactPage: NextPage = () => {
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "16:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     ],
+    // Matches the Google Business Profile, which lists Wood's as open 24 hours.
     // AggregateRating omitted — only one allowed per page per Google policy.
     // The canonical rating is on the primary LocalBusiness schema (homepage/location pages).
   };

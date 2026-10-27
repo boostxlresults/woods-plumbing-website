@@ -52,7 +52,7 @@ const BlogCategoryPage: NextPage<CategoryPageProps> = ({ posts, category, allCat
     <div>
       <Head>
         <title>{`${category} Articles - Expert Plumbing Tips & Guides | Wood's Plumbing`}</title>
-        <meta name="description" content={`Read expert ${category} articles, tips, and guides from licensed Arizona plumbers. Learn from 46+ years of experience serving Tucson, Marana & Southern Arizona homeowners.`} />
+        <meta name="description" content={`Read expert ${category} articles, tips, and guides from licensed Arizona plumbers. Learn from 45+ years of experience serving Tucson, Marana & Southern Arizona homeowners.`} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${BUSINESS.website}/blog/category/${slugifyCategory(category)}`} />
         

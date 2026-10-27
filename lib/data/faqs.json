@@ -2226,7 +2226,7 @@
   {
     "id": "551bb290-7acf-4dba-86ff-76762c479259",
     "question": "How long have you been serving Tucson?",
-    "answer": "Wood's Plumbing has been serving Tucson and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Tucson and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "tucson",
     "displayOrder": 8
@@ -2290,7 +2290,7 @@
   {
     "id": "15ec70b2-a009-494e-b807-995825f1130e",
     "question": "How long have you been serving Marana?",
-    "answer": "Wood's Plumbing has been serving Marana and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Marana and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "marana",
     "displayOrder": 8
@@ -2354,7 +2354,7 @@
   {
     "id": "29723d46-141c-440b-b989-f4366abebb7c",
     "question": "How long have you been serving Oro Valley?",
-    "answer": "Wood's Plumbing has been serving Oro Valley and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Oro Valley and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "oro-valley",
     "displayOrder": 8
@@ -2418,7 +2418,7 @@
   {
     "id": "cb46859a-9564-4629-b22f-0c5efc1c18ce",
     "question": "How long have you been serving Catalina Foothills?",
-    "answer": "Wood's Plumbing has been serving Catalina Foothills and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Catalina Foothills and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "catalina-foothills",
     "displayOrder": 8
@@ -2482,7 +2482,7 @@
   {
     "id": "8fe8815b-9ab7-46b1-91a6-b6b8ddcfe070",
     "question": "How long have you been serving Green Valley?",
-    "answer": "Wood's Plumbing has been serving Green Valley and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Green Valley and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "green-valley",
     "displayOrder": 8
@@ -2546,7 +2546,7 @@
   {
     "id": "2afbbe37-ec05-468c-98a5-d2dad7b79372",
     "question": "How long have you been serving Sahuarita?",
-    "answer": "Wood's Plumbing has been serving Sahuarita and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Sahuarita and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "sahuarita",
     "displayOrder": 8
@@ -2610,7 +2610,7 @@
   {
     "id": "735e3a2a-38b3-46de-9461-7f2789f160c8",
     "question": "How long have you been serving Vail?",
-    "answer": "Wood's Plumbing has been serving Vail and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Vail and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "vail",
     "displayOrder": 8
@@ -2674,9 +2674,33 @@
   {
     "id": "6be9567e-fa08-4994-a57e-959c1b986775",
     "question": "How long have you been serving Picture Rocks?",
-    "answer": "Wood's Plumbing has been serving Picture Rocks and Southern Arizona since 1979—over 46 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
+    "answer": "Wood's Plumbing has been serving Picture Rocks and Southern Arizona since 1979—over 45 years of trusted plumbing service. We're a locally owned company with deep roots in the community.",
     "serviceSlug": null,
     "locationSlug": "picture-rocks",
     "displayOrder": 8
+  },
+  {
+    "id": "b3f059bd-744c-4fce-ad72-6233326cfe5e",
+    "question": "Do you serve all of Northwest Tucson?",
+    "answer": "Yes. We cover Northwest Tucson including Casas Adobes, Cortaro Farms, Thornydale, the Ina and Orange Grove corridors, La Cholla and Tortolita, plus the 85704, 85741, 85742, 85743 and 85745 ZIP codes. Our shop is in nearby Marana.",
+    "serviceSlug": null,
+    "locationSlug": "northwest-tucson",
+    "displayOrder": 1
+  },
+  {
+    "id": "73121c17-7c01-4ef5-8da6-0bc158d3b87a",
+    "question": "How do I know if my Northwest Tucson home has a slab leak?",
+    "answer": "Common signs are a warm spot on the floor, the sound of running water with every fixture off, a water meter that keeps moving, and an unexplained jump in your water bill. Call us before opening any flooring so we can locate the leak first.",
+    "serviceSlug": null,
+    "locationSlug": "northwest-tucson",
+    "displayOrder": 2
+  },
+  {
+    "id": "9d70861a-a64d-4bed-9224-0ede3235e43a",
+    "question": "Should I repair or replace my water heater?",
+    "answer": "If a tank water heater is 10 years old or more, leaking from the tank itself, or full of sediment, replacement is usually the better value. Newer units with a bad thermostat, element, or gas valve are often worth repairing. We give you upfront pricing for both options.",
+    "serviceSlug": null,
+    "locationSlug": "northwest-tucson",
+    "displayOrder": 3
   }
 ]

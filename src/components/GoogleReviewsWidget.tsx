@@ -71,7 +71,7 @@ export const GoogleReviewsWidget: React.FC<GoogleReviewsWidgetProps> = ({
                 </p>
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <span className="font-medium text-gray-900">{review.author}</span>
-                  <span>{review.location}</span>
+                  <span>{new Date(review.datePublished).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}</span>
                 </div>
                 <div className="flex items-center gap-2 mt-1 text-xs text-gray-400">
                   <span>{review.reviewPlatform}</span>

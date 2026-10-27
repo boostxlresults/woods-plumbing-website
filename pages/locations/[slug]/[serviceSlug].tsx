@@ -16,6 +16,7 @@ import {
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
+import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -382,37 +383,8 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
 // Focus on the top 3 cities × top 20 services = 60 high-value pages
 // ─────────────────────────────────────────────────────────────────────────────
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Priority locations for geo-service matrix
-  const priorityLocationSlugs = [
-    'marana', 'tucson', 'oro-valley',
-    'gladden-farms', 'continental-ranch', 'dove-mountain',
-    'avra-valley', 'catalina-foothills', 'sahuarita',
-    'green-valley', 'vail', 'picture-rocks',
-  ];
-
-  // Top services for geo-service matrix
-  const priorityServiceSlugs = [
-    'emergency-plumbing',
-    'drain-cleaning',
-    'water-heater-repair',
-    'water-heater-installation',
-    'tankless-water-heaters',
-    'leak-detection',
-    'slab-leak-detection',
-    'sewer-line-repair',
-    'hydro-jetting',
-    'gas-line-installation',
-    'water-softener-installation',
-    'burst-pipe-repair',
-    'toilet-repair',
-    'faucet-installation',
-    'garbage-disposal-repair',
-    'whole-house-repiping',
-    'sewer-camera-inspection',
-    'trenchless-sewer-repair',
-    'gas-leak-detection',
-    'reverse-osmosis-systems',
-  ];
+  const priorityLocationSlugs = GEO_MATRIX_LOCATION_SLUGS;
+  const priorityServiceSlugs = GEO_MATRIX_SERVICE_SLUGS;
 
   const paths: Array<{ params: { slug: string; serviceSlug: string } }> = [];
 
@@ -447,15 +419,21 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
     return { notFound: true };
   }
 
+  // Combinations outside the maintained geo matrix were auto-generated thin pages.
+  // Send them (and any links they earned) to the main service page instead.
+  if (!GEO_MATRIX_LOCATION_SLUGS.includes(slug) || !GEO_MATRIX_SERVICE_SLUGS.includes(serviceSlug)) {
+    return { redirect: { destination: `/services/${serviceSlug}`, permanent: true } };
+  }
+
   // Related services (same category, different service)
   const relatedServices = servicesData
-    .filter((s: any) => s.slug !== serviceSlug)
+    .filter((s: any) => s.slug !== serviceSlug && GEO_MATRIX_SERVICE_SLUGS.includes(s.slug))
     .filter((s: any) => s.featured || s.slug.includes('emergency') || s.slug.includes('water-heater') || s.slug.includes('drain'))
     .slice(0, 6) as Service[];
 
   // Related locations (nearby cities, same service)
   const relatedLocations = locationsData
-    .filter((l: any) => l.slug !== slug && l.featured)
+    .filter((l: any) => l.slug !== slug && l.featured && GEO_MATRIX_LOCATION_SLUGS.includes(l.slug))
     .slice(0, 4) as Location[];
 
   // FAQs for this service + location combination

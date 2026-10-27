@@ -15,24 +15,25 @@ export const BUSINESS = {
   },
   
   geo: {
-    latitude: 32.4185,
-    longitude: -111.1926,
+    latitude: 32.4588,
+    longitude: -111.2084,
   },
   
   hours: {
-    weekday: "Monday-Friday: 7:00 AM - 5:00 PM",
-    saturday: "Saturday: 8:00 AM - 4:00 PM",
+    weekday: "Office: Monday-Friday 7:00 AM - 5:00 PM",
+    saturday: "Office: Saturday 8:00 AM - 4:00 PM",
     sunday: "Sunday: Emergency Services Only",
-    emergency: "24/7 Emergency Service Available",
+    emergency: "Open 24/7 for plumbing emergencies",
   },
   
   trust: {
     founded: 1979,
-    yearsInBusiness: 46, // 2025 - 1979
+    yearsInBusiness: new Date().getFullYear() - 1979,
     license: "296386",
-    rating: 4.9,
-    displayRating: "4.9",
-    totalReviews: 300,
+    // Keep in sync with the Google Business Profile (4.8 stars, 203 reviews as of Oct 2026)
+    rating: 4.8,
+    displayRating: "4.8",
+    totalReviews: 200,
     bbbRating: "A+",
   },
   
@@ -40,17 +41,31 @@ export const BUSINESS = {
     facebook: "https://facebook.com/woodsplumbingaz",
     instagram: "https://instagram.com/woodsplumbingaz",
     yelp: "https://yelp.com/biz/woods-plumbing-tucson",
-    googleBusiness: "https://g.page/woods-plumbing-tucson",
+    googleBusiness: "https://www.google.com/maps/place/?q=place_id:ChIJA0k0a5Tk1YYRw_DWPZ3P16A",
     bbb: "https://www.bbb.org/us/az/marana/profile/plumber/woods-plumbing-enterprises-llc-1286-1000065937",
   },
   
-  owner: {
-    name: "Andrew M Dobbins",
-    title: "Owner & Master Plumber",
-    yearsExperience: 40,
-    credentials: ["Arizona Master Plumber License", "Arizona ROC Licensed Contractor (CR-37 Plumbing)", "ROC #296386"],
+  founder: {
+    name: "Bill Woods",
+    title: "Founder",
+    founded: 1979,
   },
-  
+
+  owner: {
+    name: "Andrew Dobbins",
+    title: "Owner",
+    bio: "U.S. Marine Corps veteran and founder of Intelligent Design (2011), owner of Wood's Plumbing since the two companies joined in 2022.",
+  },
+
+  // Wood's joined Intelligent Design in 2022. Wood's keeps its own name, phone,
+  // address and Google Business Profile; Intelligent Design is the parent company.
+  parent: {
+    name: "Intelligent Design Home Services",
+    url: "https://www.idesignac.com",
+    joined: 2022,
+    ratingClaim: "4.96 stars across 23,000+ customer reviews",
+  },
+
   emergencyServices: {
     available: true,
     response: "Same-day emergency service available",

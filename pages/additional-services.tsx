@@ -92,7 +92,7 @@ const AdditionalServicesPage: NextPage = () => {
               Wood&apos;s Plumbing is your one-call solution for every plumbing need. Beyond our core services in emergency plumbing, water heaters, drains, and leak detection, we offer a full range of additional services for homes and businesses throughout Southern Arizona.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Need a new faucet installed? Want to upgrade your toilet to a water-saving model? Looking for a commercial plumbing contractor for your business? Interested in water treatment to protect your plumbing from Arizona&apos;s hard water? We handle it all—and we do it with the same professionalism, fair pricing, and quality workmanship that has made us Southern Arizona&apos;s trusted plumber for over 46 years.
+              Need a new faucet installed? Want to upgrade your toilet to a water-saving model? Looking for a commercial plumbing contractor for your business? Interested in water treatment to protect your plumbing from Arizona&apos;s hard water? We handle it all—and we do it with the same professionalism, fair pricing, and quality workmanship that has made us Southern Arizona&apos;s trusted plumber for over 45 years.
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-8">
               <div className="flex items-start gap-3">
