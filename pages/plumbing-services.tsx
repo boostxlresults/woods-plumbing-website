@@ -74,7 +74,7 @@ const PlumbingServicesPage: NextPage = () => {
               Your Full-Service Plumbing Company
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-              For over 46 years, Wood&apos;s Plumbing has been Southern Arizona&apos;s trusted plumbing contractor. We handle everything from emergency repairs at 3 AM to scheduled water heater replacements, from stubborn drain clogs to complete home repiping projects. No job is too big or too small.
+              For over 45 years, Wood&apos;s Plumbing has been Southern Arizona&apos;s trusted plumbing contractor. We handle everything from emergency repairs at 3 AM to scheduled water heater replacements, from stubborn drain clogs to complete home repiping projects. No job is too big or too small.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               Our fleet of fully-equipped service vehicles is positioned throughout Tucson, Marana, Oro Valley, and surrounding communities for rapid response. When you call Wood&apos;s Plumbing, you get licensed technicians with the training, tools, and parts to fix it right the first time.

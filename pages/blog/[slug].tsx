@@ -181,6 +181,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, relatedPosts, content
         <title>{post.metaTitle && post.metaTitle.length >= 50 ? post.metaTitle : `${post.title} | Wood's Plumbing Blog`}</title>
         <meta name="description" content={post.metaDescription && post.metaDescription.length >= 120 ? post.metaDescription : `${post.excerpt.slice(0, 120)} Expert plumbing tips from Wood's Plumbing in Tucson, AZ.`} />
         <link rel="canonical" href={`${BUSINESS.website}/blog/${post.slug}`} />
+        {/* Short posts (under 300 words) stay live for readers but are kept out of the
+            index until they are expanded, so thin pages do not drag down the site. */}
+        {post.content.split(/\s+/).length < 300 && <meta name="robots" content="noindex, follow" />}
         
         {/* Open Graph */}
         <meta property="og:title" content={post.title} />

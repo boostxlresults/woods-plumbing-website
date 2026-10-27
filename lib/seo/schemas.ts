@@ -147,7 +147,7 @@ export function generateOrganizationSchema() {
       `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
       "Family-Owned & Operated Since 1979",
       `${BUSINESS.trust.totalReviews}+ Verified Customer Reviews`,
-      "4.9-Star Average Rating",
+      "4.8-Star Average Rating on Google",
     ],
     memberOf: [
       {

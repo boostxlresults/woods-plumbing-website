@@ -199,8 +199,8 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
   return (
     <div>
       <Head>
-        <title>Wood&apos;s Plumbing | Marana, Tucson & Oro Valley&apos;s Trusted Plumber Since 1979</title>
-        <meta name="description" content={`#1 Rated plumber in Marana, Tucson & Oro Valley AZ since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service — no overtime charges. Licensed ROC #${BUSINESS.trust.license}, CR-37. Free estimates — call ${BUSINESS.phone}!`} />
+        <title>Plumber in Marana, AZ | Wood&apos;s Plumbing, Trusted Since 1979</title>
+        <meta name="description" content={`Licensed Marana plumber serving Northwest Tucson & Oro Valley since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating} stars, ${BUSINESS.trust.totalReviews}+ reviews. 24/7 emergency service — no overtime charges. Licensed ROC #${BUSINESS.trust.license}, CR-37. Free estimates — call ${BUSINESS.phone}!`} />
         <link rel="canonical" href={BUSINESS.website} />
         
         <meta property="og:title" content={`${BUSINESS.name} — Marana, Tucson & Oro Valley’s Trusted Plumber Since ${BUSINESS.trust.founded}`} />
@@ -297,7 +297,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
           </div>
           <div className="py-8 px-4 flex flex-col items-center text-center">
             <h1 className="text-navy-700 font-bold text-3xl leading-tight mb-4 uppercase">
-              THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
+              MARANA&apos;S PLUMBING EXPERTS, TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
             </h1>
             
             <p className="text-red-600 font-bold text-2xl mb-3">
@@ -344,7 +344,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
               </div>
               <div className="py-16 px-12">
                 <p className="text-navy-700 font-bold text-4xl lg:text-5xl leading-tight mb-6 uppercase max-w-xl" role="presentation" aria-hidden="true">
-                  THE PLUMBING EXPERTS YOU&apos;VE TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
+                  MARANA&apos;S PLUMBING EXPERTS, TRUSTED FOR OVER {new Date().getFullYear() - BUSINESS.trust.founded} YEARS IN SOUTHERN ARIZONA
                 </p>
                 
                 <p className="text-red-600 font-bold text-3xl mb-4">

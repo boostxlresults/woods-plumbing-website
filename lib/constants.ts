@@ -15,8 +15,8 @@ export const BUSINESS = {
   },
   
   geo: {
-    latitude: 32.4185,
-    longitude: -111.1926,
+    latitude: 32.4588,
+    longitude: -111.2084,
   },
   
   hours: {
@@ -28,11 +28,12 @@ export const BUSINESS = {
   
   trust: {
     founded: 1979,
-    yearsInBusiness: 46, // 2025 - 1979
+    yearsInBusiness: new Date().getFullYear() - 1979,
     license: "296386",
-    rating: 4.9,
-    displayRating: "4.9",
-    totalReviews: 300,
+    // Keep in sync with the Google Business Profile (4.8 stars, 203 reviews as of Oct 2026)
+    rating: 4.8,
+    displayRating: "4.8",
+    totalReviews: 200,
     bbbRating: "A+",
   },
   
@@ -40,7 +41,7 @@ export const BUSINESS = {
     facebook: "https://facebook.com/woodsplumbingaz",
     instagram: "https://instagram.com/woodsplumbingaz",
     yelp: "https://yelp.com/biz/woods-plumbing-tucson",
-    googleBusiness: "https://g.page/woods-plumbing-tucson",
+    googleBusiness: "https://www.google.com/maps/place/?q=place_id:ChIJA0k0a5Tk1YYRw_DWPZ3P16A",
     bbb: "https://www.bbb.org/us/az/marana/profile/plumber/woods-plumbing-enterprises-llc-1286-1000065937",
   },
   

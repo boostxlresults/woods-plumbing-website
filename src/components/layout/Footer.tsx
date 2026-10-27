@@ -9,7 +9,12 @@ import locationsData from '@/lib/data/locations.json';
 
 export function Footer() {
   const popularServices = servicesData.filter(s => s.featured).slice(0, 8);
-  const popularLocations = locationsData.slice(0, 6);
+  // Sitewide links go to the areas we most want to rank in (Marana home base,
+  // plus Northwest Tucson and Oro Valley where we are not yet in the map pack).
+  const footerLocationSlugs = ['marana', 'northwest-tucson', 'oro-valley', 'dove-mountain', 'continental-ranch', 'tucson'];
+  const popularLocations = footerLocationSlugs
+    .map((slug) => locationsData.find((l) => l.slug === slug))
+    .filter((l): l is (typeof locationsData)[number] => Boolean(l));
 
   return (
     <footer className="bg-navy-950 text-gray-300">

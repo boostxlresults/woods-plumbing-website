@@ -2,11 +2,15 @@ import { GetServerSideProps } from 'next';
 import servicesData from '@/lib/data/services.json';
 import locationsData from '@/lib/data/locations.json';
 import blogPostsData from '@/lib/data/blog-posts.json';
+import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
 
+const CONTENT_LASTMOD = '2026-10-27';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.woodsplumbing.com';
 
 function generateSiteMap() {
-  const today = new Date().toISOString();
+  // Real content-change date. Update when site content changes; a lastmod that
+  // always equals "now" is ignored by Google.
+  const today = CONTENT_LASTMOD;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -94,8 +98,8 @@ function generateSiteMap() {
   
   <!-- Geo-Service Intersection Pages (Location x Service Matrix) -->
   ${(() => {
-    const priorityLocationSlugs = ['marana', 'tucson', 'oro-valley', 'gladden-farms', 'continental-ranch', 'dove-mountain', 'avra-valley', 'catalina-foothills', 'sahuarita', 'green-valley', 'vail', 'picture-rocks'];
-    const priorityServiceSlugs = ['emergency-plumbing', 'drain-cleaning', 'water-heater-repair', 'water-heater-installation', 'tankless-water-heaters', 'leak-detection', 'slab-leak-detection', 'sewer-line-repair', 'hydro-jetting', 'gas-line-installation', 'water-softener-installation', 'burst-pipe-repair', 'toilet-repair', 'faucet-installation', 'garbage-disposal-repair', 'whole-house-repiping', 'sewer-camera-inspection', 'trenchless-sewer-repair', 'gas-leak-detection', 'reverse-osmosis-systems'];
+    const priorityLocationSlugs = GEO_MATRIX_LOCATION_SLUGS;
+    const priorityServiceSlugs = GEO_MATRIX_SERVICE_SLUGS;
     const geoServiceUrls: string[] = [];
     for (const locSlug of priorityLocationSlugs) {
       const locExists = locationsData.find((l: any) => l.slug === locSlug);
@@ -124,7 +128,7 @@ function generateSiteMap() {
   </url>
   
   <!-- Blog Posts -->
-  ${blogPostsData.map((post) => {
+  ${blogPostsData.filter((post) => post.content.split(/\s+/).length >= 300).map((post) => {
     const postDate = new Date(post.publishedAt).toISOString();
     return `
   <url>

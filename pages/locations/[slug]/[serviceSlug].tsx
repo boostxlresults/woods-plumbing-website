@@ -16,6 +16,7 @@ import {
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
+import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -382,37 +383,8 @@ const GeoServicePage: NextPage<GeoServicePageProps> = ({
 // Focus on the top 3 cities × top 20 services = 60 high-value pages
 // ─────────────────────────────────────────────────────────────────────────────
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Priority locations for geo-service matrix
-  const priorityLocationSlugs = [
-    'marana', 'tucson', 'oro-valley',
-    'gladden-farms', 'continental-ranch', 'dove-mountain',
-    'avra-valley', 'catalina-foothills', 'sahuarita',
-    'green-valley', 'vail', 'picture-rocks',
-  ];
-
-  // Top services for geo-service matrix
-  const priorityServiceSlugs = [
-    'emergency-plumbing',
-    'drain-cleaning',
-    'water-heater-repair',
-    'water-heater-installation',
-    'tankless-water-heaters',
-    'leak-detection',
-    'slab-leak-detection',
-    'sewer-line-repair',
-    'hydro-jetting',
-    'gas-line-installation',
-    'water-softener-installation',
-    'burst-pipe-repair',
-    'toilet-repair',
-    'faucet-installation',
-    'garbage-disposal-repair',
-    'whole-house-repiping',
-    'sewer-camera-inspection',
-    'trenchless-sewer-repair',
-    'gas-leak-detection',
-    'reverse-osmosis-systems',
-  ];
+  const priorityLocationSlugs = GEO_MATRIX_LOCATION_SLUGS;
+  const priorityServiceSlugs = GEO_MATRIX_SERVICE_SLUGS;
 
   const paths: Array<{ params: { slug: string; serviceSlug: string } }> = [];
 

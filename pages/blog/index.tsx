@@ -61,7 +61,7 @@ const BlogPage: NextPage<BlogIndexProps> = ({ posts, categories }) => {
     <div>
       <Head>
         <title>Plumbing Blog & Tips - Expert Guides for Homeowners | Wood&apos;s Plumbing</title>
-        <meta name="description" content="Expert plumbing tips, maintenance guides, and DIY advice from licensed Arizona plumbers. Learn from 46+ years of experience serving Tucson, Marana, and Southern Arizona homeowners." />
+        <meta name="description" content="Expert plumbing tips, maintenance guides, and DIY advice from licensed Arizona plumbers. Learn from 45+ years of experience serving Tucson, Marana, and Southern Arizona homeowners." />
         <meta name="keywords" content="plumbing blog, plumbing tips, plumbing maintenance, Arizona plumbing, water heater guide, drain cleaning tips" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/blog`} />
