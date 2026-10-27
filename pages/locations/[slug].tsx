@@ -12,15 +12,18 @@ import { HeroSplit } from '@/components/HeroSplit';
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
+import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
 
 interface LocationPageProps {
   location: typeof locationsData[0];
-  popularServices: typeof servicesData;
+  popularServices: Array<{ id: string; name: string; slug: string }>;
+  gridServices: Array<{ id: string; name: string; slug: string }>;
+  hasGeoPages: boolean;
   locationFaqs: typeof faqsData;
   longDescriptionHtml: string | null;
 }
 
-const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, locationFaqs, longDescriptionHtml }) => {
+const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, gridServices, hasGeoPages, locationFaqs, longDescriptionHtml }) => {
   useEffect(() => {
     trackLocationView(location.name);
   }, [location.name]);
@@ -363,10 +366,10 @@ const LocationPage: NextPage<LocationPageProps> = ({ location, popularServices, 
             Click any service below for dedicated {location.name} pricing, availability, and details.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-            {popularServices.map((service) => (
+            {gridServices.map((service) => (
               <Link
                 key={service.slug}
-                href={`/locations/${location.slug}/${service.slug}`}
+                href={hasGeoPages ? `/locations/${location.slug}/${service.slug}` : `/services/${service.slug}`}
                 className="group flex items-center gap-2 bg-navy-900 hover:bg-red-600 border border-navy-700 hover:border-red-500 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 hover:text-white transition-all"
               >
                 <Wrench className="w-3.5 h-3.5 flex-shrink-0 text-red-400 group-hover:text-white" />
@@ -426,8 +429,18 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
     return { notFound: true };
   }
 
-  // For the geo-service grid we want all services so every intersection page gets an inbound link
-  const popularServices = servicesData;
+  // Only ship the fields the page renders. Passing full service objects put
+  // ~725 KB of JSON into every location page.
+  const slim = (s: any) => ({ id: String(s.id), name: s.name, slug: s.slug });
+  const popularServices = servicesData.map(slim);
+
+  // The grid links only to location x service pages we actually maintain (the
+  // geo matrix), instead of 66 auto-generated combinations per city.
+  const hasGeoPages = GEO_MATRIX_LOCATION_SLUGS.includes(location.slug);
+  const gridServices = GEO_MATRIX_SERVICE_SLUGS
+    .map((slug) => servicesData.find((s: any) => s.slug === slug))
+    .filter(Boolean)
+    .map(slim);
   
   const locationFaqs = faqsData
     .filter((faq) => faq.locationSlug === location!.slug)
@@ -444,6 +457,8 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
     props: {
       location,
       popularServices,
+      gridServices,
+      hasGeoPages,
       locationFaqs,
       longDescriptionHtml,
     },

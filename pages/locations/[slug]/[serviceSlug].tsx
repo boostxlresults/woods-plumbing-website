@@ -419,6 +419,12 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
     return { notFound: true };
   }
 
+  // Combinations outside the maintained geo matrix were auto-generated thin pages.
+  // Send them (and any links they earned) to the main service page instead.
+  if (!GEO_MATRIX_LOCATION_SLUGS.includes(slug) || !GEO_MATRIX_SERVICE_SLUGS.includes(serviceSlug)) {
+    return { redirect: { destination: `/services/${serviceSlug}`, permanent: true } };
+  }
+
   // Related services (same category, different service)
   const relatedServices = servicesData
     .filter((s: any) => s.slug !== serviceSlug)
