@@ -12,7 +12,7 @@ import { HeroSplit } from '@/components/HeroSplit';
 import locationsData from '@/lib/data/locations.json';
 import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
-import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
+import { GEO_MATRIX_SERVICE_SLUGS, geoServicesFor } from '@/lib/seo/geoMatrix';
 
 interface LocationPageProps {
   location: typeof locationsData[0];
@@ -436,8 +436,9 @@ export const getStaticProps: GetStaticProps<LocationPageProps> = async ({ params
 
   // The grid links only to location x service pages we actually maintain (the
   // geo matrix), instead of 66 auto-generated combinations per city.
-  const hasGeoPages = GEO_MATRIX_LOCATION_SLUGS.includes(location.slug);
-  const gridServices = GEO_MATRIX_SERVICE_SLUGS
+  const locationGeoServices = geoServicesFor(location.slug);
+  const hasGeoPages = locationGeoServices.length > 0;
+  const gridServices = (hasGeoPages ? locationGeoServices : GEO_MATRIX_SERVICE_SLUGS)
     .map((slug) => servicesData.find((s: any) => s.slug === slug))
     .filter(Boolean)
     .map(slim);

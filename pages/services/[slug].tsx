@@ -14,7 +14,7 @@ import servicesData from '@/lib/data/services.json';
 import faqsData from '@/lib/data/faqs.json';
 import reviewsData from '@/lib/data/reviews.json';
 import locationsData from '@/lib/data/locations.json';
-import { GEO_MATRIX_LOCATION_SLUGS, GEO_MATRIX_SERVICE_SLUGS } from '@/lib/seo/geoMatrix';
+import { isGeoPage } from '@/lib/seo/geoMatrix';
 
 const getServiceImage = (slug: string): string => {
   const emergencyServices = ['emergency-plumbing', 'burst-pipe-repair', 'emergency-leak-repair', 'emergency-drain-cleaning', 'sewer-backup-emergency', 'frozen-pipe-repair'];
@@ -670,7 +670,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
             {serviceAreas.map((loc) => (
               <Link
                 key={loc.slug}
-                href={GEO_MATRIX_SERVICE_SLUGS.includes(service.slug) && GEO_MATRIX_LOCATION_SLUGS.includes(loc.slug) ? `/locations/${loc.slug}/${service.slug}` : `/locations/${loc.slug}`}
+                href={isGeoPage(loc.slug, service.slug) ? `/locations/${loc.slug}/${service.slug}` : `/locations/${loc.slug}`}
                 className="group flex items-center gap-2 bg-navy-900 hover:bg-red-600 border border-navy-700 hover:border-red-500 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-300 hover:text-white transition-all"
               >
                 <MapPin className="w-3.5 h-3.5 flex-shrink-0 text-red-400 group-hover:text-white" />
