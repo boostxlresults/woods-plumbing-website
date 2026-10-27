@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '../src/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../src/components/ui/card';
 import { Phone, Award, Users, Clock, CheckCircle, Star, ChevronDown } from 'lucide-react';
+import { generateFounderSchema, generateOwnerSchema } from '@/lib/seo/schemas';
 import { BUSINESS } from '../lib/constants';
 
 const AboutPage: NextPage = () => {
@@ -65,7 +66,7 @@ const AboutPage: NextPage = () => {
     },
     {
       question: "Are you available for emergency calls?",
-      answer: `Yes! We provide ${BUSINESS.hours.emergency}. We understand plumbing emergencies don't wait for business hours, so we're always available when you need us.`
+      answer: `Yes. We are ${BUSINESS.hours.emergency.charAt(0).toLowerCase() + BUSINESS.hours.emergency.slice(1)}. We understand plumbing emergencies don't wait for business hours, so we're always available when you need us.`
     },
     {
       question: "Do you charge overtime for emergency calls?",
@@ -90,37 +91,13 @@ const AboutPage: NextPage = () => {
     }))
   };
 
-  const authorSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Andrew M Dobbins",
-    "jobTitle": "Owner & Master Plumber",
-    "description": "Andrew M Dobbins is the owner of Wood's Plumbing Enterprises LLC, a licensed Master Plumber with over 40 years of experience serving Southern Arizona.",
-    "knowsAbout": ["Plumbing", "Gas Line Services", "Water Heater Installation", "Leak Detection", "Emergency Plumbing", "Residential Plumbing", "Commercial Plumbing"],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "license",
-        "name": "Arizona ROC Contractor License",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Arizona Registrar of Contractors"
-        }
-      }
-    ],
-    "worksFor": {
-      "@id": `${BUSINESS.website}#organization`
-    },
-    "sameAs": [
-      BUSINESS.social.googleBusiness
-    ]
-  };
+  const authorSchema = [generateFounderSchema(), generateOwnerSchema()];
 
   return (
     <div>
       <Head>
         <title>About Us - Family-Owned Plumber Since 1979 | Wood&apos;s Plumbing Arizona</title>
-        <meta name="description" content={`Learn about Wood's Plumbing Enterprises LLC — family-owned plumbing company serving Marana, Tucson & Oro Valley since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating}-star reviews. Licensed ROC #${BUSINESS.trust.license}, CR-37 Plumbing. Meet owner Andrew Dobbins.`} />
+        <meta name="description" content={`Learn about Wood's Plumbing Enterprises LLC, the family-owned plumbing company serving Marana, Tucson & Oro Valley since ${BUSINESS.trust.founded}. BBB ${BUSINESS.trust.bbbRating} rated, ${BUSINESS.trust.displayRating}-star reviews. Licensed ROC #${BUSINESS.trust.license}, CR-37 Plumbing. Founded by Bill Woods, part of Intelligent Design since 2022.`} />
         <meta name="keywords" content={`about ${BUSINESS.name}, plumber history, Tucson plumber since ${BUSINESS.trust.founded}, licensed plumber Arizona, BBB A+ plumber, family owned plumbing`} />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href={`${BUSINESS.website}/about`} />
@@ -171,55 +148,51 @@ const AboutPage: NextPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="prose max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                {`For over ${BUSINESS.trust.yearsInBusiness} years, ${BUSINESS.name} has been the trusted name in plumbing services across Southern Arizona. What started as a small family operation in ${BUSINESS.trust.founded} has grown into one of the region's most respected plumbing contractors, built on a foundation of honest service, quality workmanship, and genuine care for our customers.`}
+                {`Bill Woods started ${BUSINESS.name} in ${BUSINESS.founder.founded} with a simple idea: show up when you say you will, tell people the truth about what their plumbing needs, and stand behind the work. For more than four decades, that approach made Wood's the name Marana, Northwest Tucson and Oro Valley families called first, and many of our customers have used us for generations.`}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                We understand that plumbing problems don&apos;t wait for convenient times. That&apos;s why we maintain 24/7 emergency 
-                service with no overtime charges—because Tucson families and businesses deserve reliable help whenever they 
-                need it. Our team of licensed, experienced plumbers brings not just technical expertise but a commitment to 
-                treating every home and business like our own.
+                {`In ${BUSINESS.parent.joined}, Wood's joined forces with Intelligent Design, the family- and veteran-owned Tucson home services company founded by U.S. Marine Corps veteran Andrew Dobbins and rated ${BUSINESS.parent.ratingClaim}. Wood's kept its name, its Marana shop, its phone number and its focus on plumbing. What changed is what stands behind it: more licensed plumbers, more trucks on the road, modern scheduling, and the training and accountability of one of Southern Arizona's most-reviewed home services companies.`}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                {`From emergency repairs to planned installations, from residential homes to commercial facilities, we've seen it all and fixed it all. Our BBB A+ rating and ${BUSINESS.trust.displayRating}-star average across ${BUSINESS.trust.totalReviews}+ reviews reflect our unwavering commitment to customer satisfaction and quality work.`}
+                {`Today Wood's handles everything from emergency repairs to repipes, water heaters and slab leaks, and when you need heating, cooling, electrical or solar work, our sister company `}
+                <a href={BUSINESS.parent.url} className="text-blue-600 hover:underline">Intelligent Design</a>
+                {` is a phone call away. Our ${BUSINESS.trust.displayRating}-star average across ${BUSINESS.trust.totalReviews}+ Google reviews comes from neighbors who keep calling us back.`}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Meet the Owner - E-E-A-T Author Bio */}
+      {/* The people behind Wood's: E-E-A-T */}
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Meet the Owner</h2>
-            <div className="bg-white rounded-xl shadow-lg p-8 md:flex md:items-start md:gap-8">
-              <div className="flex-shrink-0 mb-6 md:mb-0 text-center md:text-left">
-                <div className="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto md:mx-0">
-                  <Users className="w-16 h-16 text-blue-600" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">The People Behind Wood&apos;s</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-8 h-8 text-blue-600" />
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">{BUSINESS.founder.name}</h3>
+                <p className="text-blue-600 font-medium mb-4">{`Founder, ${BUSINESS.founder.founded}`}</p>
+                <p className="text-gray-700">
+                  {`Bill founded Wood's Plumbing in ${BUSINESS.founder.founded} and built its reputation one Marana home at a time. The standards he set, honest diagnoses, upfront pricing and clean job sites, are still how we work today.`}
+                </p>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Andrew M Dobbins</h3>
-                <p className="text-blue-600 font-medium mb-4">Owner & Master Plumber</p>
-                <div className="prose text-gray-700">
-                  <p className="mb-4">
-                    With over 40 years of hands-on experience in the plumbing industry, Andrew Dobbins has built 
-                    Wood&apos;s Plumbing Enterprises into one of Southern Arizona&apos;s most trusted plumbing companies. 
-                    A licensed Master Plumber (ROC #{BUSINESS.trust.license}), Bill personally oversees operations 
-                    to ensure every job meets the highest standards.
-                  </p>
-                  <p className="mb-4">
-                    Bill&apos;s expertise spans residential and commercial plumbing, gas line services, water heater 
-                    installation, and emergency repairs. His commitment to honest service and fair pricing has earned 
-                    the company a BBB A+ rating and {BUSINESS.trust.totalReviews}+ positive customer reviews.
-                  </p>
-                  <p>
-                    <strong>Certifications:</strong> Arizona ROC Licensed Contractor, Certified in Gas Line Services, 
-                    Backflow Prevention Certified, OSHA Safety Trained
-                  </p>
+              <div className="bg-white rounded-xl shadow-lg p-8">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Users className="w-8 h-8 text-blue-600" />
                 </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-1">{BUSINESS.owner.name}</h3>
+                <p className="text-blue-600 font-medium mb-4">{`Owner since ${BUSINESS.parent.joined}`}</p>
+                <p className="text-gray-700">
+                  {`Andrew is a U.S. Marine Corps veteran who founded Intelligent Design in Tucson in 2011. When Wood's joined Intelligent Design in ${BUSINESS.parent.joined}, he committed to keeping Wood's a Marana plumbing company first, with the resources of a larger team behind it.`}
+                </p>
               </div>
             </div>
+            <p className="text-center text-gray-600 mt-6">
+              {`Licensed Arizona plumbing contractor, ROC #${BUSINESS.trust.license} (CR-37).`}
+            </p>
           </div>
         </div>
       </section>
@@ -340,7 +313,7 @@ const AboutPage: NextPage = () => {
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">Certified Master Plumbers on Staff</span>
+                <span className="text-gray-700">Licensed, Experienced Plumbers on Staff</span>
               </div>
             </div>
           </div>

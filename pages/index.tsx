@@ -87,17 +87,12 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "16:00"
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     ],
+    // Matches the Google Business Profile, which lists Wood's as open 24 hours.
     "knowsAbout": [
       "Emergency Plumbing Repairs",
       "Water Heater Installation",
@@ -122,7 +117,7 @@ const Home: NextPage<HomeProps> = ({ featuredServices, locations }) => {
     "award": [
       "BBB A+ Rated Business",
       `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
-      "Family-Owned & Operated Since 1979",
+      "Serving Marana Since 1979",
     ],
     "priceRange": "$$",
     "paymentAccepted": "Cash, Credit Card, Check, Financing Available",

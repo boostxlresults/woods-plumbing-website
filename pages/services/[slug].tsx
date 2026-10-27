@@ -572,7 +572,7 @@ const ServicePage: NextPage<ServicePageProps> = ({ service, relatedServices, ser
             Customer Reviews
           </h2>
           <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-            {reviewsData.slice(0, 3).map((review) => (
+            {[...reviewsData.filter((r) => r.serviceSlug === service.slug), ...reviewsData.filter((r) => r.serviceSlug !== service.slug)].slice(0, 3).map((review) => (
               <div key={review.id} className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (

@@ -32,7 +32,7 @@ const KnowledgeBasePage: NextPage<KnowledgeBaseProps> = ({ services, locations, 
     },
     {
       question: "Does Wood's Plumbing offer emergency services?",
-      answer: `Yes! We provide ${BUSINESS.hours.emergency}. Call ${BUSINESS.phone} anytime for immediate assistance. Average emergency response time is under 60 minutes in the Tucson metro area.`
+      answer: `Yes. We are ${BUSINESS.hours.emergency.charAt(0).toLowerCase() + BUSINESS.hours.emergency.slice(1)}. Call ${BUSINESS.phone} anytime for immediate assistance. Average emergency response time is under 60 minutes in the Tucson metro area.`
     },
     {
       question: "How can I contact Wood's Plumbing?",

@@ -254,8 +254,15 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-navy-800 mt-8 pt-8 text-sm text-center">
           <p className="text-gray-400">
-            © 2025 {BUSINESS.legalName}. All rights reserved. |{' '}
+            © {new Date().getFullYear()} {BUSINESS.legalName}. All rights reserved. |{' '}
             <span className="text-red-400">ROC #{BUSINESS.trust.license} (CR-37 Plumbing)</span>
+          </p>
+          <p className="text-gray-400 mt-2">
+            A proud member of the{' '}
+            <a href={BUSINESS.parent.url} className="text-gray-300 hover:text-red-400 underline transition-colors">
+              Intelligent Design Home Services
+            </a>{' '}
+            family since {BUSINESS.parent.joined}.
           </p>
           <div className="mt-3 flex flex-wrap justify-center gap-4 text-gray-300">
             <Link href="/privacy-policy" className="hover:text-red-400 transition-colors">

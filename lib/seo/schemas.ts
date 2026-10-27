@@ -61,7 +61,15 @@ export function generateOrganizationSchema() {
     email: BUSINESS.email,
     foundingDate: String(BUSINESS.trust.founded),
     founder: {
+      "@type": "Person",
       "@id": `${BUSINESS.website}#founder`,
+      name: BUSINESS.founder.name,
+    },
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": `${BUSINESS.parent.url}/#organization`,
+      name: BUSINESS.parent.name,
+      url: BUSINESS.parent.url,
     },
     address: {
       "@type": "PostalAddress",
@@ -79,25 +87,13 @@ export function generateOrganizationSchema() {
     priceRange: "$$",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card, Check, Financing Available",
+    // Matches the Google Business Profile, which lists Wood's as open 24 hours.
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
-        closes: "17:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "08:00",
-        closes: "16:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         opens: "00:00",
         closes: "23:59",
-        description: "Emergency Services Only",
       },
     ],
     knowsAbout: [
@@ -145,7 +141,7 @@ export function generateOrganizationSchema() {
     award: [
       "BBB A+ Rated Business",
       `${BUSINESS.trust.yearsInBusiness}+ Years Serving Southern Arizona`,
-      "Family-Owned & Operated Since 1979",
+      "Serving Southern Arizona Since 1979",
       `${BUSINESS.trust.totalReviews}+ Verified Customer Reviews`,
       "4.8-Star Average Rating on Google",
     ],
@@ -576,67 +572,31 @@ export function generateReviewSchema(reviews: Array<{
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FOUNDER / OWNER SCHEMA — E-E-A-T signal
-// Updated to reflect Andrew M Dobbins as ROC license holder (CR-37)
-// while Andrew M Dobbins is the operational owner/master plumber
+// FOUNDER SCHEMA: E-E-A-T signal. Bill Woods founded Wood's in 1979.
+// Andrew Dobbins (Intelligent Design) has owned the company since 2022.
 // ─────────────────────────────────────────────────────────────────────────────
 export function generateFounderSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${BUSINESS.website}#founder`,
+    name: BUSINESS.founder.name,
+    jobTitle: BUSINESS.founder.title,
+    description: `${BUSINESS.founder.name} founded ${BUSINESS.name} in ${BUSINESS.founder.founded} and built it into one of Marana's longest-serving plumbing companies.`,
+    knowsAbout: ["Residential Plumbing", "Commercial Plumbing", "Water Heater Systems", "Drain and Sewer Services", "Slab Leak Detection"],
+  };
+}
+
+export function generateOwnerSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BUSINESS.website}#owner`,
     name: BUSINESS.owner.name,
     jobTitle: BUSINESS.owner.title,
-    worksFor: {
-      "@id": `${BUSINESS.website}#organization`,
-    },
-    description: `${BUSINESS.owner.name} is the owner and master plumber at ${BUSINESS.name}, bringing over ${BUSINESS.owner.yearsExperience} years of hands-on plumbing experience to Southern Arizona. As a licensed Arizona contractor (ROC #${BUSINESS.trust.license}, CR-37 Plumbing), the team at Wood's Plumbing is dedicated to quality workmanship and customer satisfaction in Marana, Tucson, and Oro Valley.`,
-    knowsAbout: [
-      "Residential Plumbing",
-      "Commercial Plumbing",
-      "Water Heater Systems",
-      "Drain and Sewer Services",
-      "Gas Line Installation",
-      "Emergency Plumbing Repairs",
-      "Water Treatment Systems",
-      "Plumbing Code Compliance",
-      "Slab Leak Detection",
-      "Trenchless Sewer Repair",
-    ],
-    hasCredential: [
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "license",
-        name: "Arizona Master Plumber License",
-        recognizedBy: {
-          "@type": "GovernmentOrganization",
-          name: "Arizona Registrar of Contractors",
-          url: "https://roc.az.gov",
-        },
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "license",
-        name: "Arizona ROC License CR-37 Plumbing",
-        identifier: `ROC #${BUSINESS.trust.license}`,
-        recognizedBy: {
-          "@type": "GovernmentOrganization",
-          name: "Arizona Registrar of Contractors",
-          url: "https://roc.az.gov",
-        },
-      },
-    ],
-    memberOf: {
-      "@type": "Organization",
-      name: BUSINESS.name,
-      url: BUSINESS.website,
-    },
-    award: [
-      `${BUSINESS.owner.yearsExperience}+ Years Master Plumber Experience`,
-      "Arizona ROC Licensed Contractor CR-37",
-      "BBB A+ Rated Business",
-    ],
-    sameAs: Object.values(BUSINESS.social).filter(Boolean),
+    description: BUSINESS.owner.bio,
+    worksFor: { "@id": `${BUSINESS.website}#organization` },
+    affiliation: { "@type": "Organization", name: BUSINESS.parent.name, url: BUSINESS.parent.url },
   };
 }
 
