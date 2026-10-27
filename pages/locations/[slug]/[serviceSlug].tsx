@@ -472,12 +472,14 @@ export const getStaticProps: GetStaticProps<GeoServicePageProps> = async ({ para
   const relatedServices = servicesData
     .filter((s: any) => s.slug !== serviceSlug && geoServicesFor(slug).includes(s.slug))
     .filter((s: any) => s.featured || s.slug.includes('emergency') || s.slug.includes('water-heater') || s.slug.includes('drain'))
-    .slice(0, 6) as Service[];
+    .slice(0, 6)
+    .map((s: any) => ({ id: String(s.id), name: s.name, slug: s.slug, shortDescription: '' })) as Service[];
 
   // Related locations (nearby cities, same service)
   const relatedLocations = locationsData
     .filter((l: any) => l.slug !== slug && l.featured && isGeoPage(l.slug, serviceSlug))
-    .slice(0, 4) as Location[];
+    .slice(0, 4)
+    .map((l: any) => ({ id: String(l.id), name: l.name, slug: l.slug, zipCodes: [] })) as Location[];
 
   // FAQs for this service + location combination
   const serviceFaqs = (faqsData as any[])
